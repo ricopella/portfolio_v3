@@ -1,12 +1,11 @@
 import { Link, withPrefix } from 'gatsby'
-// import PropTypes from 'prop-types'
 import { transparentize } from 'polished'
 import React from 'react'
 import styled from '@emotion/styled'
 import { configureAnchors } from 'react-scrollable-anchor'
 
 import { colors, dimensions, heights, zIndex } from '../styles/variables'
-import Container from './Container'
+import Container from './container'
 
 const StyledHeader = styled.header`
   height: ${heights.header}px;
