@@ -1,11 +1,12 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Main from '../containers/Main'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="nrs." keywords={[`developer`, `full-stack`, `react`]} />
-    <div>Wu-Tang Clan</div>
+    <Main />
   </Layout>
 )
 
