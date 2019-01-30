@@ -1,5 +1,5 @@
 import './layout.css'
-
+import get from 'lodash/get'
 import styled from '@emotion/styled'
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
@@ -19,7 +19,6 @@ const MainBodyContainer = styled('div')`
   height: calc(100vh - ${heights.header}px - ${heights.footer}px);
   width: 100vw;
   margin: 0 auto;
-  padding: 0px 1.0875rem 1.45rem;
   grid-row: 2;
 `
 
@@ -40,16 +39,27 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            author {
+              name
+              url
+              email
+              handle
+            }
           }
         }
       }
     `}
     render={data => (
       <RootContainer>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header
+          siteTitle={get(data, ['site', 'site', 'siteMetaData', 'title'], '')}
+        />
         <MainBodyContainer>{children}</MainBodyContainer>
         <FooterContainer>
-          © {new Date().getFullYear()}, <span>Narin R. Sundarabhaya</span>
+          © {new Date().getFullYear()},{' '}
+          <span>
+            {get(data, ['site', 'siteMetaData', 'author', 'name'], '')}
+          </span>
         </FooterContainer>
       </RootContainer>
     )}

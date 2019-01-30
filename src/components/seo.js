@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import get from 'lodash/get'
 
 function SEO({ description, lang, meta, keywords, title }) {
   return (
@@ -40,7 +41,11 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
+                content: get(
+                  data,
+                  ['site', 'siteMetadata', 'author', 'name'],
+                  ''
+                ),
               },
               {
                 name: `twitter:title`,
@@ -89,7 +94,9 @@ const detailsQuery = graphql`
       siteMetadata {
         title
         description
-        author
+        author {
+          name
+        }
       }
     }
   }

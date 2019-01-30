@@ -4,7 +4,7 @@ import Home from './Home'
 const MainContainer = ({ data }) => {
   return (
     <>
-      <Home data={data} />
+      <Home data={data} name='Narin R. Sundarabhaya' position='Full Stack Developer' />
     </>
   )
 }

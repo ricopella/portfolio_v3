@@ -37,6 +37,7 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
+    "lodash": "^4.17.11",
     "prettier": "^1.15.2"
   },
   "repository": {
