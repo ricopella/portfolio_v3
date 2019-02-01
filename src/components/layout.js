@@ -16,7 +16,6 @@ const RootContainer = styled('div')`
 
 const MainBodyContainer = styled('div')`
   display: grid;
-  height: calc(100vh - ${heights.header}px - ${heights.footer}px);
   width: 100vw;
   margin: 0 auto;
   grid-row: 2;
@@ -52,13 +51,13 @@ const Layout = ({ children }) => (
     render={data => (
       <RootContainer>
         <Header
-          siteTitle={get(data, ['site', 'site', 'siteMetaData', 'title'], '')}
+          siteTitle={get(data, ['site', 'site', 'siteMetadata', 'title'], '')}
         />
         <MainBodyContainer>{children}</MainBodyContainer>
         <FooterContainer>
           © {new Date().getFullYear()},{' '}
           <span>
-            {get(data, ['site', 'siteMetaData', 'author', 'name'], '')}
+            {get(data, ['site', 'siteMetadata', 'author', 'name'], '')}
           </span>
         </FooterContainer>
       </RootContainer>
