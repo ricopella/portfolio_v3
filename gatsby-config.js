@@ -2,7 +2,12 @@ module.exports = {
     siteMetadata: {
         title: `nrs.`,
         description: `Full-Stack Developer specialized in the Front-End.`,
-        author: `@ricopella`,
+        author: {
+            name: 'Narin Sundarabhaya',
+            url: 'https://twitter.com/ricopella',
+            email: 'nrs710@gmail.com',
+            handle: `@ricopella`
+        },
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -27,8 +32,6 @@ module.exports = {
                 icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
             },
         },
-        // this (optional) plugin enables Progressive Web App + Offline functionality
-        // To learn more, visit: https://gatsby.app/offline
         'gatsby-plugin-offline',
         'gatsby-plugin-emotion',
     ],
