@@ -1,6 +1,9 @@
 import React from 'react'
 import Home from './Home'
 import Gallery from './Gallery'
+import AboutMe from './AboutMe'
+import Skills from './Skills'
+import Contact from './Contact'
 
 const MainContainer = ({ data }) => {
   return (
@@ -11,6 +14,9 @@ const MainContainer = ({ data }) => {
         position="Full Stack Developer"
       />
       <Gallery />
+      <AboutMe />
+      <Skills />
+      <Contact />
     </>
   )
 }
