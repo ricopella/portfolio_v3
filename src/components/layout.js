@@ -1,4 +1,4 @@
-import './layout.css'
+import '../styles/normalize'
 import get from 'lodash/get'
 import styled from '@emotion/styled'
 import { graphql, StaticQuery } from 'gatsby'

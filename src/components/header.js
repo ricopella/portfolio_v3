@@ -57,7 +57,7 @@ const IconWrapper = styled.img`
   max-width: 40%;
   cursor: pointer;
 `
-
+// TODO: mobile icons
 export default class Header extends React.Component {
   constructor(props) {
     super(props)
@@ -104,7 +104,6 @@ export default class Header extends React.Component {
               </Link>
             </MobileNavGroup>
           )}
-          ;
         </HeaderInner>
       </StyledHeader>
     )
