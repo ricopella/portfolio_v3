@@ -20,7 +20,8 @@ injectGlobal`
   }
 
   body {
-    width: 100%;
+    margin: 0 auto;
+    width: 100vw;
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: ${fonts.sansSerif};

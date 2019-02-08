@@ -1,11 +1,17 @@
-import { Link, withPrefix } from 'gatsby'
+import { Link } from 'gatsby'
 import { transparentize } from 'polished'
 import React from 'react'
 import styled from '@emotion/styled'
-import { configureAnchors } from 'react-scrollable-anchor'
 
 import { colors, dimensions, heights, zIndex } from '../styles/variables'
 import Container from './container'
+
+// Assets
+import Home from '../images/home.svg'
+import Portfolio from '../images/portfolio.svg'
+import AboutMe from '../images/aboutme.svg'
+import Contact from '../images/contact.svg'
+import Skills from '../images/skills.svg'
 
 const StyledHeader = styled.header`
   height: ${heights.header}px;
@@ -57,14 +63,13 @@ const IconWrapper = styled.img`
   max-width: 40%;
   cursor: pointer;
 `
-// TODO: mobile icons
+
 export default class Header extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       isMobile: typeof window !== 'undefined' && window.innerWidth < 768,
     }
-    configureAnchors({ scrollDuration: 500 })
   }
 
   componentDidMount() {
@@ -88,19 +93,19 @@ export default class Header extends React.Component {
           ) : (
             <MobileNavGroup>
               <Link to="home">
-                <IconWrapper src={withPrefix('images/home.svg')} />
+                <IconWrapper src={Home} />
               </Link>
               <Link to="#portfolio">
-                <IconWrapper src={withPrefix('images/portfolio.svg')} />
+                <IconWrapper src={Portfolio} />
               </Link>
               <Link to="#about-me">
-                <IconWrapper src={withPrefix('images/aboutme.svg')} />
+                <IconWrapper src={AboutMe} />
               </Link>
               <Link to="#skills">
-                <IconWrapper src={withPrefix('images/skills.svg')} />
+                <IconWrapper src={Skills} />
               </Link>
               <Link to="#contact">
-                <IconWrapper src={withPrefix('images/contact.svg')} />
+                <IconWrapper src={Contact} />
               </Link>
             </MobileNavGroup>
           )}
