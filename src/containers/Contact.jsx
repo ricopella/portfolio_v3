@@ -63,7 +63,7 @@ const SkillsContainer = () => (
             textDecoration: 'underline',
           }}
         >
-          <a className={anchor} href="mailto:nrs710@gmail.com" target="__top">
+          <a css={anchor} href="mailto:nrs710@gmail.com" target="__top">
             {`get in touch`.toUpperCase()}
           </a>
         </h1>
