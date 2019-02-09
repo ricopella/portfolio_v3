@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors } from '../styles/variables'
-import Image from '../components/image.js'
+import Image from '../components/image'
 
 const StyledFullPage = styled.div`
   background: transparent;

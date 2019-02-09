@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 // Background image
-const Image = ({ style }) => (
+const Image = ({ style, ...rest }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -17,7 +17,11 @@ const Image = ({ style }) => (
       }
     `}
     render={data => (
-      <Img style={style} fluid={data.placeholderImage.childImageSharp.fluid} />
+      <Img
+        style={style}
+        fluid={data.placeholderImage.childImageSharp.fluid}
+        {...rest}
+      />
     )}
   />
 )
