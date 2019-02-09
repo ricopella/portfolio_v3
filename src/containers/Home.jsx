@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors } from '../styles/variables'
+import Image from '../components/image'
 
 // assets
 import BackgroundImage from '../images/nrs_background.jpg'
@@ -78,9 +79,14 @@ const ImageContainer = styled.img`
 
 const HomeContainer = ({ data, name = '', position = '' }) => (
   <StyledFullPage id="home">
-    <ImageContainer
-      src={BackgroundImage}
-      style={{ position: 'unset', opacity: 0.95 }}
+    <Image
+      style={{
+        position: 'unset',
+        opacity: 0.95,
+        gridRow: '1/-1',
+        gridColumn: '1/-1',
+      }}
+      css={ImageContainer}
       alt="Narin Sundarabhaya - Welcome!"
     />
     <StyledIntroTextContainer>
