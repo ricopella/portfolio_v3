@@ -63,32 +63,36 @@ const SkillsContainer = () => (
             textDecoration: 'underline',
           }}
         >
-          <a className={anchor} href="mailto:nrs710@gmail.com" target="__top">
+          <a css={anchor} href="mailto:nrs710@gmail.com" target="__top">
             {`get in touch`.toUpperCase()}
           </a>
         </h1>
         <ContactRow>
-          <a href="https://github.com/ricopella" target="_blank" rel="noopener">
+          <a
+            href="https://github.com/ricopella"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image src={github} />
           </a>
           <a
             href="https://www.instagram.com/ricopella"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <Image src={insta} />
           </a>
           <a
             href="https://twitter.com/ricopella"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <Image src={twitter} />
           </a>
           <a
             href="https://www.linkedin.com/in/nsundara/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <Image src={linkedin} />
           </a>

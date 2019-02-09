@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { colors } from "../styles/variables";
+import { colors } from '../styles/variables'
 
 // Assets
-import PatientStack from '../images/patient-stack.gif';
-import Reacting from '../images/reacting.png';
-import SplitzEase from '../images/splitzease.jpg';
-import Nike from '../images/nike.png';
-import FriendFinder from '../images/dff.png';
-import HackerNoon from '../images/hack.png';
-import Tacos from '../images/edt.png';
-import UpMeet from '../images/upmeet.png';
-import Fenway from '../images/fenway.png';
+import PatientStack from '../images/patient-stack.gif'
+import Reacting from '../images/reacting.png'
+import SplitzEase from '../images/splitzease.jpg'
+import Nike from '../images/nike.png'
+import FriendFinder from '../images/dff.png'
+import HackerNoon from '../images/hack.png'
+import Tacos from '../images/edt.png'
+import UpMeet from '../images/upmeet.png'
+import Fenway from '../images/fenway.png'
 
 const StyledLayoutContainer = styled.main`
   display: grid;
@@ -28,19 +28,19 @@ const StyledLayoutContainer = styled.main`
   @media (max-width: 820px) {
     grid-template-columns: 1fr;
   }
-`;
+`
 
 const galleryImage = css`
   height: 100%;
   width: 100%;
-`;
+`
 
 const LinkContainer = styled.a`
   & :hover {
     background-color: red;
     cursor: pointer;
   }
-`;
+`
 
 const effectPortfolio = css`
   position: relative;
@@ -60,6 +60,10 @@ const effectPortfolio = css`
     position: relative;
     display: block;
     opacity: 0.75;
+  }
+
+  img {
+    object-fit: cover;
   }
 
   & h2 {
@@ -165,16 +169,12 @@ const effectPortfolio = css`
     letter-spacing: 1px;
     font-size: 68.5%;
   }
-`;
+`
 
 const GalleryMain = ({ data }) => (
   <StyledLayoutContainer>
-    <figure className={effectPortfolio}>
-      <img
-        className={galleryImage}
-        src={PatientStack}
-        alt="Patient Stack"
-      />
+    <figure css={effectPortfolio}>
+      <img css={galleryImage} src={PatientStack} alt="Patient Stack" />
       <figcaption>
         <h2>
           Patient
@@ -187,11 +187,11 @@ const GalleryMain = ({ data }) => (
         />
       </figcaption>
     </figure>
-    <figure className={effectPortfolio}>
+    <figure css={effectPortfolio}>
       <img
-        className={galleryImage}
+        css={galleryImage}
         src={Reacting}
-        alt='Portfolio - Reacting To The Times'
+        alt="Portfolio - Reacting To The Times"
       />
       <figcaption>
         <h2>
@@ -205,8 +205,8 @@ const GalleryMain = ({ data }) => (
         />
       </figcaption>
     </figure>
-    <figure className={effectPortfolio}>
-      <img className={galleryImage} src={SplitzEase} alt='Portfolio - Splitzease'/>
+    <figure css={effectPortfolio}>
+      <img css={galleryImage} src={SplitzEase} alt="Portfolio - Splitzease" />
       <figcaption>
         <h2>
           Splitz
@@ -219,8 +219,8 @@ const GalleryMain = ({ data }) => (
         />
       </figcaption>
     </figure>
-    <figure className={effectPortfolio}>
-      <img className={galleryImage} src={Nike} alt='Portfolio - Nike Trivia'/>
+    <figure css={effectPortfolio}>
+      <img css={galleryImage} src={Nike} alt="Portfolio - Nike Trivia" />
       <figcaption>
         <h2>
           Nike
@@ -233,11 +233,11 @@ const GalleryMain = ({ data }) => (
         />
       </figcaption>
     </figure>
-    <figure className={effectPortfolio}>
+    <figure css={effectPortfolio}>
       <img
-        className={galleryImage}
+        css={galleryImage}
         src={FriendFinder}
-        alt='Portfolio - Friend Finder'
+        alt="Portfolio - Friend Finder"
       />
       <figcaption>
         <h2>
@@ -251,8 +251,12 @@ const GalleryMain = ({ data }) => (
         />
       </figcaption>
     </figure>
-    <figure className={effectPortfolio}>
-      <img className={galleryImage} src={HackerNoon} alt='Portfolio - A cup of hacker noon'/>
+    <figure css={effectPortfolio}>
+      <img
+        css={galleryImage}
+        src={HackerNoon}
+        alt="Portfolio - A cup of hacker noon"
+      />
       <figcaption>
         <h2>
           A Cup of
@@ -265,8 +269,8 @@ const GalleryMain = ({ data }) => (
         />
       </figcaption>
     </figure>
-    <figure className={effectPortfolio}>
-      <img className={galleryImage} src={Tacos} alt='Portfolio - Eat Dos Tacos' />
+    <figure css={effectPortfolio}>
+      <img css={galleryImage} src={Tacos} alt="Portfolio - Eat Dos Tacos" />
       <figcaption>
         <h2>Eat-DoS-Tacos</h2>
         <p>A Full-Stack application built with Node, Express, and MySQL.</p>
@@ -276,8 +280,8 @@ const GalleryMain = ({ data }) => (
         />
       </figcaption>
     </figure>
-    <figure className={effectPortfolio}>
-      <img className={galleryImage} src={UpMeet} alt='Portfolio - UpMeet'/>
+    <figure css={effectPortfolio}>
+      <img css={galleryImage} src={UpMeet} alt="Portfolio - UpMeet" />
       <figcaption>
         <h2>
           Up
@@ -290,8 +294,12 @@ const GalleryMain = ({ data }) => (
         />
       </figcaption>
     </figure>
-    <figure className={effectPortfolio}>
-      <img className={galleryImage} src={Fenway} alt='Portfolio - Fenway Park Hangman'/>
+    <figure css={effectPortfolio}>
+      <img
+        css={galleryImage}
+        src={Fenway}
+        alt="Portfolio - Fenway Park Hangman"
+      />
       <figcaption>
         <h2>
           Fenway Park
@@ -305,6 +313,6 @@ const GalleryMain = ({ data }) => (
       </figcaption>
     </figure>
   </StyledLayoutContainer>
-);
+)
 
-export default GalleryMain;
+export default GalleryMain
