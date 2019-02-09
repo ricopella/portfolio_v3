@@ -5,6 +5,10 @@ import styled from '@emotion/styled'
 const StyledFullPage = styled.div`
   width: 100%;
   padding: 5%;
+
+  @media (max-width: 750px) {
+    padding: 10%;
+  }
 `
 
 const GalleryContainer = ({ data }) => (

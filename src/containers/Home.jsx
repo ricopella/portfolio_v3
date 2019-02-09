@@ -23,7 +23,7 @@ const StyledIntroTextContainer = styled.div`
   align-content: center;
   display: grid;
   grid-template-columns: auto-fill;
-  grid-template-rows: repeat(3, 60px);
+  grid-template-rows: 60px 10px 60px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -31,12 +31,22 @@ const StyledIntroTextContainer = styled.div`
   z-index: 2;
   grid-row: 1 / -1;
   grid-column: 1 / -1;
+
+  @media (max-width: 750px) {
+    grid-template-rows: 36px 12px 32px;
+  }
 `
 
 const StyledIntroText = styled.div`
   color: ${colors.header};
   font-size: 4em;
   text-align: center;
+  align-self: center;
+  justify-self: center;
+
+  @media (max-width: 750px) {
+    font-size: 2em;
+  }
 `
 
 const description = css`
@@ -55,7 +65,7 @@ const StyledBreak = styled.div`
   justify-self: center;
   width: 600px;
   @media (max-width: 750px) {
-    opacity: 0;
+    width: 80%;
   }
 `
 const ImageContainer = styled.img`

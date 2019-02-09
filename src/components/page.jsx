@@ -9,6 +9,10 @@ const StyledPage = styled.div`
   height: 100vh;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 750px) {
+    height: 100%;
+  }
 `
 
 const Page = ({ children, className, id, style }) => (

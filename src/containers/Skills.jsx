@@ -38,6 +38,10 @@ const ImageWrapper = styled.img`
   max-width: 10%;
   margin: 0px 6px;
   padding: 5px 7px;
+
+  @media (max-width: 750px) {
+    max-width: 21%;
+  }
 `
 
 const SkillsWrapper = styled.div`
@@ -55,6 +59,7 @@ const SkillsWrapper = styled.div`
 
   @media (max-width: 820px) {
     flex: 1;
+    padding-top: 10%;
   }
 `
 
@@ -147,7 +152,7 @@ const SkillsContainer = () => (
           title="Gulp"
           style={{ maxWidth: '6%' }}
         />
-        <imImageWrapperg
+        <ImageWrapper
           className="skills-logo"
           src={pythonLogo}
           alt="Python Logo"
@@ -238,7 +243,6 @@ const SkillsContainer = () => (
           src={mocha}
           alt="mocha Logo"
           title="Mocha"
-          style={{ maxWidth: '10%' }}
         />
         <ImageWrapper
           className="skills-logo"

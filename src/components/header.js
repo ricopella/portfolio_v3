@@ -92,7 +92,7 @@ export default class Header extends React.Component {
             </NavigationGroup>
           ) : (
             <MobileNavGroup>
-              <Link to="home">
+              <Link to="#home">
                 <IconWrapper src={Home} />
               </Link>
               <Link to="#portfolio">

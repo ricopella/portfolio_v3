@@ -1,46 +1,56 @@
-import React from "react";
+import React from 'react'
 import styled from '@emotion/styled'
-import Container from "../components/container";
-import Page from "../components/page";
-import { colors } from "../styles/variables";
+import Container from '../components/container'
+import Page from '../components/page'
+import { colors } from '../styles/variables'
 
 const StyledAboutMeContainer = styled.div`
   display: grid;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
-`;
+`
 
 const StyledAboutMeColumn = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 30px;
-`;
+
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 30px;
+  }
+`
 
 const StyledAboutMeP = styled.div`
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: ${colors.white};
-`;
+
+  @media (max-width: 750px) {
+    font-size: 1.25rem;
+  }
+`
 
 const AboutMeMain = () => (
-  <StyledAboutMeContainer >
+  <StyledAboutMeContainer>
     <Page
       id="about-me"
       style={{
-        height: "100vh",
-        width: "100vw",
+        height: '100vh',
+        width: '100vw',
         backgroundColor: colors.limeGreen,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
       <Container>
         <h1
           style={{
-            fontSize: "3rem",
-            textAlign: "center",
-            textDecoration: "underline",
-            color: colors.white
+            fontSize: '3rem',
+            textAlign: 'center',
+            textDecoration: 'underline',
+            color: colors.white,
           }}
         >
           {`about me`.toUpperCase()}
@@ -64,6 +74,6 @@ const AboutMeMain = () => (
       </Container>
     </Page>
   </StyledAboutMeContainer>
-);
+)
 
-export default AboutMeMain;
+export default AboutMeMain
