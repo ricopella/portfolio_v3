@@ -2,6 +2,31 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors } from '../styles/variables'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+const Image = ({ style, ...rest }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        placeholderImage: file(relativePath: { eq: "nrs_background.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Img
+        style={style}
+        fluid={data.placeholderImage.childImageSharp.fluid}
+        {...rest}
+      />
+    )}
+  />
+)
 
 const StyledFullPage = styled.div`
   background: transparent;
@@ -75,6 +100,16 @@ const ImageContainer = styled.img`
 
 const HomeContainer = ({ data, name = '', position = '' }) => (
   <StyledFullPage id="home">
+    <Image
+      style={{
+        position: 'unset',
+        opacity: 0.95,
+        gridRow: '1/-1',
+        gridColumn: '1/-1',
+      }}
+      css={ImageContainer}
+      alt="Narin Sundarabhaya - Welcome!"
+    />
     <StyledIntroTextContainer>
       <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
       <StyledBreak />
