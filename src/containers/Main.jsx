@@ -1,10 +1,22 @@
 import React from 'react'
 import Home from './Home'
+import Gallery from './Gallery'
+import AboutMe from './AboutMe'
+import Skills from './Skills'
+import Contact from './Contact'
 
 const MainContainer = ({ data }) => {
   return (
     <>
-      <Home data={data} />
+      <Home
+        data={data}
+        name="Narin R. Sundarabhaya"
+        position="Full Stack Developer"
+      />
+      <Gallery />
+      <AboutMe />
+      <Skills />
+      <Contact />
     </>
   )
 }
