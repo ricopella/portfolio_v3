@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors } from '../styles/variables'
+import TypeIt from 'typeit'
 
 // assets
 import BackgroundImage from '../images/nrs_background.jpg'
@@ -76,21 +77,60 @@ const ImageContainer = styled.img`
   grid-column: 1 / -1;
 `
 
-const HomeContainer = ({ data, name = '', position = '' }) => (
-  <StyledFullPage id="home">
-    <ImageContainer
-      src={BackgroundImage}
-      style={{ position: 'unset', opacity: 0.95 }}
-      alt="Narin Sundarabhaya - Welcome!"
-    />
-    <StyledIntroTextContainer>
-      <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
-      <StyledBreak />
-      <StyledIntroText className={description}>
-        {position.toUpperCase()}
-      </StyledIntroText>
-    </StyledIntroTextContainer>
-  </StyledFullPage>
-)
+const HomeContainer = ({ data, name = '' }) => {
+  new TypeIt('#myID', {
+    loop: true,
+  })
+    .type('Full-Stack Developer')
+    .pause(700)
+    .delete()
+    .type('Front-End Developer')
+    .pause(700)
+    .delete()
+    .type('Freelance Developer')
+    .pause(700)
+    .delete()
+    .type('Scrum Master')
+    .pause(700)
+    .delete()
+    .type('Project Manager')
+    .pause(700)
+    .delete()
+    .type('DeeJay')
+    .pause(500)
+    .delete()
+    .type('Turntablist')
+    .pause(500)
+    .delete()
+    .type('Producer')
+    .pause(500)
+    .delete()
+    .type('Bulldog Owner')
+    .pause(500)
+    .delete()
+    .type('Amateur Photographer')
+    .pause(500)
+    .delete()
+    .type('Boston Sports Fan')
+    .pause(500)
+    .delete()
+    .go()
+  return (
+    <StyledFullPage id="home">
+      <ImageContainer
+        src={BackgroundImage}
+        style={{ position: 'unset', opacity: 0.95 }}
+        alt="Narin Sundarabhaya - Welcome!"
+      />
+      <StyledIntroTextContainer>
+        <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
+        <StyledBreak />
+        <StyledIntroText className={description}>
+          <div id="myID" />
+        </StyledIntroText>
+      </StyledIntroTextContainer>
+    </StyledFullPage>
+  )
+}
 
 export default HomeContainer
