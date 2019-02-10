@@ -5,7 +5,10 @@ import Main from '../containers/Main'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="nrs." keywords={[`developer`, `full-stack`, `react`]} />
+    <SEO
+      title="Welcome"
+      keywords={[`web developer`, `full-stack`, `react`, `Los Angeles`]}
+    />
     <Main />
   </Layout>
 )

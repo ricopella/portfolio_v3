@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { colors } from '../styles/variables'
+import styled from '@emotion/styled'
+import React from 'react'
 import TypeIt from 'typeit'
 
-// assets
 import BackgroundImage from '../images/nrs_background.jpg'
+import { colors } from '../styles/variables'
 
+// assets
 const StyledFullPage = styled.div`
   background: transparent;
   height: 100%;
@@ -52,6 +52,7 @@ const StyledIntroText = styled.div`
 
 const description = css`
   font-size: 1.9em;
+
   @media (max-width: 750px) {
     word-wrap: break-word;
     font-size: 1em;
@@ -65,6 +66,7 @@ const StyledBreak = styled.div`
   height: 4px;
   justify-self: center;
   width: 600px;
+
   @media (max-width: 750px) {
     width: 80%;
   }
@@ -113,7 +115,6 @@ const HomeContainer = ({ data, name = '' }) => {
     .delete()
     .type('Boston Sports Fan')
     .pause(500)
-    .delete()
     .go()
   return (
     <StyledFullPage id="home">
