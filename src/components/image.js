@@ -6,7 +6,7 @@ import Img from 'gatsby-image'
  * https://noahgilmore.com/blog/easy-gatsby-image-components/
  */
 
-export default (Image = props => (
+const Image = props => (
   <StaticQuery
     query={graphql`
       query {
@@ -37,4 +37,5 @@ export default (Image = props => (
       return <Img alt={props.alt} sizes={imageSizes} style={props.style} />
     }}
   />
-))
+)
+export default Image
