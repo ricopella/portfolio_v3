@@ -72,55 +72,75 @@ const StyledBreak = styled.div`
   }
 `
 
-const HomeContainer = ({ data, name = '' }) => {
-  new TypeIt('#myID', {
-    loop: true,
-  })
-    .type('Full-Stack Developer')
-    .pause(700)
-    .delete()
-    .type('Front-End Developer')
-    .pause(700)
-    .delete()
-    .type('Freelance Developer')
-    .pause(700)
-    .delete()
-    .type('Scrum Master')
-    .pause(700)
-    .delete()
-    .type('Project Manager')
-    .pause(700)
-    .delete()
-    .type('DeeJay')
-    .pause(500)
-    .delete()
-    .type('Turntablist')
-    .pause(500)
-    .delete()
-    .type('Producer')
-    .pause(500)
-    .delete()
-    .type('Bulldog Owner')
-    .pause(500)
-    .delete()
-    .type('Amateur Photographer')
-    .pause(500)
-    .delete()
-    .type('Boston Sports Fan')
-    .pause(500)
-    .go()
-  return (
-    <StyledFullPage id="home">
-      <Image filename="nrs_background.jpg" style={{ position: 'unset', opacity: 0.95, maxWidth: '100%', margin: '0 auto', padding: 0, gridRow: '1/-1', gridColumn: '1/-1', minHeight: 'calc(100vh - 60px)' }} alt="Narin Sundarabhaya - Welcome!"/>
-      <StyledIntroTextContainer>
-        <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
-        <StyledBreak />
-        <StyledIntroText className={description}>
-          <div id="myID" />
-        </StyledIntroText>
-      </StyledIntroTextContainer>
-    </StyledFullPage>
-  )
+export default class HomeContainer extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+  componentDidMount() {
+    new TypeIt('#myID', {
+      loop: true,
+    })
+      .type('Full-Stack Developer')
+      .pause(700)
+      .delete()
+      .type('Front-End Developer')
+      .pause(700)
+      .delete()
+      .type('Freelance Developer')
+      .pause(700)
+      .delete()
+      .type('Scrum Master')
+      .pause(700)
+      .delete()
+      .type('Project Manager')
+      .pause(700)
+      .delete()
+      .type('DeeJay')
+      .pause(500)
+      .delete()
+      .type('Turntablist')
+      .pause(500)
+      .delete()
+      .type('Producer')
+      .pause(500)
+      .delete()
+      .type('Bulldog Owner')
+      .pause(500)
+      .delete()
+      .type('Amateur Photographer')
+      .pause(500)
+      .delete()
+      .type('Boston Sports Fan')
+      .pause(500)
+      .go()
+  }
+  render() {
+    const { data, name = '' } = this.props
+    return (
+      <StyledFullPage id="home">
+        <Image
+          filename="nrs_background.jpg"
+          style={{
+            position: 'unset',
+            opacity: 0.95,
+            maxWidth: '100%',
+            margin: '0 auto',
+            padding: 0,
+            gridRow: '1/-1',
+            gridColumn: '1/-1',
+            minHeight: 'calc(100vh - 60px)',
+          }}
+          alt="Narin Sundarabhaya - Welcome!"
+        />
+        <StyledIntroTextContainer>
+          <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
+          <StyledBreak />
+          <StyledIntroText className={description}>
+            <div id="myID" />
+          </StyledIntroText>
+        </StyledIntroTextContainer>
+      </StyledFullPage>
+    )
+  }
 }
-
-export default HomeContainer
