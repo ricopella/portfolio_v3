@@ -79,9 +79,9 @@ export default class HomeContainer extends React.Component {
   componentDidMount() {
     if (typeof window !== 'undefined') {
       try {
-        this.typeIt = require('typeit')
+        const typeIt = require('typeit')
 
-        new this.typeIt('#myID', {
+        new typeIt('#myID', {
           loop: true,
         })
           .type('Full-Stack Developer')
