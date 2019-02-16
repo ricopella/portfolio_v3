@@ -3,8 +3,8 @@ import styled from '@emotion/styled'
 import React from 'react'
 import TypeIt from 'typeit'
 
-import BackgroundImage from '../images/nrs_background.jpg'
 import { colors } from '../styles/variables'
+import Image from '../components/image'
 
 // assets
 const StyledFullPage = styled.div`
@@ -71,13 +71,6 @@ const StyledBreak = styled.div`
     width: 80%;
   }
 `
-const ImageContainer = styled.img`
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  grid-row: 1 / -1;
-  grid-column: 1 / -1;
-`
 
 const HomeContainer = ({ data, name = '' }) => {
   new TypeIt('#myID', {
@@ -118,11 +111,7 @@ const HomeContainer = ({ data, name = '' }) => {
     .go()
   return (
     <StyledFullPage id="home">
-      <ImageContainer
-        src={BackgroundImage}
-        style={{ position: 'unset', opacity: 0.95 }}
-        alt="Narin Sundarabhaya - Welcome!"
-      />
+      <Image filename="nrs_background.jpg" style={{ position: 'unset', opacity: 0.95, maxWidth: '100%', margin: '0 auto', padding: 0, gridRow: '1/-1', gridColumn: '1/-1', minHeight: 'calc(100vh - 60px)' }} alt="Narin Sundarabhaya - Welcome!"/>
       <StyledIntroTextContainer>
         <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
         <StyledBreak />
