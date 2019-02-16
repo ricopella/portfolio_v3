@@ -1,7 +1,6 @@
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import React from 'react'
-import TypeIt from 'typeit'
 
 import { colors } from '../styles/variables'
 import Image from '../components/image'
@@ -82,7 +81,7 @@ export default class HomeContainer extends React.Component {
       try {
         this.typeIt = require('typeit')
 
-        new TypeIt('#myID', {
+        new this.typeIt('#myID', {
           loop: true,
         })
           .type('Full-Stack Developer')
