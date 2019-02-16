@@ -78,47 +78,49 @@ export default class HomeContainer extends React.Component {
     this.state = {}
   }
   componentDidMount() {
-    try {
-      this.typeIt = require('typeit')
+    if (typeof window !== 'undefined') {
+      try {
+        this.typeIt = require('typeit')
 
-      new TypeIt('#myID', {
-        loop: true,
-      })
-        .type('Full-Stack Developer')
-        .pause(700)
-        .delete()
-        .type('Front-End Developer')
-        .pause(700)
-        .delete()
-        .type('Freelance Developer')
-        .pause(700)
-        .delete()
-        .type('Scrum Master')
-        .pause(700)
-        .delete()
-        .type('Project Manager')
-        .pause(700)
-        .delete()
-        .type('DeeJay')
-        .pause(500)
-        .delete()
-        .type('Turntablist')
-        .pause(500)
-        .delete()
-        .type('Producer')
-        .pause(500)
-        .delete()
-        .type('Bulldog Owner')
-        .pause(500)
-        .delete()
-        .type('Amateur Photographer')
-        .pause(500)
-        .delete()
-        .type('Boston Sports Fan')
-        .pause(500)
-        .go()
-    } catch (e) {
-      console.error(e)
+        new TypeIt('#myID', {
+          loop: true,
+        })
+          .type('Full-Stack Developer')
+          .pause(700)
+          .delete()
+          .type('Front-End Developer')
+          .pause(700)
+          .delete()
+          .type('Freelance Developer')
+          .pause(700)
+          .delete()
+          .type('Scrum Master')
+          .pause(700)
+          .delete()
+          .type('Project Manager')
+          .pause(700)
+          .delete()
+          .type('DeeJay')
+          .pause(500)
+          .delete()
+          .type('Turntablist')
+          .pause(500)
+          .delete()
+          .type('Producer')
+          .pause(500)
+          .delete()
+          .type('Bulldog Owner')
+          .pause(500)
+          .delete()
+          .type('Amateur Photographer')
+          .pause(500)
+          .delete()
+          .type('Boston Sports Fan')
+          .pause(500)
+          .go()
+      } catch (e) {
+        console.error(e)
+      }
     }
   }
   render() {
