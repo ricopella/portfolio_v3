@@ -73,28 +73,28 @@ const SkillsContainer = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src={github} />
+            <Image src={github} alt="Github - @ricopella" />
           </a>
           <a
             href="https://www.instagram.com/ricopella"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src={insta} />
+            <Image src={insta} alt="Instagram - @ricopella" />
           </a>
           <a
             href="https://twitter.com/ricopella"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src={twitter} />
+            <Image src={twitter} alt="Twitter - @ricopella" />
           </a>
           <a
             href="https://www.linkedin.com/in/nsundara/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src={linkedin} />
+            <Image src={linkedin} alt="Linkedin - Narin Sundarabhaya" />
           </a>
         </ContactRow>
       </Container>

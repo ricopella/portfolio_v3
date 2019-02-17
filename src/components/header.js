@@ -1,20 +1,18 @@
+import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { transparentize } from 'polished'
 import React from 'react'
-import styled from '@emotion/styled'
 
-import { colors, dimensions, heights, zIndex } from '../styles/variables'
+import AboutMe from '../images/aboutme.svg'
+import Contact from '../images/contact.svg'
+import Home from '../images/home.svg'
+import Portfolio from '../images/portfolio.svg'
+import Skills from '../images/skills.svg'
+import { colors, dimensions, zIndex } from '../styles/variables'
 import Container from './container'
 
 // Assets
-import Home from '../images/home.svg'
-import Portfolio from '../images/portfolio.svg'
-import AboutMe from '../images/aboutme.svg'
-import Contact from '../images/contact.svg'
-import Skills from '../images/skills.svg'
-
 const StyledHeader = styled.header`
-  height: ${heights.header}px;
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.header};
   color: ${transparentize(0.5, colors.white)};
@@ -24,6 +22,10 @@ const StyledHeader = styled.header`
   top: 0;
   z-index: ${zIndex.header};
   grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 `
 
 const HeaderInner = styled(Container)`
@@ -64,6 +66,17 @@ const IconWrapper = styled.img`
   cursor: pointer;
 `
 
+const HeaderLogo = styled(`div`)`
+  font-size: 3rem;
+  color: ${colors.gray.light};
+  align-self: center;
+  padding-left: 100px;
+
+  @media (max-width: 750px) {
+    padding: 0;
+  }
+`
+
 export default class Header extends React.Component {
   constructor(props) {
     super(props)
@@ -81,6 +94,7 @@ export default class Header extends React.Component {
 
     return (
       <StyledHeader>
+        <HeaderLogo>nrs.</HeaderLogo>
         <HeaderInner>
           {!isMobile ? (
             <NavigationGroup>
@@ -93,19 +107,31 @@ export default class Header extends React.Component {
           ) : (
             <MobileNavGroup>
               <Link to="#home">
-                <IconWrapper src={Home} />
+                <IconWrapper src={Home} alt="Mobile Navigation Icon - Home" />
               </Link>
               <Link to="#portfolio">
-                <IconWrapper src={Portfolio} />
+                <IconWrapper
+                  src={Portfolio}
+                  alt="Mobile Navigation Icon - Portfolio"
+                />
               </Link>
               <Link to="#about-me">
-                <IconWrapper src={AboutMe} />
+                <IconWrapper
+                  src={AboutMe}
+                  alt="Mobile Navigation Icon - About Me"
+                />
               </Link>
               <Link to="#skills">
-                <IconWrapper src={Skills} />
+                <IconWrapper
+                  src={Skills}
+                  alt="Mobile Navigation Icon - Skills"
+                />
               </Link>
               <Link to="#contact">
-                <IconWrapper src={Contact} />
+                <IconWrapper
+                  src={Contact}
+                  alt="Mobile Navigation Icon - Contact"
+                />
               </Link>
             </MobileNavGroup>
           )}
