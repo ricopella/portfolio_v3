@@ -2,17 +2,9 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors } from '../styles/variables'
+import Image from '../components/image'
 
 // Assets
-import PatientStack from '../images/patient-stack.gif'
-import Reacting from '../images/reacting.png'
-import SplitzEase from '../images/splitzease.jpg'
-import Nike from '../images/nike.png'
-import FriendFinder from '../images/dff.png'
-import HackerNoon from '../images/hack.png'
-import Tacos from '../images/edt.png'
-import UpMeet from '../images/upmeet.png'
-import Fenway from '../images/fenway.png'
 
 const StyledLayoutContainer = styled.main`
   display: grid;
@@ -46,23 +38,19 @@ const effectPortfolio = css`
   position: relative;
   overflow: hidden;
   margin: 10px auto;
-  max-width: 568px;
-  max-height: 398px;
   height: auto;
   cursor: pointer;
   background: ${colors.gray.dark};
-  margin: 0 auto;
-  height: 100%;
   width: 100%;
 
-  & img,
+  & .gatsby-image-wrapper,
   & .gatsby-image-wrapper {
     position: relative;
     display: block;
     opacity: 0.75;
   }
 
-  img {
+  .gatsby-image-wrapper {
     object-fit: cover;
   }
 
@@ -83,13 +71,13 @@ const effectPortfolio = css`
     font-size: 68.5%;
   }
 
-  & img,
+  & .gatsby-image-wrapper,
   & .gatsby-image-wrapper,
   & h2 {
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
   }
-  & img,
+  & .gatsby-image-wrapper,
   & .gatsby-image-wrapper {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -111,7 +99,7 @@ const effectPortfolio = css`
     transform: translate3d(0, $fifty, 0);
   }
 
-  & :hover img {
+  & :hover .gatsby-image-wrapper {
     -webkit-transform: translate3d(0, -80px, 0);
     transform: translate3d(0, -80px, 0);
   }
@@ -174,7 +162,71 @@ const effectPortfolio = css`
 const GalleryMain = ({ data }) => (
   <StyledLayoutContainer>
     <figure css={effectPortfolio}>
-      <img css={galleryImage} src={PatientStack} alt="Patient Stack" />
+      <Image
+        filename="fanai.png"
+        css={galleryImage}
+        alt="Portfolio - FanAI Inc."
+        style={{ height: '100%' }}
+      />
+      <figcaption>
+        <h2>FanAI</h2>
+        <p>
+          Audience Monetization Platform. Built with TypeScript, React,
+          Highcharts.
+        </p>
+        <LinkContainer
+          href="https://fanai.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+      </figcaption>
+    </figure>
+    <figure css={effectPortfolio}>
+      <Image
+        filename="md.png"
+        css={galleryImage}
+        alt="Portfolio - Matt Denny's Ale House Restaurant"
+        style={{ height: '100%' }}
+      />
+      <figcaption>
+        <h2>
+          Matt<span>Denny's</span>
+        </h2>
+        <p>A fully customized Wix site for a restaurant client.</p>
+        <LinkContainer
+          href="https://mattdennys.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+      </figcaption>
+    </figure>
+    <figure css={effectPortfolio}>
+      <Image
+        filename="br.png"
+        css={galleryImage}
+        alt="Portfolio - Base Roots Shop"
+        style={{ height: '100%' }}
+      />
+      <figcaption>
+        <h2>
+          Base
+          <span>Roots</span>
+        </h2>
+        <p>A customized Shopify store for an e-commerce client.</p>
+        <LinkContainer
+          href="https://baserootsshop.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+      </figcaption>
+    </figure>
+    <figure css={effectPortfolio}>
+      <Image
+        filename="Patientstack.png"
+        css={galleryImage}
+        alt="Patient Stack"
+        style={{ height: '100%' }}
+      />
       <figcaption>
         <h2>
           Patient
@@ -184,14 +236,16 @@ const GalleryMain = ({ data }) => (
         <LinkContainer
           href="https://patientstack.herokuapp.com/"
           target="_blank"
+          rel="noopener noreferrer"
         />
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img
+      <Image
+        filename="reacting.png"
         css={galleryImage}
-        src={Reacting}
         alt="Portfolio - Reacting To The Times"
+        style={{ height: '100%' }}
       />
       <figcaption>
         <h2>
@@ -202,11 +256,17 @@ const GalleryMain = ({ data }) => (
         <LinkContainer
           href="https://reacting-to-the-times.herokuapp.com/"
           target="_blank"
+          rel="noopener noreferrer"
         />
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img css={galleryImage} src={SplitzEase} alt="Portfolio - Splitzease" />
+      <Image
+        filename="splitzease.jpg"
+        css={galleryImage}
+        alt="Portfolio - Splitzease"
+        style={{ height: '100%' }}
+      />
       <figcaption>
         <h2>
           Splitz
@@ -216,11 +276,17 @@ const GalleryMain = ({ data }) => (
         <LinkContainer
           href="https://github.com/ricopella/splitzease"
           target="_blank"
+          rel="noopener noreferrer"
         />
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img css={galleryImage} src={Nike} alt="Portfolio - Nike Trivia" />
+      <Image
+        filename="nike.png"
+        css={galleryImage}
+        alt="Portfolio - Nike Trivia"
+        style={{ height: '100%' }}
+      />
       <figcaption>
         <h2>
           Nike
@@ -230,32 +296,36 @@ const GalleryMain = ({ data }) => (
         <LinkContainer
           href="https://codepen.io/Ricopella/full/KvMeza/"
           target="_blank"
+          rel="noopener noreferrer"
         />
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img
+      <Image
+        filename="meta.png"
         css={galleryImage}
-        src={FriendFinder}
-        alt="Portfolio - Friend Finder"
+        alt="Portfolio - Metta Healing Arts and Wellness"
+        style={{ height: '100%' }}
       />
       <figcaption>
         <h2>
-          Friend Finder
-          <span>Stack</span>
+          Metta
+          <span>Healing Arts and Wellness</span>
         </h2>
-        <p>A Full-Stack application matching users with a dinner buddy.</p>
+        <p>A client site built with Squarespace.</p>
         <LinkContainer
-          href="https://friend-finder-nrs.herokuapp.com/"
+          href="https://mettavt.com/"
           target="_blank"
+          rel="noopener noreferrer"
         />
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img
+      <Image
+        filename="hack.png"
         css={galleryImage}
-        src={HackerNoon}
         alt="Portfolio - A cup of hacker noon"
+        style={{ height: '100%' }}
       />
       <figcaption>
         <h2>
@@ -266,49 +336,7 @@ const GalleryMain = ({ data }) => (
         <LinkContainer
           href="https://cup-of-hackernoon.herokuapp.com/#results"
           target="_blank"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <img css={galleryImage} src={Tacos} alt="Portfolio - Eat Dos Tacos" />
-      <figcaption>
-        <h2>Eat-DoS-Tacos</h2>
-        <p>A Full-Stack application built with Node, Express, and MySQL.</p>
-        <LinkContainer
-          href="https://eat-dos-tacos.herokuapp.com/tacos"
-          target="_blank"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <img css={galleryImage} src={UpMeet} alt="Portfolio - UpMeet" />
-      <figcaption>
-        <h2>
-          Up
-          <span>Meet</span>
-        </h2>
-        <p>Meetup tool built for developers utilizing various API's.</p>
-        <LinkContainer
-          href="https://ricopella.github.io/upMeet/"
-          target="_blank"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <img
-        css={galleryImage}
-        src={Fenway}
-        alt="Portfolio - Fenway Park Hangman"
-      />
-      <figcaption>
-        <h2>
-          Fenway Park
-          <span>Hangman</span>
-        </h2>
-        <p>A baseball themed hangman game built with CSS and JS.</p>
-        <LinkContainer
-          href="https://ricopella.github.io/baseball-hangman/"
-          target="_blank"
+          rel="noopener noreferrer"
         />
       </figcaption>
     </figure>
