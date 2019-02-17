@@ -123,7 +123,7 @@ export default class HomeContainer extends React.Component {
     }
   }
   render() {
-    const { name = '' } = this.props
+    const { name = '', ...rest } = this.props
     return (
       <StyledFullPage id="home">
         <Image
@@ -139,6 +139,7 @@ export default class HomeContainer extends React.Component {
             minHeight: 'calc(100vh - 60px)',
           }}
           alt="Narin Sundarabhaya - Welcome!"
+          {...rest}
         />
         <StyledIntroTextContainer>
           <StyledIntroText>{name.toUpperCase()}</StyledIntroText>

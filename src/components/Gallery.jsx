@@ -2,17 +2,9 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors } from '../styles/variables'
+import Image from '../components/image'
 
 // Assets
-import PatientStack from '../images/patient-stack.gif'
-import Reacting from '../images/reacting.png'
-import SplitzEase from '../images/splitzease.jpg'
-import Nike from '../images/nike.png'
-import HackerNoon from '../images/hack.png'
-import BaseRoots from '../images/br.png'
-import MattDenny from '../images/md.png'
-import MetaHealing from '../images/meta.png'
-import FanAI from '../images/fanai.png'
 
 const StyledLayoutContainer = styled.main`
   display: grid;
@@ -46,23 +38,19 @@ const effectPortfolio = css`
   position: relative;
   overflow: hidden;
   margin: 10px auto;
-  max-width: 568px;
-  max-height: 398px;
   height: auto;
   cursor: pointer;
   background: ${colors.gray.dark};
-  margin: 0 auto;
-  height: 100%;
   width: 100%;
 
-  & img,
+  & .gatsby-image-wrapper,
   & .gatsby-image-wrapper {
     position: relative;
     display: block;
     opacity: 0.75;
   }
 
-  img {
+  .gatsby-image-wrapper {
     object-fit: cover;
   }
 
@@ -83,13 +71,13 @@ const effectPortfolio = css`
     font-size: 68.5%;
   }
 
-  & img,
+  & .gatsby-image-wrapper,
   & .gatsby-image-wrapper,
   & h2 {
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
   }
-  & img,
+  & .gatsby-image-wrapper,
   & .gatsby-image-wrapper {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -111,7 +99,7 @@ const effectPortfolio = css`
     transform: translate3d(0, $fifty, 0);
   }
 
-  & :hover img {
+  & :hover .gatsby-image-wrapper {
     -webkit-transform: translate3d(0, -80px, 0);
     transform: translate3d(0, -80px, 0);
   }
@@ -174,7 +162,12 @@ const effectPortfolio = css`
 const GalleryMain = ({ data }) => (
   <StyledLayoutContainer>
     <figure css={effectPortfolio}>
-      <img css={galleryImage} src={FanAI} alt="Portfolio - FanAI Inc." />
+      <Image
+        filename="fanai.png"
+        css={galleryImage}
+        alt="Portfolio - FanAI Inc."
+        style={{ height: '100%' }}
+      />
       <figcaption>
         <h2>FanAI</h2>
         <p>
@@ -189,10 +182,11 @@ const GalleryMain = ({ data }) => (
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img
+      <Image
+        filename="md.png"
         css={galleryImage}
-        src={MattDenny}
         alt="Portfolio - Matt Denny's Ale House Restaurant"
+        style={{ height: '100%' }}
       />
       <figcaption>
         <h2>
@@ -207,10 +201,11 @@ const GalleryMain = ({ data }) => (
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img
+      <Image
+        filename="br.png"
         css={galleryImage}
-        src={BaseRoots}
         alt="Portfolio - Base Roots Shop"
+        style={{ height: '100%' }}
       />
       <figcaption>
         <h2>
@@ -226,7 +221,12 @@ const GalleryMain = ({ data }) => (
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img css={galleryImage} src={PatientStack} alt="Patient Stack" />
+      <Image
+        filename="Patientstack.png"
+        css={galleryImage}
+        alt="Patient Stack"
+        style={{ height: '100%' }}
+      />
       <figcaption>
         <h2>
           Patient
@@ -241,10 +241,11 @@ const GalleryMain = ({ data }) => (
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img
+      <Image
+        filename="reacting.png"
         css={galleryImage}
-        src={Reacting}
         alt="Portfolio - Reacting To The Times"
+        style={{ height: '100%' }}
       />
       <figcaption>
         <h2>
@@ -260,7 +261,12 @@ const GalleryMain = ({ data }) => (
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img css={galleryImage} src={SplitzEase} alt="Portfolio - Splitzease" />
+      <Image
+        filename="splitzease.jpg"
+        css={galleryImage}
+        alt="Portfolio - Splitzease"
+        style={{ height: '100%' }}
+      />
       <figcaption>
         <h2>
           Splitz
@@ -275,7 +281,12 @@ const GalleryMain = ({ data }) => (
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img css={galleryImage} src={Nike} alt="Portfolio - Nike Trivia" />
+      <Image
+        filename="nike.png"
+        css={galleryImage}
+        alt="Portfolio - Nike Trivia"
+        style={{ height: '100%' }}
+      />
       <figcaption>
         <h2>
           Nike
@@ -290,10 +301,11 @@ const GalleryMain = ({ data }) => (
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img
+      <Image
+        filename="meta.png"
         css={galleryImage}
-        src={MetaHealing}
         alt="Portfolio - Metta Healing Arts and Wellness"
+        style={{ height: '100%' }}
       />
       <figcaption>
         <h2>
@@ -309,10 +321,11 @@ const GalleryMain = ({ data }) => (
       </figcaption>
     </figure>
     <figure css={effectPortfolio}>
-      <img
+      <Image
+        filename="hack.png"
         css={galleryImage}
-        src={HackerNoon}
         alt="Portfolio - A cup of hacker noon"
+        style={{ height: '100%' }}
       />
       <figcaption>
         <h2>
