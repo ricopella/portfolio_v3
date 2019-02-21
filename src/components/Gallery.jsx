@@ -4,8 +4,6 @@ import { css } from '@emotion/core'
 import { colors } from '../styles/variables'
 import Image from '../components/image'
 
-// Assets
-
 const StyledLayoutContainer = styled.main`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -159,187 +157,108 @@ const effectPortfolio = css`
   }
 `
 
+const FigureComponent = ({
+  filename,
+  alt,
+  title,
+  span,
+  description,
+  href,
+  style,
+}) => (
+  <figure css={effectPortfolio}>
+    <Image
+      filename={filename}
+      css={galleryImage}
+      alt={alt}
+      style={{ height: '100%' }}
+    />
+    <figcaption>
+      <h2>
+        {title}
+        {span ? <span>{span}</span> : null}
+      </h2>
+
+      <p>{description}</p>
+      <LinkContainer href={href} target="_blank" rel="noopener noreferrer" />
+    </figcaption>
+  </figure>
+)
+
 const GalleryMain = ({ data }) => (
   <StyledLayoutContainer>
-    <figure css={effectPortfolio}>
-      <Image
-        filename="fanai.png"
-        css={galleryImage}
-        alt="Portfolio - FanAI Inc."
-        style={{ height: '100%' }}
-      />
-      <figcaption>
-        <h2>FanAI</h2>
-        <p>
-          Audience Monetization Platform. Built with TypeScript, React,
-          Highcharts.
-        </p>
-        <LinkContainer
-          href="https://fanai.io"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <Image
-        filename="md.png"
-        css={galleryImage}
-        alt="Portfolio - Matt Denny's Ale House Restaurant"
-        style={{ height: '100%' }}
-      />
-      <figcaption>
-        <h2>
-          Matt<span>Denny's</span>
-        </h2>
-        <p>A fully customized Wix site for a restaurant client.</p>
-        <LinkContainer
-          href="https://mattdennys.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <Image
-        filename="br.png"
-        css={galleryImage}
-        alt="Portfolio - Base Roots Shop"
-        style={{ height: '100%' }}
-      />
-      <figcaption>
-        <h2>
-          Base
-          <span>Roots</span>
-        </h2>
-        <p>A customized Shopify store for an e-commerce client.</p>
-        <LinkContainer
-          href="https://baserootsshop.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <Image
-        filename="Patientstack.png"
-        css={galleryImage}
-        alt="Patient Stack"
-        style={{ height: '100%' }}
-      />
-      <figcaption>
-        <h2>
-          Patient
-          <span>Stack</span>
-        </h2>
-        <p>Patient management system for general practice doctors.</p>
-        <LinkContainer
-          href="https://patientstack.herokuapp.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <Image
-        filename="reacting.png"
-        css={galleryImage}
-        alt="Portfolio - Reacting To The Times"
-        style={{ height: '100%' }}
-      />
-      <figcaption>
-        <h2>
-          Reacting
-          <span>To The Times</span>
-        </h2>
-        <p>A NY Times Scrapper built with React.</p>
-        <LinkContainer
-          href="https://reacting-to-the-times.herokuapp.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <Image
-        filename="splitzease.jpg"
-        css={galleryImage}
-        alt="Portfolio - Splitzease"
-        style={{ height: '100%' }}
-      />
-      <figcaption>
-        <h2>
-          Splitz
-          <span>Ease</span>
-        </h2>
-        <p>A React-Native mobile application for splitting bills.</p>
-        <LinkContainer
-          href="https://github.com/ricopella/splitzease"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <Image
-        filename="nike.png"
-        css={galleryImage}
-        alt="Portfolio - Nike Trivia"
-        style={{ height: '100%' }}
-      />
-      <figcaption>
-        <h2>
-          Nike
-          <span>Trivia</span>
-        </h2>
-        <p>A Nike themed trivia game built with Vanilla JavaScript.</p>
-        <LinkContainer
-          href="https://codepen.io/Ricopella/full/KvMeza/"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <Image
-        filename="meta.png"
-        css={galleryImage}
-        alt="Portfolio - Metta Healing Arts and Wellness"
-        style={{ height: '100%' }}
-      />
-      <figcaption>
-        <h2>
-          Metta
-          <span>Healing Arts and Wellness</span>
-        </h2>
-        <p>A client site built with Squarespace.</p>
-        <LinkContainer
-          href="https://mettavt.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </figcaption>
-    </figure>
-    <figure css={effectPortfolio}>
-      <Image
-        filename="hack.png"
-        css={galleryImage}
-        alt="Portfolio - A cup of hacker noon"
-        style={{ height: '100%' }}
-      />
-      <figcaption>
-        <h2>
-          A Cup of
-          <span>Hacker Noon</span>
-        </h2>
-        <p>A web scrapper built with Cherrio, Node, Express, and MongoDB.</p>
-        <LinkContainer
-          href="https://cup-of-hackernoon.herokuapp.com/#results"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </figcaption>
-    </figure>
+    <FigureComponent
+      filename="fanai.png"
+      alt="Portfolio - FanAI Inc."
+      title="FanAI"
+      description="Audience Monetization Platform. Built with TypeScript, React,
+  Highcharts."
+      href="https://fanai.io"
+    />
+    <FigureComponent
+      filename="md.png"
+      alt="Portfolio - Matt Denny's Ale House Restaurant"
+      title="Matt"
+      span="Denny's"
+      description="A fully customized Wix site for a restaurant client."
+      href="https://mattdennys.com"
+    />
+    <FigureComponent
+      filename="br.png"
+      alt="Portfolio - Base Roots Shop"
+      title="Base"
+      span="Roots"
+      description="A customized Shopify store for an e-commerce client."
+      href="https://baserootsshop.com"
+    />
+    <FigureComponent
+      filename="Patientstack.png"
+      alt="Portfolio - Patient Stack"
+      title="Patient"
+      span="Stack"
+      description="Patient management system for general practice doctors."
+      href="https://patientstack.herokuapp.com/"
+    />
+    <FigureComponent
+      filename="reacting.png"
+      alt="Portfolio - Reacting To The Times"
+      title="Reacting"
+      span="To The Times"
+      description="A NY Times Scrapper built with React."
+      href="https://reacting-to-the-times.herokuapp.com/"
+    />
+    <FigureComponent
+      filename="splitzease.jpg"
+      alt="Portfolio - Splitzease"
+      title="Splitz"
+      span="Ease"
+      description="A React-Native mobile application for splitting bills."
+      href="https://github.com/ricopella/splitzease"
+    />
+    <FigureComponent
+      filename="nike.png"
+      alt="Portfolio - Nike Trivia"
+      title="Nike"
+      span="Trivia"
+      description="A Nike themed trivia game built with Vanilla JavaScript."
+      href="https://codepen.io/Ricopella/full/KvMeza/"
+    />
+    <FigureComponent
+      filename="meta.png"
+      alt="Portfolio - Metta Healing Arts and Wellness"
+      title="Metta"
+      span="Healing Arts and Wellness"
+      description="A client site built with Squarespace."
+      href="https://mettavt.com/"
+    />
+    <FigureComponent
+      filename="hack.png"
+      alt="Portfolio - A cup of hacker noon"
+      title="A Cup of"
+      span="Hacker Noon"
+      description="A web scrapper built with Cherrio, Node, Express, and MongoDB."
+      href="https://cup-of-hackernoon.herokuapp.com/#results"
+    />
   </StyledLayoutContainer>
 )
 

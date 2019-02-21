@@ -2,16 +2,16 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { transparentize } from 'polished'
 import React from 'react'
+import { colors, dimensions, zIndex } from '../styles/variables'
+import Container from './container'
 
+// Assets
 import AboutMe from '../images/aboutme.svg'
 import Contact from '../images/contact.svg'
 import Home from '../images/home.svg'
 import Portfolio from '../images/portfolio.svg'
 import Skills from '../images/skills.svg'
-import { colors, dimensions, zIndex } from '../styles/variables'
-import Container from './container'
 
-// Assets
 const StyledHeader = styled.header`
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.header};
@@ -39,6 +39,7 @@ const HeaderInner = styled(Container)`
 
 const HomepageLink = styled('a')`
   color: ${colors.gray.light};
+  cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
   justify-self: center;
@@ -69,6 +70,7 @@ const IconWrapper = styled.img`
 const HeaderLogo = styled(`div`)`
   font-size: 3rem;
   color: ${colors.gray.light};
+  cursor: pointer;
   align-self: center;
   padding-left: 100px;
 
@@ -89,16 +91,22 @@ export default class Header extends React.Component {
     window.addEventListener('resize', this.updateElement)
   }
 
+  scrollToTop() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const { isMobile } = this.state
 
     return (
       <StyledHeader>
-        <HeaderLogo>nrs.</HeaderLogo>
+        <HeaderLogo onClick={() => this.scrollToTop()}>nrs.</HeaderLogo>
         <HeaderInner>
           {!isMobile ? (
             <NavigationGroup>
-              <HomepageLink href="#home">Home</HomepageLink>
+              <HomepageLink onClick={() => this.scrollToTop()}>
+                Home
+              </HomepageLink>
               <HomepageLink href="#portfolio">Portfolio</HomepageLink>
               <HomepageLink href="#about-me">About Me</HomepageLink>
               <HomepageLink href="#skills">Skills</HomepageLink>
