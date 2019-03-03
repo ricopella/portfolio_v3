@@ -60,7 +60,7 @@ const HomepageLink = styled('a')`
   font-size: 1.5rem;
   font-weight: 600;
   align-self: center;
-  padding: 0 1.5rem;
+  justify-self: center;
 
   &:hover,
   &:focus {
@@ -71,7 +71,7 @@ const HomepageLink = styled('a')`
 const NavigationGroup = styled(`div`)`
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(5, 100px);
+  grid-template-columns: repeat(5, 120px);
 `
 
 const MobileNavGroup = styled(`div`)`
@@ -233,6 +233,10 @@ export default class Header extends React.Component {
     window.addEventListener('resize', this.updateElement)
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateElement)
+  }
+
   scrollToTop() {
     window.scrollTo(0, 0)
   }
@@ -241,14 +245,21 @@ export default class Header extends React.Component {
     this.setState({ menuIsShown: !this.state.menuIsShown })
   }
 
-  updateElement = () => this.setState({ isMobile: window.innerWidth <= 768 })
+  updateElement = () => this.setState({ isMobile: window.innerWidth < 768 })
 
   render() {
     const { isMobile, menuIsShown } = this.state
 
     return (
       <StyledHeader className={menuIsShown ? 'active' : null}>
-        <HeaderLogo onClick={() => this.scrollToTop()}>nrs.</HeaderLogo>
+        <HeaderLogo
+          onClick={() => {
+            this.scrollToTop()
+            this.setState({ menuIsShown: false })
+          }}
+        >
+          nrs.
+        </HeaderLogo>
         <HeaderInner>
           {!isMobile ? (
             <NavigationGroup>

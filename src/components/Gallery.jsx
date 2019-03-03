@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors } from '../styles/variables'
-import Image from '../components/image'
+import Image from '../components/galleryImage'
 
 const StyledLayoutContainer = styled.main`
   display: grid;
