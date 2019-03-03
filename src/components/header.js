@@ -241,7 +241,7 @@ export default class Header extends React.Component {
     this.setState({ menuIsShown: !this.state.menuIsShown })
   }
 
-  updateElement = () => this.setState({ isMobile: window.innerWidth < 768 })
+  updateElement = () => this.setState({ isMobile: window.innerWidth <= 768 })
 
   render() {
     const { isMobile, menuIsShown } = this.state

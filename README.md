@@ -17,6 +17,6 @@ Built With: Gatsby JS, React, Emotion, and hosted with Netlify.
 
 ## History
 
-- Last Updated: 02/19/19
+- Last Updated: 03/03/19
 
 - Created: 02/17/19
