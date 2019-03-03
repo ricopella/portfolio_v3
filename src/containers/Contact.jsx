@@ -40,6 +40,10 @@ const anchor = css`
   :hover {
     color: ${colors.gray.light};
   }
+
+  @media (max-width: 750px) {
+    font-size: 2.5rem;
+  }
 `
 
 const SkillsContainer = () => (

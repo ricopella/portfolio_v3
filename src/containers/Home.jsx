@@ -33,7 +33,7 @@ const StyledIntroTextContainer = styled.div`
   grid-column: 1 / -1;
 
   @media (max-width: 750px) {
-    grid-template-rows: 36px 12px 32px;
+    grid-template-rows: 36px 60px 0px;
   }
 `
 
