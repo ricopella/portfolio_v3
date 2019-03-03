@@ -57,7 +57,7 @@ const HeaderInner = styled(Container)`
 const HomepageLink = styled('a')`
   color: ${colors.gray.light};
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   align-self: center;
   justify-self: center;
@@ -71,7 +71,7 @@ const HomepageLink = styled('a')`
 const NavigationGroup = styled(`div`)`
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(5, 120px);
+  grid-template-columns: repeat(5, 100px);
 `
 
 const MobileNavGroup = styled(`div`)`
