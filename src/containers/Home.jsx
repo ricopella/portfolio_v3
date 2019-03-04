@@ -4,6 +4,7 @@ import React from 'react'
 
 import { colors } from '../styles/variables'
 import Image from '../components/image'
+import MobileImage from '../components/galleryImage'
 
 // assets
 const StyledFullPage = styled.div`
@@ -33,7 +34,7 @@ const StyledIntroTextContainer = styled.div`
   grid-column: 1 / -1;
 
   @media (max-width: 750px) {
-    grid-template-rows: 36px 12px 32px;
+    grid-template-rows: 36px 60px 0px;
   }
 `
 
@@ -74,10 +75,14 @@ const StyledBreak = styled.div`
 export default class HomeContainer extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      isMobile: typeof window !== 'undefined' && window.innerWidth < 768,
+    }
   }
+
   componentDidMount() {
     if (typeof window !== 'undefined') {
+      window.addEventListener('resize', this.updateElement)
       try {
         const typeIt = require('typeit')
 
@@ -122,25 +127,50 @@ export default class HomeContainer extends React.Component {
       }
     }
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateElement)
+  }
+
+  updateElement = () => this.setState({ isMobile: window.innerWidth <= 768 })
   render() {
     const { name = '', ...rest } = this.props
+    const { isMobile } = this.state
     return (
       <StyledFullPage id="home">
-        <Image
-          filename="nrs_background.jpg"
-          style={{
-            position: 'unset',
-            opacity: 0.95,
-            maxWidth: '100%',
-            margin: '0 auto',
-            padding: 0,
-            gridRow: '1/-1',
-            gridColumn: '1/-1',
-            minHeight: 'calc(100vh - 60px)',
-          }}
-          alt="Narin Sundarabhaya - Welcome!"
-          {...rest}
-        />
+        {!isMobile ? (
+          <Image
+            filename="nrs_background.jpg"
+            style={{
+              position: 'unset',
+              opacity: 0.95,
+              maxWidth: '100%',
+              margin: '0 auto',
+              padding: 0,
+              gridRow: '1/-1',
+              gridColumn: '1/-1',
+              minHeight: 'calc(100vh - 60px)',
+            }}
+            alt="Narin Sundarabhaya - Welcome!"
+            {...rest}
+          />
+        ) : (
+          <MobileImage
+            filename="nrs_background.jpg"
+            style={{
+              position: 'unset',
+              opacity: 0.95,
+              maxWidth: '100%',
+              margin: '0 auto',
+              padding: 0,
+              gridRow: '1/-1',
+              gridColumn: '1/-1',
+              minHeight: 'calc(100vh - 60px)',
+            }}
+            alt="Narin Sundarabhaya - Welcome!"
+            {...rest}
+          />
+        )}
         <StyledIntroTextContainer>
           <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
           <StyledBreak />

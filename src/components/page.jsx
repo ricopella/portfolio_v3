@@ -11,7 +11,7 @@ const StyledPage = styled.div`
   justify-content: center;
 
   @media (max-width: 750px) {
-    height: 100%;
+    height: 100% !important;
   }
 `
 
