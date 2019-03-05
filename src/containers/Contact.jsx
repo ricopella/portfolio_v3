@@ -36,9 +36,9 @@ const ContactRow = styled.div`
 `
 
 const anchor = css`
-  color: ${colors.white};
+  color: ${colors.gray.dark};
   :hover {
-    color: ${colors.gray.light};
+    color: ${colors.gray.calm};
   }
 
   @media (max-width: 750px) {
@@ -55,7 +55,7 @@ const SkillsContainer = () => (
       justifyContent: 'center',
       height: heights.contact,
       width: '100vw',
-      backgroundColor: colors.limeGreen,
+      backgroundColor: colors.header,
     }}
   >
     <ContactWrapper>

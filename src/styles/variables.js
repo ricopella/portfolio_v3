@@ -20,6 +20,13 @@ export const colors = {
   white: '#fff',
   black: '#000',
   limeGreen: '#43b743',
+  terminalHeader: '#e4e3e5',
+  terminalBackground: '#666385',
+  terminalActionClose: '#f96256',
+  terminalActionMinimize: '#fdbc3d',
+  terminalActionExpand: '#2dbb41',
+  backgroundColor: '#f6f9fc',
+  teal: '#35feff',
 }
 
 export const fonts = {
@@ -70,4 +77,9 @@ export const heights = {
 
 export const zIndex = {
   header: 1030,
+}
+
+export const shadows = {
+  box: `0 50px 100px rgba(50, 50, 93, 0.05),
+    0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);`,
 }
