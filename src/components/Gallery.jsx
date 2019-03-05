@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { colors } from '../styles/variables'
+import { colors, shadows } from '../styles/variables'
 import Image from '../components/galleryImage'
 
 const StyledLayoutContainer = styled.main`
@@ -41,8 +41,7 @@ const effectPortfolio = css`
   background: ${colors.gray.dark};
   width: 100%;
   border-radius: 4px;
-  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.05),
-    0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: ${shadows.box};
 
   & .gatsby-image-wrapper,
   & .gatsby-image-wrapper {

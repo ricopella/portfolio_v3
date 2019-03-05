@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Page from '../components/page'
-import { colors, fonts, shadows } from '../styles/variables'
+import { borders, shadows, colors, fonts } from '../styles/variables'
 import TerminalCommand from '../components/TerminalCommand'
 
 const TerminalContainer = styled.div`
@@ -21,7 +21,7 @@ const TerminalHeaderTitle = styled.div`
 
 const TerminalHeader = styled.div`
   background-color: ${colors.terminalHeader};
-  border-radius: 10px 10px 0 0;
+  border-radius: ${borders.large};
   max-height: 30px;
   width: 100%;
   display: grid;
@@ -30,9 +30,8 @@ const TerminalHeader = styled.div`
 
 const TerminalBody = styled.div`
   background-color: ${colors.terminalBackground};
-  border-radius: 0 0 4px 4px;
-  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.15),
-    0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.12);
+  border-radius: ${borders.medium};
+  box-shadow: ${shadows.box};
   font-family: ${fonts.monospace};
   width: 100%;
   height: 100%;
