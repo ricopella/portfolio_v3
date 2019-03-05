@@ -94,7 +94,7 @@ const AboutMeMain = () => (
           />
         </TerminalHeaderActionContainer>
         <TerminalHeaderTitle>
-          narin@Narin-Portfolio: ~/About_Me
+          admin@nrs-portfolio: ~/About_Me
         </TerminalHeaderTitle>
       </TerminalHeader>
       <TerminalBody>
