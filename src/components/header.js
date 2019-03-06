@@ -24,11 +24,15 @@ const StyledHeader = styled.header`
     position: absolute;
     padding: 0px 0px;
     height: 100px;
-    display: flex;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr;
     transition: all 0.3s ease-in;
 
     &.active {
       position: fixed;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px 1fr;
       height: 350px;
     }
   }
