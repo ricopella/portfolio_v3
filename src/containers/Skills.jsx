@@ -2,6 +2,7 @@ import React from 'react'
 import Page from '../components/page'
 import Container from '../components/container'
 import styled from '@emotion/styled'
+import { colors } from '../styles/variables'
 
 // assets
 import reactLogo from '../images/react.svg'
@@ -78,6 +79,7 @@ const SkillsContainer = () => (
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      backgroundColor: colors.header,
     }}
   >
     <SkillsWrapper>

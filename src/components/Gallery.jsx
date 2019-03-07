@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { colors } from '../styles/variables'
+import { colors, shadows } from '../styles/variables'
 import Image from '../components/galleryImage'
 
 const StyledLayoutContainer = styled.main`
@@ -40,6 +40,8 @@ const effectPortfolio = css`
   cursor: pointer;
   background: ${colors.gray.dark};
   width: 100%;
+  border-radius: 4px;
+  box-shadow: ${shadows.box};
 
   & .gatsby-image-wrapper,
   & .gatsby-image-wrapper {

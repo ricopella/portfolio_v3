@@ -1,6 +1,7 @@
 import React from 'react'
 import Gallery from '../components/Gallery'
 import styled from '@emotion/styled'
+import { colors } from '../styles/variables'
 
 const StyledFullPage = styled.div`
   width: 100%;
@@ -12,7 +13,7 @@ const StyledFullPage = styled.div`
 `
 
 const GalleryContainer = ({ data }) => (
-  <StyledFullPage id="portfolio">
+  <StyledFullPage id="portfolio" style={{ backgroundColor: colors.header }}>
     <h1
       style={{
         fontSize: '3rem',
