@@ -3,7 +3,7 @@ import { dimensions, fonts, colors, breakpoints } from './variables'
 import { getEmSize } from './mixins'
 
 // tslint:disable-next-line:no-unused-expression
-injectGlobal `
+injectGlobal`
   html {
     box-sizing: border-box;
   }

@@ -251,41 +251,50 @@ export default class Header extends React.Component {
     const { isMobile, menuIsShown } = this.state
 
     return (
-      <StyledHeader className={menuIsShown ? 'active' : null}>
-        <HeaderLogo
-          onClick={() => {
-            this.scrollToTop()
-            this.setState({ menuIsShown: false })
-          }}
-        >
-          nrs.
-        </HeaderLogo>
-        <HeaderInner>
-          {!isMobile ? (
-            <NavigationGroup>
-              <HomepageLink onClick={() => this.scrollToTop()}>
-                Home
-              </HomepageLink>
-              <HomepageLink href="#portfolio">Portfolio</HomepageLink>
-              <HomepageLink href="#about-me">About Me</HomepageLink>
-              <HomepageLink href="#skills">Skills</HomepageLink>
-              <HomepageLink href="#contact">Contact</HomepageLink>
-            </NavigationGroup>
-          ) : (
-            <MobileNavGroup>
-              <HamburgerWrapper
-                onClick={() => this.handleHamburgerClick()}
-                className={menuIsShown ? 'active' : null}
-              >
-                <HamburgerBar
-                  id={'bar1'}
-                  className={menuIsShown ? 'active' : null}
-                />
-              </HamburgerWrapper>
-            </MobileNavGroup>
-          )}
-        </HeaderInner>
+      <>
+        {!isMobile ? (
+          <StyledHeader className={menuIsShown ? 'active' : null}>
+            <HeaderLogo
+              onClick={() => {
+                this.scrollToTop()
+                this.setState({ menuIsShown: false })
+              }}
+            >
+              nrs.
+            </HeaderLogo>
+            <HeaderInner>
+              {!isMobile ? (
+                <NavigationGroup>
+                  <HomepageLink onClick={() => this.scrollToTop()}>
+                    Home
+                  </HomepageLink>
+                  <HomepageLink href="#portfolio">Portfolio</HomepageLink>
+                  <HomepageLink href="#about-me">About Me</HomepageLink>
+                  <HomepageLink href="#skills">Skills</HomepageLink>
+                  <HomepageLink href="#contact">Contact</HomepageLink>
+                </NavigationGroup>
+              ) : null
+              // <MobileNavGroup>
+              //   <HamburgerWrapper
+              //     onClick={() => this.handleHamburgerClick()}
+              //     className={menuIsShown ? 'active' : null}
+              //   >
+              //     <HamburgerBar
+              //       id={'bar1'}
+              //       className={menuIsShown ? 'active' : null}
+              //     />
+              //   </HamburgerWrapper>
+              // </MobileNavGroup>
+              }
+            </HeaderInner>
+          </StyledHeader>
+        ) : null}
+      </>
+    )
+  }
+}
 
+/**
         {isMobile && (
           <MobileDropdown className={menuIsShown ? 'active' : null}>
             <HomepageLink
@@ -322,7 +331,4 @@ export default class Header extends React.Component {
             </HomepageLink>
           </MobileDropdown>
         )}
-      </StyledHeader>
-    )
-  }
-}
+        */

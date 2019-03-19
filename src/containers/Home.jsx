@@ -149,7 +149,7 @@ export default class HomeContainer extends React.Component {
               padding: 0,
               gridRow: '1/-1',
               gridColumn: '1/-1',
-              minHeight: 'calc(100vh - 60px)',
+              minHeight: '100vh',
             }}
             alt="Narin Sundarabhaya - Welcome!"
             {...rest}
@@ -165,7 +165,7 @@ export default class HomeContainer extends React.Component {
               padding: 0,
               gridRow: '1/-1',
               gridColumn: '1/-1',
-              minHeight: 'calc(100vh - 60px)',
+              minHeight: '100vh',
             }}
             alt="Narin Sundarabhaya - Welcome!"
             {...rest}

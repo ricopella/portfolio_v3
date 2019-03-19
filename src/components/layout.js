@@ -10,7 +10,7 @@ import Header from './header'
 
 const RootContainer = styled('div')`
   display: grid;
-  grid-template-rows: ${heights.header}px max-content ${heights.footer}px;
+  grid-template-rows: repeat(2, max-content);
   grid-template-columns: 1fr;
 `
 
@@ -50,9 +50,6 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <RootContainer>
-        <Header
-          siteTitle={get(data, ['site', 'site', 'siteMetadata', 'title'], '')}
-        />
         <MainBodyContainer>{children}</MainBodyContainer>
         <FooterContainer>
           © {new Date().getFullYear()},{' '}
@@ -70,3 +67,9 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+/** 
+ *         <Header
+          siteTitle={get(data, ['site', 'site', 'siteMetadata', 'title'], '')}
+        />
+*/
