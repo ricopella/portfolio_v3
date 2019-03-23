@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { transparentize } from 'polished'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { colors, dimensions, zIndex } from '../styles/variables'
 import Container from './container'
 
@@ -220,79 +220,68 @@ const MobileDropdown = styled('div')`
   }
 `
 
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isMobile: typeof window !== 'undefined' && window.innerWidth < 768,
-      menuIsShown: false,
+const Header = props => {
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' && window.innerWidth < 768
+  )
+
+  const [menuIsShown, setMenuState] = useState(false)
+
+  const scrollToTop = () => window.scrollTo(0, 0)
+
+  const handleHamburgerClick = () => setMenuState(!menuIsShown)
+
+  useEffect(() => {
+    const setMobileStatus = () =>
+      setIsMobile(typeof window !== 'undefined' && window.innerWidth < 768)
+    window.removeEventListener('resize', setMobileStatus)
+
+    return () => {
+      window.removeEventListener('resize', setMobileStatus)
     }
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.updateElement)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateElement)
-  }
-
-  scrollToTop() {
-    window.scrollTo(0, 0)
-  }
-
-  handleHamburgerClick() {
-    this.setState({ menuIsShown: !this.state.menuIsShown })
-  }
-
-  updateElement = () => this.setState({ isMobile: window.innerWidth < 768 })
-
-  render() {
-    const { isMobile, menuIsShown } = this.state
-
-    return (
-      <>
-        {!isMobile ? (
-          <StyledHeader className={menuIsShown ? 'active' : null}>
-            <HeaderLogo
-              onClick={() => {
-                this.scrollToTop()
-                this.setState({ menuIsShown: false })
-              }}
-            >
-              nrs.
-            </HeaderLogo>
-            <HeaderInner>
-              {!isMobile ? (
-                <NavigationGroup>
-                  <HomepageLink onClick={() => this.scrollToTop()}>
-                    Home
-                  </HomepageLink>
-                  <HomepageLink href="#portfolio">Portfolio</HomepageLink>
-                  <HomepageLink href="#about-me">About Me</HomepageLink>
-                  <HomepageLink href="#skills">Skills</HomepageLink>
-                  <HomepageLink href="#contact">Contact</HomepageLink>
-                </NavigationGroup>
-              ) : null
-              // <MobileNavGroup>
-              //   <HamburgerWrapper
-              //     onClick={() => this.handleHamburgerClick()}
-              //     className={menuIsShown ? 'active' : null}
-              //   >
-              //     <HamburgerBar
-              //       id={'bar1'}
-              //       className={menuIsShown ? 'active' : null}
-              //     />
-              //   </HamburgerWrapper>
-              // </MobileNavGroup>
-              }
-            </HeaderInner>
-          </StyledHeader>
-        ) : null}
-      </>
-    )
-  }
+  })
+  return (
+    <>
+      {!isMobile ? (
+        <StyledHeader className={menuIsShown ? 'active' : null}>
+          <HeaderLogo
+            onClick={() => {
+              scrollToTop()
+              setMenuState(false)
+            }}
+          >
+            nrs.
+          </HeaderLogo>
+          <HeaderInner>
+            {!isMobile ? (
+              <NavigationGroup>
+                <HomepageLink onClick={() => scrollToTop()}>Home</HomepageLink>
+                <HomepageLink href="#portfolio">Portfolio</HomepageLink>
+                <HomepageLink href="#about-me">About Me</HomepageLink>
+                <HomepageLink href="#skills">Skills</HomepageLink>
+                <HomepageLink href="#contact">Contact</HomepageLink>
+              </NavigationGroup>
+            ) : null
+            // <MobileNavGroup>
+            //   <HamburgerWrapper
+            //     onClick={() => this.handleHamburgerClick()}
+            //     className={menuIsShown ? 'active' : null}
+            //   >
+            //     <HamburgerBar
+            //       id={'bar1'}
+            //       className={menuIsShown ? 'active' : null}
+            //     />
+            //   </HamburgerWrapper>
+            // </MobileNavGroup>
+            }
+          </HeaderInner>
+        </StyledHeader>
+      ) : null}
+    </>
+  )
 }
+
+export default Header
 
 /**
         {isMobile && (

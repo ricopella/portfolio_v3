@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { colors } from '../styles/variables'
 import Image from '../components/image'
@@ -72,17 +72,15 @@ const StyledBreak = styled.div`
   }
 `
 
-export default class HomeContainer extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isMobile: typeof window !== 'undefined' && window.innerWidth < 768,
-    }
-  }
+const HomeContainer = ({ name = '', ...rest }) => {
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' && window.innerWidth < 768
+  )
 
-  componentDidMount() {
+  useEffect(() => {
+    const handleSetMobile = () => setIsMobile(window.innerWidth <= 768)
     if (typeof window !== 'undefined') {
-      window.addEventListener('resize', this.updateElement)
+      window.addEventListener('resize', handleSetMobile)
       try {
         const typeIt = require('typeit')
 
@@ -126,59 +124,55 @@ export default class HomeContainer extends React.Component {
         console.error(e)
       }
     }
-  }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateElement)
-  }
-
-  updateElement = () => this.setState({ isMobile: window.innerWidth <= 768 })
-  render() {
-    const { name = '', ...rest } = this.props
-    const { isMobile } = this.state
-    return (
-      <StyledFullPage id="home">
-        {!isMobile ? (
-          <Image
-            filename="nrs_background.jpg"
-            style={{
-              position: 'unset',
-              opacity: 0.95,
-              maxWidth: '100%',
-              margin: '0 auto',
-              padding: 0,
-              gridRow: '1/-1',
-              gridColumn: '1/-1',
-              minHeight: '100vh',
-            }}
-            alt="Narin Sundarabhaya - Welcome!"
-            {...rest}
-          />
-        ) : (
-          <MobileImage
-            filename="nrs_background.jpg"
-            style={{
-              position: 'unset',
-              opacity: 0.95,
-              maxWidth: '100%',
-              margin: '0 auto',
-              padding: 0,
-              gridRow: '1/-1',
-              gridColumn: '1/-1',
-              minHeight: '100vh',
-            }}
-            alt="Narin Sundarabhaya - Welcome!"
-            {...rest}
-          />
-        )}
-        <StyledIntroTextContainer>
-          <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
-          <StyledBreak />
-          <StyledIntroText className={description}>
-            <div id="myID" />
-          </StyledIntroText>
-        </StyledIntroTextContainer>
-      </StyledFullPage>
-    )
-  }
+    return () => {
+      window.removeEventListener('resize', handleSetMobile)
+    }
+  })
+  return (
+    <StyledFullPage id="home">
+      {!isMobile ? (
+        <Image
+          filename="nrs_background.jpg"
+          style={{
+            position: 'unset',
+            opacity: 0.95,
+            maxWidth: '100%',
+            margin: '0 auto',
+            padding: 0,
+            gridRow: '1/-1',
+            gridColumn: '1/-1',
+            minHeight: '100vh',
+          }}
+          alt="Narin Sundarabhaya - Welcome!"
+          {...rest}
+        />
+      ) : (
+        <MobileImage
+          filename="nrs_background.jpg"
+          style={{
+            position: 'unset',
+            opacity: 0.95,
+            maxWidth: '100%',
+            margin: '0 auto',
+            padding: 0,
+            gridRow: '1/-1',
+            gridColumn: '1/-1',
+            minHeight: '100vh',
+          }}
+          alt="Narin Sundarabhaya - Welcome!"
+          {...rest}
+        />
+      )}
+      <StyledIntroTextContainer>
+        <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
+        <StyledBreak />
+        <StyledIntroText className={description}>
+          <div id="myID" />
+        </StyledIntroText>
+      </StyledIntroTextContainer>
+    </StyledFullPage>
+  )
 }
+
+export default HomeContainer
