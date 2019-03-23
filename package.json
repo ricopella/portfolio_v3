@@ -9,7 +9,6 @@
         "@emotion/styled": "^10.0.7",
         "emotion": "^10.0.7",
         "emotion-server": "^10.0.7",
-        "fsevents": "^1.2.7",
         "gatsby": "^2.2.0",
         "gatsby-image": "^2.0.20",
         "gatsby-plugin-emotion": "^4.0.4",
@@ -42,7 +41,8 @@
     },
     "devDependencies": {
         "lodash": "^4.17.11",
-        "prettier": "^1.15.2"
+        "prettier": "^1.15.2",
+        "fsevents": "^1.2.7",
     },
     "repository": {
         "type": "git",
