@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Home from './Home'
-import Gallery from './Gallery'
-import AboutMe from './AboutMe'
-import Skills from './Skills'
-import Contact from './Contact'
+const Gallery = React.lazy(() => import('./Gallery'))
+const AboutMe = React.lazy(() => import('./AboutMe'))
+const Skills = React.lazy(() => import('./Skills'))
+const Contact = React.lazy(() => import('./Contact'))
 
 const MainContainer = ({ data }) => {
   return (
@@ -13,10 +13,18 @@ const MainContainer = ({ data }) => {
         name="Narin R. Sundarabhaya"
         position="Full Stack Developer"
       />
-      <Gallery />
-      <AboutMe />
-      <Skills />
-      <Contact />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Gallery />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <AboutMe />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Skills />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Contact />
+      </Suspense>
     </>
   )
 }

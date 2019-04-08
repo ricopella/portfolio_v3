@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors, shadows } from '../styles/variables'
@@ -168,23 +168,25 @@ const FigureComponent = ({
   href,
   style,
 }) => (
-  <figure css={effectPortfolio}>
-    <Image
-      filename={filename}
-      css={galleryImage}
-      alt={alt}
-      style={{ height: '100%' }}
-    />
-    <figcaption>
-      <h2>
-        {title}
-        {span ? <span>{span}</span> : null}
-      </h2>
+  <Suspense fallback={<div>Loading...</div>}>
+    <figure css={effectPortfolio}>
+      <Image
+        filename={filename}
+        css={galleryImage}
+        alt={alt}
+        style={{ height: '100%' }}
+      />
+      <figcaption>
+        <h2>
+          {title}
+          {span ? <span>{span}</span> : null}
+        </h2>
 
-      <p>{description}</p>
-      <LinkContainer href={href} target="_blank" rel="noopener noreferrer" />
-    </figcaption>
-  </figure>
+        <p>{description}</p>
+        <LinkContainer href={href} target="_blank" rel="noopener noreferrer" />
+      </figcaption>
+    </figure>
+  </Suspense>
 )
 
 const GalleryMain = ({ data }) => (
