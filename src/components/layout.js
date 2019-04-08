@@ -4,9 +4,7 @@ import styled from '@emotion/styled'
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-
-import { colors, heights } from '../styles/variables'
-import Header from './header'
+import { colors } from '../styles/variables'
 
 const RootContainer = styled('div')`
   display: grid;
@@ -67,9 +65,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
-/** 
- *         <Header
-          siteTitle={get(data, ['site', 'site', 'siteMetadata', 'title'], '')}
-        />
-*/
