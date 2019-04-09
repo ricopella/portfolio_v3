@@ -15,14 +15,8 @@ const MainContainer = ({ data }) => {
       />
       <Suspense fallback={<div>Loading...</div>}>
         <Gallery />
-      </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
         <AboutMe />
-      </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
         <Skills />
-      </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
         <Contact />
       </Suspense>
     </>
