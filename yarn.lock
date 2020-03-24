@@ -1434,6 +1434,14 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/react@^16.9.19":
+  version "16.9.25"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.25.tgz#6ae2159b40138c792058a23c3c04fd3db49e929e"
+  integrity sha512-Dlj2V72cfYLPNscIG3/SMUOzhzj7GK3bpSrfefwt2YT9GLynvLCCZjbhyF6VsT0q0+aRACRX03TDJGb7cA0cqg==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
 "@types/rimraf@^2.0.2":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/rimraf/-/rimraf-2.0.3.tgz#0199a46af106729ba14213fda7b981278d8c84f2"
@@ -11884,6 +11892,14 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typeit-react@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/typeit-react/-/typeit-react-0.1.0.tgz#56506578beb9a89c17bdb7a7feeac88acddc7dae"
+  integrity sha512-UGR2pGaLxuTGpsvhgARn7PyWelG4lE0dkk/97QuEE/VuNUkjN4YrLNf0l8rqx0jzuCuuIXU5olZjB70VNF1eiQ==
+  dependencies:
+    "@types/react" "^16.9.19"
+    typeit "^7.0.0"
 
 typeit@^7.0.0:
   version "7.0.0"
