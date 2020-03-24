@@ -98,7 +98,7 @@ const SkillsContainer = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src={linkedin} alt="Linkedin - Narin Sundarabhaya" />
+            <Image src={linkedin} alt="LinkedIn - Narin Sundarabhaya" />
           </a>
         </ContactRow>
       </Container>
