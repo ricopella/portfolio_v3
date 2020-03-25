@@ -2,6 +2,7 @@ import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import React, { useState, useEffect } from 'react'
 import TypeIt from 'typeit-react'
+import useIsMobile from '../hooks/useIsMobile'
 
 import { colors } from '../styles/variables'
 import Image from '../components/image'
@@ -74,21 +75,7 @@ const StyledBreak = styled.div`
 `
 
 const HomeContainer = ({ name = '', ...rest }) => {
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== 'undefined' && window.innerWidth < 768
-  )
-
-  const updateElement = () => setIsMobile(window.innerWidth <= 768)
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', updateElement)
-    }
-
-    return () => {
-      window.removeEventListener('resize', updateElement)
-    }
-  }, [])
+  const isMobile = useIsMobile()
 
   return (
     <StyledFullPage id="home">
