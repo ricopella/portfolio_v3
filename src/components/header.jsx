@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
 import { transparentize } from 'polished'
-import React from 'react'
+import React, { useState } from 'react'
 import { colors, dimensions, zIndex } from '../styles/variables'
 import Container from './container'
+import useIsMobile from '../hooks/useIsMobile'
 
 const StyledHeader = styled.header`
   height: 6.25rem;
@@ -220,78 +221,53 @@ const MobileDropdown = styled('div')`
   }
 `
 
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isMobile: typeof window !== 'undefined' && window.innerWidth < 768,
-      menuIsShown: false,
-    }
-  }
+const Header = () => {
+  const [isMenuShown, setIsMenuShown] = useState(false)
+  const isMobile = useIsMobile()
 
-  componentDidMount() {
-    window.addEventListener('resize', this.updateElement)
-  }
+  const scrollToTop = () => window.scrollTo(0, 0)
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateElement)
-  }
+  const handleHamburgerMenu = () => setIsMenuShown(cur => !cur)
 
-  scrollToTop() {
-    window.scrollTo(0, 0)
-  }
-
-  handleHamburgerClick() {
-    this.setState({ menuIsShown: !this.state.menuIsShown })
-  }
-
-  updateElement = () => this.setState({ isMobile: window.innerWidth < 768 })
-
-  render() {
-    const { isMobile, menuIsShown } = this.state
-
-    return (
-      <>
-        {!isMobile ? (
-          <StyledHeader className={menuIsShown ? 'active' : null}>
-            <HeaderLogo
-              onClick={() => {
-                this.scrollToTop()
-                this.setState({ menuIsShown: false })
-              }}
-            >
-              nrs.
-            </HeaderLogo>
-            <HeaderInner>
-              {!isMobile ? (
-                <NavigationGroup>
-                  <HomepageLink onClick={() => this.scrollToTop()}>
-                    Home
-                  </HomepageLink>
-                  <HomepageLink href="#portfolio">Portfolio</HomepageLink>
-                  <HomepageLink href="#about-me">About Me</HomepageLink>
-                  <HomepageLink href="#skills">Skills</HomepageLink>
-                  <HomepageLink href="#contact">Contact</HomepageLink>
-                </NavigationGroup>
-              ) : null
-              // <MobileNavGroup>
-              //   <HamburgerWrapper
-              //     onClick={() => this.handleHamburgerClick()}
-              //     className={menuIsShown ? 'active' : null}
-              //   >
-              //     <HamburgerBar
-              //       id={'bar1'}
-              //       className={menuIsShown ? 'active' : null}
-              //     />
-              //   </HamburgerWrapper>
-              // </MobileNavGroup>
-              }
-            </HeaderInner>
-          </StyledHeader>
-        ) : null}
-      </>
-    )
-  }
+  return (
+    <>
+      {!isMobile ? (
+        <StyledHeader className={isMenuShown ? 'active' : null}>
+          <HeaderLogo
+            onClick={() => {
+              scrollToTop()
+              setIsMenuShown(false)
+            }}
+          >
+            nrs.
+          </HeaderLogo>
+          <HeaderInner>
+            {!isMobile ? (
+              <NavigationGroup>
+                <HomepageLink onClick={() => scrollToTop()}>Home</HomepageLink>
+                <HomepageLink href="#portfolio">Portfolio</HomepageLink>
+                <HomepageLink href="#about-me">About Me</HomepageLink>
+                <HomepageLink href="#skills">Skills</HomepageLink>
+                <HomepageLink href="#contact">Contact</HomepageLink>
+              </NavigationGroup>
+            ) : null
+            // <MobileNavGroup>
+            //   <HamburgerWrapper
+            //     onClick={() => this.handleHamburgerClick()}
+            //     className={menuIsShown ? 'active' : null}
+            //   >
+            //     <HamburgerBar
+            //       id={'bar1'}
+            //       className={menuIsShown ? 'active' : null}
+            //     />
+            //   </HamburgerWrapper>
+            // </MobileNavGroup>
+            }
+          </HeaderInner>
+        </StyledHeader>
+      ) : null}
+    </>
+  )
 }
 
 /**
@@ -332,3 +308,5 @@ export default class Header extends React.Component {
           </MobileDropdown>
         )}
         */
+
+export default Header
