@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import React, { useState, useEffect } from 'react'
 import TypeIt from 'typeit-react'
 import useIsMobile from '../hooks/useIsMobile'
-
+import Hero from '../components/Hero'
 import { colors } from '../styles/variables'
 import Image from '../components/image'
 import MobileImage from '../components/galleryImage'
@@ -46,6 +46,7 @@ const StyledIntroText = styled.div`
   text-align: center;
   align-self: center;
   justify-self: center;
+  width: calc(100vw + (1.5rem * 2));
 
   @media (max-width: 46.875rem) {
     font-size: 2rem;
@@ -79,43 +80,11 @@ const HomeContainer = ({ name = '', ...rest }) => {
 
   return (
     <StyledFullPage id="home">
-      {!isMobile ? (
-        <Image
-          filename="nrs_background.jpg"
-          style={{
-            position: 'unset',
-            opacity: 0.95,
-            maxWidth: '100%',
-            margin: '0 auto',
-            padding: 0,
-            gridRow: '1/-1',
-            gridColumn: '1/-1',
-            minHeight: '100vh',
-          }}
-          alt="Narin Sundarabhaya - Welcome!"
-          {...rest}
-        />
-      ) : (
-        <MobileImage
-          filename="nrs_background.jpg"
-          style={{
-            position: 'unset',
-            opacity: 0.95,
-            maxWidth: '100%',
-            margin: '0 auto',
-            padding: 0,
-            gridRow: '1/-1',
-            gridColumn: '1/-1',
-            minHeight: '100vh',
-          }}
-          alt="Narin Sundarabhaya - Welcome!"
-          {...rest}
-        />
-      )}
+      <Hero />
       <StyledIntroTextContainer>
         <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
         <StyledBreak />
-        <StyledIntroText className={description}>
+        <StyledIntroText style={description}>
           <TypeIt
             options={{ loop: true }}
             getBeforeInit={instance => {
