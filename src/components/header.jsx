@@ -1,11 +1,12 @@
 import styled from '@emotion/styled'
 import { transparentize } from 'polished'
-import React from 'react'
+import React, { useState } from 'react'
 import { colors, dimensions, zIndex } from '../styles/variables'
 import Container from './container'
+import useIsMobile from '../hooks/useIsMobile'
 
 const StyledHeader = styled.header`
-  height: 100px;
+  height: 6.25rem;
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.header};
   color: ${transparentize(0.5, colors.white)};
@@ -20,20 +21,20 @@ const StyledHeader = styled.header`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 
-  @media (max-width: 750px) {
+  @media (max-width: 46.875rem) {
     position: absolute;
     padding: 0px 0px;
-    height: 100px;
+    height: 6.25rem;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 6.25rem 1fr;
     transition: all 0.3s ease-in;
 
     &.active {
       position: fixed;
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 100px 1fr;
-      height: 350px;
+      grid-template-rows: 6.25rem 1fr;
+      height: 21.875rem;
     }
   }
 `
@@ -46,10 +47,10 @@ const HeaderInner = styled(Container)`
   justify-content: flex-end;
   max-width: 100em;
 
-  @media (max-width: 750px) {
+  @media (max-width: 46.875rem) {
     position: fixed;
-    right: 15px;
-    top: 10px;
+    right: 0.9375rem;
+    top: 0.625rem;
     height: initial;
   }
 `
@@ -71,7 +72,7 @@ const HomepageLink = styled('a')`
 const NavigationGroup = styled(`div`)`
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(5, 100px);
+  grid-template-columns: repeat(5, 6.25rem);
 `
 
 const MobileNavGroup = styled(`div`)`
@@ -85,9 +86,9 @@ const HeaderLogo = styled(`div`)`
   color: ${colors.gray.light};
   cursor: pointer;
   align-self: center;
-  padding-left: 100px;
+  padding-left: 6.25rem;
 
-  @media (max-width: 750px) {
+  @media (max-width: 46.875rem) {
     padding: 0 1.5rem;
   }
 `
@@ -109,10 +110,10 @@ const HamburgerBar = styled(`div`)`
   left: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
-  height: 6px;
+  height: 0.375rem;
   width: 66%;
   background: #fff;
-  border-radius: 2px;
+  border-radius: 0.125rem;
   -webkit-transition: background 0.28s linear 0.12s,
     -webkit-transform 0.28s cubic-bezier(0.77, 0, 0.175, 1);
   transition: background 0.28s linear 0.12s,
@@ -126,14 +127,14 @@ const HamburgerBar = styled(`div`)`
     -webkit-transform 0.28s cubic-bezier(0.77, 0, 0.175, 1);
 
   &::before {
-    top: -14px;
+    top: -0.875rem;
     content: '';
     position: absolute;
     display: block;
-    height: 5px;
+    height: 0.3125rem;
     width: 100%;
     background: #fff;
-    border-radius: 2px;
+    border-radius: 0.125rem;
     -webkit-transform-origin: 5.5% center;
     -ms-transform-origin: 5.5% center;
     transform-origin: 5.5% center;
@@ -146,14 +147,14 @@ const HamburgerBar = styled(`div`)`
   }
 
   &::after {
-    bottom: -14px;
+    bottom: -0.875rem;
     content: '';
     position: absolute;
     display: block;
-    height: 5px;
+    height: 0.3125rem;
     width: 100%;
     background: #fff;
-    border-radius: 2px;
+    border-radius: 0.125rem;
     -webkit-transform-origin: 5.5% center;
     -ms-transform-origin: 5.5% center;
     transform-origin: 5.5% center;
@@ -191,7 +192,7 @@ const HamburgerBar = styled(`div`)`
       -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
-      bottom: -18px;
+      bottom: -1.125rem;
     }
   }
 `
@@ -200,7 +201,7 @@ const MobileDropdown = styled('div')`
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 50px);
+  grid-template-rows: repeat(5, 3.125rem);
   background-color: #f8f8f8;
   height: 0px;
   opacity: 0;
@@ -214,84 +215,59 @@ const MobileDropdown = styled('div')`
 
   &.active {
     opacity: 1;
-    height: 250px;
+    height: 15.625rem;
     pointer-events: initial;
     cursor: pointer;
   }
 `
 
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isMobile: typeof window !== 'undefined' && window.innerWidth < 768,
-      menuIsShown: false,
-    }
-  }
+const Header = () => {
+  const [isMenuShown, setIsMenuShown] = useState(false)
+  const isMobile = useIsMobile()
 
-  componentDidMount() {
-    window.addEventListener('resize', this.updateElement)
-  }
+  const scrollToTop = () => window.scrollTo(0, 0)
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateElement)
-  }
+  const handleHamburgerMenu = () => setIsMenuShown(cur => !cur)
 
-  scrollToTop() {
-    window.scrollTo(0, 0)
-  }
-
-  handleHamburgerClick() {
-    this.setState({ menuIsShown: !this.state.menuIsShown })
-  }
-
-  updateElement = () => this.setState({ isMobile: window.innerWidth < 768 })
-
-  render() {
-    const { isMobile, menuIsShown } = this.state
-
-    return (
-      <>
-        {!isMobile ? (
-          <StyledHeader className={menuIsShown ? 'active' : null}>
-            <HeaderLogo
-              onClick={() => {
-                this.scrollToTop()
-                this.setState({ menuIsShown: false })
-              }}
-            >
-              nrs.
-            </HeaderLogo>
-            <HeaderInner>
-              {!isMobile ? (
-                <NavigationGroup>
-                  <HomepageLink onClick={() => this.scrollToTop()}>
-                    Home
-                  </HomepageLink>
-                  <HomepageLink href="#portfolio">Portfolio</HomepageLink>
-                  <HomepageLink href="#about-me">About Me</HomepageLink>
-                  <HomepageLink href="#skills">Skills</HomepageLink>
-                  <HomepageLink href="#contact">Contact</HomepageLink>
-                </NavigationGroup>
-              ) : null
-              // <MobileNavGroup>
-              //   <HamburgerWrapper
-              //     onClick={() => this.handleHamburgerClick()}
-              //     className={menuIsShown ? 'active' : null}
-              //   >
-              //     <HamburgerBar
-              //       id={'bar1'}
-              //       className={menuIsShown ? 'active' : null}
-              //     />
-              //   </HamburgerWrapper>
-              // </MobileNavGroup>
-              }
-            </HeaderInner>
-          </StyledHeader>
-        ) : null}
-      </>
-    )
-  }
+  return (
+    <>
+      {!isMobile ? (
+        <StyledHeader className={isMenuShown ? 'active' : null}>
+          <HeaderLogo
+            onClick={() => {
+              scrollToTop()
+              setIsMenuShown(false)
+            }}
+          >
+            nrs.
+          </HeaderLogo>
+          <HeaderInner>
+            {!isMobile ? (
+              <NavigationGroup>
+                <HomepageLink onClick={() => scrollToTop()}>Home</HomepageLink>
+                <HomepageLink href="#portfolio">Portfolio</HomepageLink>
+                <HomepageLink href="#about-me">About Me</HomepageLink>
+                <HomepageLink href="#skills">Skills</HomepageLink>
+                <HomepageLink href="#contact">Contact</HomepageLink>
+              </NavigationGroup>
+            ) : null
+            // <MobileNavGroup>
+            //   <HamburgerWrapper
+            //     onClick={() => this.handleHamburgerClick()}
+            //     className={menuIsShown ? 'active' : null}
+            //   >
+            //     <HamburgerBar
+            //       id={'bar1'}
+            //       className={menuIsShown ? 'active' : null}
+            //     />
+            //   </HamburgerWrapper>
+            // </MobileNavGroup>
+            }
+          </HeaderInner>
+        </StyledHeader>
+      ) : null}
+    </>
+  )
 }
 
 /**
@@ -332,3 +308,5 @@ export default class Header extends React.Component {
           </MobileDropdown>
         )}
         */
+
+export default Header

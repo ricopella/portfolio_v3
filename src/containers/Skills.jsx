@@ -37,10 +37,10 @@ import code from '../images/vscode.png'
 
 const ImageWrapper = styled.img`
   max-width: 10%;
-  margin: 0px 6px;
-  padding: 5px 7px;
+  margin: 0px 0.375rem;
+  padding: 0.3125rem 0.4375rem;
 
-  @media (max-width: 750px) {
+  @media (max-width: 46.875rem) {
     max-width: 21%;
 
     &.gulp {
@@ -62,11 +62,11 @@ const SkillsWrapper = styled.div`
   flex-wrap: wrap;
   align-items: flex-start;
 
-  @media (max-width: 1240px) {
+  @media (max-width: 77.5rem) {
     flex: 2;
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 51.25rem) {
     flex: 1;
     padding-top: 10%;
   }
