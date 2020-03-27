@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from '@emotion/styled'
-
+import { PageProps } from '../types'
 import { dimensions } from '../styles/variables'
 
 const StyledPage = styled.div`
@@ -10,12 +10,12 @@ const StyledPage = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 750px) {
+  @media (max-width: 46.875rem) {
     height: 100% !important;
   }
 `
 
-const Page = ({ children, className, id, style }) => (
+const Page: FC<PageProps> = ({ children, className, id, style }) => (
   <StyledPage id={id} className={className} style={style}>
     {children}
   </StyledPage>

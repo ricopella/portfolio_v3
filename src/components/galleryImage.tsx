@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { GalleryImageProps } from '../types'
 
 /*
  * https://noahgilmore.com/blog/easy-gatsby-image-components/
  */
-
-const GalleryImage = props => {
+const GalleryImage: FC<GalleryImageProps> = ({ alt, filename, style = {} }) => {
   const { images } = useStaticQuery(graphql`
     query {
       images: allFile {
@@ -25,17 +25,11 @@ const GalleryImage = props => {
     }
   `)
   const image = images.edges.find(n => {
-    return n.node.relativePath.includes(props.filename)
+    return n.node.relativePath.includes(filename)
   })
 
   const imageSizes = image.node.childImageSharp.sizes
 
-  return (
-    <Img
-      alt={props.alt}
-      sizes={imageSizes ? imageSizes : 0}
-      style={props.style}
-    />
-  )
+  return <Img alt={alt} sizes={imageSizes ? imageSizes : 0} style={style} />
 }
 export default GalleryImage

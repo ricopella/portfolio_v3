@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from '@emotion/styled'
-
+import { ContainerProps } from '../types'
 import { widths } from '../styles/variables'
 import { getEmSize } from '../styles/mixins'
 
@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
   max-width: ${getEmSize(widths.lg)}em;
 `
 
-const Container = ({ children, className, style }) => (
+const Container: FC<ContainerProps> = ({ children, className, style }) => (
   <StyledContainer className={className} style={style}>
     {children}
   </StyledContainer>

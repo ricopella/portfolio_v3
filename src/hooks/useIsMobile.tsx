@@ -4,9 +4,9 @@ import { breakpoints } from '../styles/variables'
 const useIsMobile = () => {
   const setStatus = () =>
     typeof window !== 'undefined' && window.innerWidth < breakpoints.md
-  const updatedState = () => setIsMobile(setStatus())
 
   const [isMobile, setIsMobile] = useState(setStatus())
+  const updatedState = () => setIsMobile(setStatus())
 
   useEffect(() => {
     window.addEventListener('resize', () => updatedState())

@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { transparentize } from 'polished'
 import React, { useState } from 'react'
 import { colors, dimensions, zIndex } from '../styles/variables'
-import Container from './container'
+import Container from './Container'
 import useIsMobile from '../hooks/useIsMobile'
 
 const StyledHeader = styled.header`
@@ -222,8 +222,8 @@ const MobileDropdown = styled('div')`
 `
 
 const Header = () => {
-  const [isMenuShown, setIsMenuShown] = useState(false)
-  const isMobile = useIsMobile()
+  const [isMenuShown, setIsMenuShown] = useState<boolean>(false)
+  const isMobile: boolean = useIsMobile()
 
   const scrollToTop = () => window.scrollTo(0, 0)
 
@@ -232,7 +232,7 @@ const Header = () => {
   return (
     <>
       {!isMobile ? (
-        <StyledHeader className={isMenuShown ? 'active' : null}>
+        <StyledHeader className={isMenuShown ? 'active' : ''}>
           <HeaderLogo
             onClick={() => {
               scrollToTop()

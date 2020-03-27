@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import Page from '../components/page'
+import Page from '../components/Page'
 import { borders, shadows, colors, fonts } from '../styles/variables'
 import TerminalCommand from '../components/TerminalCommand'
 
@@ -104,7 +104,7 @@ const AboutMeMain = () => (
         <TerminalCommand
           question={'contact_information'}
           answer={'nrs710@gmail.com'}
-          isLink={'mailto:nrs710@gmail.com'}
+          href={'mailto:nrs710@gmail.com'}
         />
         <TerminalCommand
           question={'roles'}

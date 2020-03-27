@@ -1,6 +1,6 @@
 import React from 'react'
-import Page from '../components/page'
-import Container from '../components/container'
+import Page from '../components/Page'
+import Container from '../components/Container'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors, heights } from '../styles/variables'

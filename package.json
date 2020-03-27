@@ -37,12 +37,20 @@
         "build": "gatsby build",
         "develop": "gatsby develop",
         "devMobile": "gatsby develop -H 0.0.0.0",
-        "start": "npm run develop",
-        "format": "prettier --write \"src/**/*.js\""
+        "format": "prettier --write \"src/**/*.js\"",
+        "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+        "start": "npm run develop"
     },
     "devDependencies": {
-        "lodash": "^4.17.15",
-        "prettier": "^1.19.1"
+        "@typescript-eslint/eslint-plugin": "^2.25.0",
+        "@typescript-eslint/parser": "^2.25.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-react": "^7.19.0",
+        "gatsby-plugin-typescript": "^2.3.1",
+        "prettier": "^1.19.1",
+        "typescript": "^3.8.3"
     },
     "repository": {
         "type": "git",
