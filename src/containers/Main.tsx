@@ -4,7 +4,7 @@ import Gallery from './Gallery'
 import AboutMe from './AboutMe'
 import Skills from './Skills'
 import Contact from './Contact'
-import Header from '../components/header'
+import Header from '../components/Header'
 
 const MainContainer = ({ data }) => {
   return (

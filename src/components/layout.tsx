@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import { colors, heights } from '../styles/variables'
-import Header from './header'
+import Header from './Header'
 
 const RootContainer = styled('div')`
   display: grid;
