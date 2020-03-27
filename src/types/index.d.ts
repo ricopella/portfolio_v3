@@ -17,3 +17,13 @@ export interface GalleryImageProps {
   filename: string
   style?: CSSProperties
 }
+
+export interface UseSiteMetaDataReturns {
+  author: {
+    name: string
+    url: string
+    email: string
+    handle: string
+  }
+  title: string
+}

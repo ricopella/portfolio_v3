@@ -1,12 +1,8 @@
 import '../styles/normalize'
-import get from 'lodash/get'
 import styled from '@emotion/styled'
-import { graphql, StaticQuery } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
-
-import { colors, heights } from '../styles/variables'
-import Header from './Header'
+import React, { FC } from 'react'
+import { colors } from '../styles/variables'
+import useSiteMetaData from '../hooks/useSiteMetaData'
 
 const RootContainer = styled('div')`
   display: grid;
@@ -16,60 +12,32 @@ const RootContainer = styled('div')`
 
 const MainBodyContainer = styled('div')`
   display: grid;
-  width: 100vw;
-  margin: 0 auto;
   grid-row: 2;
+  margin: 0 auto;
+  width: 100vw;
 `
 
 const FooterContainer = styled('footer')`
   display: grid;
-  grid-template-columns: max-content max-content;
-  grid-column-gap: 10px;
   align-items: center;
-  justify-content: center;
-  grid-row: 3 / -1;
   background-color: ${colors.header};
+  grid-column-gap: 0.625rem;
+  grid-row: 3 / -1;
+  grid-template-columns: max-content max-content;
+  justify-content: center;
 `
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-            author {
-              name
-              url
-              email
-              handle
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <RootContainer>
-        <MainBodyContainer>{children}</MainBodyContainer>
-        <FooterContainer>
-          © {new Date().getFullYear()},{' '}
-          <span>
-            {get(data, ['site', 'siteMetadata', 'author', 'name'], '')}
-          </span>
-        </FooterContainer>
-      </RootContainer>
-    )}
-  />
-)
+const Layout: FC<{}> = ({ children }) => {
+  const { author } = useSiteMetaData()
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  return (
+    <RootContainer>
+      <MainBodyContainer>{children}</MainBodyContainer>
+      <FooterContainer>
+        &copy; {new Date().getFullYear()}, <span>{author?.name || ''}</span>
+      </FooterContainer>
+    </RootContainer>
+  )
 }
 
 export default Layout
-
-/** 
- *         <Header
-          siteTitle={get(data, ['site', 'site', 'siteMetadata', 'title'], '')}
-        />
-*/
