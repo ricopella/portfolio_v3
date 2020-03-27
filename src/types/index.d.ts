@@ -18,6 +18,14 @@ export interface GalleryImageProps {
   style?: CSSProperties
 }
 
+export interface PageProps {
+  className?: string
+  id: string
+  style?: CSSProperties
+}
+
+// GRAPHQL QUERIES
+
 export interface UseSiteMetaDataReturns {
   author: {
     name: string

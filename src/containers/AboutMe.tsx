@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import Page from '../components/page'
+import Page from '../components/Page'
 import { borders, shadows, colors, fonts } from '../styles/variables'
 import TerminalCommand from '../components/TerminalCommand'
 

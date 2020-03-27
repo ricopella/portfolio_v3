@@ -1,5 +1,5 @@
 import React from 'react'
-import Page from '../components/page'
+import Page from '../components/Page'
 import Container from '../components/Container'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
