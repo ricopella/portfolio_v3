@@ -5,7 +5,6 @@ import TypeIt from 'typeit-react'
 import useIsMobile from '../hooks/useIsMobile'
 import Hero from '../components/Hero'
 import { colors } from '../styles/variables'
-import Image from '../components/image'
 import MobileImage from '../components/galleryImage'
 
 // assets
