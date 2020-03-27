@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors, shadows } from '../styles/variables'
 import Image from './galleryImage'
+import { GalleryProps } from '../types'
 
 const StyledLayoutContainer = styled.main`
   display: grid;
@@ -159,21 +160,21 @@ const effectPortfolio = css`
   }
 `
 
-const FigureComponent = ({
-  filename,
+const FigureComponent: FC<GalleryProps> = ({
   alt,
-  title,
-  span,
   description,
+  filename,
   href,
-  style,
+  span,
+  style = {},
+  title,
 }) => (
   <figure css={effectPortfolio}>
     <Image
       filename={filename}
       css={galleryImage}
       alt={alt}
-      style={{ height: '100%' }}
+      style={{ height: '100%', style }}
     />
     <figcaption>
       <h2>
@@ -187,7 +188,7 @@ const FigureComponent = ({
   </figure>
 )
 
-const GalleryMain = ({ data }) => (
+const GalleryMain: FC<{}> = () => (
   <StyledLayoutContainer>
     <FigureComponent
       filename="fanai.png"
