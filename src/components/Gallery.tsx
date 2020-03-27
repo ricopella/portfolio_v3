@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { colors, shadows } from '../styles/variables'
-import Image from './galleryImage'
+import Image from './GalleryImage'
 import { GalleryProps } from '../types'
 
 const StyledLayoutContainer = styled.main`

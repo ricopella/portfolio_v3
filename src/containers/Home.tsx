@@ -5,7 +5,7 @@ import TypeIt from 'typeit-react'
 import useIsMobile from '../hooks/useIsMobile'
 import Hero from '../components/Hero'
 import { colors } from '../styles/variables'
-import MobileImage from '../components/galleryImage'
+import MobileImage from '../components/GalleryImage'
 
 // assets
 const StyledFullPage = styled.div`

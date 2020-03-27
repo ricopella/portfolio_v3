@@ -5,12 +5,15 @@ export interface ContainerProps {
   style?: CSSProperties
 }
 
-export interface GalleryProps {
-  alt: string
+export interface GalleryProps extends GalleryImageProps {
   description: string
-  filename: string
   href: string
   span: string
-  style?: CSSProperties
   title: string
+}
+
+export interface GalleryImageProps {
+  alt: string
+  filename: string
+  style?: CSSProperties
 }
