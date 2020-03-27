@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { transparentize } from 'polished'
 import React, { useState } from 'react'
 import { colors, dimensions, zIndex } from '../styles/variables'
-import Container from './container'
+import Container from './Container'
 import useIsMobile from '../hooks/useIsMobile'
 
 const StyledHeader = styled.header`
