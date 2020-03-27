@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import { colors } from '../styles/variables'
+import { TerminalCommandProps } from '../types'
 
 const TerminalWrapper = styled.div`
   display: grid;
@@ -30,8 +31,8 @@ const FinalStatement = styled.div`
   display: inline-block;
   background-color: ${colors.code};
   vertical-align: top;
-  width: 10px;
-  height: 24px;
+  width: 0.625rem;
+  height: 1.5rem;
   -webkit-animation: blink 1s step-end infinite;
   animation: blink 1s step-end infinite;
 
@@ -60,7 +61,11 @@ const FinalStatement = styled.div`
   }
 `
 
-const TerminalCommand = ({ question, answer, isLink }) => (
+const TerminalCommand: FC<TerminalCommandProps> = ({
+  question,
+  answer,
+  href,
+}) => (
   <TerminalWrapper>
     {question && answer ? (
       <>
@@ -68,14 +73,10 @@ const TerminalCommand = ({ question, answer, isLink }) => (
           <TerminalArrow>>></TerminalArrow> {question}
         </TerminalInput>
         <TerminalOutput>
-          {!isLink ? (
+          {!href ? (
             answer
           ) : (
-            <TerminalLink
-              href={isLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <TerminalLink href={href} target="_blank" rel="noopener noreferrer">
               "{answer}"
             </TerminalLink>
           )}

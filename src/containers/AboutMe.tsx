@@ -104,7 +104,7 @@ const AboutMeMain = () => (
         <TerminalCommand
           question={'contact_information'}
           answer={'nrs710@gmail.com'}
-          isLink={'mailto:nrs710@gmail.com'}
+          href={'mailto:nrs710@gmail.com'}
         />
         <TerminalCommand
           question={'roles'}
