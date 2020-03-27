@@ -2,11 +2,12 @@ module.exports = {
     siteMetadata: {
         title: `nrs.`,
         description: `Full-Stack Developer specialized in the Front-End.`,
+        lang: `en`,
         author: {
             name: 'Narin Sundarabhaya',
             url: 'https://twitter.com/ricopella',
             email: 'nrs710@gmail.com',
-            handle: `@ricopella`
+            handle: `@ricopella`,
         },
     },
     plugins: [

@@ -24,6 +24,12 @@ export interface PageProps {
   style?: CSSProperties
 }
 
+export interface TerminalCommandProps {
+  answer: string
+  href?: string
+  question: string
+}
+
 // GRAPHQL QUERIES
 
 export interface UseSiteMetaDataReturns {
@@ -33,5 +39,9 @@ export interface UseSiteMetaDataReturns {
     email: string
     handle: string
   }
+  description?: string
+  lang?: string
+  meta?: []
+  keywords?: string[]
   title: string
 }

@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { colors, heights } from '../styles/variables'
 
 import Layout from '../components/Layout'
-import SEO from '../components/seo'
+import SEO from '../components/Seo'
 
 const Styled404 = styled.div`
   height: calc(100vh - ${heights.header}px - ${heights.footer}px);

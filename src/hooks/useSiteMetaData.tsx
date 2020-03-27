@@ -7,6 +7,8 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
       data: site {
         siteMetadata {
           title
+          description
+          lang
           author {
             name
             url
