@@ -6,9 +6,9 @@ import TerminalCommand from '../components/TerminalCommand'
 
 const TerminalContainer = styled.div`
   display: grid;
-  grid-template-rows: 30px max-content;
+  grid-template-rows: 1.875rem max-content;
   grid-template-columns: 1fr;
-  max-width: 900px;
+  max-width: 56.25rem;
   align-self: center;
   justify-self: center;
   box-shadow: ${shadows.box};
@@ -22,7 +22,7 @@ const TerminalHeaderTitle = styled.div`
 const TerminalHeader = styled.div`
   background-color: ${colors.terminalHeader};
   border-radius: ${borders.large};
-  max-height: 30px;
+  max-height: 1.875rem;
   width: 100%;
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -42,15 +42,15 @@ const TerminalHeaderActionContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, max-content);
   grid-template-rows: 1fr;
-  grid-column-gap: 5px;
-  height: 30px;
+  grid-column-gap: 0.3125rem;
+  height: 1.875rem;
   align-items: center;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 `
 
 const TerminalHeaderActionBalls = styled.div`
-  height: 15px;
-  width: 15px;
+  height: 0.9375rem;
+  width: 0.9375rem;
   border-radius: 50%;
 `
 
@@ -64,7 +64,7 @@ const AboutMeMain = () => (
       display: 'grid',
       gridTemplateColumns: '1fr',
       gridTemplateRows: 'max-content max-content',
-      gridRowGap: '60px',
+      gridRowGap: '3.75rem',
       alignContent: 'center',
       justifyContent: 'center',
     }}
