@@ -6,15 +6,11 @@ import Skills from './Skills'
 import Contact from './Contact'
 import Header from '../components/Header'
 
-const MainContainer = ({ data }) => {
+const MainContainer = () => {
   return (
     <>
       <Header />
-      <Home
-        data={data}
-        name="Narin R. Sundarabhaya"
-        position="Full Stack Developer"
-      />
+      <Home />
       <Gallery />
       <AboutMe />
       <Skills />
