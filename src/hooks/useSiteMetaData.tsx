@@ -6,15 +6,17 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
     query {
       data: site {
         siteMetadata {
-          title
-          description
-          lang
           author {
             name
             url
             email
             handle
           }
+          description
+          keywords
+          lang
+          title
+          titleTemplate
         }
       }
     }
