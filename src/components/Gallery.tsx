@@ -174,7 +174,7 @@ const FigureComponent: FC<GalleryProps> = ({
       filename={filename}
       css={galleryImage}
       alt={alt}
-      style={{ height: '100%', style }}
+      style={{ height: '100%', ...style }}
     />
     <figcaption>
       <h2>
