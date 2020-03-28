@@ -1,7 +1,9 @@
 module.exports = {
     siteMetadata: {
-        title: `nrs.`,
+        title: `Welcome`,
+        titleTemplate: `nrs.`,
         description: `Full-Stack Developer specialized in the Front-End.`,
+        keywords: [`web developer`, `full-stack`, `react`, `Los Angeles`],
         lang: `en`,
         author: {
             name: 'Narin Sundarabhaya',
