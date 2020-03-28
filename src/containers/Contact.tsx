@@ -22,7 +22,7 @@ const ContactWrapper = styled.div`
 `
 
 const socialIcon = styled.div`
-  width: 40px;
+  width: 2.5rem;
   justify-self: center;
 `
 
@@ -31,8 +31,8 @@ const Image = socialIcon.withComponent('img')
 const ContactRow = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 20px;
-  margin-top: 20px;
+  grid-column-gap: 1.25rem;
+  margin-top: 1.25rem;
 `
 
 const anchor = css`
@@ -41,7 +41,7 @@ const anchor = css`
     color: ${colors.gray.calm};
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 46.875rem) {
     font-size: 2.5rem;
   }
 `

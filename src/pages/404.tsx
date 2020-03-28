@@ -4,9 +4,10 @@ import { colors, heights } from '../styles/variables'
 
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
+import Header from '../components/Header'
 
 const Styled404 = styled.div`
-  height: calc(100vh - ${heights.header}px - ${heights.footer}px);
+  height: calc(100vh - ${heights.header}px);
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
@@ -15,11 +16,11 @@ const Styled404 = styled.div`
   justify-items: center;
   background-color: ${colors.header};
   grid-row: 2;
-  margin-top: -8px;
 `
 
 const NotFoundPage = () => (
   <Layout>
+    <Header />
     <SEO title="404: Not found" />
     <Styled404>
       <h1>NOT FOUND</h1>

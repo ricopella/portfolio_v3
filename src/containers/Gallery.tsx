@@ -12,7 +12,7 @@ const StyledFullPage = styled.div`
   }
 `
 
-const GalleryContainer = ({ data }) => (
+const GalleryContainer = () => (
   <StyledFullPage id="portfolio" style={{ backgroundColor: colors.header }}>
     <h1
       style={{
@@ -23,7 +23,7 @@ const GalleryContainer = ({ data }) => (
     >
       {`portfolio`.toUpperCase()}
     </h1>
-    <Gallery data={data} />
+    <Gallery />
   </StyledFullPage>
 )
 

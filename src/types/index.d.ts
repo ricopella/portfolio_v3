@@ -8,7 +8,7 @@ export interface ContainerProps {
 export interface GalleryProps extends GalleryImageProps {
   description: string
   href: string
-  span: string
+  span?: string
   title: string
 }
 
@@ -25,9 +25,9 @@ export interface PageProps {
 }
 
 export interface TerminalCommandProps {
-  answer: string
+  answer?: string
   href?: string
-  question: string
+  question?: string
 }
 
 // GRAPHQL QUERIES
@@ -44,4 +44,9 @@ export interface UseSiteMetaDataReturns {
   meta?: []
   keywords?: string[]
   title: string
+  titleTemplate: string
+}
+
+export interface SEOProps {
+  title?: string
 }
