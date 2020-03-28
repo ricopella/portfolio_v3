@@ -1,11 +1,10 @@
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import TypeIt from 'typeit-react'
-import useIsMobile from '../hooks/useIsMobile'
 import Hero from '../components/Hero'
 import { colors } from '../styles/variables'
-import MobileImage from '../components/GalleryImage'
+import useSiteMetaData from '../hooks/useSiteMetaData'
 
 // assets
 const StyledFullPage = styled.div`
@@ -74,14 +73,13 @@ const StyledBreak = styled.div`
   }
 `
 
-const HomeContainer = ({ name = '', ...rest }) => {
-  const isMobile = useIsMobile()
-
+const HomeContainer = () => {
+  const { author } = useSiteMetaData()
   return (
     <StyledFullPage id="home">
       <Hero />
       <StyledIntroTextContainer>
-        <StyledIntroText>{name.toUpperCase()}</StyledIntroText>
+        <StyledIntroText>{author?.name.toUpperCase()}</StyledIntroText>
         <StyledBreak />
         <StyledIntroText style={description}>
           <TypeIt
