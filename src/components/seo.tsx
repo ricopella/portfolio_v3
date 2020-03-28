@@ -1,9 +1,17 @@
 import React, { FC } from 'react'
 import Helmet from 'react-helmet'
 import useSiteMetaData from '../hooks/useSiteMetaData'
+import { SEOProps } from '../types'
 
-const SEO: FC<{}> = () => {
-  const { title, description, author, lang } = useSiteMetaData()
+const SEO: FC<SEOProps> = ({ title: defaultTitle }) => {
+  const {
+    titleTemplate,
+    title,
+    description,
+    author,
+    lang,
+    keywords,
+  } = useSiteMetaData()
 
   return (
     <Helmet
@@ -11,7 +19,9 @@ const SEO: FC<{}> = () => {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${title}`}
+      titleTemplate={`${titleTemplate} | ${
+        defaultTitle ? defaultTitle : title
+      }`}
       meta={[
         {
           name: `description`,
@@ -45,7 +55,14 @@ const SEO: FC<{}> = () => {
           name: `twitter:description`,
           content: description,
         },
-      ]}
+      ].concat(
+        (keywords || []).length
+          ? {
+              name: `keywords`,
+              content: (keywords || []).join(`, `),
+            }
+          : []
+      )}
     />
   )
 }
