@@ -1,3 +1,4 @@
 import { dimensions } from './variables'
 
-export const getEmSize = size => size / dimensions.fontSize.regular
+export const getEmSize = (size: number): number =>
+  size / dimensions.fontSize.regular
