@@ -88,3 +88,23 @@ export const borders = {
   medium: `0 0 4px 4px`,
   large: `10px 10px 0 0`,
 }
+
+export const SLIDE_IN_ANIMATION_OPTIONS = {
+  animate: 'visible',
+  exit: 'exit',
+  initial: 'hidden',
+  variants: {
+    exit: {
+      opacity: 0,
+      y: 20,
+    },
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  },
+}
