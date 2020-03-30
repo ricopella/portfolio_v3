@@ -4,14 +4,7 @@ import useSiteMetaData from '../hooks/useSiteMetaData'
 import { SEOProps } from '../types'
 
 const SEO: FC<SEOProps> = ({ title: defaultTitle }) => {
-  const {
-    titleTemplate,
-    title,
-    description,
-    author,
-    lang,
-    keywords,
-  } = useSiteMetaData()
+  const { titleTemplate, title, description, author, lang } = useSiteMetaData()
 
   return (
     <Helmet
@@ -55,14 +48,7 @@ const SEO: FC<SEOProps> = ({ title: defaultTitle }) => {
           name: `twitter:description`,
           content: description,
         },
-      ].concat(
-        (keywords || []).length
-          ? {
-              name: `keywords`,
-              content: (keywords || []).join(`, `),
-            }
-          : []
-      )}
+      ]}
     />
   )
 }

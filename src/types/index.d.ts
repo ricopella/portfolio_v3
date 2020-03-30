@@ -42,7 +42,6 @@ export interface UseSiteMetaDataReturns {
   description?: string
   lang?: string
   meta?: []
-  keywords?: string[]
   title: string
   titleTemplate: string
 }
