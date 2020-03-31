@@ -1,4 +1,19 @@
-export const colors = {
+import { DimensionsType } from '../types'
+
+export const BORDERS = {
+  medium: `0 0 0.25rem 0.25rem`,
+  large: `0.625rem 0.625rem 0 0`,
+}
+
+export const BREAKPOINTS = {
+  xs: 0,
+  sm: 576,
+  md: 768, // tablet
+  lg: 992,
+  xl: 1200,
+}
+
+export const COLORS = {
   brand: '#663399',
   header: '#f8f8f8',
   lilac: '#9d7cbf',
@@ -29,29 +44,7 @@ export const colors = {
   teal: '#35feff',
 }
 
-export const fonts = {
-  sansSerif:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
-  serif: 'Georgia, "Times New Roman", Times, serif',
-  monospace:
-    'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace',
-}
-
-export const breakpoints = {
-  xs: 0,
-  sm: 576,
-  md: 768, // tablet
-  lg: 992,
-  xl: 1200,
-}
-
-export const widths = {
-  md: 720,
-  lg: 960,
-  xl: 1140,
-}
-
-export const dimensions = {
+export const DIMENSIONS: DimensionsType = {
   fontSize: {
     regular: 16,
     large: 18,
@@ -69,24 +62,28 @@ export const dimensions = {
   containerPadding: 1.5,
 }
 
-export const heights = {
-  header: 60,
-  contact: 300,
-  footer: 60,
+export const FONTS = {
+  sansSerif:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
+  serif: 'Georgia, "Times New Roman", Times, serif',
+  monospace:
+    'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace',
 }
 
-export const zIndex = {
-  header: 1030,
+export const FONT_WIDTHS = {
+  SEMI_BOLD: 600,
 }
 
-export const shadows = {
+export const HEIGHTS = {
+  CONTACT: 300,
+  FOOTER: 60,
+  HEADER: `5rem`,
+  MOBILE_MENU: `21.875rem`,
+}
+
+export const SHADOWS = {
   box: `0 50px 100px rgba(50, 50, 93, 0.05),
     0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);`,
-}
-
-export const borders = {
-  medium: `0 0 4px 4px`,
-  large: `10px 10px 0 0`,
 }
 
 export const SLIDE_IN_ANIMATION_OPTIONS = {
@@ -107,4 +104,14 @@ export const SLIDE_IN_ANIMATION_OPTIONS = {
       y: 0,
     },
   },
+}
+
+export const WIDTHS = {
+  md: 720,
+  lg: `60rem`,
+  xl: 1140,
+}
+export const Z_INDEX = {
+  HEADER: 1030,
+  MOBILE_NAV_BUTTON: 100,
 }
