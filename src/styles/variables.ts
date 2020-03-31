@@ -8,7 +8,9 @@ export const BORDERS = {
 export const BREAKPOINTS = {
   xs: 0,
   sm: 576,
+  smRem: `36rem`,
   md: 768, // tablet
+  mdRem: `48rem`,
   lg: 992,
   xl: 1200,
 }
@@ -114,4 +116,5 @@ export const WIDTHS = {
 export const Z_INDEX = {
   HEADER: 1030,
   MOBILE_NAV_BUTTON: 100,
+  PAGE_CONTENT: 2,
 }
