@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { breakpoints } from '../styles/variables'
+import { BREAKPOINTS } from '../styles/variables'
 
 const useIsMobile = () => {
   const setStatus = () =>
-    typeof window !== 'undefined' && window.innerWidth < breakpoints.md
+    typeof window !== 'undefined' && window.innerWidth < BREAKPOINTS.md
 
   const [isMobile, setIsMobile] = useState(setStatus())
   const updatedState = () => setIsMobile(setStatus())

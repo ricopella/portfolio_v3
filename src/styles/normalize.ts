@@ -1,5 +1,11 @@
 import { injectGlobal } from 'emotion'
-import { dimensions, fonts, colors, breakpoints } from './variables'
+import {
+  BREAKPOINTS,
+  COLORS,
+  DIMENSIONS,
+  FONT_WIDTHS,
+  FONTS,
+} from './variables'
 import { getEmSize } from './mixins'
 
 // tslint:disable-next-line:no-unused-expression
@@ -15,8 +21,8 @@ injectGlobal`
   }
 
   html {
-    font-size: ${dimensions.fontSize.regular}px !important;
-    line-height: ${dimensions.lineHeight.regular} !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
   }
 
   body {
@@ -24,15 +30,15 @@ injectGlobal`
     width: 100vw;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: ${fonts.sansSerif};
-    color: ${colors.black};
-    background-color: ${colors.white};
+    font-family: ${FONTS.sansSerif};
+    color: ${COLORS.black};
+    background-color: ${COLORS.white};
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }
 
   a {
-    color: ${colors.brand};
+    color: ${COLORS.brand};
     text-decoration: none;
 
     &:hover,
@@ -58,7 +64,7 @@ injectGlobal`
   table {
     width: 100%;
     margin-bottom: 1rem;
-    border: 1px solid ${colors.ui.light};
+    border: 0.0625rem solid ${COLORS.ui.light};
     font-size: 85%;
     border-collapse: collapse;
   }
@@ -66,7 +72,7 @@ injectGlobal`
   td,
   th {
     padding: .25rem .5rem;
-    border: 1px solid ${colors.ui.light};
+    border: 0.0625rem solid ${COLORS.ui.light};
   }
 
   th {
@@ -77,10 +83,10 @@ injectGlobal`
     tr {
       &:nth-of-type(odd) {
         td {
-          background-color: ${colors.ui.whisper};
+          background-color: ${COLORS.ui.whisper};
         }
         tr {
-          background-color: ${colors.ui.whisper};
+          background-color: ${COLORS.ui.whisper};
         }
       }
     }
@@ -89,27 +95,27 @@ injectGlobal`
   h1, h2, h3, h4, h5, h6 {
     margin-top: 1.414rem;
     margin-bottom: .5rem;
-    color: ${colors.black};
-    font-weight: 600;
-    line-height: ${dimensions.lineHeight.heading};
+    color: ${COLORS.black};
+    font-weight: ${FONT_WIDTHS.SEMI_BOLD};
+    line-height: ${DIMENSIONS.lineHeight.heading};
     text-rendering: optimizeLegibility;
   }
 
   h1 {
     margin-top: 0;
-    font-size: ${dimensions.headingSizes.h1}rem;
+    font-size: ${DIMENSIONS.headingSizes.h1}rem;
   }
 
   h2 {
-    font-size: ${dimensions.headingSizes.h2}rem;
+    font-size: ${DIMENSIONS.headingSizes.h2}rem;
   }
 
   h3 {
-    font-size: ${dimensions.headingSizes.h3}rem;
+    font-size: ${DIMENSIONS.headingSizes.h3}rem;
   }
 
   h4, h5, h6 {
-    font-size: ${dimensions.headingSizes.h4}rem;
+    font-size: ${DIMENSIONS.headingSizes.h4}rem;
   }
 
   p {
@@ -118,7 +124,7 @@ injectGlobal`
   }
 
   strong {
-    color: ${colors.black};
+    color: ${COLORS.black};
   }
 
   ul,
@@ -140,14 +146,14 @@ injectGlobal`
     position: relative;
     margin: 1.5rem 0;
     border: 0;
-    border-top: 1px solid ${colors.ui.light};
+    border-top: 0.0625rem solid ${COLORS.ui.light};
   }
 
   blockquote {
     margin: .8rem 0;
     padding: .5rem 1rem;
-    border-left: .25rem solid ${colors.ui.light};
-    color: ${colors.gray.calm};
+    border-left: .25rem solid ${COLORS.ui.light};
+    color: ${COLORS.gray.calm};
 
     p {
       &:last-child {
@@ -155,7 +161,7 @@ injectGlobal`
       }
     }
 
-    @media (min-width: ${getEmSize(breakpoints.md)}em) {
+    @media (min-width: ${getEmSize(BREAKPOINTS.md)}em) {
       padding-right: 5rem;
       padding-left: 1.25rem;
     }

@@ -13,7 +13,6 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
             handle
           }
           description
-          keywords
           lang
           title
           titleTemplate
@@ -22,7 +21,7 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
     }
   `)
 
-  return data?.siteMetadata
+  return data?.siteMetadata || null
 }
 
 export default useSiteMetaData

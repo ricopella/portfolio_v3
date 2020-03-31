@@ -42,11 +42,24 @@ export interface UseSiteMetaDataReturns {
   description?: string
   lang?: string
   meta?: []
-  keywords?: string[]
   title: string
   titleTemplate: string
 }
 
 export interface SEOProps {
   title?: string
+}
+
+export interface DimensionsType {
+  fontSize: {
+    regular: number
+    large: number
+  }
+  headingSizes: {
+    [h: string]: number
+  }
+  lineHeight: {
+    [lH: string]: number
+  }
+  containerPadding: string | number
 }
