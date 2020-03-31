@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { GalleryImageProps } from '../types'
+import { GalleryImageProps } from '../../types'
 
 /*
  * https://noahgilmore.com/blog/easy-gatsby-image-components/
