@@ -1,53 +1,58 @@
+import {
+  BREAKPOINTS,
+  COLORS,
+  DIMENSIONS,
+  HEIGHTS,
+  FONT_WIDTHS,
+  Z_INDEX,
+} from '../../styles/variables'
 import styled from '@emotion/styled'
 import { transparentize } from 'polished'
-import React, { useState } from 'react'
-import { colors, dimensions, zIndex } from '../styles/variables'
-import Container from './Container'
-import useIsMobile from '../hooks/useIsMobile'
 
-const StyledHeader = styled.header`
-  height: 6.25rem;
-  padding: 0 ${dimensions.containerPadding}rem;
-  background-color: ${colors.header};
-  color: ${transparentize(0.5, colors.white)};
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: ${zIndex.header};
-  grid-row: 1 / -1;
-  grid-column: 1 / -1;
+const Header = styled.header`
+  background-color: ${COLORS.header};
+  color: ${transparentize(0.5, COLORS.white)};
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  grid-template-columns: max-content 1fr;
   grid-template-rows: 1fr;
+  height: ${HEIGHTS.HEADER};
+  left: 0;
+  padding: 0 ${DIMENSIONS.containerPadding}rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: ${Z_INDEX.HEADER};
 
-  @media (max-width: 46.875rem) {
+  // MOBILE MENU (Breaks at tablet size)
+  @media (max-width: ${BREAKPOINTS.md}) {
     position: absolute;
-    padding: 0px 0px;
-    height: 6.25rem;
+    padding: 0 0;
     grid-template-columns: 1fr;
-    grid-template-rows: 6.25rem 1fr;
+    grid-template-rows: ${HEIGHTS.HEADER} 1fr;
     transition: all 0.3s ease-in;
 
     &.active {
       position: fixed;
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 6.25rem 1fr;
-      height: 21.875rem;
+      grid-template-rows: ${HEIGHTS.HEADER} 1fr;
+      height: ${HEIGHTS.MOBILE_MENU};
     }
   }
 `
 
-const HeaderInner = styled(Container)`
+const HeaderInner = styled(`div`)`
   align-items: center;
   display: flex;
   flex-direction: row;
   height: 100%;
   justify-content: flex-end;
-  max-width: 100em;
+  max-width: 100rem;
 
-  @media (max-width: 46.875rem) {
+  // MOBILE MENU (Breaks at tablet size)
+  @media (max-width: ${BREAKPOINTS.md}) {
     position: fixed;
     right: 0.9375rem;
     top: 0.625rem;
@@ -56,10 +61,10 @@ const HeaderInner = styled(Container)`
 `
 
 const HomepageLink = styled('a')`
-  color: ${colors.gray.light};
+  color: ${COLORS.gray.light};
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: ${DIMENSIONS.fontSize.regular};
+  font-weight: ${FONT_WIDTHS.SEMI_BOLD};
   align-self: center;
   justify-self: center;
 
@@ -76,14 +81,18 @@ const NavigationGroup = styled(`div`)`
 `
 
 const MobileNavGroup = styled(`div`)`
+  background-color: transparent;
   display: grid;
-  grid-template-rows: 1fr;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: 5% 5%;
+  position: fixed;
+  z-index: ${Z_INDEX.MOBILE_NAV_BUTTON};
 `
 
 const HeaderLogo = styled(`div`)`
   font-size: 3rem;
-  color: ${colors.gray.light};
+  color: ${COLORS.gray.light};
   cursor: pointer;
   align-self: center;
   padding-left: 6.25rem;
@@ -94,13 +103,14 @@ const HeaderLogo = styled(`div`)`
 `
 
 const HamburgerWrapper = styled(`div`)`
-  height: 5rem;
-  width: 5rem;
   background: rgba(15, 0, 53, 0.5);
-  pointer-events: auto;
   border-radius: 5rem;
-  z-index: 100;
   cursor: pointer;
+  height: 5rem;
+  pointer-events: auto;
+  position: relative;
+  width: 5rem;
+  z-index: ${Z_INDEX.HEADER};
 `
 
 const HamburgerBar = styled(`div`)`
@@ -112,7 +122,7 @@ const HamburgerBar = styled(`div`)`
   transform: translate3d(-50%, -50%, 0);
   height: 0.375rem;
   width: 66%;
-  background: #fff;
+  background: ${COLORS.white};
   border-radius: 0.125rem;
   -webkit-transition: background 0.28s linear 0.12s,
     -webkit-transform 0.28s cubic-bezier(0.77, 0, 0.175, 1);
@@ -133,7 +143,7 @@ const HamburgerBar = styled(`div`)`
     display: block;
     height: 0.3125rem;
     width: 100%;
-    background: #fff;
+    background: ${COLORS.white};
     border-radius: 0.125rem;
     -webkit-transform-origin: 5.5% center;
     -ms-transform-origin: 5.5% center;
@@ -153,7 +163,7 @@ const HamburgerBar = styled(`div`)`
     display: block;
     height: 0.3125rem;
     width: 100%;
-    background: #fff;
+    background: ${COLORS.white};
     border-radius: 0.125rem;
     -webkit-transform-origin: 5.5% center;
     -ms-transform-origin: 5.5% center;
@@ -203,7 +213,7 @@ const MobileDropdown = styled('div')`
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 3.125rem);
   background-color: #f8f8f8;
-  height: 0px;
+  height: 0;
   opacity: 0;
   transition: all 0.3s ease-in;
   pointer-events: none;
@@ -221,92 +231,14 @@ const MobileDropdown = styled('div')`
   }
 `
 
-const Header = () => {
-  const [isMenuShown, setIsMenuShown] = useState<boolean>(false)
-  const isMobile: boolean = useIsMobile()
-
-  const scrollToTop = () => window.scrollTo(0, 0)
-
-  const handleHamburgerMenu = () => setIsMenuShown(cur => !cur)
-
-  return (
-    <>
-      {!isMobile ? (
-        <StyledHeader className={isMenuShown ? 'active' : ''}>
-          <HeaderLogo
-            onClick={() => {
-              scrollToTop()
-              setIsMenuShown(false)
-            }}
-          >
-            nrs.
-          </HeaderLogo>
-          <HeaderInner>
-            {!isMobile ? (
-              <NavigationGroup>
-                <HomepageLink onClick={() => scrollToTop()}>Home</HomepageLink>
-                <HomepageLink href="#portfolio">Portfolio</HomepageLink>
-                <HomepageLink href="#about-me">About Me</HomepageLink>
-                <HomepageLink href="#skills">Skills</HomepageLink>
-                <HomepageLink href="#contact">Contact</HomepageLink>
-              </NavigationGroup>
-            ) : null
-            // <MobileNavGroup>
-            //   <HamburgerWrapper
-            //     onClick={() => this.handleHamburgerClick()}
-            //     className={menuIsShown ? 'active' : null}
-            //   >
-            //     <HamburgerBar
-            //       id={'bar1'}
-            //       className={menuIsShown ? 'active' : null}
-            //     />
-            //   </HamburgerWrapper>
-            // </MobileNavGroup>
-            }
-          </HeaderInner>
-        </StyledHeader>
-      ) : null}
-    </>
-  )
+export default {
+  HamburgerBar,
+  HamburgerWrapper,
+  Header,
+  HeaderInner,
+  HeaderLogo,
+  HomepageLink,
+  MobileDropdown,
+  MobileNavGroup,
+  NavigationGroup,
 }
-
-/**
-        {isMobile && (
-          <MobileDropdown className={menuIsShown ? 'active' : null}>
-            <HomepageLink
-              onClick={() => {
-                this.handleHamburgerClick()
-                this.scrollToTop()
-              }}
-            >
-              Home
-            </HomepageLink>
-            <HomepageLink
-              href="#portfolio"
-              onClick={() => this.handleHamburgerClick()}
-            >
-              Portfolio
-            </HomepageLink>
-            <HomepageLink
-              href="#about-me"
-              onClick={() => this.handleHamburgerClick()}
-            >
-              About Me
-            </HomepageLink>
-            <HomepageLink
-              href="#skills"
-              onClick={() => this.handleHamburgerClick()}
-            >
-              Skills
-            </HomepageLink>
-            <HomepageLink
-              href="#contact"
-              onClick={() => this.handleHamburgerClick()}
-            >
-              Contact
-            </HomepageLink>
-          </MobileDropdown>
-        )}
-        */
-
-export default Header
