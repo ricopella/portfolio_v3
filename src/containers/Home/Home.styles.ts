@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { COLORS } from '../../styles/variables'
+import { BREAKPOINTS, COLORS, Z_INDEX } from '../../styles/variables'
 import { motion } from 'framer-motion'
 
 const FullPage = styled.div`
@@ -23,13 +23,13 @@ const IntroTextContainer = styled(motion.div)`
   -webkit-justify-content: center;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
-  grid-template-columns: auto-fill;
-  grid-template-rows: 3.75rem 0.625rem 3.75rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3.75rem 0.625rem 3.75rem max-content;
   justify-content: center;
-  z-index: 2;
+  z-index: ${Z_INDEX.PAGE_CONTENT};
 
-  @media (max-width: 46.875rem) {
-    grid-template-rows: 2.25rem 3.75rem 0px;
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    grid-template-rows: 2.25rem 1.75rem 0;
   }
 `
 
@@ -39,9 +39,10 @@ const IntroText = styled.div`
   font-size: 4rem;
   justify-self: center;
   text-align: center;
-  width: calc(100vw + (1.5rem * 2));
+  margin: 0 1.5rem;
+  width: 100%;
 
-  @media (max-width: 46.875rem) {
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
     font-size: 2rem;
   }
 `
@@ -49,7 +50,7 @@ const IntroText = styled.div`
 const Description = styled(IntroText)`
   font-size: 3rem;
 
-  @media (max-width: 46.875rem) {
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
     word-wrap: break-word;
     font-size: 1rem;
     padding: 7% 0;
@@ -63,8 +64,12 @@ const Break = styled.div`
   justify-self: center;
   width: 37.5rem;
 
-  @media (max-width: 46.875rem) {
-    width: 80%;
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    width: 40%;
+  }
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    width: 60%;
   }
 `
 

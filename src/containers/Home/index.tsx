@@ -1,9 +1,10 @@
 import React from 'react'
-import TypeIt from 'typeit-react'
+import TypeIt from '../../components/TypeIt'
 import Hero from '../../components/Hero/index'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
 import { SLIDE_IN_ANIMATION_OPTIONS } from '../../styles/variables'
 import Styled from './Home.styles'
+import Arrow from '../../components/Arrow'
 
 const HomeContainer = () => {
   const { author } = useSiteMetaData()
@@ -15,44 +16,9 @@ const HomeContainer = () => {
         <Styled.IntroText>{author?.name.toUpperCase()}</Styled.IntroText>
         <Styled.Break />
         <Styled.Description>
-          <TypeIt
-            options={{ loop: true }}
-            getBeforeInit={instance => {
-              instance
-                .type('Full-Stack Developer')
-                .pause(900)
-                .delete()
-                .type('Front-End Developer')
-                .pause(900)
-                .delete()
-                .type('Freelance Developer')
-                .pause(900)
-                .delete()
-                .type('Scrum Master')
-                .pause(700)
-                .delete()
-                .type('Project Manager')
-                .pause(700)
-                .delete()
-                .type('DeeJay')
-                .pause(500)
-                .delete()
-                .type('Turntablist')
-                .pause(500)
-                .delete()
-                .type('Producer')
-                .pause(500)
-                .delete()
-                .type('Bulldog Owner')
-                .pause(500)
-                .delete()
-                .type('Boston Sports Fan')
-                .pause(500)
-                .delete()
-              return instance
-            }}
-          />
+          <TypeIt />
         </Styled.Description>
+        <Arrow />
       </Styled.IntroTextContainer>
     </Styled.FullPage>
   )
