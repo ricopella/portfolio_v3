@@ -218,6 +218,8 @@ const MobileDropdown = styled('div')`
   transition: all 0.3s ease-in;
   pointer-events: none;
   cursor: none;
+  position: fixed;
+  z-index: ${Z_INDEX.HEADER};
 
   & a {
     font-size: 1.5rem;
