@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import Helmet from 'react-helmet'
-import useSiteMetaData from '../hooks/useSiteMetaData'
-import { SEOProps } from '../types'
+import useSiteMetaData from '../../hooks/useSiteMetaData'
+import { SEOProps } from '../../types'
 
 const SEO: FC<SEOProps> = ({ title: defaultTitle }) => {
   const { titleTemplate, title, description, author, lang } = useSiteMetaData()
