@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { COLORS, HEIGHTS } from '../styles/variables'
+import { COLORS } from '../styles/variables'
 
 const Styled404 = styled.div`
   display: grid;
@@ -8,7 +8,7 @@ const Styled404 = styled.div`
   grid-row: 2;
   grid-template-columns: 1fr;
   grid-template-rows: max-content max-content;
-  height: calc(100vh - ${HEIGHTS.HEADER});
+  height: calc(100vh - 2rem);
   justify-items: center;
   width: 100vw;
 `
