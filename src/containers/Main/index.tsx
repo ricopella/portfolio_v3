@@ -10,7 +10,7 @@ import '../../styles/normalize'
 const MainContainer = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Home />
       <Gallery />
       <AboutMe />
