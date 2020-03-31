@@ -26,7 +26,7 @@ const Header = styled.header`
   z-index: ${Z_INDEX.HEADER};
 
   // MOBILE MENU (Breaks at tablet size)
-  @media (max-width: ${BREAKPOINTS.md}) {
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
     position: absolute;
     padding: 0 0;
     grid-template-columns: 1fr;
@@ -52,7 +52,7 @@ const HeaderInner = styled(`div`)`
   max-width: 100rem;
 
   // MOBILE MENU (Breaks at tablet size)
-  @media (max-width: ${BREAKPOINTS.md}) {
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
     position: fixed;
     right: 0.9375rem;
     top: 0.625rem;
