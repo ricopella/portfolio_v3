@@ -1,6 +1,6 @@
 import React from 'react'
 import TypeIt from 'typeit-react'
-import Hero from '../../components/Hero'
+import Hero from '../../components/Hero/index'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
 import { SLIDE_IN_ANIMATION_OPTIONS } from '../../styles/variables'
 import Styled from './Home.styles'

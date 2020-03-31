@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { colors } from '../../styles/variables'
+import { COLORS } from '../../styles/variables'
 import { motion } from 'framer-motion'
 
 const FullPage = styled.div`
@@ -35,7 +35,7 @@ const IntroTextContainer = styled(motion.div)`
 
 const IntroText = styled.div`
   align-self: center;
-  color: ${colors.header};
+  color: ${COLORS.header};
   font-size: 4rem;
   justify-self: center;
   text-align: center;
@@ -58,7 +58,7 @@ const Description = styled(IntroText)`
 
 const Break = styled.div`
   align-self: center;
-  background-color: ${colors.white};
+  background-color: ${COLORS.white};
   height: 4px;
   justify-self: center;
   width: 37.5rem;
