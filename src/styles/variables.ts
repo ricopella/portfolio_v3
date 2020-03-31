@@ -115,6 +115,6 @@ export const WIDTHS = {
 }
 export const Z_INDEX = {
   HEADER: 1030,
-  MOBILE_NAV_BUTTON: 100,
+  MOBILE_NAV_BUTTON: 1030 + 1,
   PAGE_CONTENT: 2,
 }
