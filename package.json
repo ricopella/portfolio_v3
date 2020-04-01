@@ -40,7 +40,7 @@
         "devMobile": "gatsby develop -H 0.0.0.0",
         "format": "prettier --write \"src/**/*.js\"",
         "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
-        "start": "npm run develop",
+        "start": "yarn develop",
         "test:coverage": "yarn test --coverage --runInBand",
         "test:update": "yarn test --updateSnapshot",
         "test:watch": "yarn test --watch",
