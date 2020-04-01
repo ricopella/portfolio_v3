@@ -42,8 +42,18 @@ export interface UseSiteMetaDataReturns {
   description?: string
   lang?: string
   meta?: []
+  portfolioItems: PortfolioItem[]
   title: string
   titleTemplate: string
+}
+
+export interface PortfolioItem {
+  alt: string
+  description: string
+  fileName: string
+  href: string
+  title: string
+  span?: string
 }
 
 export interface SEOProps {

@@ -14,6 +14,14 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
           }
           description
           lang
+          portfolioItems {
+            alt
+            description
+            fileName
+            href
+            title
+            span
+          }
           title
           titleTemplate
         }
