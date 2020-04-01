@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Arrow /> should match Arrow snapshot 1`] = `
+<div>
+  <div
+    className="css-1o9ii3w"
+  />
+  <div
+    className="css-1rmi5y1"
+  />
+</div>
+`;
