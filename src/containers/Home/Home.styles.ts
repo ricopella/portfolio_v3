@@ -35,7 +35,7 @@ const IntroTextContainer = styled(motion.div)`
 
 const IntroText = styled.div`
   align-self: center;
-  color: ${COLORS.header};
+  color: ${COLORS.white};
   font-size: 4rem;
   justify-self: center;
   text-align: center;
