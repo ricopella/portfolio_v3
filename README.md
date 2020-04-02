@@ -8,7 +8,7 @@ Live version can be viewed at [narinsun.com](narinsun.com)
 
 ## Tech Stack
 
-Built With: Gatsby JS, React, Emotion, and hosted with Netlify.
+Built With: [TypeScript](https://www.typescriptlang.org/), [GatsbyJS](https://www.gatsbyjs.org/), [React](https://reactjs.org/), [Emotion](https://emotion.sh/docs/introduction), [Framer-Motion](https://www.framer.com/motion/), hosted with [Netlify](https://www.netlify.com/), and tested with [Jest](https://jestjs.io/) & [Testing-Library/React](https://github.com/testing-library/react-testing-library).
 
 ## More Information
 
@@ -17,6 +17,6 @@ Built With: Gatsby JS, React, Emotion, and hosted with Netlify.
 
 ## History
 
-- Last Updated: 03/03/19
+- Last Updated: 04/01/20
 
 - Created: 02/17/19

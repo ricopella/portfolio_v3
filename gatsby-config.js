@@ -83,6 +83,32 @@ module.exports = {
                 title: 'A Cup of',
             },
         ],
+        terminalCommands: [{
+                answer: '"Los Angeles, CA"',
+                question: 'current_location',
+            },
+            {
+                answer: 'nrs710@gmail.com',
+                href: 'mailto:nrs710@gmail.com',
+                question: 'contact_information',
+            },
+            {
+                answer: '["Front-End Web Developer", "Freelancer", "Certified Scrum Master"]',
+                question: 'roles',
+            },
+            {
+                answer: '["Complex web-apps", "Data visualizations in the browser", "Small business websites", "Shopify customizations", "Mobile apps"]',
+                question: 'types_of_work',
+            },
+            {
+                answer: '["TypeScript", "React", "Highcharts", "PostCSS", "Jest/Enzyme"]',
+                question: 'most_recent_tech_stack',
+            },
+            {
+                answer: '["Turntablism", "Record Collecting", "Music Production", Olde English Bulldog owner", "Photography", "Boston Sports - Bruins, Red Sox, Patriots, Celtics", "Eating new places", "Coffee", "Tacos"]',
+                question: 'interests || hobbies',
+            },
+        ],
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
