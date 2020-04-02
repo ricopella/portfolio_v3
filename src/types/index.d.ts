@@ -42,6 +42,7 @@ export interface UseSiteMetaDataReturns {
   description?: string
   lang?: string
   meta?: []
+  headerItems: string[]
   portfolioItems: PortfolioItem[]
   title: string
   titleTemplate: string

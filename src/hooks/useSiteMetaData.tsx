@@ -14,6 +14,7 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
           }
           description
           lang
+          headerItems
           portfolioItems {
             alt
             description
