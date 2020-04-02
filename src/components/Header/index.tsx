@@ -1,100 +1,76 @@
-import React, { useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import useIsMobile from '../../hooks/useIsMobile'
 import Styled from './Header.styles'
+import useSiteMetaData from '../../hooks/useSiteMetaData'
+import setHref from '../../utils/setHref'
 
-const Header = () => {
+const Header: FC<{}> = () => {
   const [isMenuShown, setIsMenuShown] = useState<boolean>(false)
+  const [activeClassName, setActiveClassName] = useState<string>('')
+  const { headerItems, titleTemplate } = useSiteMetaData()
   const isMobile: boolean = useIsMobile()
-
   const scrollToTop = () => window.scrollTo(0, 0)
-
   const handleHamburgerMenu = () => setIsMenuShown(cur => !cur)
 
-  // TODO: Move Nav items to gatsby-config and map over them
+  useEffect(() => {
+    setActiveClassName(isMenuShown ? 'active' : '')
+  }, [isMenuShown])
 
-  return (
+  const renderDesktopHeader = () => (
+    <Styled.Header className={activeClassName}>
+      <Styled.HeaderLogo
+        onClick={() => {
+          scrollToTop()
+          setIsMenuShown(false)
+        }}
+        to={setHref(headerItems[0])}
+      >
+        {titleTemplate}
+      </Styled.HeaderLogo>
+      <Styled.HeaderInner>
+        {!isMobile ? (
+          <Styled.NavigationGroup>
+            {headerItems.map(item => (
+              <Styled.HomepageLink
+                key={`homepage_link_${item}`}
+                to={setHref(item)}
+              >
+                {item}
+              </Styled.HomepageLink>
+            ))}
+          </Styled.NavigationGroup>
+        ) : null}
+      </Styled.HeaderInner>
+    </Styled.Header>
+  )
+
+  const renderMobileNav = () => (
     <>
-      {!isMobile ? (
-        <Styled.Header className={isMenuShown ? 'active' : ''}>
-          <Styled.HeaderLogo
-            onClick={() => {
-              scrollToTop()
-              setIsMenuShown(false)
-            }}
-          >
-            nrs.
-          </Styled.HeaderLogo>
-          <Styled.HeaderInner>
-            {!isMobile ? (
-              <Styled.NavigationGroup>
-                <Styled.HomepageLink onClick={() => scrollToTop()} href="#home">
-                  Home
-                </Styled.HomepageLink>
-                <Styled.HomepageLink href="#portfolio">
-                  Portfolio
-                </Styled.HomepageLink>
-                <Styled.HomepageLink href="#about-me">
-                  About Me
-                </Styled.HomepageLink>
-                <Styled.HomepageLink href="#skills">Skills</Styled.HomepageLink>
-                <Styled.HomepageLink href="#contact">
-                  Contact
-                </Styled.HomepageLink>
-              </Styled.NavigationGroup>
-            ) : null}
-          </Styled.HeaderInner>
-        </Styled.Header>
-      ) : (
-        <Styled.MobileNavGroup>
-          <Styled.HamburgerWrapper
-            onClick={() => handleHamburgerMenu()}
-            className={isMenuShown ? 'active' : ''}
-          >
-            <Styled.HamburgerBar
-              id={'bar1'}
-              className={isMenuShown ? 'active' : ''}
-            />
-          </Styled.HamburgerWrapper>
-        </Styled.MobileNavGroup>
-      )}
-      {isMobile ? (
-        <Styled.MobileDropdown className={isMenuShown ? 'active' : ''}>
+      {/* Mobile Hamburger Icon */}
+      <Styled.MobileNavGroup>
+        <Styled.HamburgerWrapper
+          onClick={() => handleHamburgerMenu()}
+          className={activeClassName}
+        >
+          <Styled.HamburgerBar className={activeClassName} id={'bar1'} />
+        </Styled.HamburgerWrapper>
+      </Styled.MobileNavGroup>
+      {/* Mobile Dropdown */}
+      <Styled.MobileDropdown className={activeClassName}>
+        {headerItems.map(item => (
           <Styled.HomepageLink
-            onClick={() => {
-              handleHamburgerMenu()
-              scrollToTop()
-            }}
-          >
-            Home
-          </Styled.HomepageLink>
-          <Styled.HomepageLink
-            href="#portfolio"
+            key={`mobile_homepage_link_${item}`}
+            to={setHref(item)}
             onClick={() => handleHamburgerMenu()}
           >
-            Portfolio
+            {item}
           </Styled.HomepageLink>
-          <Styled.HomepageLink
-            href="#about-me"
-            onClick={() => handleHamburgerMenu()}
-          >
-            About Me
-          </Styled.HomepageLink>
-          <Styled.HomepageLink
-            href="#skills"
-            onClick={() => handleHamburgerMenu()}
-          >
-            Skills
-          </Styled.HomepageLink>
-          <Styled.HomepageLink
-            href="#contact"
-            onClick={() => handleHamburgerMenu()}
-          >
-            Contact
-          </Styled.HomepageLink>
-        </Styled.MobileDropdown>
-      ) : null}
+        ))}
+      </Styled.MobileDropdown>
     </>
   )
+
+  return <>{!isMobile ? renderDesktopHeader() : renderMobileNav()}</>
 }
 
 export default Header

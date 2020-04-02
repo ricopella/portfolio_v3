@@ -10,6 +10,7 @@ module.exports = {
             email: 'nrs710@gmail.com',
             handle: `@ricopella`,
         },
+        headerItems: [`home`, `portfolio`, `about me`, `skills`, `contact`],
         portfolioItems: [{
                 alt: 'Portfolio - FanAI Inc.',
                 description: 'Audience Monetization Platform. Built with TypeScript, React, Highcharts.',
