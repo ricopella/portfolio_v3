@@ -17,7 +17,7 @@ export const BREAKPOINTS = {
 
 export const COLORS = {
   brand: '#663399',
-  header: '#f8f8f8',
+  header: 'rgba(255,255,255, .5)',
   lilac: '#9d7cbf',
   accent: '#ffb238',
   success: '#37b635',
