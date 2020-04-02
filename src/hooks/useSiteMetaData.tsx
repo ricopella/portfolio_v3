@@ -23,6 +23,11 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
             title
             span
           }
+          terminalCommands {
+            answer
+            href
+            question
+          }
           title
           titleTemplate
         }

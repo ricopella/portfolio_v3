@@ -44,6 +44,7 @@ export interface UseSiteMetaDataReturns {
   meta?: []
   headerItems: string[]
   portfolioItems: PortfolioItem[]
+  terminalCommands: TerminalCommand[]
   title: string
   titleTemplate: string
 }
@@ -73,4 +74,10 @@ export interface DimensionsType {
     [lH: string]: number
   }
   containerPadding: string | number
+}
+
+export interface TerminalCommand {
+  answer: string
+  href?: string
+  question: string
 }
