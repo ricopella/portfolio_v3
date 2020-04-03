@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import setRandomArrayItem from '../../utils/setRandomArrayItem'
 
 const DATA_SAL = [`slide-up`, `slide-left`, `slide-right`]
-const DATA_SAL_DELAY = `300`
+const DATA_SAL_DELAY = `200`
 const DATA_SAL_EASING = `ease`
 
 /**
