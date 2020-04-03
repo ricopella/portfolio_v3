@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToggleSwitch /> should match ToggleSwitch snapshot 1`] = `
+<div
+  className="css-1bapo22"
+>
+  <button
+    className="active left css-ln562o"
+    onClick={[Function]}
+  >
+    foo
+  </button>
+  <button
+    className=" right css-ln562o"
+    onClick={[Function]}
+  >
+    bar
+  </button>
+</div>
+`;

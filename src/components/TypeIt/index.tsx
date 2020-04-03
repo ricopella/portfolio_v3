@@ -37,7 +37,6 @@ const TypeItDescription = () => (
         .pause(500)
       return instance
     }}
-    waitUntilVisible
   />
 )
 
