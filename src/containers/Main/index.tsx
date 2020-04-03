@@ -12,9 +12,9 @@ const MainContainer = () => {
     <>
       <Header />
       <Home />
-      <Gallery />
       <AboutMe />
       <Skills />
+      <Gallery />
       <Contact />
     </>
   )
