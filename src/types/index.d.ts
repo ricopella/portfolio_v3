@@ -1,5 +1,7 @@
 import { CSSProperties } from 'react'
 
+export type AboutMeViews = 'bio' | 'terminal'
+export type AboutMeViewsArr = ['bio', 'terminal']
 export interface ContainerProps {
   className?: string
   style?: CSSProperties
@@ -28,6 +30,12 @@ export interface TerminalCommandProps {
   answer?: string
   href?: string
   question?: string
+}
+
+export interface ToggleSwitchProps<T> {
+  currentView: T
+  setView: (view: T) => void
+  views: T[]
 }
 
 // GRAPHQL QUERIES
