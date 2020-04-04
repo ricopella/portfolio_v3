@@ -15,7 +15,7 @@ const DATA_SAL_EASING = `ease`
  */
 const ScrollReveal: FC<{}> = ({ children }) => (
   <div
-    data-sal={setRandomArrayItem<string>(DATA_SAL)}
+    data-sal={DATA_SAL[0]}
     data-sal-delay={DATA_SAL_DELAY}
     data-sal-easing={DATA_SAL_EASING}
   >
