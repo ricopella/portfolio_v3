@@ -59,10 +59,14 @@ const TerminalHeaderActionBalls = styled.div`
 `
 const BioContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(3, max-content);
   grid-column-gap: 1.25rem;
   margin: 0 10%;
+
+  @media (max-width: 1244px) {
+    grid-template-columns: 1fr;
+  }
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     margin: 0 10%;
@@ -97,6 +101,14 @@ const BioHeadingText = styled.div`
 const BioParagraph = styled('p')`
   color: ${COLORS.gray.light};
   grid-column: 1 / -1;
+
+  &.first {
+    grid-column: 2;
+
+    @media (max-width: 1244px) {
+      grid-column: 1 / -1;
+    }
+  }
 `
 
 const PageStyles = css`

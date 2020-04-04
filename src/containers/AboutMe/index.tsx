@@ -11,7 +11,6 @@ import { AboutMeViewsArr } from '../../types'
 const VIEWS: AboutMeViewsArr = ['bio', 'terminal']
 
 const AboutMeMain = () => {
-  const PAGE_TITLE = `about me`
   const { terminalCommands } = useSiteMetaData()
   const [currentView, setCurrentView] = useState<string>(VIEWS[0])
 
@@ -60,7 +59,7 @@ const AboutMeMain = () => {
           <h4>{`I'm grateful that you've visited my page.`}</h4>
         </Styled.BioHeadingText>
       </Styled.BioHeadingWrapper>
-      <Styled.BioParagraph>
+      <Styled.BioParagraph className="first">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
         lorem sit amet mi tincidunt venenatis eu vitae libero. Aliquam erat
         volutpat. Nam ut molestie urna, in placerat dolor. Aenean eget vulputate
