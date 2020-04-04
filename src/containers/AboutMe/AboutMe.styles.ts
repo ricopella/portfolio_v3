@@ -63,11 +63,11 @@ const BioContainer = styled.div`
   grid-template-rows: repeat(3, max-content);
   grid-column-gap: 1.25rem;
   margin: 0 10%;
-  justify-items: center;
-  max-width: calc(56.25rem - 10%);
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     margin: 0 10%;
+    justify-items: center;
+    max-width: calc(56.25rem - 10%);
   }
 `
 
