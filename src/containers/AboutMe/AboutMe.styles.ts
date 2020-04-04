@@ -1,6 +1,12 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { BORDERS, SHADOWS, COLORS, FONTS } from '../../styles/variables'
+import {
+  BREAKPOINTS,
+  BORDERS,
+  SHADOWS,
+  COLORS,
+  FONTS,
+} from '../../styles/variables'
 
 const TerminalContainer = styled.div`
   display: grid;
@@ -51,9 +57,61 @@ const TerminalHeaderActionBalls = styled.div`
   width: 0.9375rem;
   border-radius: 50%;
 `
+const BioContainer = styled.div`
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: repeat(3, max-content);
+  grid-column-gap: 1.25rem;
+  margin: 0 10%;
+
+  @media (max-width: 1244px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    margin: 0 10%;
+    justify-items: center;
+    max-width: calc(56.25rem - 10%);
+  }
+`
+
+const BioHeadingWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: max-content;
+  grid-column-gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+`
+
+const BioHeadingText = styled.div`
+  max-width: 15.625rem;
+  color: ${COLORS.gray.light};
+
+  & h2,
+  & h4 {
+    color: ${COLORS.gray.light};
+  }
+`
+const BioParagraph = styled('p')`
+  color: ${COLORS.gray.light};
+  grid-column: 1 / -1;
+
+  &.first {
+    grid-column: 2;
+
+    @media (max-width: 1244px) {
+      grid-column: 1 / -1;
+    }
+  }
+`
 
 const PageStyles = css`
-  height: 100vh;
   width: 100vw;
   background-color: ${COLORS.header};
   display: grid;
@@ -68,16 +126,20 @@ const PageHeading = css`
   fontsize: 3rem;
   text-align: center;
   text-decoration: underline;
-  color: ${COLORS.gray.dark};
+  color: ${COLORS.gray.calm};
 `
 
 export default {
-  TerminalContainer,
-  TerminalHeaderTitle,
-  TerminalHeader,
-  TerminalBody,
-  TerminalHeaderActionContainer,
-  TerminalHeaderActionBalls,
-  PageStyles,
+  BioContainer,
+  BioHeadingText,
+  BioHeadingWrapper,
+  BioParagraph,
   PageHeading,
+  PageStyles,
+  TerminalBody,
+  TerminalContainer,
+  TerminalHeader,
+  TerminalHeaderActionBalls,
+  TerminalHeaderActionContainer,
+  TerminalHeaderTitle,
 }

@@ -44,6 +44,8 @@ const IntroText = styled.div`
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     font-size: 2rem;
+    max-width: calc(100vw - 10%);
+    line-height: 2rem;
   }
 `
 

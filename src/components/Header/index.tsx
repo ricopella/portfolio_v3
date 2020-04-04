@@ -9,7 +9,6 @@ const Header: FC<{}> = () => {
   const [activeClassName, setActiveClassName] = useState<string>('')
   const { headerItems, titleTemplate } = useSiteMetaData()
   const isMobile: boolean = useIsMobile()
-  const scrollToTop = () => window.scrollTo(0, 0)
   const handleHamburgerMenu = () => setIsMenuShown(cur => !cur)
 
   useEffect(() => {
@@ -18,13 +17,7 @@ const Header: FC<{}> = () => {
 
   const renderDesktopHeader = () => (
     <Styled.Header className={activeClassName}>
-      <Styled.HeaderLogo
-        onClick={() => {
-          scrollToTop()
-          setIsMenuShown(false)
-        }}
-        to={setHref(headerItems[0])}
-      >
+      <Styled.HeaderLogo to={setHref(headerItems[0])} stripHash>
         {titleTemplate}
       </Styled.HeaderLogo>
       <Styled.HeaderInner>
@@ -34,6 +27,7 @@ const Header: FC<{}> = () => {
               <Styled.HomepageLink
                 key={`homepage_link_${item}`}
                 to={setHref(item)}
+                stripHash
               >
                 {item}
               </Styled.HomepageLink>
@@ -61,7 +55,6 @@ const Header: FC<{}> = () => {
           <Styled.HomepageLink
             key={`mobile_homepage_link_${item}`}
             to={setHref(item)}
-            onClick={() => handleHamburgerMenu()}
           >
             {item}
           </Styled.HomepageLink>
