@@ -109,6 +109,169 @@ module.exports = {
                 question: 'interests || hobbies',
             },
         ],
+        skills: [{
+                title: 'Languages',
+                skills: [{
+                        title: `TypeScript`,
+                        percent: 80,
+                    },
+                    {
+                        title: `JavaScript (ES6+)`,
+                        percent: 75,
+                    },
+                    {
+                        title: `Python`,
+                        percent: 30,
+                    },
+                    {
+                        title: 'PHP',
+                        percent: 20,
+                    },
+                ],
+            },
+            {
+                title: 'Front-End',
+                skills: [{
+                        title: `React`,
+                        percent: 80,
+                    },
+                    {
+                        title: `Redux`,
+                        percent: 80,
+                    },
+                    {
+                        title: `CSSNext`,
+                        percent: 75,
+                    },
+                    {
+                        title: `Styled-Components`,
+                        percent: 75,
+                    },
+                    {
+                        title: `Highcharts`,
+                        percent: 70,
+                    },
+                    {
+                        title: 'Framer-Motion',
+                        percent: 65,
+                    },
+                    {
+                        title: 'Sass',
+                        percent: 65,
+                    },
+                    {
+                        title: `Storybook`,
+                        percent: 65,
+                    },
+                    {
+                        title: `GatsbyJS`,
+                        percent: 65,
+                    },
+                    {
+                        title: `React-Native`,
+                        percent: 60,
+                    },
+
+                    {
+                        title: `D3.js`,
+                        percent: 50,
+                    },
+
+                    {
+                        title: `liquid`,
+                        percent: 50,
+                    },
+                ],
+            },
+            {
+                title: 'Back-End / Operations',
+                skills: [{
+                        title: 'Node.JS',
+                        percent: 60,
+                    },
+                    {
+                        title: 'Express.JS',
+                        percent: 60,
+                    },
+                    {
+                        title: `netlify`,
+                        percent: 60,
+                    },
+                    {
+                        title: `heroku`,
+                        percent: 60,
+                    },
+                    {
+                        title: `flask`,
+                        percent: 50,
+                    },
+                    {
+                        title: `django`,
+                        percent: 50,
+                    },
+                    {
+                        title: `socket.io`,
+                        percent: 50,
+                    },
+                    {
+                        title: `google cloud`,
+                        percent: 50,
+                    },
+                ],
+            },
+            {
+                title: 'Database',
+                skills: [{
+                        title: 'Firebase',
+                        percent: 80,
+                    },
+                    {
+                        title: `MySQL`,
+                        percent: 60,
+                    },
+                    {
+                        title: `SQLite`,
+                        percent: 60,
+                    },
+                    {
+                        title: `MongoDB`,
+                        percent: 60,
+                    },
+                ],
+            },
+            {
+                title: 'Testing',
+                skills: [{
+                        title: 'Jest',
+                        percent: 80,
+                    },
+                    {
+                        title: 'Enzyme',
+                        percent: 80,
+                    },
+                    {
+                        title: 'Testing-Library',
+                        percent: 80,
+                    },
+                    {
+                        title: 'Chai',
+                        percent: 70,
+                    },
+                    {
+                        title: 'Mocha',
+                        percent: 70,
+                    },
+                    {
+                        title: 'Cypress',
+                        percent: 50,
+                    },
+                    {
+                        title: 'Mabl',
+                        percent: 50,
+                    },
+                ],
+            },
+        ],
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -137,6 +300,6 @@ module.exports = {
         'gatsby-plugin-emotion',
         `gatsby-plugin-typescript`,
         `gatsby-plugin-scroll-reveal`,
-        'gatsby-plugin-anchor-links'
+        'gatsby-plugin-anchor-links',
     ],
 }
