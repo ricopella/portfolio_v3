@@ -84,8 +84,9 @@ export const HEIGHTS = {
 }
 
 export const SHADOWS = {
-  box: `0 50px 100px rgba(50, 50, 93, 0.05),
-    0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);`,
+  box: `0 3.125rem 6.25rem rgba(50, 50, 93, 0.05),
+    0 0.9375rem 2.1875rem rgba(50, 50, 93, 0.1), 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);`,
+  header: `rgba(0, 0, 0, 0.1) 0 0.125rem 0.25rem 0`,
 }
 
 export const SLIDE_IN_ANIMATION_OPTIONS = {
