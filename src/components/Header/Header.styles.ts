@@ -4,13 +4,16 @@ import {
   DIMENSIONS,
   HEIGHTS,
   FONT_WIDTHS,
+  SHADOWS,
   Z_INDEX,
 } from '../../styles/variables'
 import styled from '@emotion/styled'
 import { transparentize } from 'polished'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 const Header = styled.header`
   background-color: ${COLORS.header};
+  box-shadow: ${SHADOWS.header};
   color: ${transparentize(0.5, COLORS.white)};
   display: grid;
   grid-column: 1 / -1;
@@ -61,7 +64,7 @@ const HeaderInner = styled(`div`)`
   }
 `
 
-const HomepageLink = styled('a')`
+const HomepageLink = styled(AnchorLink)`
   color: ${COLORS.gray.light};
   cursor: pointer;
   font-size: ${DIMENSIONS.fontSize.regular};
@@ -92,7 +95,7 @@ const MobileNavGroup = styled(`div`)`
   z-index: ${Z_INDEX.MOBILE_NAV_BUTTON};
 `
 
-const HeaderLogo = styled('a')`
+const HeaderLogo = styled(AnchorLink)`
   font-size: 3rem;
   color: ${COLORS.gray.light};
   cursor: pointer;
