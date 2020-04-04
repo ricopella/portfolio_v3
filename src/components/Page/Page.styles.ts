@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 const StyledPage = styled.div`
   display: flex;
   padding: ${DIMENSIONS.containerPadding}rem;
-  height: 100vh;
+  height: 100%;
   align-items: center;
   justify-content: center;
 
