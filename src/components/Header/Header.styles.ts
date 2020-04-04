@@ -8,7 +8,6 @@ import {
 } from '../../styles/variables'
 import styled from '@emotion/styled'
 import { transparentize } from 'polished'
-import { Link } from 'gatsby'
 
 const Header = styled.header`
   background-color: ${COLORS.header};
@@ -24,6 +23,7 @@ const Header = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  max-width: 100vw;
   z-index: ${Z_INDEX.HEADER};
 
   // MOBILE MENU (Breaks at tablet size)
@@ -61,7 +61,7 @@ const HeaderInner = styled(`div`)`
   }
 `
 
-const HomepageLink = styled(Link)`
+const HomepageLink = styled('a')`
   color: ${COLORS.gray.light};
   cursor: pointer;
   font-size: ${DIMENSIONS.fontSize.regular};
@@ -92,7 +92,7 @@ const MobileNavGroup = styled(`div`)`
   z-index: ${Z_INDEX.MOBILE_NAV_BUTTON};
 `
 
-const HeaderLogo = styled(Link)`
+const HeaderLogo = styled('a')`
   font-size: 3rem;
   color: ${COLORS.gray.light};
   cursor: pointer;

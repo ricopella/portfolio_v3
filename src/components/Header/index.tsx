@@ -23,7 +23,7 @@ const Header: FC<{}> = () => {
           scrollToTop()
           setIsMenuShown(false)
         }}
-        to={setHref(headerItems[0])}
+        href={setHref(headerItems[0])}
       >
         {titleTemplate}
       </Styled.HeaderLogo>
@@ -33,7 +33,7 @@ const Header: FC<{}> = () => {
             {headerItems.map(item => (
               <Styled.HomepageLink
                 key={`homepage_link_${item}`}
-                to={setHref(item)}
+                href={setHref(item)}
               >
                 {item}
               </Styled.HomepageLink>
@@ -60,7 +60,7 @@ const Header: FC<{}> = () => {
         {headerItems.map(item => (
           <Styled.HomepageLink
             key={`mobile_homepage_link_${item}`}
-            to={setHref(item)}
+            href={setHref(item)}
             onClick={() => handleHamburgerMenu()}
           >
             {item}
