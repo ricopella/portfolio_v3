@@ -2,12 +2,12 @@
 
 exports[`<Page /> should match Page snapshot 1`] = `
 <div
-  data-sal="slide-left"
+  data-sal="slide-up"
   data-sal-delay="200"
   data-sal-easing="ease"
 >
   <div
-    className="foo css-1ivi42b"
+    className="foo css-xg3jbm"
     id="foo"
     style={
       Object {
