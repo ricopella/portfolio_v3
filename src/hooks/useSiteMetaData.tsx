@@ -23,6 +23,13 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
             title
             span
           }
+          skills {
+            title
+            skills {
+              title
+              percent
+            }
+          }
           terminalCommands {
             answer
             href
@@ -35,6 +42,7 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
     }
   `)
 
+  console.log(data.siteMetadata)
   return data?.siteMetadata || null
 }
 
