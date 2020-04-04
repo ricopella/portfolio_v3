@@ -137,11 +137,6 @@ module.exports = {
         'gatsby-plugin-emotion',
         `gatsby-plugin-typescript`,
         `gatsby-plugin-scroll-reveal`,
-        {
-            resolve: 'gatsby-plugin-anchor-links',
-            options: {
-                offset: -100,
-            },
-        },
+        'gatsby-plugin-anchor-links'
     ],
 }
