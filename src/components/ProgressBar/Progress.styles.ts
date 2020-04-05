@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { COLORS } from '../../styles/variables'
+import { BREAKPOINTS, COLORS } from '../../styles/variables'
 import { motion } from 'framer-motion'
 
 const ProgressRowContainer = styled.div`
@@ -8,11 +8,31 @@ const ProgressRowContainer = styled.div`
   grid-template-rows: max-content;
   align-items: center;
   grid-column-gap: 1.25rem;
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    grid-template-columns: 1fr max-content;
+    grid-template-rows: repeat(2, max-content);
+  }
 `
 
 const ProgressTitle = styled.div`
   color: ${COLORS.gray.calm};
   text-align: right;
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    text-align: left;
+    grid-row: 2;
+    grid-column: 1;
+  }
+`
+
+const ProgressPercent = styled.div`
+  color: ${COLORS.gray.calm};
+  text-align: left;
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    grid-row: 2;
+    grid-column: 2;
+  }
 `
 
 const ProgressBarContainer = styled.div`
@@ -20,11 +40,17 @@ const ProgressBarContainer = styled.div`
   height: 1.25rem;
   width: 21.875rem;
   border-radius: 3.125rem;
-  border: 0.1875rem solid ${COLORS.gray.calm};
+  border: 0.1875rem solid ${COLORS.palette.pastelGray};
+  grid-row: 1;
+  grid-column: 1 / -1;
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    width: 100%;
+  }
 `
 
 const ProgressBarFiller = styled(motion.div)`
-  background-color: ${COLORS.terminalBackground};
+  background-color: ${COLORS.palette.mediumSlateBlue};
   height: 100%;
   border-radius: inherit;
   transition: width 0.2s ease-in;
@@ -35,4 +61,5 @@ export default {
   ProgressBarContainer,
   ProgressBarFiller,
   ProgressTitle,
+  ProgressPercent,
 }
