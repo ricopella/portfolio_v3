@@ -38,6 +38,17 @@ export interface ToggleSwitchProps<T> {
   views: T[]
 }
 
+export interface ProgressBarProps {
+  percent: number
+  title: string
+}
+
+export interface ToggleTabsProps {
+  items: string[]
+  selectedItem: string
+  setSelectedItem: (item: string) => void
+}
+
 // GRAPHQL QUERIES
 
 export interface UseSiteMetaDataReturns {
@@ -53,8 +64,14 @@ export interface UseSiteMetaDataReturns {
   headerItems: string[]
   portfolioItems: PortfolioItem[]
   terminalCommands: TerminalCommand[]
+  skills: Skills[]
   title: string
   titleTemplate: string
+}
+
+export interface Skills {
+  title: string
+  skills: { title: string; percent: number }[]
 }
 
 export interface PortfolioItem {
