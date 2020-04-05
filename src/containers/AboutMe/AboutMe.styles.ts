@@ -69,9 +69,9 @@ const BioContainer = styled.div`
   }
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
-    margin: 0 10%;
     justify-items: center;
     max-width: calc(56.25rem - 10%);
+    margin: 0 0;
   }
 `
 
