@@ -44,6 +44,13 @@ export const COLORS = {
   terminalActionExpand: '#2dbb41',
   backgroundColor: '#f6f9fc',
   teal: '#35feff',
+  palette: {
+    eerieBlack: `#211A1D`,
+    hanPurple: `#6320EE`,
+    mediumSlateBlue: `#8075FF`,
+    magnolia: `#F8F0FB`,
+    pastelGray: `#CAD5CA`,
+  },
 }
 
 export const DIMENSIONS: DimensionsType = {
