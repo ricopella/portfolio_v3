@@ -20,11 +20,11 @@ const ProgressBarContainer = styled.div`
   height: 1.25rem;
   width: 21.875rem;
   border-radius: 3.125rem;
-  border: 0.1875rem solid ${COLORS.gray.calm};
+  border: 0.1875rem solid ${COLORS.palette.pastelGray};
 `
 
 const ProgressBarFiller = styled(motion.div)`
-  background-color: ${COLORS.terminalBackground};
+  background-color: ${COLORS.palette.mediumSlateBlue};
   height: 100%;
   border-radius: inherit;
   transition: width 0.2s ease-in;
