@@ -194,27 +194,27 @@ module.exports = {
                         percent: 60,
                     },
                     {
-                        title: `netlify`,
+                        title: `Netlify`,
                         percent: 60,
                     },
                     {
-                        title: `heroku`,
+                        title: `Heroku`,
                         percent: 60,
                     },
                     {
-                        title: `flask`,
+                        title: `Flask`,
                         percent: 50,
                     },
                     {
-                        title: `django`,
+                        title: `Django`,
                         percent: 50,
                     },
                     {
-                        title: `socket.io`,
+                        title: `Socket.io`,
                         percent: 50,
                     },
                     {
-                        title: `google cloud`,
+                        title: `Google Cloud`,
                         percent: 50,
                     },
                 ],
