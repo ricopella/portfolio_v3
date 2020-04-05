@@ -43,6 +43,12 @@ export interface ProgressBarProps {
   title: string
 }
 
+export interface ToggleTabsProps {
+  items: string[]
+  selectedItem: string
+  setSelectedItem: (item: string) => void
+}
+
 // GRAPHQL QUERIES
 
 export interface UseSiteMetaDataReturns {
