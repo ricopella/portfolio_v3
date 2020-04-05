@@ -42,7 +42,6 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
     }
   `)
 
-  console.log(data.siteMetadata)
   return data?.siteMetadata || null
 }
 
