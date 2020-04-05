@@ -1,30 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Page from '../../components/Page/index'
-import Container from '../../components/Container/index'
 import ProgressBar from '../../components/ProgressBar'
 import Styled from './Skills.styles'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
+import ToggleTabs from '../../components/ToggleTabs'
 
 const SkillsContainer = () => {
   const { skills: categories } = useSiteMetaData()
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    categories?.[0]?.title
+  )
+
+  const setCurrentSkills = () => {
+    return (
+      categories.find(category => category.title === selectedCategory)
+        ?.skills || []
+    )
+  }
+  const [shownSkills, setShownSkills] = useState(setCurrentSkills())
+
+  useEffect(() => {
+    setShownSkills(setCurrentSkills)
+  }, [selectedCategory])
+
   return (
     <Page id="skills" css={Styled.PageHeading}>
       <Styled.SkillsWrapper>
-        <Container>
-          <h1 css={Styled.PageTitle}>{`technical skills`.toUpperCase()}</h1>
-          {categories.map(category => (
-            <div key={`skill_category_${category.title}`}>
-              <div>{category.title}</div>
-              {category.skills.map(skill => (
-                <ProgressBar
-                  key={`skill_${category.title}_${skill.title}`}
-                  title={skill.title}
-                  percent={skill.percent}
-                />
-              ))}
-            </div>
+        <h1 css={Styled.PageTitle}>{`technical skills`.toUpperCase()}</h1>
+        <ToggleTabs
+          items={categories.map(category => category.title)}
+          selectedItem={selectedCategory}
+          setSelectedItem={setSelectedCategory}
+        />
+        <Styled.SelectedSkillsWrapper>
+          {shownSkills.map(skill => (
+            <ProgressBar
+              key={`skill_${selectedCategory}_${skill.title}`}
+              title={skill.title}
+              percent={skill.percent}
+            />
           ))}
-        </Container>
+        </Styled.SelectedSkillsWrapper>
       </Styled.SkillsWrapper>
     </Page>
   )
