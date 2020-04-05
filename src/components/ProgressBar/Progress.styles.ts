@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { COLORS } from '../../styles/variables'
+import { motion } from 'framer-motion'
 
 const ProgressRowContainer = styled.div`
   display: grid;
@@ -22,7 +23,7 @@ const ProgressBarContainer = styled.div`
   border: 0.1875rem solid ${COLORS.gray.calm};
 `
 
-const ProgressBarFiller = styled.div`
+const ProgressBarFiller = styled(motion.div)`
   background-color: ${COLORS.terminalBackground};
   height: 100%;
   border-radius: inherit;
