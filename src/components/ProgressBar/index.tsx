@@ -34,7 +34,7 @@ const ProgressBar: FC<ProgressBarProps> = ({ title, percent }) => {
             }}
           />
         </Styled.ProgressBarContainer>
-        <Styled.ProgressTitle>{percent}%</Styled.ProgressTitle>
+        <Styled.ProgressPercent>{percent}%</Styled.ProgressPercent>
       </Styled.ProgressRowContainer>
     </AnimatePresence>
   )
