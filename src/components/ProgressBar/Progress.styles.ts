@@ -18,6 +18,8 @@ const ProgressRowContainer = styled.div`
 const ProgressTitle = styled.div`
   color: ${COLORS.gray.calm};
   text-align: right;
+  grid-row: 1;
+  grid-column: 1;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     text-align: left;
@@ -29,6 +31,9 @@ const ProgressTitle = styled.div`
 const ProgressPercent = styled.div`
   color: ${COLORS.gray.calm};
   text-align: left;
+  grid-row: 1;
+  grid-column: 3;
+
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     grid-row: 2;
     grid-column: 2;
@@ -42,10 +47,12 @@ const ProgressBarContainer = styled.div`
   border-radius: 3.125rem;
   border: 0.1875rem solid ${COLORS.palette.pastelGray};
   grid-row: 1;
-  grid-column: 1 / -1;
+  grid-column: 2;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     width: 100%;
+    grid-row: 1;
+    grid-column: 1 / -1;
   }
 `
 
