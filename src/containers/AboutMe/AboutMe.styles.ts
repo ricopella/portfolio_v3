@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import { motion } from 'framer-motion'
 import {
   BREAKPOINTS,
   BORDERS,
@@ -8,7 +9,7 @@ import {
   FONTS,
 } from '../../styles/variables'
 
-const TerminalContainer = styled.div`
+const TerminalContainer = styled(motion.div)`
   display: grid;
   grid-template-rows: 1.875rem max-content;
   grid-template-columns: 1fr;
@@ -57,7 +58,7 @@ const TerminalHeaderActionBalls = styled.div`
   width: 0.9375rem;
   border-radius: 50%;
 `
-const BioContainer = styled.div`
+const BioContainer = styled(motion.div)`
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(3, max-content);

@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
 import Page from '../../components/Page/index'
-import TerminalCommand from '../../components/TerminalCommand/index'
-import Styled from './AboutMe.styles'
-import { COLORS } from '../../styles/variables'
-import useSiteMetaData from '../../hooks/useSiteMetaData'
 import ProfileImage from '../../components/ProfileImage'
+import React, { useState } from 'react'
+import Styled from './AboutMe.styles'
+import TerminalCommand from '../../components/TerminalCommand/index'
 import ToggleSwitch from '../../components/ToggleSwitch'
+import useSiteMetaData from '../../hooks/useSiteMetaData'
 import { AboutMeViewsArr } from '../../types'
+import { COLORS } from '../../styles/variables'
+import { SLIDE_IN_ANIMATION_OPTIONS } from '../../styles/variables'
 
 const VIEWS: AboutMeViewsArr = ['bio', 'terminal']
 
@@ -34,7 +35,7 @@ const AboutMeMain = () => {
   )
 
   const renderTerminal = () => (
-    <Styled.TerminalContainer>
+    <Styled.TerminalContainer {...SLIDE_IN_ANIMATION_OPTIONS}>
       {renderTerminalHeader()}
       <Styled.TerminalBody>
         {terminalCommands.map(command => (
@@ -51,7 +52,7 @@ const AboutMeMain = () => {
   )
 
   const renderInfo = () => (
-    <Styled.BioContainer>
+    <Styled.BioContainer {...SLIDE_IN_ANIMATION_OPTIONS}>
       <Styled.BioHeadingWrapper>
         <ProfileImage />
         <Styled.BioHeadingText>
