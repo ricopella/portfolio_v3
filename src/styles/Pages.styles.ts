@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { COLORS } from '../styles/variables'
+import { COLORS } from './variables'
 
 const Styled404 = styled.div`
   display: grid;
