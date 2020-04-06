@@ -5,6 +5,7 @@ const Arrow = () => (
   <div>
     <Styled.ArrowFirst />
     <Styled.ArrowSecond />
+    <Styled.ArrowMask to="/#about-me" />
   </div>
 )
 
