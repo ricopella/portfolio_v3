@@ -31,8 +31,7 @@
         "react-dom": "^16.13.1",
         "react-helmet": "^5.2.0",
         "react-scrollable-anchor": "^0.6.1",
-        "tslint": "^6.1.1",
-        "typeit-react": "^0.1.0"
+        "tslint": "^6.1.1"
     },
     "keywords": [
         "gatsby",
