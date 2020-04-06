@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react'
 import Page from '../../components/Page/index'
 import ProgressBar from '../../components/ProgressBar'
+import React, { useEffect } from 'react'
 import Styled from './Skills.styles'
-import useSiteMetaData from '../../hooks/useSiteMetaData'
 import ToggleTabs from '../../components/ToggleTabs'
-import useIsMobile from '../../hooks/useIsMobile'
 import useCategorySubSkills from '../../hooks/useCategorySubSkills'
+import useIsMobile from '../../hooks/useIsMobile'
+import useSiteMetaData from '../../hooks/useSiteMetaData'
+import { motion } from 'framer-motion'
+import { SLIDE_IN_ANIMATION_OPTIONS } from '../../styles/variables'
+
+const HEADING_TITLE = `Technical Skills`
 
 const SkillsContainer = () => {
   const isMobile = useIsMobile()
@@ -35,7 +39,7 @@ const SkillsContainer = () => {
   return (
     <Page id="skills" css={Styled.PageHeading}>
       <Styled.SkillsWrapper>
-        <h1 css={Styled.PageTitle}>{`technical skills`.toUpperCase()}</h1>
+        <h1 css={Styled.PageTitle}>{HEADING_TITLE}</h1>
         <ToggleTabs
           items={categories.map(category => category.title)}
           selectedItem={selectedCategory}
@@ -43,11 +47,12 @@ const SkillsContainer = () => {
         >
           <Styled.SelectedSkillsWrapper>
             {selectedCategorySubSkills.map(skill => (
-              <ProgressBar
+              <motion.div
+                {...SLIDE_IN_ANIMATION_OPTIONS}
                 key={`skill_${selectedCategory}_${skill.title}`}
-                title={skill.title}
-                percent={skill.percent}
-              />
+              >
+                <ProgressBar title={skill.title} percent={skill.percent} />
+              </motion.div>
             ))}
           </Styled.SelectedSkillsWrapper>
         </ToggleTabs>
