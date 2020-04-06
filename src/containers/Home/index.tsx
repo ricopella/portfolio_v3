@@ -1,10 +1,10 @@
-import React from 'react'
-import TypeIt from '../../components/TypeIt'
+import Arrow from '../../components/Arrow'
 import Hero from '../../components/Hero/index'
+import React from 'react'
+import Styled from './Home.styles'
+import TypeIt from '../../components/TypeIt'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
 import { SLIDE_IN_ANIMATION_OPTIONS } from '../../styles/variables'
-import Styled from './Home.styles'
-import Arrow from '../../components/Arrow'
 
 const HomeContainer = () => {
   const { author } = useSiteMetaData()

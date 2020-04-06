@@ -1,6 +1,6 @@
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-import { BREAKPOINTS, COLORS } from '../../styles/variables'
+import { COLORS } from '../../styles/variables'
 
 const ProfileImageOuterBorder = styled('div')`
   display: grid;
@@ -12,7 +12,8 @@ const ProfileImageOuterBorder = styled('div')`
   justify-items: center;
   width: 13.125rem;
 
-  @media (max-width: ${BREAKPOINTS.mdRem}) {
+  // custom width that fixes a responsive bug for iPad
+  @media (max-width: 47.9375rem) {
     height: 10rem;
     width: 10rem;
   }

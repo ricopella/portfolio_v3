@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { keyframes } from '@emotion/core'
 
 // Originally from: https://codepen.io/TommiTikall/pen/xZwpGR
@@ -54,8 +55,21 @@ const ArrowSecond = styled(Arrow)`
   animation: ${AnimateArrow} 2s 1s ease-in-out infinite;
 `
 
+const ArrowMask = styled(AnchorLink)`
+  position: absolute;
+  left: 48%;
+  top: 69%;
+  width: 5rem;
+  height: 5rem;
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  z-index: 5;
+`
+
 export default {
   Arrow,
   ArrowFirst,
+  ArrowMask,
   ArrowSecond,
 }

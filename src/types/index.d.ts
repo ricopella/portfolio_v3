@@ -69,9 +69,14 @@ export interface UseSiteMetaDataReturns {
   titleTemplate: string
 }
 
+export interface SubSkills {
+  title: string
+  percent: number
+}
+
 export interface Skills {
   title: string
-  skills: { title: string; percent: number }[]
+  skills: SubSkills[]
 }
 
 export interface PortfolioItem {

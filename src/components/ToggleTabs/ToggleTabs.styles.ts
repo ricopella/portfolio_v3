@@ -6,7 +6,7 @@ const ToggleSection = styled(motion.div)`
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(2, max-content);
-  grid-column-gap: 1rem;
+  grid-column-gap: 8%;
 `
 
 const MobileAccordionContainer = styled.div`
@@ -28,6 +28,7 @@ const MobileAccordionButton = styled.div`
   align-content: center;
   background-color: transparent;
   border-left: 0.0625rem solid ${COLORS.terminalBackground};
+  color: ${COLORS.terminalBackground};
   border: none;
   font-size: 1rem;
   grid-template-columns: 1fr max-content;
@@ -36,6 +37,10 @@ const MobileAccordionButton = styled.div`
   letter-spacing: 0.1rem;
   padding: 0 10%;
   width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &.active {
     background-color: ${COLORS.terminalBackground};
@@ -60,7 +65,7 @@ const MobileAccordionArrow = styled.div`
 `
 
 const ToggleTabsContainer = styled.div`
-  border-left: 0.1875rem solid ${COLORS.terminalBackground};
+  border-left: 0.0625rem solid ${COLORS.terminalBackground};
   height: 100%;
   width: 100%;
 `
