@@ -178,7 +178,7 @@ module.exports = {
                     },
 
                     {
-                        title: `liquid`,
+                        title: `Liquid`,
                         percent: 50,
                     },
                 ],
