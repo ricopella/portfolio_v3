@@ -1891,7 +1891,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.19", "@types/react@^16.9.32":
+"@types/react@*", "@types/react@^16.9.32":
   version "16.9.32"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.32.tgz#f6368625b224604148d1ddf5920e4fefbd98d383"
   integrity sha512-fmejdp0CTH00mOJmxUPPbWCEBWPvRIL4m8r0qD+BSDUqmutPyGQCHifzMpMzdvZwROdEdL78IuZItntFWgPXHQ==
@@ -13616,19 +13616,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typeit-react@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/typeit-react/-/typeit-react-0.1.0.tgz#56506578beb9a89c17bdb7a7feeac88acddc7dae"
-  integrity sha512-UGR2pGaLxuTGpsvhgARn7PyWelG4lE0dkk/97QuEE/VuNUkjN4YrLNf0l8rqx0jzuCuuIXU5olZjB70VNF1eiQ==
-  dependencies:
-    "@types/react" "^16.9.19"
-    typeit "^7.0.0"
-
-typeit@^7.0.0:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/typeit/-/typeit-7.0.1.tgz#4a7ef62d0ad780b10031f08efde679293f08ddcb"
-  integrity sha512-vt929R+RS/C+P0HiEGWWSUNSlnJ1XBPMbVLPgMHgZQt9jxraR+cQQRQKWjF3zD7vRQep/h1crnB01UXyjBYZjg==
 
 typescript@^3.8.3:
   version "3.8.3"

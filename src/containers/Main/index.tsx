@@ -1,10 +1,10 @@
-import React from 'react'
-import Home from '../Home/index'
-import Gallery from '../Gallery/index'
 import AboutMe from '../AboutMe/index'
-import Skills from '../Skills/index'
 import Contact from '../Contact/index'
+import Gallery from '../Gallery/index'
 import Header from '../../components/Header/index'
+import Home from '../Home/index'
+import React from 'react'
+import Skills from '../Skills/index'
 import '../../styles/normalize'
 
 const MainContainer = () => {
