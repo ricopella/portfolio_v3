@@ -63,7 +63,6 @@ const BioContainer = styled(motion.div)`
   grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(3, max-content);
   grid-column-gap: 1.25rem;
-  margin: 0 10%;
 
   @media (max-width: 1244px) {
     grid-template-columns: 1fr;
@@ -113,7 +112,6 @@ const BioParagraph = styled('p')`
 `
 
 const PageStyles = css`
-  width: 100vw;
   background-color: ${COLORS.header};
   display: grid;
   grid-template-columns: 1fr;
