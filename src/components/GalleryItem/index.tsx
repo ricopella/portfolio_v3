@@ -1,7 +1,7 @@
-import React, { FC } from 'react'
 import Image from '../GalleryImage/index'
-import { GalleryProps } from '../../types'
+import React, { FC } from 'react'
 import Styled from './Gallery.styles'
+import { GalleryProps } from '../../types'
 
 const GalleryItem: FC<GalleryProps> = ({
   alt,

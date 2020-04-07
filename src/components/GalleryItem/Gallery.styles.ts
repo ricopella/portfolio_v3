@@ -1,22 +1,6 @@
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
 import { COLORS, SHADOWS } from '../../styles/variables'
-
-const LayoutContainer = styled.main`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 1.875rem;
-  grid-row-gap: 1.875rem;
-
-  @media (max-width: 77.5rem) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 51.25rem) {
-    grid-template-columns: 1fr;
-  }
-`
+import { css } from '@emotion/core'
 
 const GalleryImage = css`
   height: 100%;
@@ -158,7 +142,6 @@ const EffectPortfolio = css`
 `
 
 export default {
-  LayoutContainer,
   GalleryImage,
   LinkContainer,
   EffectPortfolio,
