@@ -49,6 +49,10 @@ export interface ToggleTabsProps {
   setSelectedItem: (item: string) => void
 }
 
+export interface PageHeadingProps {
+  title: string
+}
+
 // GRAPHQL QUERIES
 
 export interface UseSiteMetaDataReturns {

@@ -1,4 +1,5 @@
 import Page from '../../components/Page/index'
+import PageHeading from '../../components/PageHeading'
 import ProgressBar from '../../components/ProgressBar'
 import React, { useEffect } from 'react'
 import Styled from './Skills.styles'
@@ -39,7 +40,7 @@ const SkillsContainer = () => {
   return (
     <Page id="skills" css={Styled.PageHeading}>
       <Styled.SkillsWrapper>
-        <h1 css={Styled.PageTitle}>{HEADING_TITLE}</h1>
+        <PageHeading title={HEADING_TITLE} />
         <ToggleTabs
           items={categories.map(category => category.title)}
           selectedItem={selectedCategory}
