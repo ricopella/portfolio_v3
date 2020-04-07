@@ -4,7 +4,7 @@ import ProgressBar from '../../components/ProgressBar'
 import React, { useEffect } from 'react'
 import Styled from './Skills.styles'
 import ToggleTabs from '../../components/ToggleTabs'
-import useCategorySubSkills from '../../hooks/useCategorySubSkills'
+import useCategoryItems from '../../hooks/useCategoryItems'
 import useIsMobile from '../../hooks/useIsMobile'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
 import { motion } from 'framer-motion'
@@ -19,7 +19,7 @@ const SkillsContainer = () => {
     selectedCategorySubSkills,
     selectedCategory,
     setSelectedCategory,
-  ] = useCategorySubSkills(categories)
+  ] = useCategoryItems(categories)
 
   useEffect(() => {
     if (isMobile) {
