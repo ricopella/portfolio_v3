@@ -1,8 +1,8 @@
 import AboutMe from '../AboutMe'
 import Contact from '../Contact'
-import Experience from '../Experience'
 import Header from '../../components/Header'
 import Home from '../Home'
+import Portfolio from '../Portfolio'
 import React from 'react'
 import Skills from '../Skills'
 import '../../styles/normalize'
@@ -14,7 +14,7 @@ const MainContainer = () => {
       <Home />
       <AboutMe />
       <Skills />
-      <Experience />
+      <Portfolio />
       <Contact />
     </>
   )
