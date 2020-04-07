@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+import { string } from 'prop-types'
 
 export type AboutMeViews = 'bio' | 'terminal'
 export type AboutMeViewsArr = ['bio', 'terminal']
@@ -49,6 +50,10 @@ export interface ToggleTabsProps {
   setSelectedItem: (item: string) => void
 }
 
+export interface PageHeadingProps {
+  title: string
+}
+
 // GRAPHQL QUERIES
 
 export interface UseSiteMetaDataReturns {
@@ -62,7 +67,7 @@ export interface UseSiteMetaDataReturns {
   lang?: string
   meta?: []
   headerItems: string[]
-  portfolioItems: PortfolioItem[]
+  portfolioItems: Portfolio[]
   terminalCommands: TerminalCommand[]
   skills: Skills[]
   title: string
@@ -76,7 +81,12 @@ export interface SubSkills {
 
 export interface Skills {
   title: string
-  skills: SubSkills[]
+  items: SubSkills[]
+}
+
+export interface Portfolio {
+  title: string
+  items: PortfolioItem[]
 }
 
 export interface PortfolioItem {
@@ -110,4 +120,13 @@ export interface TerminalCommand {
   answer: string
   href?: string
   question: string
+}
+
+export interface UsePortfolioItems {
+  selectedToggleItem: string
+  selectedView: string
+  setSelectedToggleItem: (item: string) => void
+  setSelectedView: (item: string) => void
+  shownItem: PortfolioItem | null
+  views: string[]
 }

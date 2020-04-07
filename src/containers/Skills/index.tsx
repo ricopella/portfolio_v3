@@ -1,9 +1,10 @@
 import Page from '../../components/Page/index'
+import PageHeading from '../../components/PageHeading'
 import ProgressBar from '../../components/ProgressBar'
 import React, { useEffect } from 'react'
 import Styled from './Skills.styles'
 import ToggleTabs from '../../components/ToggleTabs'
-import useCategorySubSkills from '../../hooks/useCategorySubSkills'
+import useCategoryItems from '../../hooks/useCategoryItems'
 import useIsMobile from '../../hooks/useIsMobile'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
 import { motion } from 'framer-motion'
@@ -18,7 +19,7 @@ const SkillsContainer = () => {
     selectedCategorySubSkills,
     selectedCategory,
     setSelectedCategory,
-  ] = useCategorySubSkills(categories)
+  ] = useCategoryItems(categories)
 
   useEffect(() => {
     if (isMobile) {
@@ -39,7 +40,7 @@ const SkillsContainer = () => {
   return (
     <Page id="skills" css={Styled.PageHeading}>
       <Styled.SkillsWrapper>
-        <h1 css={Styled.PageTitle}>{HEADING_TITLE}</h1>
+        <PageHeading title={HEADING_TITLE} />
         <ToggleTabs
           items={categories.map(category => category.title)}
           selectedItem={selectedCategory}

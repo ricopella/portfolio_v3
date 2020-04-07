@@ -1,10 +1,10 @@
-import AboutMe from '../AboutMe/index'
-import Contact from '../Contact/index'
-import Gallery from '../Gallery/index'
-import Header from '../../components/Header/index'
-import Home from '../Home/index'
+import AboutMe from '../AboutMe'
+import Contact from '../Contact'
+import Header from '../../components/Header'
+import Home from '../Home'
+import Portfolio from '../Portfolio'
 import React from 'react'
-import Skills from '../Skills/index'
+import Skills from '../Skills'
 import '../../styles/normalize'
 
 const MainContainer = () => {
@@ -14,7 +14,7 @@ const MainContainer = () => {
       <Home />
       <AboutMe />
       <Skills />
-      <Gallery />
+      <Portfolio />
       <Contact />
     </>
   )

@@ -16,16 +16,19 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
           lang
           headerItems
           portfolioItems {
-            alt
-            description
-            fileName
-            href
             title
-            span
+            items {
+              alt
+              description
+              fileName
+              href
+              title
+              span
+            }
           }
           skills {
             title
-            skills {
+            items {
               title
               percent
             }
