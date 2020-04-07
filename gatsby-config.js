@@ -12,75 +12,83 @@ module.exports = {
         },
         headerItems: [`home`, `about me`, `skills`, `portfolio`, `contact`],
         portfolioItems: [{
-                alt: 'Portfolio - FanAI Inc.',
-                description: 'Audience Monetization Platform. Built with TypeScript, React, Highcharts.',
-                fileName: 'fanai.png',
-                href: 'https://fanai.io',
-                title: 'FanAI',
+                title: 'Experience',
+                items: [{
+                        alt: 'Portfolio - FanAI Inc.',
+                        description: 'Audience Monetization Platform. Built with TypeScript, React, Highcharts.',
+                        fileName: 'fanai.png',
+                        href: 'https://fanai.io',
+                        title: 'FanAI',
+                    },
+                    {
+                        alt: `Portfolio - Matt Denny's Ale House Restaurant`,
+                        description: `Portfolio - Matt Denny's Ale House Restaurant`,
+                        fileName: 'md.png',
+                        href: 'https://mattdennys.com',
+                        span: `Denny's`,
+                        title: 'Matt',
+                    },
+                    {
+                        alt: 'Portfolio - Base Roots Shop',
+                        description: 'A customized Shopify store for an e-commerce client.',
+                        fileName: 'br.png',
+                        href: 'https://baserootsshop.com',
+                        span: `Roots`,
+                        title: 'Base',
+                    },
+                    {
+                        alt: 'Portfolio - Metta Healing Arts and Wellness',
+                        description: 'A client site built with Squarespace.',
+                        fileName: 'meta.png',
+                        href: 'https://mettavt.com/',
+                        span: `Healing Arts and Wellness`,
+                        title: 'Metta',
+                    },
+                ],
             },
             {
-                alt: `Portfolio - Matt Denny's Ale House Restaurant`,
-                description: `Portfolio - Matt Denny's Ale House Restaurant`,
-                fileName: 'md.png',
-                href: 'https://mattdennys.com',
-                span: `Denny's`,
-                title: 'Matt',
-            },
-            {
-                alt: 'Portfolio - Base Roots Shop',
-                description: 'A customized Shopify store for an e-commerce client.',
-                fileName: 'br.png',
-                href: 'https://baserootsshop.com',
-                span: `Roots`,
-                title: 'Base',
-            },
-            {
-                alt: 'Portfolio - Patient Stack',
-                description: 'Patient management system for general practice doctors.',
-                fileName: 'Patientstack.png',
-                href: 'https://patientstack.herokuapp.com/',
-                span: `Stack`,
-                title: 'Patient',
-            },
-            {
-                alt: 'Portfolio - Reacting To The Times',
-                description: 'A NY Times Scrapper built with React.',
-                fileName: 'reacting.png',
-                href: 'https://reacting-to-the-times.herokuapp.com/',
-                span: `To The Times`,
-                title: 'Reacting',
-            },
-            {
-                alt: 'Portfolio - Splitzease',
-                description: 'A React-Native mobile application for splitting bills.',
-                fileName: 'splitzease.jpg',
-                href: 'https://github.com/ricopella/splitzease',
-                span: `Ease`,
-                title: 'Splitz',
-            },
-            {
-                alt: 'Portfolio - Nike Trivia',
-                description: 'A Nike themed trivia game built with Vanilla JavaScript.',
-                fileName: 'nike.png',
-                href: 'https://codepen.io/Ricopella/full/KvMeza/',
-                span: `Trivia`,
-                title: 'Nike',
-            },
-            {
-                alt: 'Portfolio - Metta Healing Arts and Wellness',
-                description: 'A client site built with Squarespace.',
-                fileName: 'meta.png',
-                href: 'https://mettavt.com/',
-                span: `Healing Arts and Wellness`,
-                title: 'Metta',
-            },
-            {
-                alt: 'Portfolio - A cup of hacker noon',
-                description: 'A web scrapper built with Cherrio, Node, Express, and MongoDB.',
-                fileName: 'hack.png',
-                href: 'https://cup-of-hackernoon.herokuapp.com/#results',
-                span: `Hacker Noon`,
-                title: 'A Cup of',
+                title: 'Projects',
+                items: [{
+                        alt: 'Portfolio - Patient Stack',
+                        description: 'Patient management system for general practice doctors.',
+                        fileName: 'Patientstack.png',
+                        href: 'https://patientstack.herokuapp.com/',
+                        span: `Stack`,
+                        title: 'Patient',
+                    },
+                    {
+                        alt: 'Portfolio - Reacting To The Times',
+                        description: 'A NY Times Scrapper built with React.',
+                        fileName: 'reacting.png',
+                        href: 'https://reacting-to-the-times.herokuapp.com/',
+                        span: `To The Times`,
+                        title: 'Reacting',
+                    },
+                    {
+                        alt: 'Portfolio - Splitzease',
+                        description: 'A React-Native mobile application for splitting bills.',
+                        fileName: 'splitzease.jpg',
+                        href: 'https://github.com/ricopella/splitzease',
+                        span: `Ease`,
+                        title: 'Splitz',
+                    },
+                    {
+                        alt: 'Portfolio - Nike Trivia',
+                        description: 'A Nike themed trivia game built with Vanilla JavaScript.',
+                        fileName: 'nike.png',
+                        href: 'https://codepen.io/Ricopella/full/KvMeza/',
+                        span: `Trivia`,
+                        title: 'Nike',
+                    },
+                    {
+                        alt: 'Portfolio - A cup of hacker noon',
+                        description: 'A web scrapper built with Cherrio, Node, Express, and MongoDB.',
+                        fileName: 'hack.png',
+                        href: 'https://cup-of-hackernoon.herokuapp.com/#results',
+                        span: `Hacker Noon`,
+                        title: 'A Cup of',
+                    },
+                ],
             },
         ],
         terminalCommands: [{
@@ -111,7 +119,7 @@ module.exports = {
         ],
         skills: [{
                 title: 'Languages',
-                skills: [{
+                items: [{
                         title: `TypeScript`,
                         percent: 80,
                     },
@@ -131,7 +139,7 @@ module.exports = {
             },
             {
                 title: 'Front-End',
-                skills: [{
+                items: [{
                         title: `React`,
                         percent: 80,
                     },
@@ -185,7 +193,7 @@ module.exports = {
             },
             {
                 title: 'Back-End / Operations',
-                skills: [{
+                items: [{
                         title: 'Node.JS',
                         percent: 60,
                     },
@@ -221,7 +229,7 @@ module.exports = {
             },
             {
                 title: 'Database',
-                skills: [{
+                items: [{
                         title: 'Firebase',
                         percent: 80,
                     },
@@ -241,7 +249,7 @@ module.exports = {
             },
             {
                 title: 'Testing',
-                skills: [{
+                items: [{
                         title: 'Jest',
                         percent: 80,
                     },
