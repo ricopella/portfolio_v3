@@ -3,6 +3,7 @@ import Page from '../../components/Page'
 import PageHeading from '../../components/PageHeading'
 import React, { FC } from 'react'
 import ScrollReveal from '../../components/ScrollReveal'
+import SlideUp from '../../components/SlideUpElement'
 import Styled from './Portfolio.styles'
 import ToggleSwitch from '../../components/ToggleSwitch'
 import ToggleTabs from '../../components/ToggleTabs'
@@ -30,34 +31,37 @@ const Portfolio: FC<{}> = () => {
 
   return (
     <ScrollReveal>
-      <Page id="experience" css={Styled.ExperiencePage}>
+      <Page id="portfolio" css={Styled.ExperiencePage}>
         <PageHeading title={HEADING} />
-        <ToggleSwitch
-          currentView={selectedView}
-          setView={setSelectedView}
-          views={views}
-        />
-        <ToggleTabs
-          items={
-            portfolioItems
-              .find(item => item?.title === selectedView)
-              ?.items.map(item => item.title) || []
-          }
-          selectedItem={selectedToggleItem}
-          setSelectedItem={handleSetSelectedToggleItem}
-        >
-          {shownItem?.title ? (
-            <GalleryItem
-              alt={shownItem.alt}
-              description={shownItem.description}
-              filename={shownItem.fileName}
-              href={shownItem.href}
-              key={shownItem.title}
-              span={shownItem.span}
-              title={shownItem.title}
-            />
-          ) : null}
-        </ToggleTabs>
+        <Styled.ExperienceContentWrapper>
+          <ToggleSwitch
+            currentView={selectedView}
+            setView={setSelectedView}
+            views={views}
+          />
+          <ToggleTabs
+            items={
+              portfolioItems
+                .find(item => item?.title === selectedView)
+                ?.items.map(item => item.title) || []
+            }
+            selectedItem={selectedToggleItem}
+            setSelectedItem={handleSetSelectedToggleItem}
+          >
+            {shownItem?.title ? (
+              <SlideUp key={shownItem.title}>
+                <GalleryItem
+                  alt={shownItem.alt}
+                  description={shownItem.description}
+                  filename={shownItem.fileName}
+                  href={shownItem.href}
+                  span={shownItem.span}
+                  title={shownItem.title}
+                />
+              </SlideUp>
+            ) : null}
+          </ToggleTabs>
+        </Styled.ExperienceContentWrapper>
       </Page>
     </ScrollReveal>
   )

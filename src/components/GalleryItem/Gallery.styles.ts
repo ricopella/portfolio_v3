@@ -2,9 +2,19 @@ import styled from '@emotion/styled'
 import { COLORS, SHADOWS } from '../../styles/variables'
 import { css } from '@emotion/core'
 
+const GalleryImageWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 46.875rem;
+
+  // custom width to break on desktop when gets close to Gallery Image
+  @media (max-width: 66.1875rem) {
+    max-width: 25rem;
+  }
+`
+
 const GalleryImage = css`
-  height: 100%;
-  width: 100%;
+  width: 37.5rem;
 `
 
 const LinkContainer = styled.a`
@@ -12,6 +22,10 @@ const LinkContainer = styled.a`
     background-color: red;
     cursor: pointer;
   }
+`
+
+const ExperienceItemWrapper = styled.div`
+  display: grid;
 `
 
 const EffectPortfolio = css`
@@ -143,6 +157,8 @@ const EffectPortfolio = css`
 
 export default {
   GalleryImage,
+  GalleryImageWrapper,
   LinkContainer,
   EffectPortfolio,
+  ExperienceItemWrapper,
 }

@@ -1,4 +1,4 @@
-import Image from '../GalleryImage/index'
+import Image from '../GalleryImage'
 import React, { FC } from 'react'
 import Styled from './Gallery.styles'
 import { GalleryProps } from '../../types'
@@ -12,27 +12,22 @@ const GalleryItem: FC<GalleryProps> = ({
   style = {},
   title,
 }) => (
-  <figure css={Styled.EffectPortfolio}>
-    <Image
-      filename={filename}
-      css={Styled.GalleryImage}
-      alt={alt}
-      style={{ height: '100%', ...style }}
+  <Styled.ExperienceItemWrapper>
+    <Styled.GalleryImageWrapper>
+      {filename ? (
+        <Image filename={filename} css={Styled.GalleryImage} alt={alt} />
+      ) : (
+        <div />
+      )}
+    </Styled.GalleryImageWrapper>
+    <h2>{`${title} ${span ? span : ''}`}</h2>
+    <p>{description}</p>
+    <Styled.LinkContainer
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
     />
-    <figcaption>
-      <h2>
-        {title}
-        {span ? <span>{span}</span> : null}
-      </h2>
-
-      <p>{description}</p>
-      <Styled.LinkContainer
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      />
-    </figcaption>
-  </figure>
+  </Styled.ExperienceItemWrapper>
 )
 
 export default GalleryItem

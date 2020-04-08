@@ -18,7 +18,7 @@ const FooterContainer = styled('footer')`
   display: grid;
   align-items: center;
   background-color: ${COLORS.header};
-  grid-column-gap: 0.625rem;
+  grid-column-gap: 0.25rem;
   grid-row: 3 / -1;
   grid-template-columns: max-content max-content;
   justify-content: center;
