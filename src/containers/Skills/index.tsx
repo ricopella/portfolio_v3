@@ -2,13 +2,12 @@ import Page from '../../components/Page/index'
 import PageHeading from '../../components/PageHeading'
 import ProgressBar from '../../components/ProgressBar'
 import React, { useEffect } from 'react'
+import SlideUp from '../../components/SlideUpElement'
 import Styled from './Skills.styles'
 import ToggleTabs from '../../components/ToggleTabs'
 import useCategoryItems from '../../hooks/useCategoryItems'
 import useIsMobile from '../../hooks/useIsMobile'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
-import { motion } from 'framer-motion'
-import { SLIDE_IN_ANIMATION_OPTIONS } from '../../styles/variables'
 
 const HEADING_TITLE = `Technical Skills`
 
@@ -48,12 +47,9 @@ const SkillsContainer = () => {
         >
           <Styled.SelectedSkillsWrapper>
             {selectedCategorySubSkills.map(skill => (
-              <motion.div
-                {...SLIDE_IN_ANIMATION_OPTIONS}
-                key={`skill_${selectedCategory}_${skill.title}`}
-              >
+              <SlideUp key={`skill_${selectedCategory}_${skill.title}`}>
                 <ProgressBar title={skill.title} percent={skill.percent} />
-              </motion.div>
+              </SlideUp>
             ))}
           </Styled.SelectedSkillsWrapper>
         </ToggleTabs>
