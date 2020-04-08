@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+import { SerializedStyles } from '@emotion/core'
 import { string } from 'prop-types'
 
 export type AboutMeViews = 'bio' | 'terminal'
@@ -18,6 +19,7 @@ export interface GalleryProps extends GalleryImageProps {
 export interface GalleryImageProps {
   alt: string
   filename: string
+  css?: SerializedStyles
   style?: CSSProperties
 }
 
