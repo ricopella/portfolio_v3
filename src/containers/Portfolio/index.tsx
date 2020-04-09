@@ -50,14 +50,7 @@ const Portfolio: FC<{}> = () => {
           >
             {shownItem?.title ? (
               <SlideUp key={shownItem.title}>
-                <GalleryItem
-                  alt={shownItem.alt}
-                  description={shownItem.description}
-                  filename={shownItem.fileName}
-                  href={shownItem.href}
-                  span={shownItem.span}
-                  title={shownItem.title}
-                />
+                <GalleryItem {...shownItem} filename={shownItem.fileName} />
               </SlideUp>
             ) : null}
           </ToggleTabs>
