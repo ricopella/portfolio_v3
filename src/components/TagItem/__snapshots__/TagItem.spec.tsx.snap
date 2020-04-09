@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TagItem /> should match TagItem snapshot 1`] = `
+<div
+  className="css-fbxkum"
+>
+  <div
+    className="css-102iu7f"
+  >
+    Wu-Tang Clan
+  </div>
+</div>
+`;
