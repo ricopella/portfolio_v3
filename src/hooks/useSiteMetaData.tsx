@@ -22,8 +22,10 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
               description
               fileName
               href
+              myTitle
+              tech
               title
-              span
+              year
             }
           }
           skills {

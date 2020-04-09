@@ -1,6 +1,7 @@
 import Image from '../GalleryImage'
 import React, { FC } from 'react'
 import Styled from './Gallery.styles'
+import TagItem from '../TagItem'
 import { GalleryProps } from '../../types'
 
 const GalleryItem: FC<GalleryProps> = ({
@@ -8,7 +9,9 @@ const GalleryItem: FC<GalleryProps> = ({
   description,
   filename,
   href,
-  span,
+  myTitle,
+  year,
+  tech,
   style = {},
   title,
 }) => (
@@ -20,13 +23,32 @@ const GalleryItem: FC<GalleryProps> = ({
         <div />
       )}
     </Styled.GalleryImageWrapper>
-    <h2>{`${title} ${span ? span : ''}`}</h2>
-    <p>{description}</p>
-    <Styled.LinkContainer
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-    />
+    <Styled.ExperienceContentWrapper>
+      <Styled.ExperienceTitleRow>
+        <Styled.ExperienceTitle>{title}</Styled.ExperienceTitle>
+        {myTitle ? (
+          <Styled.ExperienceMyTitle>| {myTitle}</Styled.ExperienceMyTitle>
+        ) : (
+          <div />
+        )}
+        {year ? (
+          <Styled.ExperienceMyTitle>| {year}</Styled.ExperienceMyTitle>
+        ) : null}
+      </Styled.ExperienceTitleRow>
+      <p>{description}</p>
+      <Styled.TagItemsWrapper>
+        {tech && tech.length
+          ? tech.map((item: string, idx: number) => (
+              <TagItem key={`tag_item_${item}_${idx}`} title={item} />
+            ))
+          : null}
+      </Styled.TagItemsWrapper>
+      <Styled.LinkContainer
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+    </Styled.ExperienceContentWrapper>
   </Styled.ExperienceItemWrapper>
 )
 
