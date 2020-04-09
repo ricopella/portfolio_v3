@@ -56,6 +56,10 @@ export interface PageHeadingProps {
   title: string
 }
 
+export interface TagItemProps {
+  title: string
+}
+
 // GRAPHQL QUERIES
 
 export interface UseSiteMetaDataReturns {
@@ -96,8 +100,10 @@ export interface PortfolioItem {
   description: string
   fileName: string
   href: string
+  myTitle?: string
+  tech?: string[]
   title: string
-  span?: string
+  year?: string
 }
 
 export interface SEOProps {
