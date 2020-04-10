@@ -17,6 +17,7 @@ const TerminalContainer = styled(motion.div)`
   align-self: center;
   justify-self: center;
   box-shadow: ${SHADOWS.box};
+  margin-top: 1rem;
 `
 const TerminalHeaderTitle = styled.div`
   color: ${COLORS.gray.dark};
@@ -63,6 +64,7 @@ const BioContainer = styled(motion.div)`
   grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(3, max-content);
   grid-column-gap: 1.25rem;
+  margin-top: 1rem;
 
   @media (max-width: 1244px) {
     grid-template-columns: 1fr;
@@ -116,7 +118,7 @@ const PageStyles = css`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: max-content max-content;
-  grid-row-gap: 3.75rem;
+  grid-row-gap: 1rem;
   align-content: center;
   justify-content: center;
 `

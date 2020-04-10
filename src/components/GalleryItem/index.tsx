@@ -1,4 +1,5 @@
 import Image from '../GalleryImage'
+import LaunchArrow from '../LaunchArrow'
 import React, { FC } from 'react'
 import Styled from './Gallery.styles'
 import TagItem from '../TagItem'
@@ -10,10 +11,9 @@ const GalleryItem: FC<GalleryProps> = ({
   filename,
   href,
   myTitle,
-  year,
   tech,
-  style = {},
   title,
+  year,
 }) => (
   <Styled.ExperienceItemWrapper>
     <Styled.GalleryImageWrapper>
@@ -26,15 +26,20 @@ const GalleryItem: FC<GalleryProps> = ({
     <Styled.ExperienceContentWrapper>
       <Styled.ExperienceTitleRow>
         <Styled.ExperienceTitle>{title}</Styled.ExperienceTitle>
+        {href ? <LaunchArrow href={href} /> : null}
+      </Styled.ExperienceTitleRow>
+      <Styled.ExperienceMyTitleRow>
         {myTitle ? (
-          <Styled.ExperienceMyTitle>| {myTitle}</Styled.ExperienceMyTitle>
+          <Styled.ExperienceMyTitle>{myTitle}</Styled.ExperienceMyTitle>
+        ) : null}
+        {year ? (
+          <Styled.ExperienceMyTitle>
+            {myTitle ? '|' : 'Circa:'} {year}
+          </Styled.ExperienceMyTitle>
         ) : (
           <div />
         )}
-        {year ? (
-          <Styled.ExperienceMyTitle>| {year}</Styled.ExperienceMyTitle>
-        ) : null}
-      </Styled.ExperienceTitleRow>
+      </Styled.ExperienceMyTitleRow>
       <p>{description}</p>
       <Styled.TagItemsWrapper>
         {tech && tech.length
@@ -43,11 +48,6 @@ const GalleryItem: FC<GalleryProps> = ({
             ))
           : null}
       </Styled.TagItemsWrapper>
-      <Styled.LinkContainer
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      />
     </Styled.ExperienceContentWrapper>
   </Styled.ExperienceItemWrapper>
 )
