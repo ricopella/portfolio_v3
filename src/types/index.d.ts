@@ -1,6 +1,5 @@
 import { CSSProperties } from 'react'
 import { SerializedStyles } from '@emotion/core'
-import { string } from 'prop-types'
 
 export type AboutMeViews = 'bio' | 'terminal'
 export type AboutMeViewsArr = ['bio', 'terminal']
@@ -12,8 +11,10 @@ export interface ContainerProps {
 export interface GalleryProps extends GalleryImageProps {
   description: string
   href: string
-  span?: string
+  myTitle?: string
+  tech: string[]
   title: string
+  year: string
 }
 
 export interface GalleryImageProps {
@@ -58,6 +59,10 @@ export interface PageHeadingProps {
 
 export interface TagItemProps {
   title: string
+}
+
+export interface LaunchArrowProps {
+  href: string
 }
 
 // GRAPHQL QUERIES
