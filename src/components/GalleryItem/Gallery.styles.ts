@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { COLORS, SHADOWS } from '../../styles/variables'
+import { COLORS } from '../../styles/variables'
 import { css } from '@emotion/core'
 
 const ExperienceItemWrapper = styled.div`
@@ -21,13 +21,6 @@ const GalleryImage = css`
   width: 37.5rem;
 `
 
-const LinkContainer = styled.a`
-  & :hover {
-    background-color: red;
-    cursor: pointer;
-  }
-`
-
 const ExperienceContentWrapper = styled.div`
   display: grid;
   color: ${COLORS.gray.light};
@@ -37,9 +30,19 @@ const ExperienceContentWrapper = styled.div`
 
 const ExperienceTitleRow = styled.div`
   display: grid;
-  grid-template-columns: max-content max-content auto;
+  grid-template-columns: max-content max-content;
   align-items: center;
-  grid-column-gap: 0.25rem;
+  grid-column-gap: 0.5rem;
+
+  &:last-child {
+    justify-self: end;
+  }
+`
+
+const ExperienceMyTitleRow = styled.div`
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-column-gap: 0.5rem;
 `
 
 const ExperienceTitle = styled.div`
@@ -59,13 +62,13 @@ const TagItemsWrapper = styled.div`
 `
 
 export default {
+  ExperienceContentWrapper,
+  ExperienceItemWrapper,
+  ExperienceMyTitle,
+  ExperienceMyTitleRow,
+  ExperienceTitle,
+  ExperienceTitleRow,
   GalleryImage,
   GalleryImageWrapper,
-  LinkContainer,
-  ExperienceItemWrapper,
-  ExperienceContentWrapper,
-  ExperienceTitleRow,
-  ExperienceMyTitle,
-  ExperienceTitle,
   TagItemsWrapper,
 }
