@@ -24,6 +24,10 @@ const SkillsContainer = () => {
     if (isMobile) {
       // If on mobile, reset the tabs to none
       setSelectedCategory('')
+    } else {
+      if (selectedCategory === '') {
+        setSelectedCategory(categories?.[0].title)
+      }
     }
   }, [isMobile])
 
