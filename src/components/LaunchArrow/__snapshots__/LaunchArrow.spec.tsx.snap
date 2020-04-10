@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LaunchArrow /> should match LaunchArrow snapshot 1`] = `
+<a
+  className="css-1jl04fd"
+  href="foo.com"
+  rel="noopener noreferrer"
+  target="_blank"
+  title="foo.com"
+>
+  <div
+    className="css-5t1w3f"
+  />
+</a>
+`;
