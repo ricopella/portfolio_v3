@@ -30,6 +30,10 @@ const usePortfolioItems = (
   useEffect(() => {
     if (isMobile) {
       setSelectedToggleItem('')
+    } else {
+      if (selectedToggleItem === '') {
+        setSelectedToggleItem(shownItems[0].title)
+      }
     }
   }, [isMobile])
 

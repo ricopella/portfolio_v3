@@ -1,15 +1,11 @@
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
 import { COLORS, HEIGHTS } from '../../styles/variables'
+import { css } from '@emotion/core'
 
 const ContactWrapper = styled.div`
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  flex: 3;
-  margin: 0 auto;
-  max-width: 90%;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content;
 `
 
 const SocialIcon = styled.div`
@@ -46,6 +42,16 @@ const PageHeading = css`
   width: 100vw;
 `
 
+const ContactDescription = styled.p`
+  max-width: calc(100vw - 23%);
+  color: ${COLORS.gray.light};
+`
+
+const ContactLink = styled.a`
+  color: ${COLORS.terminalBackground};
+  font-weight: bold;
+`
+
 const PageTitle = css`
   font-size: 3rem;
   text-align: center;
@@ -60,4 +66,6 @@ export default {
   PageHeading,
   PageTitle,
   SocialIcon,
+  ContactDescription,
+  ContactLink,
 }

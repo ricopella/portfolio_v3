@@ -24,6 +24,10 @@ const SkillsContainer = () => {
     if (isMobile) {
       // If on mobile, reset the tabs to none
       setSelectedCategory('')
+    } else {
+      if (selectedCategory === '') {
+        setSelectedCategory(categories?.[0].title)
+      }
     }
   }, [isMobile])
 
@@ -37,7 +41,7 @@ const SkillsContainer = () => {
   }
 
   return (
-    <Page id="skills" css={Styled.PageHeading}>
+    <Page id="skills">
       <Styled.SkillsWrapper>
         <PageHeading title={HEADING_TITLE} />
         <ToggleTabs
