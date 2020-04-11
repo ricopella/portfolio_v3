@@ -10,6 +10,12 @@ module.exports = {
             email: 'nrs710@gmail.com',
             handle: `@ricopella`,
         },
+        contactItems: [
+            { title: 'Github', href: `https://github.com/ricopella`, },
+            { title: 'Twitter', href: `https://twitter.com/ricopella` },
+            { title: 'LinkedIn', href: `https://www.linkedin.com/in/nsundara/` },
+            { title: 'E-Mail', href: `mailto:nrs710@gmail.com` }
+        ],
         headerItems: [`home`, `about me`, `skills`, `portfolio`, `contact`],
         portfolioItems: [{
                 title: 'Experience',
@@ -206,7 +212,7 @@ module.exports = {
                 question: 'most_recent_tech_stack',
             },
             {
-                answer: '["Turntablism", "Record Collecting", "Music Production", Olde English Bulldog owner", "Photography", "Boston Sports - Bruins, Red Sox, Patriots, Celtics", "Eating new places", "Coffee", "Tacos"]',
+                answer: '["Turntablism", "Record Collecting", "Music Production", Olde English Bulldog owner", "Photography", "Boston Sports - Bruins, Red Sox, Patriots, Celtics", "Eating at new places", "Coffee", "Tacos"]',
                 question: 'interests || hobbies',
             },
         ],

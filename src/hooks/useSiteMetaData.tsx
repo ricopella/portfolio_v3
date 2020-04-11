@@ -12,6 +12,10 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
             email
             handle
           }
+          contactItems {
+            href
+            title
+          }
           description
           lang
           headerItems

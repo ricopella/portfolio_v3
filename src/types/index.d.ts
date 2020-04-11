@@ -54,6 +54,7 @@ export interface ToggleTabsProps {
 }
 
 export interface PageHeadingProps {
+  css?: SerializedStyles
   title: string
 }
 
@@ -74,6 +75,7 @@ export interface UseSiteMetaDataReturns {
     email: string
     handle: string
   }
+  contactItems: ContactItem[]
   description?: string
   lang?: string
   meta?: []
@@ -83,6 +85,11 @@ export interface UseSiteMetaDataReturns {
   skills: Skills[]
   title: string
   titleTemplate: string
+}
+
+export interface ContactItem {
+  href: string
+  title: string
 }
 
 export interface SubSkills {
