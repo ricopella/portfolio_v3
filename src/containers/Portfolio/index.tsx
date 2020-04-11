@@ -31,9 +31,9 @@ const Portfolio: FC<{}> = () => {
 
   return (
     <ScrollReveal>
-      <Page id="portfolio" css={Styled.ExperiencePage}>
-        <PageHeading title={HEADING} />
+      <Page id="portfolio">
         <Styled.ExperienceContentWrapper>
+          <PageHeading title={HEADING} />
           <ToggleSwitch
             currentView={selectedView}
             setView={setSelectedView}
