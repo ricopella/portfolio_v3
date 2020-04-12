@@ -39,7 +39,7 @@
         "format": "prettier --write \"src/**/*.js\""
     },
     "devDependencies": {
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.13",
         "prettier": "^1.15.2"
     },
     "repository": {
