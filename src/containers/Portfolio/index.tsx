@@ -1,6 +1,5 @@
 import GalleryItem from '../../components/GalleryItem'
 import Page from '../../components/Page'
-import PageHeading from '../../components/PageHeading'
 import React, { FC } from 'react'
 import ScrollReveal from '../../components/ScrollReveal'
 import SlideUp from '../../components/SlideUpElement'
@@ -30,33 +29,30 @@ const Portfolio: FC<{}> = () => {
   }
 
   return (
-    <ScrollReveal>
-      <Page id="portfolio">
-        <Styled.ExperienceContentWrapper>
-          <PageHeading title={HEADING} />
-          <ToggleSwitch
-            currentView={selectedView}
-            setView={setSelectedView}
-            views={views}
-          />
-          <ToggleTabs
-            items={
-              portfolioItems
-                .find(item => item?.title === selectedView)
-                ?.items.map(item => item.title) || []
-            }
-            selectedItem={selectedToggleItem}
-            setSelectedItem={handleSetSelectedToggleItem}
-          >
-            {shownItem?.title ? (
-              <SlideUp key={shownItem.title}>
-                <GalleryItem {...shownItem} filename={shownItem.fileName} />
-              </SlideUp>
-            ) : null}
-          </ToggleTabs>
-        </Styled.ExperienceContentWrapper>
-      </Page>
-    </ScrollReveal>
+    <Page id="portfolio" title={HEADING}>
+      <Styled.ExperienceContentWrapper>
+        <ToggleSwitch
+          currentView={selectedView}
+          setView={setSelectedView}
+          views={views}
+        />
+        <ToggleTabs
+          items={
+            portfolioItems
+              .find(item => item?.title === selectedView)
+              ?.items.map(item => item.title) || []
+          }
+          selectedItem={selectedToggleItem}
+          setSelectedItem={handleSetSelectedToggleItem}
+        >
+          {shownItem?.title ? (
+            <SlideUp key={shownItem.title}>
+              <GalleryItem {...shownItem} filename={shownItem.fileName} />
+            </SlideUp>
+          ) : null}
+        </ToggleTabs>
+      </Styled.ExperienceContentWrapper>
+    </Page>
   )
 }
 
