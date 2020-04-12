@@ -13,7 +13,7 @@ const Nav = styled(motion.nav)`
 const NavBackground = styled(motion.div)`
   background: ${COLORS.palette.magnolia};
   bottom: 0;
-  display: 'grid';
+  display: grid;
   left: 0;
   position: absolute;
   top: 0;
@@ -23,6 +23,7 @@ const NavBackground = styled(motion.div)`
 const SIDEBAR_VARIANTS = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 2.5rem 2.5rem)`,
+    opacity: 0.99,
     transition: {
       type: 'spring',
       stiffness: 20,
@@ -31,6 +32,7 @@ const SIDEBAR_VARIANTS = {
   }),
   closed: {
     clipPath: 'circle(1.875rem at 2.5rem 2.5rem)',
+    opacity: 0.7,
     transition: {
       delay: 0.5,
       type: 'spring',
