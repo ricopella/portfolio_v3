@@ -1,22 +1,13 @@
 import styled from '@emotion/styled'
-import { BREAKPOINTS } from '../../styles/variables'
 
 const ExperienceContentWrapper = styled.div`
   display: grid;
+  grid-row-gap: 1rem;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, max-content);
-  grid-row-gap: 3.75rem;
+  grid-template-rows: repeat(2, max-content);
   margin: 0 0;
-  width: 100%;
   padding: 0 0;
-
-  @media (max-width: ${BREAKPOINTS.mdRem}) {
-    margin: 0 0;
-  }
-
-  @media (max-width: ${BREAKPOINTS.smRem}) {
-    padding: 0 0;
-  }
+  width: 100%;
 `
 
 export default {

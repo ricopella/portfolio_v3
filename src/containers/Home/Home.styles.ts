@@ -28,8 +28,9 @@ const IntroTextContainer = styled(motion.div)`
   justify-content: center;
   margin: 0 10%;
   z-index: ${Z_INDEX.PAGE_CONTENT};
+  text-shadow: 0 0.0625rem 0 ${COLORS.palette.eerieBlack};
 
-  @media (max-width: ${BREAKPOINTS.mdRem}) {
+  @media (max-width: ${BREAKPOINTS.tabletPro}) {
     grid-template-rows: 2.25rem 1.75rem;
   }
 
@@ -40,7 +41,7 @@ const IntroTextContainer = styled(motion.div)`
 `
 
 const IntroTextName = styled.div`
-  color: ${COLORS.palette.hanPurple};
+  color: ${COLORS.accent};
   font-size: 3.5rem;
   font-weight: bold;
 

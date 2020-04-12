@@ -23,7 +23,7 @@ const FooterContainer = styled('footer')`
   grid-row: 3 / -1;
   grid-template-columns: max-content max-content;
   justify-content: center;
-  padding-bottom: 1%;
+  margin: 2% 0 1% 0;
 `
 
 export default {

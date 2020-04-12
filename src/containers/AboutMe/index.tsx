@@ -1,5 +1,4 @@
 import Page from '../../components/Page/index'
-import PageHeading from '../../components/PageHeading'
 import ProfileImage from '../../components/ProfileImage'
 import React, { useState } from 'react'
 import Styled from './AboutMe.styles'
@@ -11,7 +10,7 @@ import { COLORS } from '../../styles/variables'
 import { SLIDE_IN_ANIMATION_OPTIONS } from '../../styles/variables'
 
 const VIEWS: AboutMeViewsArr = ['bio', 'terminal']
-const HEADING = 'ABOUT'
+const HEADING = 'About Me'
 
 const AboutMeMain = () => {
   const { terminalCommands } = useSiteMetaData()
@@ -90,8 +89,7 @@ const AboutMeMain = () => {
   )
 
   return (
-    <Page id="about-me" css={Styled.PageStyles}>
-      <PageHeading title={HEADING} />
+    <Page id="about-me" title={HEADING}>
       <ToggleSwitch
         currentView={currentView}
         setView={setCurrentView}

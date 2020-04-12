@@ -7,7 +7,7 @@ exports[`<Page /> should match Page snapshot 1`] = `
   data-sal-easing="ease"
 >
   <div
-    className="foo css-1tnh4ft"
+    className="foo css-1p6xk4t"
     id="foo"
     style={
       Object {
@@ -15,8 +15,13 @@ exports[`<Page /> should match Page snapshot 1`] = `
       }
     }
   >
-    <div>
+    <h1
+      className="css-1cnsdig"
+    >
       Wu-Tang Clan
+    </h1>
+    <div>
+      Foo
     </div>
   </div>
 </div>

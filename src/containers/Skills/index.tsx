@@ -1,5 +1,4 @@
 import Page from '../../components/Page/index'
-import PageHeading from '../../components/PageHeading'
 import ProgressBar from '../../components/ProgressBar'
 import React, { useEffect } from 'react'
 import SlideUp from '../../components/SlideUpElement'
@@ -41,23 +40,20 @@ const SkillsContainer = () => {
   }
 
   return (
-    <Page id="skills">
-      <Styled.SkillsWrapper>
-        <PageHeading title={HEADING_TITLE} />
-        <ToggleTabs
-          items={categories.map(category => category.title)}
-          selectedItem={selectedCategory}
-          setSelectedItem={handleSetSelectedCategory}
-        >
-          <Styled.SelectedSkillsWrapper>
-            {selectedCategorySubSkills.map(skill => (
-              <SlideUp key={`skill_${selectedCategory}_${skill.title}`}>
-                <ProgressBar title={skill.title} percent={skill.percent} />
-              </SlideUp>
-            ))}
-          </Styled.SelectedSkillsWrapper>
-        </ToggleTabs>
-      </Styled.SkillsWrapper>
+    <Page id="technical-skills" title={HEADING_TITLE}>
+      <ToggleTabs
+        items={categories.map(category => category.title)}
+        selectedItem={selectedCategory}
+        setSelectedItem={handleSetSelectedCategory}
+      >
+        <Styled.SelectedSkillsWrapper>
+          {selectedCategorySubSkills.map(skill => (
+            <SlideUp key={`skill_${selectedCategory}_${skill.title}`}>
+              <ProgressBar title={skill.title} percent={skill.percent} />
+            </SlideUp>
+          ))}
+        </Styled.SelectedSkillsWrapper>
+      </ToggleTabs>
     </Page>
   )
 }

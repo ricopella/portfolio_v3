@@ -113,16 +113,6 @@ const BioParagraph = styled('p')`
   }
 `
 
-const PageStyles = css`
-  background-color: ${COLORS.header};
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: max-content max-content;
-  grid-row-gap: 1rem;
-  align-content: center;
-  justify-content: center;
-`
-
 const PageHeading = css`
   fontsize: 3rem;
   text-align: center;
@@ -136,7 +126,6 @@ export default {
   BioHeadingWrapper,
   BioParagraph,
   PageHeading,
-  PageStyles,
   TerminalBody,
   TerminalContainer,
   TerminalHeader,

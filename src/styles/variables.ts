@@ -12,6 +12,7 @@ export const BREAKPOINTS = {
   md: 768, // tablet
   mdRem: `48rem`,
   lg: 992,
+  tabletPro: `64rem`,
   xl: 1200,
 }
 

@@ -1,6 +1,9 @@
-import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
 import ImageBackground from './Hero.styles'
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+
+const LINEAR_GRADIENT = `linear-gradient(rgba(0, 0, 0, 0.2),
+rgba(0, 0, 0, 0.2))`
 
 const Hero = () => {
   const { image } = useStaticQuery(graphql`
@@ -16,7 +19,11 @@ const Hero = () => {
     }
   `)
   return (
-    <ImageBackground tag="section" fluid={image.sharp.fluid} fadeIn="soft" />
+    <ImageBackground
+      tag="section"
+      fluid={[LINEAR_GRADIENT, image.sharp.fluid]}
+      fadeIn="soft"
+    />
   )
 }
 
