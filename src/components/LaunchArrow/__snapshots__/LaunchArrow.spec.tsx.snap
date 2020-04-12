@@ -9,7 +9,7 @@ exports[`<LaunchArrow /> should match LaunchArrow snapshot 1`] = `
   title="foo.com"
 >
   <div
-    className="css-5t1w3f"
+    className="css-3nfvs0"
   />
 </a>
 `;
