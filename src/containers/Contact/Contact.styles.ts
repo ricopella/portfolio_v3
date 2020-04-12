@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { COLORS, HEIGHTS } from '../../styles/variables'
+import { BREAKPOINTS, COLORS, HEIGHTS } from '../../styles/variables'
 import { css } from '@emotion/core'
 
 const ContactWrapper = styled.div`
@@ -20,6 +20,11 @@ const ContactRow = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 1.25rem;
   margin-top: 1.25rem;
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 0.875rem;
+  }
 `
 
 const Anchor = css`
