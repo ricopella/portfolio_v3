@@ -66,6 +66,10 @@ export interface LaunchArrowProps {
   href: string
 }
 
+export interface MenuItemProps {
+  item: string
+}
+
 // GRAPHQL QUERIES
 
 export interface UseSiteMetaDataReturns {
