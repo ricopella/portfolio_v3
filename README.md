@@ -6,6 +6,10 @@ Personal portfolio website, created from the Gatsby JS.
 
 Live version can be viewed at [narinsun.com](narinsun.com)
 
+## Version 2
+
+I've been working on updating my portfolio. New layout, added TypeScript, animations, and charts. v2.0.0 can be found on my [develop](https://github.com/ricopella/portfolio_v3/tree/develop) branch.
+
 ## Tech Stack
 
 Built With: Gatsby JS, React, Emotion, and hosted with Netlify.
@@ -17,6 +21,6 @@ Built With: Gatsby JS, React, Emotion, and hosted with Netlify.
 
 ## History
 
-- Last Updated: 03/03/19
+- Last Updated: 04/1/20
 
 - Created: 02/17/19
