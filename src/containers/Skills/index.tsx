@@ -41,7 +41,7 @@ const SkillsContainer = () => {
   }
 
   return (
-    <Page id="skills">
+    <Page id="technical-skills">
       <Styled.SkillsWrapper>
         <PageHeading title={HEADING_TITLE} />
         <ToggleTabs
