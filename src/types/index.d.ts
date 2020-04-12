@@ -28,6 +28,7 @@ export interface PageProps {
   className?: string
   id: string
   style?: CSSProperties
+  title: string
 }
 
 export interface TerminalCommandProps {
