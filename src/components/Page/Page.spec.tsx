@@ -1,6 +1,6 @@
-import renderer from 'react-test-renderer'
-import React from 'react'
 import Page from './index'
+import React from 'react'
+import renderer from 'react-test-renderer'
 import { render } from '@testing-library/react'
 
 describe('<Page />', () => {
@@ -13,8 +13,8 @@ describe('<Page />', () => {
   it('should match Page snapshot', () => {
     const internalTree = renderer
       .create(
-        <Page {...props}>
-          <div>Wu-Tang Clan</div>
+        <Page {...props} title="Wu-Tang Clan">
+          <div>Foo</div>
         </Page>
       )
       .toJSON()
@@ -24,11 +24,12 @@ describe('<Page />', () => {
 
   it('should render children', () => {
     const { getByText } = render(
-      <Page {...props}>
-        <div>Wu-Tang Clan</div>
+      <Page {...props} title="Wu-Tang Clan">
+        <div>Foo</div>
       </Page>
     )
 
     expect(getByText(/Wu-Tang Clan/i)).toBeTruthy()
+    expect(getByText(/Foo/i)).toBeTruthy()
   })
 })
