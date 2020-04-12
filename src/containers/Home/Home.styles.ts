@@ -2,10 +2,10 @@ import styled from '@emotion/styled'
 import { BREAKPOINTS, COLORS, Z_INDEX } from '../../styles/variables'
 import { motion } from 'framer-motion'
 
-const FullPage = styled.div`
-  display: grid;
+const FullPage = styled(motion.div)`
   background-size: cover;
   background: transparent;
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   height: 100%;
@@ -14,71 +14,64 @@ const FullPage = styled.div`
 `
 
 const IntroTextContainer = styled(motion.div)`
-  -webkit-align-content: center;
   -ms-flex-line-pack: center;
-  align-content: center;
-  display: grid;
   -ms-flex-pack: center;
+  -webkit-align-content: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
+  align-content: center;
+  display: grid;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   grid-template-columns: 1fr;
-  grid-template-rows: 3.75rem 0.625rem 3.75rem max-content;
+  grid-template-rows: repeat(2, max-content);
   justify-content: center;
+  margin: 0 10%;
   z-index: ${Z_INDEX.PAGE_CONTENT};
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
-    grid-template-rows: 2.25rem 1.75rem 0;
-  }
-`
-
-const IntroText = styled.div`
-  align-self: center;
-  color: ${COLORS.white};
-  font-size: 4rem;
-  justify-self: center;
-  text-align: center;
-  margin: 0 1.5rem;
-  width: 100%;
-
-  @media (max-width: ${BREAKPOINTS.mdRem}) {
-    font-size: 2rem;
-    max-width: calc(100vw - 10%);
-    line-height: 2rem;
-  }
-`
-
-const Description = styled(IntroText)`
-  font-size: 3rem;
-
-  @media (max-width: ${BREAKPOINTS.mdRem}) {
-    word-wrap: break-word;
-    font-size: 1rem;
-    padding: 7% 0;
-  }
-`
-
-const Break = styled.div`
-  align-self: center;
-  background-color: ${COLORS.white};
-  height: 4px;
-  justify-self: center;
-  width: 37.5rem;
-
-  @media (max-width: ${BREAKPOINTS.mdRem}) {
-    width: 40%;
+    grid-template-rows: 2.25rem 1.75rem;
   }
 
   @media (max-width: ${BREAKPOINTS.smRem}) {
-    width: 60%;
+    margin: 0 5%;
+    max-width: calc(100vw - 10%);
+  }
+`
+
+const IntroTextName = styled.div`
+  color: ${COLORS.palette.hanPurple};
+  font-size: 3.5rem;
+  font-weight: bold;
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    font-size: 2rem;
+  }
+`
+
+const IntroContentWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, max-content);
+  line-height: 1.2;
+  font-size: 3rem;
+  color: ${COLORS.white};
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    word-wrap: break-word;
+    font-size: 1.25rem;
+  }
+`
+
+const IntroContentText = styled.div`
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    max-width: 17.5rem;
   }
 `
 
 export default {
-  Break,
-  Description,
+  IntroContentWrapper,
   FullPage,
-  IntroText,
+  IntroTextName,
   IntroTextContainer,
+  IntroContentText,
 }

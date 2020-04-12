@@ -9,12 +9,18 @@ const HomeContainer = () => {
   const { author } = useSiteMetaData()
 
   return (
-    <Styled.FullPage id="home">
+    <Styled.FullPage id="home" {...SLIDE_IN_ANIMATION_OPTIONS}>
       <Hero />
-      <Styled.IntroTextContainer {...SLIDE_IN_ANIMATION_OPTIONS}>
-        <Styled.IntroText>{author?.name.toUpperCase()}</Styled.IntroText>
-        <Styled.Break />
-        <Styled.Description></Styled.Description>
+      <Styled.IntroTextContainer>
+        <Styled.IntroContentWrapper>
+          <Styled.IntroContentText>{`Hi, I'm`}</Styled.IntroContentText>
+          <Styled.IntroTextName>
+            {author?.name.toUpperCase()}
+          </Styled.IntroTextName>
+          <Styled.IntroContentText>
+            {`a web & mobile app developer in Los Angeles, CA.`}
+          </Styled.IntroContentText>
+        </Styled.IntroContentWrapper>
         <Arrow />
       </Styled.IntroTextContainer>
     </Styled.FullPage>
