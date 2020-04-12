@@ -29,7 +29,7 @@ const IntroTextContainer = styled(motion.div)`
   margin: 0 10%;
   z-index: ${Z_INDEX.PAGE_CONTENT};
 
-  @media (max-width: ${BREAKPOINTS.mdRem}) {
+  @media (max-width: ${BREAKPOINTS.tabletPro}) {
     grid-template-rows: 2.25rem 1.75rem;
   }
 
