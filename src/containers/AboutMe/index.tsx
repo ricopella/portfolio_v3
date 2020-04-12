@@ -1,5 +1,4 @@
 import Page from '../../components/Page/index'
-import PageHeading from '../../components/PageHeading'
 import ProfileImage from '../../components/ProfileImage'
 import React, { useState } from 'react'
 import Styled from './AboutMe.styles'
@@ -90,8 +89,7 @@ const AboutMeMain = () => {
   )
 
   return (
-    <Page id="about-me" css={Styled.PageStyles}>
-      <PageHeading title={HEADING} />
+    <Page id="about-me" title={HEADING}>
       <ToggleSwitch
         currentView={currentView}
         setView={setCurrentView}
