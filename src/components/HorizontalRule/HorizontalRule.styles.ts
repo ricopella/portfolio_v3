@@ -9,6 +9,7 @@ const HorizontalRule = styled.div`
     rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0)
   );
+  margin-top: 5%;
 `
 
 export default {
