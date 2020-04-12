@@ -16,7 +16,7 @@ module.exports = {
             { title: 'LinkedIn', href: `https://www.linkedin.com/in/nsundara/` },
             { title: 'E-Mail', href: `mailto:nrs710@gmail.com` }
         ],
-        headerItems: [`home`, `about me`, `skills`, `portfolio`, `contact`],
+        headerItems: [`home`, `about me`, `technical skills`, `portfolio`, `contact`],
         portfolioItems: [{
                 title: 'Experience',
                 items: [{
