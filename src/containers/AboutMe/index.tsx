@@ -11,7 +11,7 @@ import { COLORS } from '../../styles/variables'
 import { SLIDE_IN_ANIMATION_OPTIONS } from '../../styles/variables'
 
 const VIEWS: AboutMeViewsArr = ['bio', 'terminal']
-const HEADING = 'ABOUT'
+const HEADING = 'About Me'
 
 const AboutMeMain = () => {
   const { terminalCommands } = useSiteMetaData()
