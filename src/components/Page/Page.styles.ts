@@ -7,7 +7,7 @@ const StyledPage = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
-  margin: 0 10%;
+  margin: 5% 10% 0 10%;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     height: 100% !important;
