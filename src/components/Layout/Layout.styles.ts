@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { COLORS } from '../../styles/variables'
+import { BREAKPOINTS, COLORS } from '../../styles/variables'
 
 const RootContainer = styled('div')`
   display: grid;
@@ -24,6 +24,10 @@ const FooterContainer = styled('footer')`
   grid-template-columns: max-content max-content;
   justify-content: center;
   margin: 2% 0 1% 0;
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    margin-bottom: 10%;
+  }
 `
 
 export default {
