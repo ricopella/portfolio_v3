@@ -1,27 +1,17 @@
 import React, { FC } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import Styled from './ProfileImage.styles'
-import useIsMobile from '../../hooks/useIsMobile'
+import { graphql, useStaticQuery } from 'gatsby'
 
 /**
  *`Simple Component that shows users Profile Image
  *
- * @returns
  */
 const ProfileImage: FC<{}> = () => {
-  const isMobile = useIsMobile()
-  const { desktopImage, mobileImage } = useStaticQuery(graphql`
+  const { desktopImage } = useStaticQuery(graphql`
     query {
       desktopImage: file(relativePath: { eq: "nrs.jpeg" }) {
         sharp: childImageSharp {
           fixed(width: 200, height: 200, quality: 100) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      mobileImage: file(relativePath: { eq: "nrs.jpeg" }) {
-        sharp: childImageSharp {
-          fixed(width: 150, height: 150, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -32,7 +22,7 @@ const ProfileImage: FC<{}> = () => {
   return (
     <Styled.ProfileImageOuterBorder>
       <Styled.ProfileImage
-        fixed={isMobile ? mobileImage.sharp.fixed : desktopImage.sharp.fixed}
+        fixed={desktopImage.sharp.fixed}
         alt="Profile Image"
       />
     </Styled.ProfileImageOuterBorder>
