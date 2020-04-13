@@ -12,7 +12,6 @@ const StyledPage = styled.div`
   margin: 8% 10% 0 10%;
   background-color: ${COLORS.header};
   max-width: 100vw;
-  overflow: hidden;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     margin: 10% 10% 0 10%;
