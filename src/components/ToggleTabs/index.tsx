@@ -1,9 +1,8 @@
 import React, { FC } from 'react'
-import { ToggleTabsProps } from '../../types'
-import Styled from './ToggleTabs.styles'
-import useIsMobile from '../../hooks/useIsMobile'
-import { SLIDE_DOWN_ANIMATION_OPTIONS } from '../../styles/variables'
 import setActiveClassName from '../../utils/setActiveClassName'
+import Styled from './ToggleTabs.styles'
+import { SLIDE_DOWN_ANIMATION_OPTIONS } from '../../styles/variables'
+import { ToggleTabsProps } from '../../types'
 
 const ToggleTabs: FC<ToggleTabsProps> = ({
   children,
@@ -11,8 +10,6 @@ const ToggleTabs: FC<ToggleTabsProps> = ({
   selectedItem,
   setSelectedItem,
 }) => {
-  const isMobile = useIsMobile()
-
   const renderDesktopTabs = () => (
     <Styled.ToggleSection>
       <Styled.ToggleTabsContainer>
@@ -58,7 +55,12 @@ const ToggleTabs: FC<ToggleTabsProps> = ({
     </Styled.MobileAccordionContainer>
   )
 
-  return <>{!isMobile ? renderDesktopTabs() : renderMobileAccordion()}</>
+  return (
+    <>
+      {renderDesktopTabs()}
+      {renderMobileAccordion()}
+    </>
+  )
 }
 
 export default ToggleTabs

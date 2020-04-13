@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { COLORS } from '../../styles/variables'
+import { BREAKPOINTS, COLORS } from '../../styles/variables'
 import { motion } from 'framer-motion'
 
 const ToggleSection = styled(motion.div)`
@@ -7,11 +7,19 @@ const ToggleSection = styled(motion.div)`
   grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(2, max-content);
   grid-column-gap: 8%;
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    display: none;
+  }
 `
 
 const MobileAccordionContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
+  display: none;
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 `
 
 const MobileAccordion = styled(motion.section)`
