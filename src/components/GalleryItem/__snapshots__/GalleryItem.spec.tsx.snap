@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GalleryItem /> should match GalleryItem snapshot 1`] = `
+<div
+  className="css-1yvep9v"
+>
+  <div
+    className="css-1xvo91r"
+  >
+    <div />
+  </div>
+  <div
+    className="css-1qsd2ga"
+  >
+    <div
+      className="css-d8eafh"
+    >
+      <div
+        className="css-1ijvccx"
+      >
+        King Tester
+      </div>
+      <a
+        className="css-1jl04fd"
+        href="test.com"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="test.com"
+      >
+        <div
+          className="css-3nfvs0"
+        />
+      </a>
+    </div>
+    <div
+      className="css-15fkjsq"
+    >
+      <div
+        className="css-11aljab"
+      >
+        Tester
+      </div>
+      <div
+        className="css-11aljab"
+      >
+        |
+         
+        2020
+      </div>
+    </div>
+    <p>
+      this is a test item
+    </p>
+    <div
+      className="css-1p6kesl"
+    >
+      <div
+        className="css-3m0mjb"
+      >
+        <div
+          className="css-1t1bufi"
+        >
+          renderer
+        </div>
+      </div>
+      <div
+        className="css-3m0mjb"
+      >
+        <div
+          className="css-1t1bufi"
+        >
+          react
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

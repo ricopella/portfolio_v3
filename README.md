@@ -6,13 +6,11 @@ Personal portfolio website, created from the Gatsby JS.
 
 Live version can be viewed at [narinsun.com](narinsun.com)
 
-## Version 2
-
-I've been working on updating my portfolio. New layout, added TypeScript, animations, and charts. v2.0.0 can be found on my [develop](https://github.com/ricopella/portfolio_v3/tree/develop) branch.
+I've rebuilt my portfolio a few times. Version 1 was with Vanilla JS. Version 2 was styled same as Version 1, but I built it with Gatsby and React. Version 3 is a full re-write. Still used Gatsby, but add TypeScript, Framer-Motion for animations, and re-did the layout and components. Also added unit testing.
 
 ## Tech Stack
 
-Built With: Gatsby JS, React, Emotion, and hosted with Netlify.
+Built With: [TypeScript](https://www.typescriptlang.org/), [GatsbyJS](https://www.gatsbyjs.org/), [React](https://reactjs.org/), [Emotion](https://emotion.sh/docs/introduction), [Framer-Motion](https://www.framer.com/motion/), hosted with [Netlify](https://www.netlify.com/), and tested with [Jest](https://jestjs.io/) & [Testing-Library/React](https://github.com/testing-library/react-testing-library).
 
 ## More Information
 
@@ -21,6 +19,6 @@ Built With: Gatsby JS, React, Emotion, and hosted with Netlify.
 
 ## History
 
-- Last Updated: 04/1/20
+- Last Updated: 04/10/20
 
 - Created: 02/17/19

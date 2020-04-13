@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageHeading /> should match PageHeading snapshot 1`] = `
+<h1
+  className="css-1sgt81c"
+>
+  Boston Bruins
+</h1>
+`;

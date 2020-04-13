@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TerminalCommand /> should match TerminalCommand snapshot 1`] = `
+<div
+  className="css-3yu43t"
+>
+  <div
+    className="css-ntk5lm"
+  >
+    <span
+      className="css-zbjqpz"
+    >
+      &gt;&gt; 
+    </span>
+     Who?
+  </div>
+  <div
+    className="css-1yzmtjz"
+  >
+    <a
+      className="css-1t2r17y"
+      href="wutang.com"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      "Wu-Tang Clan"
+    </a>
+  </div>
+</div>
+`;

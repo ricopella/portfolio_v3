@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Page /> should match Page snapshot 1`] = `
+<div
+  data-sal="slide-up"
+  data-sal-delay="200"
+  data-sal-easing="ease"
+>
+  <div
+    className="foo css-34ul63"
+    id="foo"
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    <h1
+      className="css-1sgt81c"
+    >
+      Wu-Tang Clan
+    </h1>
+    <div>
+      Foo
+    </div>
+  </div>
+</div>
+`;
