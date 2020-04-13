@@ -23,19 +23,21 @@ const MobileAccordionContainer = styled.div`
 `
 
 const MobileAccordion = styled(motion.section)`
-  border-left: 0.0625rem solid ${COLORS.terminalBackground};
   height: inherit;
 `
 
 const MobileAccordionContent = styled(motion.div)`
   padding: 3rem 1rem;
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    border-left: 0.0625rem solid ${COLORS.terminalBackground};
+  }
 `
 
 const MobileAccordionButton = styled.div`
   display: grid;
   align-content: center;
   background-color: transparent;
-  border-left: 0.0625rem solid ${COLORS.terminalBackground};
   color: ${COLORS.terminalBackground};
   border: none;
   font-size: 1rem;
@@ -45,6 +47,10 @@ const MobileAccordionButton = styled.div`
   letter-spacing: 0.1rem;
   padding: 0 10%;
   width: 100%;
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    border-left: 0.0625rem solid ${COLORS.terminalBackground};
+  }
 
   &:hover {
     cursor: pointer;
@@ -92,6 +98,10 @@ const ToggleTabItem = styled(motion.button)`
   letter-spacing: 0.1rem;
   padding: 0 0.2rem;
   width: 10rem;
+
+  @media (max-width: ${BREAKPOINTS.mdRem}) {
+    border-left: 0.0625rem solid ${COLORS.terminalBackground};
+  }
 
   &.active {
     background-color: ${COLORS.terminalBackground};
