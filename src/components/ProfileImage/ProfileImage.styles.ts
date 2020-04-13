@@ -22,6 +22,11 @@ const ProfileImageOuterBorder = styled('div')`
 const ProfileImage = styled(Img)`
   border-radius: 50%;
   border: 0.25rem solid white;
+
+  @media (max-width: 47.9375rem) {
+    height: 9.375rem !important;
+    width: 9.375rem !important;
+  }
 `
 
 export default {
