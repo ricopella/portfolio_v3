@@ -62,28 +62,43 @@ const AboutMeMain = () => {
         </Styled.BioHeadingText>
       </Styled.BioHeadingWrapper>
       <Styled.BioParagraph className="first">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
-        lorem sit amet mi tincidunt venenatis eu vitae libero. Aliquam erat
-        volutpat. Nam ut molestie urna, in placerat dolor. Aenean eget vulputate
-        arcu, ut hendrerit elit. Phasellus ullamcorper nulla quis diam
-        porttitor, nec interdum elit hendrerit. Orci varius natoque penatibus et
-        magnis dis parturient montes, nascetur ridiculus mus. Etiam ut augue
-        nibh. Quisque varius vulputate ex, sit amet aliquam justo cursus vel.
-        Sed velit augue, elementum vehicula condimentum in, fringilla sed felis.
-        Maecenas tincidunt hendrerit lacinia. Maecenas sit amet felis vel tortor
-        interdum eleifend tristique at metus.
+        I’m a frontend software engineer & freelance web developer living in Los
+        Angeles. I'm passionate about music, sports, technology and healthy
+        living. Collectively I have 10+ years experience in the Sports,
+        Entertainment, and Events industries. I'm a life-long learner that's
+        looking for ways to get out of my comfort zone to grow my versatility as
+        a developer.
       </Styled.BioParagraph>
       <Styled.BioParagraph>
-        Curabitur blandit, justo vel vestibulum consequat, lorem nisl accumsan
-        magna, eu accumsan urna ex id arcu. Ut mattis vitae sem id placerat.
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum
-        ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-        Curae; Duis vel luctus nisi. Cras at nisl vitae elit pharetra porta.
-        Maecenas ornare tincidunt mauris ac lacinia. Sed in eleifend velit.
-        Donec at ex vitae dui dignissim euismod in et nulla. In sodales tortor
-        quis felis suscipit, nec tristique nulla lobortis. Phasellus suscipit mi
-        orci, ut ornare massa varius at. Integer placerat sodales quam, luctus
-        gravida dui maximus quis.
+        I've built sites ranging from simple portfolios, eCommerce shops, to
+        data driven B2B web apps with machine learning and data visualizations.
+        Some of my freelance web development experience has been with Shopify,
+        Wix, and SquareSpace. I've also worked on a freelance project that
+        designed a custom API that integrated with 3rd party APIs to automate
+        inventory and sales.
+      </Styled.BioParagraph>
+      <Styled.BioParagraph>
+        In 2017, I attended UCLA's Bootcamp to accelerate my learning and gain
+        knowledge of the Node.js ecosystem. Since then, I fell in love with &
+        have been primarily using React in web applications. For static sites, I
+        love using Gatsby for creating blazing fast, SEO-driven headless
+        frontend user interfaces (like this site).
+      </Styled.BioParagraph>
+      <Styled.BioParagraph>
+        When I'm not looking into a screen filled with code, I'm usually walking
+        with my dog, at the gym, meditating, trying a new plant based recipe, or
+        doing some form musical expression. I've owned a pair of turntables,
+        beat machine, and records since I was in the 9th grade. I'm in a DJ
+        group called{' '}
+        <Styled.ContactLink
+          href={'themusicplease.com'}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Music Please
+        </Styled.ContactLink>{' '}
+        which started from a radio show that lasted 7 years. And, I'm an avid
+        New England sports fan!
       </Styled.BioParagraph>
     </Styled.BioContainer>
   )

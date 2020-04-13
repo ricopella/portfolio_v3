@@ -106,6 +106,7 @@ const BioParagraph = styled('p')`
 
   &.first {
     grid-column: 2;
+    align-self: end;
 
     @media (max-width: 1244px) {
       grid-column: 1 / -1;
@@ -120,7 +121,17 @@ const PageHeading = css`
   color: ${COLORS.gray.calm};
 `
 
+const ContactLink = styled.a`
+  color: ${COLORS.terminalBackground};
+
+  :hover {
+    color: ${COLORS.gray.calm};
+    transform: scale(1.1);
+  }
+`
+
 export default {
+  ContactLink,
   BioContainer,
   BioHeadingText,
   BioHeadingWrapper,
