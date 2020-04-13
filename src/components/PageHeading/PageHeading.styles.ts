@@ -5,7 +5,6 @@ const PageHeading = styled.h1`
   color: ${COLORS.gray.calm};
   fontsize: 3rem;
   text-align: left;
-  text-decoration: underline;
 `
 
 export default {
