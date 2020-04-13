@@ -62,43 +62,43 @@ const AboutMeMain = () => {
         </Styled.BioHeadingText>
       </Styled.BioHeadingWrapper>
       <Styled.BioParagraph className="first">
-        I’m a frontend software engineer & freelance web developer living in Los
+        {`I’m a frontend software engineer & freelance web developer living in Los
         Angeles. I'm passionate about music, sports, technology and healthy
         living. Collectively I have 10+ years experience in the Sports,
         Entertainment, and Events industries. I'm a life-long learner that's
         looking for ways to get out of my comfort zone to grow my versatility as
-        a developer.
+        a developer.`}
       </Styled.BioParagraph>
       <Styled.BioParagraph>
-        I've built sites ranging from simple portfolios, eCommerce shops, to
+        {`I've built sites ranging from simple portfolios, eCommerce shops, to
         data driven B2B web apps with machine learning and data visualizations.
         Some of my freelance web development experience has been with Shopify,
         Wix, and SquareSpace. I've also worked on a freelance project that
         designed a custom API that integrated with 3rd party APIs to automate
-        inventory and sales.
+        inventory and sales.`}
       </Styled.BioParagraph>
       <Styled.BioParagraph>
-        In 2017, I attended UCLA's Bootcamp to accelerate my learning and gain
+        {`In 2017, I attended UCLA's Bootcamp to accelerate my learning and gain
         knowledge of the Node.js ecosystem. Since then, I fell in love with &
         have been primarily using React in web applications. For static sites, I
         love using Gatsby for creating blazing fast, SEO-driven headless
-        frontend user interfaces (like this site).
+        frontend user interfaces (like this site).`}
       </Styled.BioParagraph>
       <Styled.BioParagraph>
-        When I'm not looking into a screen filled with code, I'm usually walking
+        {`When I'm not looking into a screen filled with code, I'm usually walking
         with my dog, at the gym, meditating, trying a new plant based recipe, or
-        doing some form musical expression. I've owned a pair of turntables,
+        doing some form of musical expression. I've owned a pair of turntables,
         beat machine, and records since I was in the 9th grade. I'm in a DJ
-        group called{' '}
+        group called `}
         <Styled.ContactLink
           href={'themusicplease.com'}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Music Please
-        </Styled.ContactLink>{' '}
-        which started from a radio show that lasted 7 years. And, I'm an avid
-        New England sports fan!
+          {`Music Please`}
+        </Styled.ContactLink>
+        {` which started from a radio show that lasted 7 years. And, I'm an avid
+        New England sports fan!`}
       </Styled.BioParagraph>
     </Styled.BioContainer>
   )
