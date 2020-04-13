@@ -5,13 +5,13 @@ exports[`<ToggleSwitch /> should match ToggleSwitch snapshot 1`] = `
   className="css-1bapo22"
 >
   <button
-    className="active left css-ln562o"
+    className="active left css-2ymbyf"
     onClick={[Function]}
   >
     foo
   </button>
   <button
-    className=" right css-ln562o"
+    className=" right css-2ymbyf"
     onClick={[Function]}
   >
     bar

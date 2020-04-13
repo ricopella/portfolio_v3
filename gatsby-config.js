@@ -87,6 +87,7 @@ module.exports = {
                 items: [{
                         alt: 'Portfolio - Narin Sundarabhaya Portfolio',
                         description: 'SEO Optimized and fast professional portfolio built with React & TypeScript and hosted with Netlify',
+                        fileName: 'portfolio.png',
                         href: 'https://github.com/ricopella/portfolio_v3',
                         title: 'Personal Portfolio',
                         tech: [
@@ -400,7 +401,7 @@ module.exports = {
                 background_color: `#666385`,
                 theme_color: `#666385`,
                 display: `minimal-ui`,
-                icon: `src/images/favicon.ico`, // This path is relative to the root of the site.
+                icon: `src/images/favicon/favicon.ico`, // This path is relative to the root of the site.
             },
         },
         'gatsby-plugin-offline',

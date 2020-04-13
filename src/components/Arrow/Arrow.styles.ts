@@ -1,25 +1,26 @@
 import styled from '@emotion/styled'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import { COLORS } from '../../styles/variables'
 import { keyframes } from '@emotion/core'
 
 // Originally from: https://codepen.io/TommiTikall/pen/xZwpGR
 const Arrow = styled.div`
+  left: 50%;
   opacity: 0;
   position: absolute;
-  left: 50%;
-  top: 75%;
+  top: 85%;
   transform-origin: 50% 50%;
   transform: translate3d(-50%, -50%, 0);
 
   &:before,
   &:after {
-    background: #fff;
+    background: ${COLORS.white};
     content: '';
     display: block;
     height: 0.1875rem;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
     width: 1.875rem;
   }
 
@@ -37,7 +38,7 @@ const Arrow = styled.div`
 const AnimateArrow = keyframes`
 0% {
   opacity: 0;
-  top: 70%;
+  top: 80%;
 }
 70% {
   opacity: 1;
@@ -56,14 +57,14 @@ const ArrowSecond = styled(Arrow)`
 `
 
 const ArrowMask = styled(AnchorLink)`
-  position: absolute;
-  left: 48%;
-  top: 69%;
-  width: 5rem;
-  height: 5rem;
-  color: transparent;
   background-color: transparent;
   border: none;
+  color: transparent;
+  height: 5rem;
+  left: 48%;
+  position: absolute;
+  top: 78%;
+  width: 5rem;
   z-index: 5;
 `
 
