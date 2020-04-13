@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import { ToggleSwitchProps } from '../../types'
 import Styled from './ToggleSwitch.styles'
+import { ToggleSwitchProps } from '../../types'
 
 /**
  * Component with two buttons that toggle one or the other
