@@ -91,7 +91,7 @@ const AboutMeMain = () => {
         beat machine, and records since I was in the 9th grade. I'm in a DJ
         group called `}
         <Styled.ContactLink
-          href={'themusicplease.com'}
+          href={'https://themusicplease.com/'}
           target="_blank"
           rel="noopener noreferrer"
         >
