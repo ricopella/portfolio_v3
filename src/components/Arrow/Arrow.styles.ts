@@ -66,6 +66,7 @@ const ArrowMask = styled(AnchorLink)`
   top: 78%;
   width: 5rem;
   z-index: 5;
+  opacity: 0;
 `
 
 export default {
