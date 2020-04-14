@@ -10,7 +10,7 @@ exports[`<GalleryItem /> should match GalleryItem snapshot 1`] = `
     <div />
   </div>
   <div
-    className="css-1qsd2ga"
+    className="css-1hg6sd7"
   >
     <div
       className="css-d8eafh"
@@ -21,7 +21,7 @@ exports[`<GalleryItem /> should match GalleryItem snapshot 1`] = `
         King Tester
       </div>
       <a
-        className="css-1jl04fd"
+        className="css-187n1lu"
         href="test.com"
         rel="noopener noreferrer"
         target="_blank"
@@ -58,7 +58,7 @@ exports[`<GalleryItem /> should match GalleryItem snapshot 1`] = `
         className="css-3m0mjb"
       >
         <div
-          className="css-1t1bufi"
+          className="css-cjmkt3"
         >
           renderer
         </div>
@@ -67,7 +67,7 @@ exports[`<GalleryItem /> should match GalleryItem snapshot 1`] = `
         className="css-3m0mjb"
       >
         <div
-          className="css-1t1bufi"
+          className="css-cjmkt3"
         >
           react
         </div>

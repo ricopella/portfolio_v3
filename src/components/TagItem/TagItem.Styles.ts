@@ -12,7 +12,7 @@ const ItemWrapper = styled.div`
 const Item = styled.div`
   background-color: ${COLORS.palette.mediumSlateBlue};
   border-radius: 0.3125rem;
-  color: white;
+  color: ${COLORS.palette.eerieBlack};
   font-size: 0.825rem;
   padding: 0.3125rem 0.3125rem;
   width: max-content;

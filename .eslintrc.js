@@ -6,6 +6,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'prettier/@typescript-eslint',
         'plugin:prettier/recommended'
+        "plugin:jsx-a11y/recommended"
     ],
     settings: {
         react: {
@@ -18,7 +19,7 @@ module.exports = {
         es6: true,
         jest: true,
     },
-    plugins: ['@typescript-eslint', 'react'],
+    plugins: ['@typescript-eslint', 'react', "jsx-a11y"],
     parserOptions: {
         ecmaFeatures: {
             jsx: true
@@ -29,6 +30,7 @@ module.exports = {
     rules: {
         'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
         '@typescript-eslint/explicit-function-return-type': 'off'
+        "jsx-a11y/rule-name": "warning"
     },
     overrides: [
         // Override some TypeScript rules just for .js files

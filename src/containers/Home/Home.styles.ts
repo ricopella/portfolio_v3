@@ -28,7 +28,6 @@ const IntroTextContainer = styled(motion.div)`
   justify-content: center;
   margin: 0 10%;
   z-index: ${Z_INDEX.PAGE_CONTENT};
-  text-shadow: 0 0.0625rem 0 ${COLORS.palette.eerieBlack};
 
   @media (max-width: ${BREAKPOINTS.tabletPro}) {
     grid-template-rows: 2.25rem 1.75rem;
@@ -41,7 +40,7 @@ const IntroTextContainer = styled(motion.div)`
 `
 
 const IntroTextName = styled.div`
-  color: ${COLORS.accent};
+  color: ${COLORS.homeBanner};
   font-size: 3.5rem;
   font-weight: bold;
 
@@ -64,6 +63,7 @@ const IntroContentWrapper = styled.div`
 `
 
 const IntroContentText = styled.div`
+  color: ${COLORS.gray.calm};
   @media (max-width: ${BREAKPOINTS.smRem}) {
     max-width: 17.5rem;
   }
