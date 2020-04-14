@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { motion } from 'framer-motion'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import {
   BREAKPOINTS,
   BORDERS,
@@ -121,7 +122,7 @@ const PageHeading = css`
   color: ${COLORS.gray.calm};
 `
 
-const ContactLink = styled.a`
+const ContactLink = styled(OutboundLink)`
   color: ${COLORS.terminalBackground};
 
   :hover {
