@@ -10,9 +10,8 @@ const Hero = () => {
     query {
       image: file(relativePath: { eq: "joseph-ngabo.jpg" }) {
         sharp: childImageSharp {
-          fluid(maxWidth: 2000, quality: 100) {
-            ...GatsbyImageSharpFluid
-            presentationWidth
+          fluid(quality: 90, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
