@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { COLORS } from '../../styles/variables'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const TerminalWrapper = styled.div`
   display: grid;
@@ -19,7 +20,7 @@ const TerminalOutput = styled.div`
 const TerminalArrow = styled.span`
   color: ${COLORS.limeGreen};
 `
-const TerminalLink = styled.a`
+const TerminalLink = styled(OutboundLink)`
   cursor: pointer;
   color: ${COLORS.teal};
 `
