@@ -22,6 +22,7 @@ const MenuToggle: FC<{ toggle: Cycle }> = ({ toggle }) => (
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.9 }}
     className="hamburger_menu"
+    aria-label="navigation button"
   >
     <svg
       width={MENU_WIDTH}
