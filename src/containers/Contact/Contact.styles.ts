@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { BREAKPOINTS, COLORS } from '../../styles/variables'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const ContactWrapper = styled.div`
   display: grid;
@@ -24,7 +25,7 @@ const ContactDescription = styled.p`
   color: ${COLORS.gray.light};
 `
 
-const ContactLink = styled.a`
+const ContactLink = styled(OutboundLink)`
   color: ${COLORS.terminalBackground};
   font-weight: bold;
 
