@@ -14,7 +14,7 @@ const Arrow = styled.div`
 
   &:before,
   &:after {
-    background: ${COLORS.white};
+    background: ${COLORS.terminalBackground};
     content: '';
     display: block;
     height: 0.1875rem;
