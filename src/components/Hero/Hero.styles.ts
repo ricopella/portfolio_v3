@@ -1,20 +1,23 @@
 import BackgroundImage from 'gatsby-background-image'
 import styled from '@emotion/styled'
+import { COLORS } from '../../styles/variables'
 
-const ImageBackground = styled(BackgroundImage)`
-  background-size: cover;
-  height: 100vh;
-  position: 'unset';
-  opacity: 0.95;
-  max-width: 100%;
-  padding: 0;
-  grid-row: 1/-1;
+const BackgroundGradient = styled.div`
+  background: -webkit-linear-gradient(
+    360deg,
+    ${COLORS.white} 0.5%,
+    ${COLORS.terminalBackground} 360%
+  );
+  background: linear-gradient(
+    360deg,
+    ${COLORS.white} 0.5%,
+    ${COLORS.terminalBackground} 360%
+  );
   grid-column: 1/-1;
+  grid-row: 1/-1;
+  height: 100vh;
+  max-width: 100%;
   min-height: 100vh;
-
-  + * {
-    margin-top: 0;
-  }
 `
 
-export default ImageBackground
+export default BackgroundGradient
