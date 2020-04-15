@@ -12,6 +12,7 @@ module.exports = {
         title: `Welcome`,
         titleTemplate: `nrs.`,
         description: `Full-Stack Developer specialized in the Front-End.`,
+        siteUrl: `https://narinsun.com`
         lang: `en`,
         author: {
             name: 'Narin Sundarabhaya',
