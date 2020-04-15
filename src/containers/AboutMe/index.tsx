@@ -1,3 +1,4 @@
+import Img from 'gatsby-image'
 import Page from '../../components/Page/index'
 import ProfileImage from '../../components/ProfileImage'
 import React, { useState } from 'react'
@@ -5,6 +6,7 @@ import Styled from './AboutMe.styles'
 import TerminalCommand from '../../components/TerminalCommand/index'
 import ToggleSwitch from '../../components/ToggleSwitch'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
+import useSpotifyData from '../../hooks/useSpotifyData'
 import { AboutMeViewsArr } from '../../types'
 import { COLORS } from '../../styles/variables'
 import { SLIDE_IN_ANIMATION_OPTIONS } from '../../styles/variables'
@@ -15,6 +17,8 @@ const HEADING = 'About Me'
 const AboutMeMain = () => {
   const { terminalCommands } = useSiteMetaData()
   const [currentView, setCurrentView] = useState<string>(VIEWS[0])
+  const recentTracks = useSpotifyData()
+  console.log(recentTracks)
 
   const renderTerminalHeader = () => (
     <Styled.TerminalHeader>
@@ -100,6 +104,16 @@ const AboutMeMain = () => {
         {` which started from a radio show that lasted 7 years. And, I'm an avid
         New England sports fan!`}
       </Styled.BioParagraph>
+      <div>
+        {recentTracks.map((audio, idx) => (
+          <div key={audio.track.name + idx}>
+            {audio.track.name} -{' '}
+            <a href={audio.track.href}>{audio.track.href} </a>
+            {audio.track.artists.map(x => `${x.name} -`)}
+            {/* <Img fluid={audio.track.image.localFile.childImageSharp.fluid} /> */}
+          </div>
+        ))}
+      </div>
     </Styled.BioContainer>
   )
 
