@@ -23,6 +23,7 @@ exports[`<GalleryItem /> should match GalleryItem snapshot 1`] = `
       <a
         className="css-187n1lu"
         href="test.com"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
         title="test.com"

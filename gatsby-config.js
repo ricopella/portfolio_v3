@@ -12,6 +12,7 @@ module.exports = {
         title: `Welcome`,
         titleTemplate: `nrs.`,
         description: `Full-Stack Developer specialized in the Front-End.`,
+        siteUrl: `https://narinsun.com`,
         lang: `en`,
         author: {
             name: 'Narin Sundarabhaya',
@@ -426,5 +427,21 @@ module.exports = {
                 respectDNT: true,
             },
         },
+        `gatsby-plugin-sitemap`,
+        {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+                host: 'https://www.narinsun.com',
+                sitemap: 'https://www.narinsun.com/sitemap.xml',
+                env: {
+                    development: {
+                        policy: [{ userAgent: '*', disallow: ['/'] }]
+                    },
+                    production: {
+                        policy: [{ userAgent: '*', allow: '/' }]
+                    }
+                }
+            }
+        }
     ],
 }
