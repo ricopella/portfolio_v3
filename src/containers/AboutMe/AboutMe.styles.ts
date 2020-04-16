@@ -63,11 +63,11 @@ const TerminalHeaderActionBalls = styled.div`
 const BioContainer = styled(motion.div)`
   display: grid;
   grid-template-columns: max-content 1fr;
-  grid-template-rows: repeat(3, max-content);
+  grid-template-rows: repeat(4, max-content);
   grid-column-gap: 1.25rem;
   margin-top: 1rem;
 
-  @media (max-width: 1244px) {
+  @media (max-width: 77.75rem) {
     grid-template-columns: 1fr;
   }
 
@@ -109,17 +109,10 @@ const BioParagraph = styled('p')`
     grid-column: 2;
     align-self: end;
 
-    @media (max-width: 1244px) {
+    @media (max-width: 77.75rem) {
       grid-column: 1 / -1;
     }
   }
-`
-
-const PageHeading = css`
-  fontsize: 3rem;
-  text-align: center;
-  text-decoration: underline;
-  color: ${COLORS.gray.calm};
 `
 
 const ContactLink = styled(OutboundLink)`
@@ -131,17 +124,57 @@ const ContactLink = styled(OutboundLink)`
   }
 `
 
+const SpotifyHeading = styled.h4`
+  color: ${COLORS.gray.light};
+  margin: 0 0;
+`
+const SpotifyHeadingWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 1rem;
+`
+
+const SpotifySubheading = styled.p`
+  color: ${COLORS.gray.light};
+`
+
+const ShowMoreButtonWrapper = styled.div`
+  margin: 0 auto;
+  grid-column: 1/-1;
+  margin-top: 2rem;
+`
+
+const ShowMoreButton = styled(motion.button)`
+  height: 3rem;
+  width: 10rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.1rem;
+  border-radius: 3.4375rem;
+  background-color: ${COLORS.terminalBackground};
+`
+
+const MoreAboutMeWrapper = styled(motion.div)`
+  grid-column: 1/-1;
+`
+
 export default {
-  ContactLink,
   BioContainer,
   BioHeadingText,
   BioHeadingWrapper,
   BioParagraph,
-  PageHeading,
+  ContactLink,
+  SpotifyHeading,
+  SpotifyHeadingWrapper,
+  SpotifySubheading,
   TerminalBody,
   TerminalContainer,
   TerminalHeader,
   TerminalHeaderActionBalls,
   TerminalHeaderActionContainer,
   TerminalHeaderTitle,
+  ShowMoreButton,
+  MoreAboutMeWrapper,
+  ShowMoreButtonWrapper,
 }

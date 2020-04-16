@@ -139,6 +139,23 @@ export const SLIDE_DOWN_ANIMATION_OPTIONS = {
   },
 }
 
+export const SLIDE_ELEMENT_DOWN_ANIMATION = {
+  initial: 'collapsed',
+  exit: 'collapsed',
+  variants: {
+    collapsed: {
+      height: 0,
+      opacity: 0,
+      zIndex: -1,
+    },
+    visible: {
+      opacity: 1,
+      height: `100%`,
+      zIndex: 0,
+    },
+  },
+}
+
 export const WIDTHS = {
   md: 720,
   lg: `60rem`,
