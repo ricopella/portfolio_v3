@@ -2,7 +2,7 @@
     "name": "portfolio_v3",
     "private": true,
     "description": "A personal portfolio, originated from the Gatsby Starter Kit",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "author": "Narin Sundarabhaya <nrs710@gmail.com>",
     "dependencies": {
         "@babel/core": "^7.9.0",
