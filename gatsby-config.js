@@ -257,6 +257,9 @@ module.exports = {
                         percent: 80,
                     },
                     {
+                        title: `GraphQL`,
+                        percent: 60,
+                    }, {
                         title: `CSSNext`,
                         percent: 75,
                     },
