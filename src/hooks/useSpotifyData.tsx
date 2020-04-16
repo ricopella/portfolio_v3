@@ -1,11 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import { UseSpotifyData } from '../types'
 
-const useSpotifyData = () => {
+const useSpotifyData = (): UseSpotifyData[] => {
   const { spotifyRecentTracks } = useStaticQuery(graphql`
     query {
       spotifyRecentTracks: allSpotifyRecentTrack(limit: 3) {
         nodes {
           track {
+            external_urls {
+              spotify
+            }
             name
             preview_url
             artists {
@@ -22,6 +26,7 @@ const useSpotifyData = () => {
               }
             }
           }
+          played_at
         }
       }
     }

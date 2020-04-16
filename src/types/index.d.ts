@@ -71,6 +71,10 @@ export interface MenuItemProps {
   item: string
 }
 
+export interface SpotifyTopItem extends UseSpotifyData {
+  playedAt?: string
+}
+
 // GRAPHQL QUERIES
 
 export interface UseSiteMetaDataReturns {
@@ -90,6 +94,36 @@ export interface UseSiteMetaDataReturns {
   skills: Skills[]
   title: string
   titleTemplate: string
+}
+
+export interface UseSpotifyData {
+  track: {
+    name: string
+    preview_url: string
+    external_urls: {
+      spotify: string
+    }
+    artists: {
+      name: string
+    }[]
+    href: string
+    image: {
+      localFile: {
+        childImageSharp: {
+          fluid: {
+            base64: string
+            aspectRatio: number
+            src: string
+            srcSet: string
+            srcWebp: string
+            srcSetWebp: string
+            sizes: string
+          }
+        }
+      }
+    }
+  }
+  played_at?: string
 }
 
 export interface ContactItem {
