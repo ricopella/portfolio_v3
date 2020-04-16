@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 const DATA_SAL = [`slide-up`, `slide-left`, `slide-right`]
-const DATA_SAL_DELAY = `200`
+const DATA_SAL_DELAY = `100`
 const DATA_SAL_EASING = `ease`
 
 /**

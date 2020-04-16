@@ -413,13 +413,19 @@ module.exports = {
                 background_color: `#666385`,
                 theme_color: `#666385`,
                 display: `minimal-ui`,
-                icon: `src/images/favicon/favicon.ico`, // This path is relative to the root of the site.
+                icon: `src/images/favicon/favicon.ico`,
             },
         },
         'gatsby-plugin-offline',
         'gatsby-plugin-emotion',
         `gatsby-plugin-typescript`,
-        `gatsby-plugin-scroll-reveal`,
+        {
+            resolve: `gatsby-plugin-scroll-reveal`,
+            options: {
+                threshold: .05,
+                once: true,
+            }
+        },
         'gatsby-plugin-anchor-links',
         {
             resolve: `gatsby-plugin-google-analytics`,
@@ -436,9 +442,9 @@ module.exports = {
                 clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
                 refreshToken: process.env.SPOTIFY_REFRESH_TOKEN,
 
-                fetchPlaylists: true, // optional. Set to false to disable fetching of your playlists
-                fetchRecent: true, // optional. Set to false to disable fetching of your recently played tracks
-                timeRanges: ['short_term', 'medium_term', 'long_term'], // optional. Set time ranges to be fetched
+                fetchPlaylists: true,
+                fetchRecent: true,
+                timeRanges: ['short_term', 'medium_term', 'long_term'],
             },
         },
     ],
