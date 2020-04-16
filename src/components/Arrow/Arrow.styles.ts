@@ -14,7 +14,7 @@ const Arrow = styled.div`
 
   &:before,
   &:after {
-    background: ${COLORS.white};
+    background: ${COLORS.terminalBackground};
     content: '';
     display: block;
     height: 0.1875rem;
@@ -66,6 +66,7 @@ const ArrowMask = styled(AnchorLink)`
   top: 78%;
   width: 5rem;
   z-index: 5;
+  opacity: 0;
 `
 
 export default {

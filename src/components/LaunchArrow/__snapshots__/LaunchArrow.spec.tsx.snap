@@ -2,8 +2,9 @@
 
 exports[`<LaunchArrow /> should match LaunchArrow snapshot 1`] = `
 <a
-  className="css-1jl04fd"
+  className="css-187n1lu"
   href="foo.com"
+  onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
   title="foo.com"

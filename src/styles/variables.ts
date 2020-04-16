@@ -29,17 +29,18 @@ export const COLORS = {
     whisper: '#fbfafc',
   },
   code: '#fcf6f0',
+  homeBanner: `#275573`,
   gray: {
     dark: 'hsla(270, 17.119554496%, 0%, 0.92)',
     copy: 'hsla(270, 15.797828016000002%, 0%, 0.88)',
     calm: 'rgba(0, 0, 0, 0.54)',
-    light: '#777',
+    light: '#737272',
   },
   white: '#fff',
   black: '#000',
   limeGreen: '#43b743',
   terminalHeader: '#e4e3e5',
-  terminalBackground: '#666385',
+  terminalBackground: '#4c4961',
   terminalActionClose: '#f96256',
   terminalActionMinimize: '#fdbc3d',
   terminalActionExpand: '#2dbb41',
@@ -134,6 +135,23 @@ export const SLIDE_DOWN_ANIMATION_OPTIONS = {
       opacity: 0,
       height: 0,
       display: `none`,
+    },
+  },
+}
+
+export const SLIDE_ELEMENT_DOWN_ANIMATION = {
+  initial: 'collapsed',
+  exit: 'collapsed',
+  variants: {
+    collapsed: {
+      height: 0,
+      opacity: 0,
+      zIndex: -1,
+    },
+    visible: {
+      opacity: 1,
+      height: `100%`,
+      zIndex: 0,
     },
   },
 }

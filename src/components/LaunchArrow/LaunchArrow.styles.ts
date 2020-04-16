@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
 import { COLORS } from '../../styles/variables'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
-const LaunchArrowWrapper = styled.a`
+const LaunchArrowWrapper = styled(OutboundLink)`
   align-items: center;
   background-color: ${COLORS.terminalBackground};
   border-radius: 0.3125rem;

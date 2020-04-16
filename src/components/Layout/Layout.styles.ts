@@ -27,6 +27,7 @@ const FooterContainer = styled('footer')`
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     margin-bottom: 10%;
+    margin-top: 10%;
   }
 `
 

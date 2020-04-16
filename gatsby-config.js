@@ -1,8 +1,18 @@
+const activeEnv =
+    process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+
+console.log(`Using environment config: '${activeEnv}'`)
+
+require("dotenv").config({
+    path: `.env.${activeEnv}`,
+})
+
 module.exports = {
     siteMetadata: {
         title: `Welcome`,
         titleTemplate: `nrs.`,
         description: `Full-Stack Developer specialized in the Front-End.`,
+        siteUrl: `https://narinsun.com`,
         lang: `en`,
         author: {
             name: 'Narin Sundarabhaya',
@@ -248,6 +258,9 @@ module.exports = {
                         percent: 80,
                     },
                     {
+                        title: `GraphQL`,
+                        percent: 60,
+                    }, {
                         title: `CSSNext`,
                         percent: 75,
                     },
@@ -401,13 +414,55 @@ module.exports = {
                 background_color: `#666385`,
                 theme_color: `#666385`,
                 display: `minimal-ui`,
-                icon: `src/images/favicon/favicon.ico`, // This path is relative to the root of the site.
+                icon: `src/images/favicon/favicon.ico`,
             },
         },
         'gatsby-plugin-offline',
         'gatsby-plugin-emotion',
         `gatsby-plugin-typescript`,
-        `gatsby-plugin-scroll-reveal`,
+        {
+            resolve: `gatsby-plugin-scroll-reveal`,
+            options: {
+                threshold: .05,
+                once: true,
+            }
+        },
         'gatsby-plugin-anchor-links',
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: process.env.GA_TRACKING_ID || "",
+                anonymize: true,
+                respectDNT: true,
+            },
+        },
+        {
+            resolve: `gatsby-source-spotify`,
+            options: {
+                clientId: process.env.SPOTIFY_CLIENT_ID,
+                clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+                refreshToken: process.env.SPOTIFY_REFRESH_TOKEN,
+
+                fetchPlaylists: true,
+                fetchRecent: true,
+                timeRanges: ['short_term', 'medium_term', 'long_term'],
+            },
+        },
+        `gatsby-plugin-sitemap`,
+        {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+                host: 'https://www.narinsun.com',
+                sitemap: 'https://www.narinsun.com/sitemap.xml',
+                env: {
+                    development: {
+                        policy: [{ userAgent: '*', disallow: ['/'] }]
+                    },
+                    production: {
+                        policy: [{ userAgent: '*', allow: '/' }]
+                    }
+                }
+            }
+        }
     ],
 }
