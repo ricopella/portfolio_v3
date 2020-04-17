@@ -18,6 +18,9 @@ export const BREAKPOINTS = {
 
 export const COLORS = {
   brand: '#663399',
+  darkBackground: `#121212`,
+  lighterDarkBackground: `#373737`,
+  darkActionColors: `#cac4f5`,
   header: 'rgba(255,255,255, .5)',
   lilac: '#9d7cbf',
   accent: '#ffb238',
@@ -175,14 +178,20 @@ export const LIGHT_MODE_THEME = {
   actionColor: COLORS.terminalBackground,
   actionBackgroundColor: COLORS.terminalBackground,
   navBackground: COLORS.palette.magnolia,
+  toggleSwitchActiveColor: COLORS.white,
+  themeToggleBackgroundColor: COLORS.darkBackground,
+  themeToggleButtonColor: COLORS.darkActionColors,
 }
 
 export const DARK_MODE_THEME = {
   color: COLORS.white,
-  backgroundColor: `#121212`,
+  backgroundColor: COLORS.darkBackground,
   colorCalm: COLORS.white,
-  backgroundContentColor: `#373737`,
-  actionColor: `#cac4f5`, // was white
+  backgroundContentColor: COLORS.lighterDarkBackground,
+  actionColor: COLORS.darkActionColors,
   actionBackgroundColor: COLORS.terminalBackground,
-  navBackground: `#373737`,
+  navBackground: COLORS.lighterDarkBackground,
+  toggleSwitchActiveColor: COLORS.lighterDarkBackground,
+  themeToggleBackgroundColor: COLORS.white,
+  themeToggleButtonColor: COLORS.terminalBackground,
 }
