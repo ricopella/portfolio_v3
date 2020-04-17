@@ -4,7 +4,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const LaunchArrowWrapper = styled(OutboundLink)`
   align-items: center;
-  background-color: ${COLORS.terminalBackground};
+  background-color: ${props => props.theme.actionColor};
   border-radius: 0.3125rem;
   display: grid;
   grid-template-columns: 1fr;

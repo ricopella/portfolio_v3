@@ -10,10 +10,10 @@ const ToggleSwitchContainer = styled('div')`
 `
 
 const ToggleButton = styled('button')`
-  background-color: transparent;
+  background-color: ${props => props.theme.backgroundContentColor};
   border-radius: 3.4375rem;
-  border: 0.25rem solid ${COLORS.terminalBackground};
-  color: ${COLORS.terminalBackground};
+  border: 0.25rem solid ${props => props.theme.actionColor};
+  color: ${props => props.theme.actionColor};
   font-size: 1.25rem;
   font-weight: bold;
   height: 2.5rem;
@@ -22,7 +22,7 @@ const ToggleButton = styled('button')`
   letter-spacing: 0.1rem;
 
   &.active {
-    background-color: ${COLORS.terminalBackground};
+    background-color: ${props => props.theme.actionColor};
     color: ${COLORS.white};
 
     &:hover {

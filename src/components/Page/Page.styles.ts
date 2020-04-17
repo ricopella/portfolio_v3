@@ -10,7 +10,6 @@ const StyledPage = styled.div`
   height: 100%;
   justify-content: center;
   margin: 8% 10% 0 10%;
-  background-color: ${COLORS.header};
   max-width: 100vw;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
