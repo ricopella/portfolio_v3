@@ -16,7 +16,7 @@ const ProgressRowContainer = styled.div`
 `
 
 const ProgressTitle = styled.div`
-  color: ${COLORS.gray.calm};
+  color: ${props => props.theme.colorCalm};
   text-align: right;
   grid-row: 1;
   grid-column: 1;
@@ -29,7 +29,7 @@ const ProgressTitle = styled.div`
 `
 
 const ProgressPercent = styled.div`
-  color: ${COLORS.gray.calm};
+  color: ${props => props.theme.colorCalm};
   text-align: left;
   grid-row: 1;
   grid-column: 3;
@@ -48,7 +48,7 @@ const ProgressBarContainer = styled.div`
   border: 0.1875rem solid ${COLORS.palette.pastelGray};
   grid-row: 1;
   grid-column: 2;
-
+  background-color: ${props => props.theme.backgroundContentColor};
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     width: 100%;
     grid-row: 1;
