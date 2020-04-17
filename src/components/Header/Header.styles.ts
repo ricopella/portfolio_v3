@@ -11,7 +11,7 @@ const Nav = styled(motion.nav)`
 `
 
 const NavBackground = styled(motion.div)`
-  background: ${COLORS.palette.magnolia};
+  background: ${props => props.theme.navBackground};
   bottom: 0;
   display: grid;
   left: 0;
