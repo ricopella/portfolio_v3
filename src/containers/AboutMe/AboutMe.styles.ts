@@ -36,7 +36,7 @@ const TerminalHeader = styled.div`
 `
 
 const TerminalBody = styled.div`
-  background-color: ${COLORS.terminalBackground};
+  background-color: ${props => props.theme.actionColor};
   border-radius: ${BORDERS.medium};
   box-shadow: ${SHADOWS.box};
   font-family: ${FONTS.monospace};
@@ -94,15 +94,15 @@ const BioHeadingWrapper = styled.div`
 
 const BioHeadingText = styled.div`
   max-width: 15.625rem;
-  color: ${COLORS.gray.light};
+  color: ${props => props.theme.color};
 
   & h2,
   & h4 {
-    color: ${COLORS.gray.light};
+    color: ${props => props.theme.color};
   }
 `
 const BioParagraph = styled('p')`
-  color: ${COLORS.gray.light};
+  color: ${props => props.theme.color};
   grid-column: 1 / -1;
 
   &.first {
@@ -116,16 +116,16 @@ const BioParagraph = styled('p')`
 `
 
 const ContactLink = styled(OutboundLink)`
-  color: ${COLORS.terminalBackground};
+  color: ${props => props.theme.actionColor};
 
   :hover {
-    color: ${COLORS.gray.calm};
+    color: ${props => props.theme.colorCalm};
     transform: scale(1.1);
   }
 `
 
 const SpotifyHeading = styled.h4`
-  color: ${COLORS.gray.light};
+  color: ${props => props.theme.color};
   margin: 0 0;
 `
 const SpotifyHeadingWrapper = styled.div`
@@ -135,7 +135,7 @@ const SpotifyHeadingWrapper = styled.div`
 `
 
 const SpotifySubheading = styled.p`
-  color: ${COLORS.gray.light};
+  color: ${props => props.theme.color};
 `
 
 const ShowMoreButtonWrapper = styled.div`
@@ -152,7 +152,8 @@ const ShowMoreButton = styled(motion.button)`
   color: white;
   letter-spacing: 0.1rem;
   border-radius: 3.4375rem;
-  background-color: ${COLORS.terminalBackground};
+  background-color: ${props => props.theme.actionColor};
+  border: none;
 `
 
 const MoreAboutMeWrapper = styled(motion.div)`
