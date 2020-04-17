@@ -5,7 +5,7 @@ import { COLORS } from '../../styles/variables'
 const ProfileImageOuterBorder = styled('div')`
   display: grid;
   align-items: center;
-  background-color: ${COLORS.gray.light};
+  background-color: ${props => props.theme.color};
   border-radius: 50%;
   grid-template-columns: 1fr;
   height: 13.125rem;

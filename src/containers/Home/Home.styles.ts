@@ -63,7 +63,7 @@ const IntroContentWrapper = styled.div`
 `
 
 const IntroContentText = styled.div`
-  color: ${COLORS.gray.calm};
+  color: ${props => props.theme.colorCalm};
   @media (max-width: ${BREAKPOINTS.smRem}) {
     max-width: 17.5rem;
   }

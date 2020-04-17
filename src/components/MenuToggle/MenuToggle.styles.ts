@@ -19,6 +19,11 @@ const MenuToggleButton = styled(motion.button)`
   z-index: ${Z_INDEX.HEADER};
 `
 
+const Path = styled(motion.path)`
+  stroke: ${props => props.theme.actionColor};
+`
+
 export default {
   MenuToggleButton,
+  Path,
 }
