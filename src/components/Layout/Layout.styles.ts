@@ -5,6 +5,7 @@ const RootContainer = styled('div')`
   display: grid;
   grid-template-rows: repeat(2, max-content);
   grid-template-columns: 1fr;
+  background-color: ${props => props.theme.backgroundColor};
 `
 
 const MainBodyContainer = styled('div')`
@@ -17,8 +18,7 @@ const MainBodyContainer = styled('div')`
 const FooterContainer = styled('footer')`
   display: grid;
   align-items: center;
-  background-color: ${COLORS.header};
-  color: ${COLORS.gray.light};
+  color: ${props => props.theme.color};
   grid-column-gap: 0.25rem;
   grid-row: 3 / -1;
   grid-template-columns: max-content max-content;
