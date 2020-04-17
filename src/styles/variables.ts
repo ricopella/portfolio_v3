@@ -166,3 +166,23 @@ export const Z_INDEX = {
   MOBILE_NAV_BUTTON: 1030 + 1,
   PAGE_CONTENT: 2,
 }
+
+export const LIGHT_MODE_THEME = {
+  color: COLORS.gray.light,
+  backgroundColor: COLORS.white,
+  colorCalm: COLORS.gray.calm,
+  backgroundContentColor: COLORS.white,
+  actionColor: COLORS.terminalBackground,
+  actionBackgroundColor: COLORS.terminalBackground,
+  navBackground: COLORS.palette.magnolia,
+}
+
+export const DARK_MODE_THEME = {
+  color: COLORS.white,
+  backgroundColor: `#121212`,
+  colorCalm: COLORS.white,
+  backgroundContentColor: `#373737`,
+  actionColor: `#cac4f5`, // was white
+  actionBackgroundColor: COLORS.terminalBackground,
+  navBackground: `#373737`,
+}
