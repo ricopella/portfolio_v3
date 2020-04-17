@@ -22,15 +22,15 @@ const ContactRow = styled.div`
 
 const ContactDescription = styled.p`
   max-width: calc(100vw - 23%);
-  color: ${COLORS.gray.light};
+  color: ${props => props.theme.color};
 `
 
 const ContactLink = styled(OutboundLink)`
-  color: ${COLORS.terminalBackground};
+  color: ${props => props.theme.actionColor};
   font-weight: bold;
 
   :hover {
-    color: ${COLORS.gray.calm};
+    color: ${props => props.theme.colorCalm};
     transform: scale(1.1);
   }
 `
