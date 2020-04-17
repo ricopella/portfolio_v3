@@ -27,7 +27,7 @@ const GalleryImage = css`
 
 const ExperienceContentWrapper = styled.div`
   display: grid;
-  color: ${COLORS.gray.light};
+  color: ${props => props.theme.color};
   grid-row-gap: 1rem;
   margin-top: 1rem;
 `
@@ -61,7 +61,7 @@ const ExperienceMyTitleRow = styled.div`
 const ExperienceTitle = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
-  color: ${COLORS.gray.copy};
+  color: ${props => props.theme.color};
 
   @media (max-width: ${BREAKPOINTS.smRem}) {
     max-width: calc(100vw - 6.9375rem);
