@@ -42,31 +42,6 @@ const SIDEBAR_VARIANTS = {
   },
 }
 
-const ThemeToggleWrapper = styled(motion.div)`
-  background-color: ${props => props.theme.themeToggleBackgroundColor};
-  border-radius: 3.4375rem;
-  grid-template-columns: max-content;
-  height: 2.1875rem;
-  left: 12.5rem;
-  position: relative;
-  top: 1.5rem;
-  width: 5rem;
-
-  &:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-  }
-`
-
-const ThemeToggleInner = styled(motion.div)`
-  display: grid;
-  background-color: ${props => props.theme.themeToggleButtonColor};
-  border-radius: 50%;
-  height: calc(100% - 35%);
-  position: absolute;
-  width: 1.375rem;
-`
-
 const TOGGLE_WRAPPER_VARIANTS = {
   open: {
     opacity: 1,
@@ -88,7 +63,5 @@ export default {
   Nav,
   NavBackground,
   SIDEBAR_VARIANTS,
-  ThemeToggleWrapper,
-  ThemeToggleInner,
   TOGGLE_WRAPPER_VARIANTS,
 }
