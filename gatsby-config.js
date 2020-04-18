@@ -442,8 +442,6 @@ module.exports = {
                 clientId: process.env.SPOTIFY_CLIENT_ID,
                 clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
                 refreshToken: process.env.SPOTIFY_REFRESH_TOKEN,
-
-                fetchPlaylists: true,
                 fetchRecent: true,
                 timeRanges: ['short_term', 'medium_term', 'long_term'],
             },
