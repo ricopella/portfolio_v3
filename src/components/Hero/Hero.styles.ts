@@ -5,13 +5,13 @@ import { COLORS } from '../../styles/variables'
 const BackgroundGradient = styled.div`
   background: -webkit-linear-gradient(
     360deg,
-    ${COLORS.white} 0.5%,
-    ${COLORS.terminalBackground} 360%
+    ${props => props.theme.backgroundColor} 0.5%,
+    ${props => props.theme.actionColor} 360%
   );
   background: linear-gradient(
     360deg,
-    ${COLORS.white} 0.5%,
-    ${COLORS.terminalBackground} 360%
+    ${props => props.theme.backgroundColor} 0.5%,
+    ${props => props.theme.actionColor} 360%
   );
   grid-column: 1/-1;
   grid-row: 1/-1;

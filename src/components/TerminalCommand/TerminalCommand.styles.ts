@@ -10,7 +10,7 @@ const TerminalWrapper = styled.div`
 `
 
 const TerminalInput = styled.div`
-  color: ${COLORS.gray.calm};
+  color: ${props => props.theme.colorCalm};
 `
 
 const TerminalOutput = styled.div`

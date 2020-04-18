@@ -26,7 +26,7 @@ const MenuItemLi = styled(motion.li)`
 `
 
 const HomepageLink = styled(AnchorLink)`
-  color: ${COLORS.terminalBackground};
+  color: ${props => props.theme.actionColor};
   cursor: pointer;
   font-size: ${DIMENSIONS.fontSize.regular};
   font-weight: ${FONT_WIDTHS.SEMI_BOLD};

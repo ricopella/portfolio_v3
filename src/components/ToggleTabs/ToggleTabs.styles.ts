@@ -30,7 +30,7 @@ const MobileAccordionContent = styled(motion.div)`
   padding: 3rem 1rem;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
-    border-left: 0.0625rem solid ${COLORS.terminalBackground};
+    border-left: 0.0625rem solid ${props => props.theme.actionColor};
   }
 `
 
@@ -38,7 +38,7 @@ const MobileAccordionButton = styled.div`
   display: grid;
   align-content: center;
   background-color: transparent;
-  color: ${COLORS.terminalBackground};
+  color: ${props => props.theme.actionColor};
   border: none;
   font-size: 1rem;
   grid-template-columns: 1fr max-content;
@@ -49,7 +49,7 @@ const MobileAccordionButton = styled.div`
   width: 100%;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
-    border-left: 0.0625rem solid ${COLORS.terminalBackground};
+    border-left: 0.0625rem solid ${props => props.theme.actionColor};
   }
 
   &:hover {
@@ -57,14 +57,14 @@ const MobileAccordionButton = styled.div`
   }
 
   &.active {
-    background-color: ${COLORS.terminalBackground};
+    background-color: ${props => props.theme.actionColor};
     color: white;
   }
 `
 
 const MobileAccordionArrow = styled.div`
-  border-right: 0.2em solid ${COLORS.terminalBackground};
-  border-top: 0.2em solid ${COLORS.terminalBackground};
+  border-right: 0.2em solid ${props => props.theme.actionColor};
+  border-top: 0.2em solid ${props => props.theme.actionColor};
   height: 1rem;
   position: relative;
   transform: rotate(135deg);
@@ -79,7 +79,7 @@ const MobileAccordionArrow = styled.div`
 `
 
 const ToggleTabsContainer = styled.div`
-  border-left: 0.0625rem solid ${COLORS.terminalBackground};
+  border-left: 0.0625rem solid ${props => props.theme.actionBackgroundColor};
   height: 100%;
   width: 100%;
 `
@@ -87,9 +87,9 @@ const ToggleTabsContainer = styled.div`
 const ToggleTabItem = styled(motion.button)`
   display: grid;
   align-items: center;
-  background-color: transparent;
+  background-color: ${props => props.theme.backgroundContentColor};
   border: none;
-  color: ${COLORS.terminalBackground};
+  color: ${props => props.theme.actionColor};
   font-size: 1rem;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -100,12 +100,11 @@ const ToggleTabItem = styled(motion.button)`
   width: 10rem;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
-    border-left: 0.0625rem solid ${COLORS.terminalBackground};
+    border-left: 0.0625rem solid ${props => props.theme.actionBackgroundColor};
   }
 
   &.active {
-    background-color: ${COLORS.terminalBackground};
-    border-bottom: 0.1875rem solid ${COLORS.terminalBackground};
+    background-color: ${props => props.theme.actionBackgroundColor};
     color: white;
     font-weight: bold;
     transition: all 0.2s ease-in;

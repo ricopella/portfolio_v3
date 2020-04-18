@@ -7,10 +7,9 @@ const MENU_WIDTH = 23
 const MENU_HEIGHT = 23
 
 const Path = props => (
-  <motion.path
+  <Styled.Path
     fill="transparent"
     strokeWidth="3"
-    stroke={COLORS.terminalBackground}
     strokeLinecap="round"
     {...props}
   />
