@@ -7,6 +7,7 @@ import TerminalCommand from '../../components/TerminalCommand/index'
 import ToggleSwitch from '../../components/ToggleSwitch'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
 import { AboutMeViewsArr } from '../../types'
+import { BUTTON_ANIMATION } from '../../styles/variables'
 import { COLORS } from '../../styles/variables'
 import {
   SLIDE_IN_ANIMATION_OPTIONS,
@@ -128,8 +129,7 @@ const AboutMeMain = () => {
       </Styled.MoreAboutMeWrapper>
       <Styled.ShowMoreButtonWrapper>
         <Styled.ShowMoreButton
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          {...BUTTON_ANIMATION}
           onClick={() => setIsMoreShown(curr => !curr)}
         >
           {!isMoreShown ? `Tell Me More!` : `Hide`}
