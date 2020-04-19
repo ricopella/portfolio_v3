@@ -3,12 +3,10 @@ import ProfileImage from '../../components/ProfileImage'
 import React, { useState } from 'react'
 import SpotifyTop3 from '../../components/SpotifyTop3'
 import Styled from './AboutMe.styles'
-import TerminalCommand from '../../components/TerminalCommand/index'
+import Terminal from '../../components/Terminal'
 import ToggleSwitch from '../../components/ToggleSwitch'
-import useSiteMetaData from '../../hooks/useSiteMetaData'
 import { AboutMeViewsArr } from '../../types'
 import { BUTTON_ANIMATION } from '../../styles/variables'
-import { COLORS } from '../../styles/variables'
 import {
   SLIDE_IN_ANIMATION_OPTIONS,
   SLIDE_ELEMENT_DOWN_ANIMATION,
@@ -18,46 +16,8 @@ const VIEWS: AboutMeViewsArr = ['bio', 'terminal']
 const HEADING = 'About Me'
 
 const AboutMeMain = () => {
-  const { terminalCommands } = useSiteMetaData()
   const [currentView, setCurrentView] = useState<string>(VIEWS[0])
   const [isMoreShown, setIsMoreShown] = useState<boolean>(false)
-
-  const renderTerminalHeader = () => (
-    <Styled.TerminalHeader>
-      <Styled.TerminalHeaderActionContainer>
-        <Styled.TerminalHeaderActionBalls
-          style={{ backgroundColor: COLORS.terminalActionClose }}
-        />
-        <Styled.TerminalHeaderActionBalls
-          style={{ backgroundColor: COLORS.terminalActionMinimize }}
-        />
-        <Styled.TerminalHeaderActionBalls
-          style={{ backgroundColor: COLORS.terminalActionExpand }}
-        />
-      </Styled.TerminalHeaderActionContainer>
-      <Styled.TerminalHeaderTitle>
-        admin@nrs-portfolio: ~/About_Me
-      </Styled.TerminalHeaderTitle>
-    </Styled.TerminalHeader>
-  )
-
-  const renderTerminal = () => (
-    <Styled.TerminalContainer {...SLIDE_IN_ANIMATION_OPTIONS}>
-      {renderTerminalHeader()}
-      <Styled.TerminalBody>
-        {terminalCommands.map(command => (
-          <TerminalCommand
-            key={`terminal_command_${command.question}`}
-            answer={command.answer}
-            href={command.href}
-            question={command.question}
-          />
-        ))}
-        <TerminalCommand />
-      </Styled.TerminalBody>
-    </Styled.TerminalContainer>
-  )
-
   const renderInfo = () => (
     <Styled.BioContainer {...SLIDE_IN_ANIMATION_OPTIONS}>
       <Styled.BioHeadingWrapper>
@@ -145,7 +105,7 @@ const AboutMeMain = () => {
         setView={setCurrentView}
         views={VIEWS}
       />
-      {currentView === 'bio' ? renderInfo() : renderTerminal()}
+      {currentView === 'bio' ? renderInfo() : <Terminal />}
     </Page>
   )
 }
