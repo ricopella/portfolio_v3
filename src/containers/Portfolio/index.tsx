@@ -16,6 +16,8 @@ const HEADING = `Portfolio`
 const Portfolio: FC<{}> = () => {
   const isMobile = useIsMobile()
   const { portfolioItems } = useSiteMetaData()
+  const githubItems = useGithubRepos()
+
   const {
     selectedView,
     setSelectedView,
@@ -23,12 +25,11 @@ const Portfolio: FC<{}> = () => {
     selectedToggleItem,
     shownItem,
     setSelectedToggleItem,
-  } = usePortfolioItems(portfolioItems, isMobile)
+  } = usePortfolioItems(portfolioItems, githubItems, isMobile)
 
   const handleSetSelectedToggleItem = (item: string) => {
     setSelectedToggleItem(selectedToggleItem === item && isMobile ? '' : item)
   }
-  const data = useGithubRepos()
 
   return (
     <Page id="portfolio" title={HEADING}>
