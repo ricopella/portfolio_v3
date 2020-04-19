@@ -52,7 +52,9 @@ const TOGGLE_WRAPPER_VARIANTS = {
   },
   closed: {
     opacity: 0,
-    display: 'none',
+    transitionEnd: {
+      display: 'none',
+    },
     transition: {
       y: { stiffness: 1000 },
     },

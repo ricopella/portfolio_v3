@@ -1,4 +1,3 @@
-import MenuItemStyled from '../MenuItem/MenuItem.styles'
 import MenuToggle from '../MenuToggle'
 import Navigation from '../Navigation'
 import React, { FC } from 'react'
