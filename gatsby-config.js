@@ -99,6 +99,7 @@ module.exports = {
                         description: 'SEO Optimized and fast professional portfolio built with React & TypeScript and hosted with Netlify',
                         fileName: 'portfolio.png',
                         href: 'https://github.com/ricopella/portfolio_v3',
+                        githubId: `MDEwOlJlcG9zaXRvcnkxNjY0MjU5NjI=`,
                         title: 'Personal Portfolio',
                         tech: [
                             'React',
@@ -118,6 +119,7 @@ module.exports = {
                         description: 'A Nike themed trivia game originally built in 2017 with vanilla javascript. I wanted to re-do the game with React & TypeScript',
                         fileName: 'nike.png',
                         href: 'https://github.com/ricopella/nike-trivia-react',
+                        githubId: `MDEwOlJlcG9zaXRvcnkxOTc5OTc0ODE=`,
                         title: 'Nike Trivia',
                         tech: [
                             'React',
@@ -132,6 +134,7 @@ module.exports = {
                         alt: 'Portfolio - RPi_Temperature',
                         description: 'Full-Stack Home Automation app that reads temperature of a room from Raspberry Pi every 5 minutes, stores the data in database. And hosts the data on a web app',
                         href: 'https://github.com/ricopella/RPi_temperature',
+                        githubId: `MDEwOlJlcG9zaXRvcnkxNDEwMDQ0Mjg=`,
                         title: 'Temperature App',
                         tech: [
                             'Node',
@@ -150,6 +153,7 @@ module.exports = {
                         description: 'A React-Native mobile application for splitting bills using OCR to extract text from a picture of a receipt.',
                         fileName: 'splitzease.jpg',
                         href: 'https://github.com/ricopella/splitzease',
+                        githubId: `MDEwOlJlcG9zaXRvcnkxMDQ4MzM0OTA=`,
                         title: 'Splitz Ease',
                         tech: [
                             'React-Nate',
@@ -166,6 +170,7 @@ module.exports = {
                         fileName: 'Patientstack.png',
                         href: 'https://patientstack.herokuapp.com/',
                         title: 'Patient Stack',
+                        githubId: `MDEwOlJlcG9zaXRvcnkxMDAzMzUzNDI=`,
                         tech: [
                             'Node',
                             'Express',
@@ -183,6 +188,7 @@ module.exports = {
                         description: 'A NY Times Scrapper built with React NodeJS and Express.',
                         fileName: 'reacting.png',
                         href: 'https://reacting-to-the-times.herokuapp.com/',
+                        githubId: `MDEwOlJlcG9zaXRvcnkxMDM2ODU3MzA`,
                         title: 'Reacting To The Times',
                         tech: ['React', 'Node', 'Express', 'MongoDB'],
                         year: `2017`,
@@ -193,6 +199,7 @@ module.exports = {
                         description: 'A web scrapper to pull articles from Hacker Noon and save them in MongoDB',
                         fileName: 'hack.png',
                         href: 'https://cup-of-hackernoon.herokuapp.com/#results',
+                        githubId: `MDEwOlJlcG9zaXRvcnkxMDI1NDYyNTI=`,
                         title: 'A Cup of Hacker Noon',
                         tech: ['Node', 'Express', 'MongoDB', 'Handlebars', 'Cheerio'],
                         year: `2017`,
