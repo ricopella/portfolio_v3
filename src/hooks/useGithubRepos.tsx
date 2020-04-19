@@ -1,15 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import { UseGithubRepoItem } from '../types'
 
-const DEFAULT_LIMIT_REPOS = 50
-const DEFAULT_LIMIT_LANGUAGES = 10
-const USER_SCREEN_NAME = 'ricopella'
-
-const useGithubRepos = () => {
+const useGithubRepos = (): UseGithubRepoItem[] => {
   const { github } = useStaticQuery(graphql`
     query {
       github {
-        user(login: USER_SCREEN_NAME) {
-          repositories(first: DEFAULT_LIMIT_REPOS) {
+        user(login: "ricopella") {
+          repositories(
+            first: 50
+            orderBy: { field: UPDATED_AT, direction: DESC }
+          ) {
             edges {
               node {
                 id
@@ -17,7 +17,10 @@ const useGithubRepos = () => {
                 updatedAt
                 url
                 createdAt
-                languages(first: DEFAULT_LIMIT_LANGUAGES) {
+                languages(
+                  first: 10
+                  orderBy: { field: SIZE, direction: DESC }
+                ) {
                   totalCount
                   totalSize
                   edges {
