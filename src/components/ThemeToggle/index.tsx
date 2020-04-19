@@ -1,22 +1,17 @@
 import React, { FC, useContext } from 'react'
 import Styled from './ThemeToggle.styles'
 import ThemeContext from '../../providers/ThemeContext'
-import { BUTTON_ANIMATION } from '../../styles/variables'
+import {
+  BUTTON_ANIMATION,
+  MENU_OPEN_CLOSED_SLIDE_ANIMATION,
+  Z_INDEX,
+} from '../../styles/variables'
 
 const ThemeToggle = () => {
   const { isThemeDark, setIsThemeDark } = useContext(ThemeContext)
   return (
     <Styled.ThemeToggleWrapper
-      variants={{
-        closed: {
-          opacity: 0,
-          y: 20,
-        },
-        open: {
-          opacity: 1,
-          y: 0,
-        },
-      }}
+      variants={MENU_OPEN_CLOSED_SLIDE_ANIMATION}
       {...BUTTON_ANIMATION}
       onClick={() => (setIsThemeDark ? setIsThemeDark(curr => !curr) : null)}
     >
