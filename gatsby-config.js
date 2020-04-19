@@ -1,9 +1,9 @@
 const activeEnv =
-    process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+    process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 
 console.log(`Using environment config: '${activeEnv}'`)
 
-require("dotenv").config({
+require('dotenv').config({
     path: `.env.${activeEnv}`,
 })
 
@@ -21,12 +21,18 @@ module.exports = {
             handle: `@ricopella`,
         },
         contactItems: [
-            { title: 'Github', href: `https://github.com/ricopella`, },
+            { title: 'Github', href: `https://github.com/ricopella` },
             { title: 'Twitter', href: `https://twitter.com/ricopella` },
             { title: 'LinkedIn', href: `https://www.linkedin.com/in/nsundara/` },
-            { title: 'E-Mail', href: `mailto:nrs710@gmail.com` }
+            { title: 'E-Mail', href: `mailto:nrs710@gmail.com` },
         ],
-        headerItems: [`home`, `about me`, `technical skills`, `portfolio`, `contact`],
+        headerItems: [
+            `home`,
+            `about me`,
+            `technical skills`,
+            `portfolio`,
+            `contact`,
+        ],
         portfolioItems: [{
                 title: 'Experience',
                 items: [{
@@ -46,8 +52,8 @@ module.exports = {
                             'Framer-Motion',
                             'Highcharts',
                             'Firebase',
-                            'Storybook'
-                        ]
+                            'Storybook',
+                        ],
                     },
                     {
                         alt: `Portfolio - iMationSoft`,
@@ -55,13 +61,7 @@ module.exports = {
                         title: `iMationSoft`,
                         year: `2017`,
                         myTitle: 'Freelance Software Engineer',
-                        tech: [
-                            'Node',
-                            'Express',
-                            'MySQL',
-                            'Chai',
-                            'Mocha'
-                        ]
+                        tech: ['Node', 'Express', 'MySQL', 'Chai', 'Mocha'],
                     },
                     {
                         alt: `Portfolio - Matt Denny's Ale House Restaurant`,
@@ -69,8 +69,8 @@ module.exports = {
                         fileName: 'md.png',
                         href: 'https://mattdennys.com',
                         title: `Matt Denny's`,
-                        myTitle: "Freelance Developer",
-                        year: `2019`
+                        myTitle: 'Freelance Developer',
+                        year: `2019`,
                     },
                     {
                         alt: 'Portfolio - Base Roots Shop',
@@ -79,7 +79,7 @@ module.exports = {
                         href: 'https://baserootsshop.com',
                         title: 'Base Roots',
                         myTitle: 'Freelance Developer',
-                        year: `2019`
+                        year: `2019`,
                     },
                     {
                         alt: 'Portfolio - Metta Healing Arts and Wellness',
@@ -88,7 +88,7 @@ module.exports = {
                         href: 'https://mettavt.com/',
                         title: 'Metta Healing Arts and Wellness',
                         myTitle: 'Freelance Developer',
-                        year: `2017`
+                        year: `2017`,
                     },
                 ],
             },
@@ -109,7 +109,7 @@ module.exports = {
                             'Framer-Motion',
                             'Jest',
                             'Testing-Library/React',
-                            'Netlify'
+                            'Netlify',
                         ],
                         year: '2020',
                     },
@@ -167,9 +167,16 @@ module.exports = {
                         href: 'https://patientstack.herokuapp.com/',
                         title: 'Patient Stack',
                         tech: [
-                            'Node', 'Express', 'MySQL', 'Bcrypt', 'Passport', 'Socket.IO', 'jQuery', 'Chart.JS'
+                            'Node',
+                            'Express',
+                            'MySQL',
+                            'Bcrypt',
+                            'Passport',
+                            'Socket.IO',
+                            'jQuery',
+                            'Chart.JS',
                         ],
-                        year: `2017`
+                        year: `2017`,
                     },
                     {
                         alt: 'Portfolio - Reacting To The Times',
@@ -177,10 +184,8 @@ module.exports = {
                         fileName: 'reacting.png',
                         href: 'https://reacting-to-the-times.herokuapp.com/',
                         title: 'Reacting To The Times',
-                        tech: [
-                            'React', 'Node', 'Express', 'MongoDB'
-                        ],
-                        year: `2017`
+                        tech: ['React', 'Node', 'Express', 'MongoDB'],
+                        year: `2017`,
                     },
 
                     {
@@ -189,14 +194,8 @@ module.exports = {
                         fileName: 'hack.png',
                         href: 'https://cup-of-hackernoon.herokuapp.com/#results',
                         title: 'A Cup of Hacker Noon',
-                        tech: [
-                            'Node',
-                            'Express',
-                            'MongoDB',
-                            'Handlebars',
-                            'Cheerio'
-                        ],
-                        year: `2017`
+                        tech: ['Node', 'Express', 'MongoDB', 'Handlebars', 'Cheerio'],
+                        year: `2017`,
                     },
                 ],
             },
@@ -260,7 +259,8 @@ module.exports = {
                     {
                         title: `GraphQL`,
                         percent: 60,
-                    }, {
+                    },
+                    {
                         title: `CSSNext`,
                         percent: 75,
                     },
@@ -423,15 +423,15 @@ module.exports = {
         {
             resolve: `gatsby-plugin-scroll-reveal`,
             options: {
-                threshold: .05,
+                threshold: 0.05,
                 once: true,
-            }
+            },
         },
         'gatsby-plugin-anchor-links',
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
-                trackingId: process.env.GA_TRACKING_ID || "",
+                trackingId: process.env.GA_TRACKING_ID || '',
                 anonymize: true,
                 respectDNT: true,
             },
@@ -454,13 +454,25 @@ module.exports = {
                 sitemap: 'https://www.narinsun.com/sitemap.xml',
                 env: {
                     development: {
-                        policy: [{ userAgent: '*', disallow: ['/'] }]
+                        policy: [{ userAgent: '*', disallow: ['/'] }],
                     },
                     production: {
-                        policy: [{ userAgent: '*', allow: '/' }]
-                    }
-                }
-            }
-        }
+                        policy: [{ userAgent: '*', allow: '/' }],
+                    },
+                },
+            },
+        },
+        {
+            resolve: "gatsby-source-graphql",
+            options: {
+                typeName: "GitHub",
+                fieldName: "github",
+                url: "https://api.github.com/graphql",
+                headers: {
+                    // Learn about environment variables: https://gatsby.dev/env-vars
+                    Authorization: `Bearer ${process.env.GITHUB_SOURCE}`,
+                },
+            },
+        },
     ],
 }
