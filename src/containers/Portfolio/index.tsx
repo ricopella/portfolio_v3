@@ -6,6 +6,7 @@ import SlideUp from '../../components/SlideUpElement'
 import Styled from './Portfolio.styles'
 import ToggleSwitch from '../../components/ToggleSwitch'
 import ToggleTabs from '../../components/ToggleTabs'
+import useGithubRepos from '../../hooks/useGithubRepos'
 import useIsMobile from '../../hooks/useIsMobile'
 import usePortfolioItems from '../../hooks/usePortfolioItems'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
@@ -27,6 +28,7 @@ const Portfolio: FC<{}> = () => {
   const handleSetSelectedToggleItem = (item: string) => {
     setSelectedToggleItem(selectedToggleItem === item && isMobile ? '' : item)
   }
+  const data = useGithubRepos()
 
   return (
     <Page id="portfolio" title={HEADING}>
