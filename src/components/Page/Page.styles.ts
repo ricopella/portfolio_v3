@@ -9,11 +9,11 @@ const StyledPage = styled.div`
   grid-template-rows: max-content max-content;
   height: 100%;
   justify-content: center;
-  margin: 8% 10% 0 10%;
+  margin: 10% 10% 0 10%;
   max-width: 100vw;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
-    margin: 10% 10% 0 10%;
+    margin: 30% 10% 0 10%;
   }
 `
 
