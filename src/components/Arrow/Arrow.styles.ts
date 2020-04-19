@@ -1,11 +1,11 @@
 import styled from '@emotion/styled'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
-import { COLORS } from '../../styles/variables'
+import { BREAKPOINTS, COLORS } from '../../styles/variables'
 import { keyframes } from '@emotion/core'
 
 // Originally from: https://codepen.io/TommiTikall/pen/xZwpGR
 const Arrow = styled.div`
-  left: 50%;
+  left: calc(50% - 1.5rem);
   opacity: 0;
   position: absolute;
   top: 85%;
@@ -22,6 +22,10 @@ const Arrow = styled.div`
     position: absolute;
     top: 0;
     width: 1.875rem;
+  }
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    top: 75%;
   }
 
   &:before {
@@ -48,12 +52,33 @@ const AnimateArrow = keyframes`
 }
 `
 
+const AnimateMobileArrow = keyframes`
+0% {
+  opacity: 0;
+  top: 70%;
+}
+70% {
+  opacity: 1;
+}
+100% {
+  opacity: 0;
+}
+`
+
 const ArrowFirst = styled(Arrow)`
   animation: ${AnimateArrow} 2s ease-in-out infinite;
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    animation: ${AnimateMobileArrow} 2s 1s ease-in-out infinite;
+  }
 `
 
 const ArrowSecond = styled(Arrow)`
   animation: ${AnimateArrow} 2s 1s ease-in-out infinite;
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    animation: ${AnimateMobileArrow} 2s 1s ease-in-out infinite;
+  }
 `
 
 const ArrowMask = styled(AnchorLink)`
@@ -67,6 +92,12 @@ const ArrowMask = styled(AnchorLink)`
   width: 5rem;
   z-index: 5;
   opacity: 0;
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    left: 37%;
+    position: absolute;
+    top: 68%;
+  }
 `
 
 export default {
