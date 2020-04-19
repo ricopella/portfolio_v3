@@ -159,6 +159,15 @@ export const SLIDE_ELEMENT_DOWN_ANIMATION = {
   },
 }
 
+export const BUTTON_ANIMATION = {
+  whileHover: {
+    scale: 1.1,
+  },
+  whileTap: {
+    scale: 0.95,
+  },
+}
+
 export const WIDTHS = {
   md: 720,
   lg: `60rem`,
