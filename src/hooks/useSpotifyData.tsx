@@ -32,7 +32,7 @@ const useSpotifyData = (): UseSpotifyData[] => {
     }
   `)
 
-  return spotifyRecentTracks?.nodes || null
+  return spotifyRecentTracks?.nodes || []
 }
 
 export default useSpotifyData
