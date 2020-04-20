@@ -7,7 +7,7 @@ exports[`<Page /> should match Page snapshot 1`] = `
   data-sal-easing="ease"
 >
   <div
-    className="foo css-q8p6yr"
+    className="foo css-f5nizv"
     id="foo"
     style={
       Object {
