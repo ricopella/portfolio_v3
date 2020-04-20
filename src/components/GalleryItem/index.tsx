@@ -1,5 +1,5 @@
-import DonutChart from '../DonutChart'
 import format from 'date-fns/format'
+import GithubDonutChart from '../GithubDonutChart'
 import Image from '../GalleryImage'
 import LaunchArrow from '../LaunchArrow'
 import React, { FC } from 'react'
@@ -25,6 +25,21 @@ const GalleryItem: FC<GalleryProps> = ({
     githubData = setGithubLanguageData(github?.languages)
   }
 
+  function renderYear() {
+    return (
+      <Styled.ExperienceMyTitle>
+        {myTitle ? '|' : github?.createdAt ? 'Created:' : 'Circa:'}{' '}
+        {github?.createdAt
+          ? format(new Date(github?.createdAt), 'MM.dd.yy')
+          : year}{' '}
+        |{' '}
+        {github?.updatedAt
+          ? `Last Updated: ${format(new Date(github?.updatedAt), 'MM.dd.yy')}`
+          : ''}
+      </Styled.ExperienceMyTitle>
+    )
+  }
+
   return (
     <Styled.ExperienceItemWrapper>
       <Styled.GalleryImageWrapper>
@@ -45,25 +60,10 @@ const GalleryItem: FC<GalleryProps> = ({
           {myTitle ? (
             <Styled.ExperienceMyTitle>{myTitle}</Styled.ExperienceMyTitle>
           ) : null}
-          {year ? (
-            <Styled.ExperienceMyTitle>
-              {myTitle ? '|' : github?.createdAt ? 'Created:' : 'Circa:'}{' '}
-              {github?.createdAt
-                ? format(new Date(github?.createdAt), 'MM dd yyyy')
-                : year}{' '}
-              {github?.updatedAt
-                ? `Last Updated: ${format(
-                    new Date(github?.updatedAt),
-                    'MM dd yyyy'
-                  )}`
-                : ''}
-            </Styled.ExperienceMyTitle>
-          ) : (
-            <div />
-          )}
+          {year ? renderYear() : <div />}
         </Styled.ExperienceMyTitleRow>
         <p>{description}</p>
-        {github ? <DonutChart data={githubData} /> : null}
+        {github ? <GithubDonutChart githubData={githubData} /> : <div />}
         <Styled.TagItemsWrapper>
           {tech && tech.length
             ? tech.map((item: string, idx: number) => (
