@@ -8,7 +8,7 @@ const setGithubLanguageData = (
   const result = (languages?.edges || []).map(lang => {
     return {
       name: lang?.node?.name,
-      y: (lang?.size / total) * 100,
+      y: Number(((lang?.size / total) * 100).toPrecision(2)),
     }
   })
 
