@@ -1,5 +1,6 @@
-import * as React from 'react'
 import Highcharts from 'highcharts'
+import React from 'react'
+import { PIE_SERIES_COLORS } from '../../styles/variables'
 import {
   Chart,
   HighchartsChart,
@@ -8,59 +9,41 @@ import {
   withHighcharts,
 } from 'react-jsx-highcharts'
 
+const HEIGHT = 240
+const INNER_SIZE = `65%`
+const MARGIN = [0, 0, 0, 0]
+const PADDING = [0, 0, 0, 0]
+const SIZE = `100%`
+const SLICE_OFFSET = 0
+const WIDTH = 240
+
 const DonutChart = ({ data = [] }) => {
   const plotOptions = {
     pie: {
-      center: ['50%', '50%'],
-      edgeWidth: 20,
-      shadow: false,
-      size: '100%',
-      slicedOffset: 0,
+      colors: PIE_SERIES_COLORS,
+      size: SIZE,
+      slicedOffset: SLICE_OFFSET,
     },
   }
 
   return (
-    <div>
-      <HighchartsChart
-        margin={[0, 0, 0, 0]}
-        spacing={[0, 0, 0, 0]}
-        className="donutChart"
-        plotOptions={plotOptions}
-      >
+    <div style={{ display: 'grid' }}>
+      <HighchartsChart plotOptions={plotOptions}>
         <Chart
-          type="pie"
           backgroundColor={`transparent`}
-          height={240}
-          width={240}
-        />
-        <Tooltip
-          useHTML={true}
-          backgroundColor={'#00171f'}
-          borderWidth={0}
-          headerFormat=""
-          shadow={false}
-          style={{ color: 'var(--white)', zIndex: 900 }}
-          formatter={function() {
-            return `
-              <div class='toolTipChartContainer'>
-                <div>
-                  <span>${this.key ? this.key : ''}</span>
-                </div>
-                <div class='toolTipValue'>
-                  ${this.point.y % 100}%
-                </div>
-              </div>
-            `
-          }}
+          height={HEIGHT}
+          margin={MARGIN}
+          padding={PADDING}
+          type="pie"
+          width={WIDTH}
         />
         <PieSeries
-          borderWidth={4}
+          borderColor={'transparent'}
           data={data}
           dataLabels={false}
-          innerSize={'78%'}
-          name="breakdownDonutChart"
-          size={'100%'}
-          slicedOffset={0}
+          innerSize={INNER_SIZE}
+          size={SIZE}
+          slicedOffset={SLICE_OFFSET}
         />
       </HighchartsChart>
     </div>
