@@ -233,3 +233,11 @@ export const DARK_MODE_THEME = {
   themeToggleButtonColor: COLORS.terminalBackground,
   toggleSwitchActiveColor: COLORS.lighterDarkBackground,
 }
+
+export const PIE_SERIES_COLORS = [
+  '#204051',
+  '#3b6978',
+  '#84a9ac',
+  '#cae8d5',
+  '#d4ded7',
+]
