@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 const ExperienceContentWrapper = styled.div`
   display: grid;
-  grid-row-gap: 1rem;
+  grid-row-gap: 3rem;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, max-content);
   margin: 0 0;
