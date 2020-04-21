@@ -43,6 +43,10 @@ const BioHeadingText = styled.div`
   & h4 {
     color: ${props => props.theme.color};
   }
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    max-width: 100%;
+  }
 `
 const BioParagraph = styled('p')`
   color: ${props => props.theme.color};
