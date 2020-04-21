@@ -4,7 +4,7 @@ import { BREAKPOINTS, COLORS } from '../../styles/variables'
 const StyledPage = styled.div`
   display: grid;
   align-items: center;
-  grid-row-gap: 1rem;
+  grid-row-gap: 3rem;
   grid-template-columns: 1fr;
   grid-template-rows: max-content max-content;
   height: 100%;
