@@ -28,13 +28,15 @@ const GalleryItem: FC<GalleryProps> = ({
   function renderYear() {
     return (
       <Styled.ExperienceMyTitle>
-        {myTitle ? '|' : github?.createdAt ? 'Created:' : 'Circa:'}{' '}
+        {myTitle ? '| ' : github?.createdAt ? 'Created:' : 'Circa:'}{' '}
         {github?.createdAt
           ? format(new Date(github?.createdAt), 'MM.dd.yy')
-          : year}{' '}
-        |{' '}
+          : year}
         {github?.updatedAt
-          ? `Last Updated: ${format(new Date(github?.updatedAt), 'MM.dd.yy')}`
+          ? ` | Last Updated: ${format(
+              new Date(github?.updatedAt),
+              'MM.dd.yy'
+            )}`
           : ''}
       </Styled.ExperienceMyTitle>
     )
