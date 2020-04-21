@@ -470,15 +470,19 @@ module.exports = {
             },
         },
         {
-            resolve: "gatsby-source-graphql",
+            resolve: `gatsby-source-graphql`,
             options: {
-                typeName: "GitHub",
-                fieldName: "github",
-                url: "https://api.github.com/graphql",
-                headers: {
-                    // Learn about environment variables: https://gatsby.dev/env-vars
-                    Authorization: `Bearer ${process.env.GITHUB_SOURCE}`,
-                },
+                fieldName: `github`,
+                typeName: `GitHub`,
+                createLink: () =>
+                    createHttpLink({
+                        uri: `https://api.github.com/graphql`,
+                        headers: {
+                            Authorization: `bearer ${process.env.GITHUB_SOURCE}`,
+                        },
+                        fetch,
+                    }),
+
             },
         },
     ],
