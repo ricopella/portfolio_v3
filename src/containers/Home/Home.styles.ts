@@ -35,6 +35,7 @@ const IntroTextContainer = styled(motion.div)`
 
   @media (max-width: ${BREAKPOINTS.smRem}) {
     margin: 0 5%;
+    padding-bottom: 50%;
     max-width: calc(100vw - 10%);
   }
 `
@@ -55,7 +56,6 @@ const IntroContentWrapper = styled.div`
   grid-template-rows: repeat(3, max-content);
   line-height: 1.2;
   font-size: 3rem;
-  color: ${COLORS.white};
   @media (max-width: ${BREAKPOINTS.mdRem}) {
     word-wrap: break-word;
     font-size: 1.25rem;
@@ -63,7 +63,7 @@ const IntroContentWrapper = styled.div`
 `
 
 const IntroContentText = styled.div`
-  color: ${props => props.theme.colorCalm};
+  color: ${props => props.theme.color};
   @media (max-width: ${BREAKPOINTS.smRem}) {
     max-width: 17.5rem;
   }

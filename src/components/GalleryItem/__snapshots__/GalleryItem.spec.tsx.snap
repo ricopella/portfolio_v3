@@ -47,11 +47,16 @@ exports[`<GalleryItem /> should match GalleryItem snapshot 1`] = `
         |
          
         2020
+         
+        |
+         
+        
       </div>
     </div>
     <p>
       this is a test item
     </p>
+    <div />
     <div
       className="css-1p6kesl"
     >

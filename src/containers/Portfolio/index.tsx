@@ -6,6 +6,7 @@ import SlideUp from '../../components/SlideUpElement'
 import Styled from './Portfolio.styles'
 import ToggleSwitch from '../../components/ToggleSwitch'
 import ToggleTabs from '../../components/ToggleTabs'
+import useGithubRepos from '../../hooks/useGithubRepos'
 import useIsMobile from '../../hooks/useIsMobile'
 import usePortfolioItems from '../../hooks/usePortfolioItems'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
@@ -15,6 +16,8 @@ const HEADING = `Portfolio`
 const Portfolio: FC<{}> = () => {
   const isMobile = useIsMobile()
   const { portfolioItems } = useSiteMetaData()
+  const githubItems = useGithubRepos()
+
   const {
     selectedView,
     setSelectedView,
@@ -22,7 +25,7 @@ const Portfolio: FC<{}> = () => {
     selectedToggleItem,
     shownItem,
     setSelectedToggleItem,
-  } = usePortfolioItems(portfolioItems, isMobile)
+  } = usePortfolioItems(portfolioItems, githubItems, isMobile)
 
   const handleSetSelectedToggleItem = (item: string) => {
     setSelectedToggleItem(selectedToggleItem === item && isMobile ? '' : item)

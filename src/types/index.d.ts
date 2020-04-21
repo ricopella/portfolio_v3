@@ -11,6 +11,7 @@ export interface ContainerProps {
 export interface GalleryProps extends GalleryImageProps {
   description: string
   href: string
+  github: interfaceGithubItem | null
   myTitle?: string
   tech: string[]
   title: string
@@ -151,6 +152,8 @@ export interface PortfolioItem {
   description: string
   fileName: string
   href: string
+  githubId?: string
+  github?: interfaceGithubItem | null
   myTitle?: string
   tech?: string[]
   title: string
@@ -159,6 +162,11 @@ export interface PortfolioItem {
 
 export interface SEOProps {
   title?: string
+}
+
+export interface GithubDonutItem {
+  name: string
+  y: number
 }
 
 export interface DimensionsType {
@@ -188,4 +196,29 @@ export interface UsePortfolioItems {
   setSelectedView: (item: string) => void
   shownItem: PortfolioItem | null
   views: string[]
+}
+
+export interface UseGithubRepoItem {
+  node: interfaceGithubItem
+}
+
+export interface interfaceGithubItem {
+  createdAt: string
+  id: string
+  languages: GithubLanguageItem
+  name: string
+  updatedAt: string
+  url: string
+}
+
+export interface GithubLanguageItem {
+  totalCount: number
+  totalSize: number
+  edges: {
+    size: number
+    node: {
+      name: string
+      id: string
+    }
+  }[]
 }
