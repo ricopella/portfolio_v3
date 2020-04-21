@@ -9,7 +9,7 @@ export const BREAKPOINTS = {
   xs: 0,
   sm: 576,
   smRem: `36rem`,
-  md: 768, // tablet
+  md: 769, // tablet
   mdRem: `48rem`,
   lg: 992,
   tabletPro: `64rem`,
@@ -55,7 +55,7 @@ export const COLORS = {
     mediumSlateBlue: `#8075FF`,
     magnolia: `#F8F0FB`,
     pastelGray: `#CAD5CA`,
-    avalanche: `#a5adab`,
+    avalanche: `#a4a599`,
   },
 }
 
