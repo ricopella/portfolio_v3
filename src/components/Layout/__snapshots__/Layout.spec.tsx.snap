@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> should match Layout snapshot 1`] = `
+<div
+  className="css-9vt5au"
+>
+  <div
+    className="css-1c7fy2u"
+  >
+    <div>
+      Wu-Tang Clan
+    </div>
+  </div>
+  <footer
+    className="css-1cda30e"
+  >
+    © 
+    2020
+    , 
+    <span>
+      Tom Brady
+    </span>
+  </footer>
+</div>
+`;
