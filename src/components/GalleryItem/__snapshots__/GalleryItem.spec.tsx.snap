@@ -44,12 +44,9 @@ exports[`<GalleryItem /> should match GalleryItem snapshot 1`] = `
       <div
         className="css-11aljab"
       >
-        |
+        | 
          
         2020
-         
-        |
-         
         
       </div>
     </div>
