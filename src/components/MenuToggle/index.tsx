@@ -1,20 +1,12 @@
 import React, { FC } from 'react'
 import Styled from './MenuToggle.styles'
 import { BUTTON_ANIMATION } from '../../styles/variables'
-import { COLORS } from '../../styles/variables'
-import { Cycle, motion } from 'framer-motion'
+import { Cycle } from 'framer-motion'
 
 const MENU_WIDTH = 23
 const MENU_HEIGHT = 23
 
-const Path = props => (
-  <Styled.Path
-    fill="transparent"
-    strokeWidth="3"
-    strokeLinecap="round"
-    {...props}
-  />
-)
+const Path = props => <Styled.Path {...props} />
 
 const MenuToggle: FC<{ toggle: Cycle }> = ({ toggle }) => (
   <Styled.MenuToggleButton
