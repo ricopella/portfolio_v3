@@ -22,6 +22,10 @@ const TerminalHeaderTitle = styled.div`
   color: ${COLORS.gray.dark};
   align-self: center;
   justify-self: center;
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    display: none;
+  }
 `
 
 const TerminalHeader = styled.div`
