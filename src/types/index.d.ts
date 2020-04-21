@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+import { FluidObject } from 'gatsby-image'
 import { SerializedStyles } from '@emotion/core'
 
 export type AboutMeViews = 'bio' | 'terminal'
@@ -23,6 +24,13 @@ export interface GalleryImageProps {
   filename: string
   css?: SerializedStyles
   style?: CSSProperties
+}
+
+export interface PureGalleryImageProps {
+  alt: string
+  css?: SerializedStyles
+  style?: CSSProperties
+  imageSizes: FluidObject
 }
 
 export interface PageProps {
@@ -79,12 +87,7 @@ export interface SpotifyTopItem extends UseSpotifyData {
 // GRAPHQL QUERIES
 
 export interface UseSiteMetaDataReturns {
-  author: {
-    name: string
-    url: string
-    email: string
-    handle: string
-  }
+  author: AuthorMetaData
   contactItems: ContactItem[]
   description?: string
   lang?: string
@@ -95,6 +98,13 @@ export interface UseSiteMetaDataReturns {
   skills: Skills[]
   title: string
   titleTemplate: string
+}
+
+export interface AuthorMetaData {
+  name: string
+  url: string
+  email: string
+  handle: string
 }
 
 export interface UseSpotifyData {
@@ -125,6 +135,16 @@ export interface UseSpotifyData {
     }
   }
   played_at?: string
+}
+
+export interface GatsbyImageSharpSizes {
+  based64: string
+  originalImg: string
+  originalName: string
+  presentationHeight: number
+  presentationWidth: number
+  srcWebp: string
+  tracedSVG: string
 }
 
 export interface ContactItem {
