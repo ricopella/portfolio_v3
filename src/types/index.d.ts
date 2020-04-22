@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+import { FluidObject } from 'gatsby-image'
 import { SerializedStyles } from '@emotion/core'
 
 export type AboutMeViews = 'bio' | 'terminal'
@@ -11,6 +12,7 @@ export interface ContainerProps {
 export interface GalleryProps extends GalleryImageProps {
   description: string
   href: string
+  github: interfaceGithubItem | null
   myTitle?: string
   tech: string[]
   title: string
@@ -22,6 +24,13 @@ export interface GalleryImageProps {
   filename: string
   css?: SerializedStyles
   style?: CSSProperties
+}
+
+export interface PureGalleryImageProps {
+  alt: string
+  css?: SerializedStyles
+  style?: CSSProperties
+  imageSizes: FluidObject
 }
 
 export interface PageProps {
@@ -78,12 +87,7 @@ export interface SpotifyTopItem extends UseSpotifyData {
 // GRAPHQL QUERIES
 
 export interface UseSiteMetaDataReturns {
-  author: {
-    name: string
-    url: string
-    email: string
-    handle: string
-  }
+  author: AuthorMetaData
   contactItems: ContactItem[]
   description?: string
   lang?: string
@@ -94,6 +98,13 @@ export interface UseSiteMetaDataReturns {
   skills: Skills[]
   title: string
   titleTemplate: string
+}
+
+export interface AuthorMetaData {
+  name: string
+  url: string
+  email: string
+  handle: string
 }
 
 export interface UseSpotifyData {
@@ -126,6 +137,16 @@ export interface UseSpotifyData {
   played_at?: string
 }
 
+export interface GatsbyImageSharpSizes {
+  based64: string
+  originalImg: string
+  originalName: string
+  presentationHeight: number
+  presentationWidth: number
+  srcWebp: string
+  tracedSVG: string
+}
+
 export interface ContactItem {
   href: string
   title: string
@@ -151,6 +172,8 @@ export interface PortfolioItem {
   description: string
   fileName: string
   href: string
+  githubId?: string
+  github?: interfaceGithubItem | null
   myTitle?: string
   tech?: string[]
   title: string
@@ -159,6 +182,11 @@ export interface PortfolioItem {
 
 export interface SEOProps {
   title?: string
+}
+
+export interface GithubDonutItem {
+  name: string
+  y: number
 }
 
 export interface DimensionsType {
@@ -188,4 +216,29 @@ export interface UsePortfolioItems {
   setSelectedView: (item: string) => void
   shownItem: PortfolioItem | null
   views: string[]
+}
+
+export interface UseGithubRepoItem {
+  node: interfaceGithubItem
+}
+
+export interface interfaceGithubItem {
+  createdAt: string
+  id: string
+  languages: GithubLanguageItem
+  name: string
+  updatedAt: string
+  url: string
+}
+
+export interface GithubLanguageItem {
+  totalCount: number
+  totalSize: number
+  edges: {
+    size: number
+    node: {
+      name: string
+      id: string
+    }
+  }[]
 }

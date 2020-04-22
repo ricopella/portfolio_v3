@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import setHref from '../../utils/setHref'
 import Styled from './MenuItem.styles'
+import { BUTTON_ANIMATION } from '../../styles/variables'
 import { MenuItemProps } from '../../types'
 
 /**
@@ -11,11 +12,7 @@ import { MenuItemProps } from '../../types'
  * @param {*} { isOpen, item }
  */
 const MenuItem: FC<MenuItemProps> = ({ item }) => (
-  <Styled.MenuItemLi
-    variants={Styled.MENU_ITEM_VARIANTS}
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.95 }}
-  >
+  <Styled.MenuItemLi variants={Styled.MENU_ITEM_VARIANTS} {...BUTTON_ANIMATION}>
     <Styled.HomepageLink to={setHref(item)}>{`+ ${item}`}</Styled.HomepageLink>
   </Styled.MenuItemLi>
 )

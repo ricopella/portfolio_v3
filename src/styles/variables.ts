@@ -9,7 +9,7 @@ export const BREAKPOINTS = {
   xs: 0,
   sm: 576,
   smRem: `36rem`,
-  md: 768, // tablet
+  md: 769, // tablet
   mdRem: `48rem`,
   lg: 992,
   tabletPro: `64rem`,
@@ -55,6 +55,7 @@ export const COLORS = {
     mediumSlateBlue: `#8075FF`,
     magnolia: `#F8F0FB`,
     pastelGray: `#CAD5CA`,
+    avalanche: `#a4a599`,
   },
 }
 
@@ -149,12 +150,45 @@ export const SLIDE_ELEMENT_DOWN_ANIMATION = {
     collapsed: {
       height: 0,
       opacity: 0,
-      zIndex: -1,
+      transitionEnd: {
+        display: 'none',
+      },
     },
     visible: {
       opacity: 1,
       height: `100%`,
-      zIndex: 0,
+      display: 'initial',
+    },
+  },
+}
+
+export const BUTTON_ANIMATION = {
+  whileHover: {
+    scale: 1.1,
+  },
+  whileTap: {
+    scale: 0.95,
+  },
+}
+
+export const MENU_OPEN_CLOSED_SLIDE_ANIMATION = {
+  closed: {
+    opacity: 0,
+    y: 20,
+    // will not occupy space, and fades out when closing
+    transitionEnd: {
+      display: 'none',
+    },
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+  open: {
+    opacity: 1,
+    y: 0,
+    display: 'grid',
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
     },
   },
 }
@@ -171,27 +205,39 @@ export const Z_INDEX = {
 }
 
 export const LIGHT_MODE_THEME = {
-  color: COLORS.gray.light,
-  backgroundColor: COLORS.white,
-  colorCalm: COLORS.gray.calm,
-  backgroundContentColor: COLORS.white,
-  actionColor: COLORS.terminalBackground,
   actionBackgroundColor: COLORS.terminalBackground,
+  actionColor: COLORS.terminalBackground,
+  backgroundColor: COLORS.white,
+  backgroundContentColor: COLORS.white,
+  color: COLORS.gray.light,
+  colorCalm: COLORS.gray.calm,
+  imageBorderColor: COLORS.gray.light,
   navBackground: COLORS.palette.magnolia,
-  toggleSwitchActiveColor: COLORS.white,
+  terminalBackground: COLORS.terminalBackground,
   themeToggleBackgroundColor: COLORS.darkBackground,
   themeToggleButtonColor: COLORS.darkActionColors,
+  toggleSwitchActiveColor: COLORS.white,
 }
 
 export const DARK_MODE_THEME = {
-  color: COLORS.white,
-  backgroundColor: COLORS.darkBackground,
-  colorCalm: COLORS.white,
-  backgroundContentColor: COLORS.lighterDarkBackground,
-  actionColor: COLORS.darkActionColors,
   actionBackgroundColor: COLORS.terminalBackground,
+  actionColor: COLORS.darkActionColors,
+  backgroundColor: COLORS.darkBackground,
+  backgroundContentColor: COLORS.lighterDarkBackground,
+  color: COLORS.palette.avalanche,
+  colorCalm: COLORS.white,
+  imageBorderColor: COLORS.lighterDarkBackground,
   navBackground: COLORS.lighterDarkBackground,
-  toggleSwitchActiveColor: COLORS.lighterDarkBackground,
+  terminalBackground: COLORS.lighterDarkBackground,
   themeToggleBackgroundColor: COLORS.white,
   themeToggleButtonColor: COLORS.terminalBackground,
+  toggleSwitchActiveColor: COLORS.lighterDarkBackground,
 }
+
+export const PIE_SERIES_COLORS = [
+  '#204051',
+  '#3b6978',
+  '#84a9ac',
+  '#cae8d5',
+  '#d4ded7',
+]

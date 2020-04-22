@@ -2,10 +2,10 @@ import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import { COLORS } from '../../styles/variables'
 
-const ProfileImageOuterBorder = styled('div')`
+const ProfileImageOuterBorder = styled.div`
   display: grid;
   align-items: center;
-  background-color: ${props => props.theme.color};
+  background-color: ${props => props.theme.imageBorderColor};
   border-radius: 50%;
   grid-template-columns: 1fr;
   height: 13.125rem;
@@ -21,7 +21,6 @@ const ProfileImageOuterBorder = styled('div')`
 
 const ProfileImage = styled(Img)`
   border-radius: 50%;
-  border: 0.25rem solid white;
 
   @media (max-width: 47.9375rem) {
     height: 9.375rem !important;

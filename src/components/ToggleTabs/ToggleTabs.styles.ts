@@ -30,7 +30,7 @@ const MobileAccordionContent = styled(motion.div)`
   padding: 3rem 1rem;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
-    border-left: 0.0625rem solid ${props => props.theme.actionColor};
+    border-left: 0.1875rem solid ${props => props.theme.actionColor};
   }
 `
 
@@ -49,7 +49,7 @@ const MobileAccordionButton = styled.div`
   width: 100%;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
-    border-left: 0.0625rem solid ${props => props.theme.actionColor};
+    border-left: 0.1875rem solid ${props => props.theme.actionColor};
   }
 
   &:hover {
@@ -58,7 +58,7 @@ const MobileAccordionButton = styled.div`
 
   &.active {
     background-color: ${props => props.theme.actionColor};
-    color: white;
+    color: ${COLORS.white};
   }
 `
 
@@ -79,7 +79,7 @@ const MobileAccordionArrow = styled.div`
 `
 
 const ToggleTabsContainer = styled.div`
-  border-left: 0.0625rem solid ${props => props.theme.actionBackgroundColor};
+  border-left: 0.1875rem solid ${props => props.theme.actionBackgroundColor};
   height: 100%;
   width: 100%;
 `
@@ -100,12 +100,12 @@ const ToggleTabItem = styled(motion.button)`
   width: 10rem;
 
   @media (max-width: ${BREAKPOINTS.mdRem}) {
-    border-left: 0.0625rem solid ${props => props.theme.actionBackgroundColor};
+    border-left: 0.1875rem solid ${props => props.theme.actionBackgroundColor};
   }
 
   &.active {
     background-color: ${props => props.theme.actionBackgroundColor};
-    color: white;
+    color: ${COLORS.white};
     font-weight: bold;
     transition: all 0.2s ease-in;
 

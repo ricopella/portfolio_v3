@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Portfolio, PortfolioItem, UsePortfolioItems } from '../types'
+import {
+  Portfolio,
+  PortfolioItem,
+  UsePortfolioItems,
+  UseGithubRepoItem,
+} from '../types'
 
 const usePortfolioItems = (
   portfolioItems: Portfolio[],
+  githubItems: UseGithubRepoItem[],
   isMobile = false
 ): UsePortfolioItems => {
   const views = portfolioItems.map(item => item.title)
@@ -40,12 +46,16 @@ const usePortfolioItems = (
   const shownItem =
     shownItems.find(item => item.title === selectedToggleItem) || null
 
+  const githubItem = githubItems.find(
+    item => item?.node?.id === shownItem?.githubId
+  )
+
   return {
     selectedToggleItem,
     selectedView,
     setSelectedToggleItem,
     setSelectedView,
-    shownItem,
+    shownItem: { ...shownItem, github: githubItem?.node || null },
     views,
   }
 }

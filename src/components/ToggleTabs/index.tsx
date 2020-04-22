@@ -1,8 +1,11 @@
 import React, { FC } from 'react'
 import setActiveClassName from '../../utils/setActiveClassName'
 import Styled from './ToggleTabs.styles'
-import { SLIDE_DOWN_ANIMATION_OPTIONS } from '../../styles/variables'
 import { ToggleTabsProps } from '../../types'
+import {
+  BUTTON_ANIMATION,
+  SLIDE_DOWN_ANIMATION_OPTIONS,
+} from '../../styles/variables'
 
 const ToggleTabs: FC<ToggleTabsProps> = ({
   children,
@@ -18,8 +21,7 @@ const ToggleTabs: FC<ToggleTabsProps> = ({
             className={setActiveClassName(selectedItem, toggleItem)}
             key={`toggle_item_${toggleItem}`}
             onClick={() => setSelectedItem(toggleItem)}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            {...BUTTON_ANIMATION}
           >
             <span>{`+ ${toggleItem}`}</span>
           </Styled.ToggleTabItem>

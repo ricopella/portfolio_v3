@@ -26,6 +26,7 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
               description
               fileName
               href
+              githubId
               myTitle
               tech
               title

@@ -1,25 +1,17 @@
 import React, { FC } from 'react'
 import Styled from './MenuToggle.styles'
-import { COLORS } from '../../styles/variables'
-import { Cycle, motion } from 'framer-motion'
+import { BUTTON_ANIMATION } from '../../styles/variables'
+import { Cycle } from 'framer-motion'
 
 const MENU_WIDTH = 23
 const MENU_HEIGHT = 23
 
-const Path = props => (
-  <Styled.Path
-    fill="transparent"
-    strokeWidth="3"
-    strokeLinecap="round"
-    {...props}
-  />
-)
+const Path = props => <Styled.Path {...props} />
 
 const MenuToggle: FC<{ toggle: Cycle }> = ({ toggle }) => (
   <Styled.MenuToggleButton
     onClick={toggle}
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
+    {...BUTTON_ANIMATION}
     className="hamburger_menu"
     aria-label="navigation button"
   >
