@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation /> should match Navigation snapshot 1`] = `
+<nav
+  style={Object {}}
+>
+  <ul
+    className="css-1am0w18"
+    style={Object {}}
+  />
+</nav>
+`;
