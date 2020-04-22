@@ -20,6 +20,8 @@ const MenuToggleButton = styled(motion.button)`
 `
 
 const Path = styled(motion.path)`
+  stroke-line-cap: round;
+  stroke-width: 0.1875rem;
   stroke: ${props => props.theme.actionColor};
 `
 

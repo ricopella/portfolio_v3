@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Hero /> should match Hero snapshot 1`] = `
+<div
+  className="css-1wwn65t"
+/>
+`;

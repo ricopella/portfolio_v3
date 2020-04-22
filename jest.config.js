@@ -4,6 +4,7 @@ module.exports = {
     setupFilesAfterEnv: [
         path.resolve(__dirname, './jest-configs/setup-test-env.js'),
     ],
+    setupFiles: [`<rootDir>/loadershim.js`],
     transform: {
         // "^.+\\.(tsx?|jsx?)$": "ts-jest",
         // '\\.svg': '<rootDir>/jest-configs/__mocks__/svgTransform.js',
@@ -14,7 +15,7 @@ module.exports = {
         // '\\.svg': `<rootDir>/jest-configs/__mocks__/svgTransform.js`,
         'typeface-*': 'identity-obj-proxy',
         '.+\\.(css|styl|less|sass|scss)$': `identity-obj-proxy`,
-        // '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': `<rootDir>/jest-configs/__mocks__/file-mocks.js`,
+        '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': `<rootDir>/__mocks__/file-mocks.js`,
     },
     testPathIgnorePatterns: [`node_modules`, `.cache`, `public`],
     transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`, `\\.svg`],
@@ -25,4 +26,5 @@ module.exports = {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
     collectCoverage: false,
     coverageReporters: ['lcov', 'text', 'html'],
+    testURL: `http://localhost`,
 }
