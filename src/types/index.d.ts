@@ -201,6 +201,11 @@ export interface DimensionsType {
     [lH: string]: number
   }
   containerPadding: string | number
+  resume: {
+    heading: {
+      height: string
+    }
+  }
 }
 
 export interface TerminalCommand {

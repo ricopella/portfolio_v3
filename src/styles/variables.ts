@@ -76,6 +76,11 @@ export const DIMENSIONS: DimensionsType = {
     heading: 1.2,
   },
   containerPadding: 1.5,
+  resume: {
+    heading: {
+      height: `10rem`,
+    },
+  },
 }
 
 export const FONTS = {
