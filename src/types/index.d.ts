@@ -242,3 +242,20 @@ export interface GithubLanguageItem {
     }
   }[]
 }
+
+export interface ThemeTypes {
+  theme: {
+    actionBackgroundColor: string
+    actionColor: string
+    backgroundColor: string
+    backgroundContentColor: string
+    color: string
+    colorCalm: string
+    imageBorderColor: string
+    navBackground: string
+    terminalBackground: string
+    themeToggleBackgroundColor: string
+    themeToggleButtonColor: string
+    toggleSwitchActiveColor: string
+  }
+}
