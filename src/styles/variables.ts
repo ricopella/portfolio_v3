@@ -7,6 +7,7 @@ export const BORDERS = {
 
 export const BREAKPOINTS = {
   xs: 0,
+  mobileOnly: `25.875rem`,
   sm: 576,
   smRem: `36rem`,
   md: 769, // tablet
