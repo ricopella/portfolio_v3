@@ -201,6 +201,11 @@ export interface DimensionsType {
     [lH: string]: number
   }
   containerPadding: string | number
+  resume: {
+    heading: {
+      height: string
+    }
+  }
 }
 
 export interface TerminalCommand {
@@ -241,4 +246,22 @@ export interface GithubLanguageItem {
       id: string
     }
   }[]
+}
+
+export interface ThemeTypes {
+  theme: {
+    actionBackgroundColor: string
+    actionColor: string
+    backgroundColor: string
+    backgroundContentColor: string
+    color: string
+    colorCalm: string
+    imageBorderColor: string
+    navBackground: string
+    terminalBackground: string
+    themeToggleBackgroundColor: string
+    themeToggleButtonColor: string
+    toggleSwitchActiveColor: string
+    white: string
+  }
 }

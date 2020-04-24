@@ -32,6 +32,7 @@ module.exports = {
             `technical skills`,
             `portfolio`,
             `contact`,
+            `resume`
         ],
         portfolioItems: [{
                 title: 'Experience',

@@ -7,6 +7,7 @@ export const BORDERS = {
 
 export const BREAKPOINTS = {
   xs: 0,
+  mobileOnly: `25.875rem`,
   sm: 576,
   smRem: `36rem`,
   md: 769, // tablet
@@ -75,6 +76,11 @@ export const DIMENSIONS: DimensionsType = {
     heading: 1.2,
   },
   containerPadding: 1.5,
+  resume: {
+    heading: {
+      height: `10rem`,
+    },
+  },
 }
 
 export const FONTS = {
@@ -217,6 +223,7 @@ export const LIGHT_MODE_THEME = {
   themeToggleBackgroundColor: COLORS.darkBackground,
   themeToggleButtonColor: COLORS.darkActionColors,
   toggleSwitchActiveColor: COLORS.white,
+  white: COLORS.white,
 }
 
 export const DARK_MODE_THEME = {
@@ -232,6 +239,7 @@ export const DARK_MODE_THEME = {
   themeToggleBackgroundColor: COLORS.white,
   themeToggleButtonColor: COLORS.terminalBackground,
   toggleSwitchActiveColor: COLORS.lighterDarkBackground,
+  white: COLORS.white,
 }
 
 export const PIE_SERIES_COLORS = [
