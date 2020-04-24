@@ -262,5 +262,6 @@ export interface ThemeTypes {
     themeToggleBackgroundColor: string
     themeToggleButtonColor: string
     toggleSwitchActiveColor: string
+    white: string
   }
 }

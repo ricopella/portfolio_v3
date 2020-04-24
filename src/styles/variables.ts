@@ -223,6 +223,7 @@ export const LIGHT_MODE_THEME = {
   themeToggleBackgroundColor: COLORS.darkBackground,
   themeToggleButtonColor: COLORS.darkActionColors,
   toggleSwitchActiveColor: COLORS.white,
+  white: COLORS.white,
 }
 
 export const DARK_MODE_THEME = {
@@ -238,6 +239,7 @@ export const DARK_MODE_THEME = {
   themeToggleBackgroundColor: COLORS.white,
   themeToggleButtonColor: COLORS.terminalBackground,
   toggleSwitchActiveColor: COLORS.lighterDarkBackground,
+  white: COLORS.white,
 }
 
 export const PIE_SERIES_COLORS = [

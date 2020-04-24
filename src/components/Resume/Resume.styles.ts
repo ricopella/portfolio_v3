@@ -20,10 +20,10 @@ const ResumeWrapper = styled.div`
   grid-row-gap: 1rem;
   grid-template-columns: 1fr;
   grid-template-rows: ${DIMENSIONS.resume.heading.height} 1fr;
-  // height: 297mm;
+  height: 297mm;
   margin: 6rem auto;
   min-height: 100vh;
-  padding: 2rem 0;
+  padding: 1rem 0;
   width: 210mm;
 
   @media (max-width: 71.875rem) {
@@ -40,20 +40,21 @@ const ResumeBody = styled.div`
   display: grid;
   grid-row: 2;
   grid-column: 1/-1;
-  grid-template-columns: 12.5rem 1fr;
+  grid-template-columns: 13.5rem 1fr;
   grid-template-rows: repeat(2, max-content);
   grid-row-gap: 1rem;
   grid-column-gap: 1rem;
   grid-template-areas:
     'contact workExperience'
-    'skills education';
+    'skills workExperience'
+    'education workExperience';
 `
 
 const ResumeBodyHeading = styled.div`
   background-color: ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
   height: 2rem;
   width: 80%;
-  color: ${(props: ThemeTypes) => props.theme.colorCalm};
+  color: ${(props: ThemeTypes) => props.theme.white};
   padding: 0 0 0 1rem;
   line-height: 2rem;
 `
@@ -61,7 +62,7 @@ const ResumeBodyHeading = styled.div`
 const ResumeMainBodyHeading = styled.div`
   padding-top: 0.2rem;
   font-size: 1.5rem;
-  border-bottom: 1px solid
+  border-bottom: 0.125rem solid
     ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
   color: ${(props: ThemeTypes) => props.theme.colorCalm};
   height: 2rem;
@@ -70,7 +71,6 @@ const ResumeMainBodyHeading = styled.div`
 // Contact Info
 const Contact = styled.div`
   display: grid;
-  width: 12.5rem;
   grid-area: contact;
   border-right: 0.125rem solid
     ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
@@ -81,14 +81,15 @@ const Contact = styled.div`
 const ContactBody = styled.div`
   display: grid;
   grid-template-rows: repeat(6, max-content);
-  grid-row-gap: 1rem;
+  // grid-row-gap: 0.5rem;
 `
 
 const ContactRowItem = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, max-content);
+  grid-template-rows: max-content;
+  grid-template-columns: repeat(2, max-content);
   padding-left: 1rem;
+  grid-column-gap: 0.5rem;
 `
 
 const ContactRowKey = styled.div`
@@ -112,11 +113,9 @@ const ContactRowValueInternalLink = styled(Link)`
 // Skills
 const Skills = styled.div`
   display: grid;
-  width: 20%;
   grid-area: skills;
   border-right: 0.125rem solid
     ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
-  width: 12.5rem;
 `
 
 const ResumeSkillsBody = styled.div`
@@ -208,6 +207,8 @@ const ExperienceBody = styled.div`
   color: ${(props: ThemeTypes) => props.theme.color};
 `
 
+const ExperienceItem = styled.div``
+
 const ExperienceFirstTitleRow = styled.div`
   display: grid;
   grid-template-columns: max-content max-content 1fr;
@@ -236,19 +237,42 @@ const ExperienceUl = styled.ul`
   padding-inline-start: 0.9375rem;
 `
 
-const ExperienceListItem = styled.li`
-  // font-size: 0.75rem;
-`
+const ExperienceListItem = styled.li``
 
 // Education
 const Education = styled.div`
   display: grid;
   grid-area: education;
+  border-right: 2px solid
+    ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
+  grid-template-rows: repeat(2, max-content);
 `
 
 const EducationBody = styled.div`
   display: grid;
+  font-size: 0.875rem;
+  color: ${(props: ThemeTypes) => props.theme.color};
+  padding: 1rem 1rem 0 1rem;
+  grid-row-gap: 0.5rem;
 `
+
+const EducationItem = styled.div`
+  display: grid;
+`
+
+const EducationItemTitle = styled.div`
+  font-weight: bold;
+  border-bottom: 1px solid
+    ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
+`
+
+const EducationItemSubTitle = styled.div``
+
+const EducationItemNote = styled.div`
+  font-size: 0.7rem;
+`
+
+const EducationItemDate = styled.i``
 
 // HEADING
 const Heading = styled.div`
@@ -386,4 +410,10 @@ export default {
   ExperienceListItem,
   ExperienceUl,
   ExperienceCompanyLink,
+  ExperienceItem,
+  EducationItem,
+  EducationItemTitle,
+  EducationItemSubTitle,
+  EducationItemDate,
+  EducationItemNote,
 }
