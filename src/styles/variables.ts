@@ -7,6 +7,7 @@ export const BORDERS = {
 
 export const BREAKPOINTS = {
   xs: 0,
+  mobileOnly: `25.875rem`,
   sm: 576,
   smRem: `36rem`,
   md: 769, // tablet
@@ -14,6 +15,7 @@ export const BREAKPOINTS = {
   lg: 992,
   tabletPro: `64rem`,
   xl: 1200,
+  resumeFirstBreak: `53.125rem`,
 }
 
 export const COLORS = {
@@ -75,6 +77,11 @@ export const DIMENSIONS: DimensionsType = {
     heading: 1.2,
   },
   containerPadding: 1.5,
+  resume: {
+    heading: {
+      height: `10rem`,
+    },
+  },
 }
 
 export const FONTS = {
@@ -213,10 +220,32 @@ export const LIGHT_MODE_THEME = {
   colorCalm: COLORS.gray.calm,
   imageBorderColor: COLORS.gray.light,
   navBackground: COLORS.palette.magnolia,
+  resumeHeadingMobile: COLORS.gray.calm,
+  resumeHeadingDesktop: COLORS.white,
   terminalBackground: COLORS.terminalBackground,
   themeToggleBackgroundColor: COLORS.darkBackground,
   themeToggleButtonColor: COLORS.darkActionColors,
   toggleSwitchActiveColor: COLORS.white,
+  white: COLORS.white,
+  resumeHeading: {
+    background: `rgb(76, 73, 97)`,
+    backgroundMoz: `-moz-linear-gradient(
+      90deg,
+      rgba(76, 73, 97, 0.7721463585434174) 0%,
+      rgba(255, 255, 255, 0.9192051820728291) 95%
+    )`,
+    backgroundWeb: `-webkit-linear-gradient(
+      90deg,
+      rgba(76, 73, 97, 0.7721463585434174) 0%,
+      rgba(255, 255, 255, 0.9192051820728291) 95%
+    )`,
+    backgroundLinear: `linear-gradient(
+      90deg,
+      rgba(76, 73, 97, 0.7721463585434174) 0%,
+      rgba(255, 255, 255, 0.9192051820728291) 95%
+    )`,
+    filter: `progid:DXImageTransform.Microsoft.gradient(startColorstr="#4c4961",endColorstr="#ffffff",GradientType=1)`,
+  },
 }
 
 export const DARK_MODE_THEME = {
@@ -228,10 +257,32 @@ export const DARK_MODE_THEME = {
   colorCalm: COLORS.white,
   imageBorderColor: COLORS.lighterDarkBackground,
   navBackground: COLORS.lighterDarkBackground,
+  resumeHeadingMobile: COLORS.white,
+  resumeHeadingDesktop: COLORS.white,
   terminalBackground: COLORS.lighterDarkBackground,
   themeToggleBackgroundColor: COLORS.white,
   themeToggleButtonColor: COLORS.terminalBackground,
   toggleSwitchActiveColor: COLORS.lighterDarkBackground,
+  white: COLORS.white,
+  resumeHeading: {
+    background: `initial`,
+    backgroundMoz: `-moz-linear-gradient(
+      308deg,
+      rgba(76, 73, 97, 0.7721463585434174) 10%,
+      rgba(55, 55, 55, 1) 100%
+    )`,
+    backgroundWeb: `-webkit-linear-gradient(
+      308deg,
+      rgba(76, 73, 97, 0.7721463585434174) 10%,
+      rgba(55, 55, 55, 1) 100%
+    )`,
+    backgroundLinear: `linear-gradient(
+      308deg,
+      rgba(76, 73, 97, 0.7721463585434174) 10%,
+      rgba(55, 55, 55, 1) 100%
+    )`,
+    filter: `progid:DXImageTransform.Microsoft.gradient(startColorstr="#4c4961",endColorstr="#373737",GradientType=1)`,
+  },
 }
 
 export const PIE_SERIES_COLORS = [

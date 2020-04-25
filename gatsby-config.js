@@ -26,12 +26,183 @@ module.exports = {
             { title: 'LinkedIn', href: `https://www.linkedin.com/in/nsundara/` },
             { title: 'E-Mail', href: `mailto:nrs710@gmail.com` },
         ],
+        resume: {
+            contact: [{
+                    key: 'Location',
+                    value: 'Los Angeles, CA',
+                },
+                {
+                    key: 'Phone',
+                    value: '424-240-5016',
+                    href: `tel:+14242405016`
+                },
+                {
+                    key: 'Email',
+                    value: 'nrs710@gmail.com',
+                    href: 'mailto:narinsun2020@gmail.com'
+                },
+                {
+                    key: 'Website',
+                    value: 'narinsun.com'
+                },
+                {
+                    key: 'Github',
+                    value: '@ricopella',
+                    href: 'https://github.com/ricopella'
+                },
+                {
+                    key: 'LinkedIn',
+                    value: '@nsundara',
+                    href: 'https://www.linkedin.com/in/nsundara/'
+                }
+            ],
+            education: [{
+                    title: 'UCLA Extension',
+                    subTitle: 'Full-Stack Web Development Certification',
+                    date: '2017'
+                },
+                {
+                    title: 'Johnson & Wales University',
+                    subTitle: 'Bachelor of Arts',
+                    note: 'GPA 3.8 of 4.0',
+                    date: `2005 - 2009`,
+                },
+                {
+                    title: `Scrum Alliance`,
+                    subTitle: `Certified ScrumMaster`,
+                    date: `2018`
+                }
+            ],
+            experience: [{
+                    title: 'Front-End Developer II',
+                    company: 'FanAI Inc.',
+                    href: 'https://fanai.io/',
+                    date: `Dec 2019 - Mar 2020`,
+                    items: [`Created data visualizations and dashboards built with Redux &
+                    Highcharts. Examples: social following & interactions (twitter &
+                    twitch), demographics, purchase behaviors, and cookie tracking
+                    analytics`,
+                        `Converted desktop only application to mobile friendly and fully
+                    responsive using React-Responsive and CSS Grid, added animations for
+                    page changes and user interactions using Framer-Motion`,
+                        `Improved UX by reducing network calls by 80% with in-browser caching`,
+                        `Removed 10k lines of code by refactoring class-based components to
+                    functional components and creating custom react-hooks`
+                    ],
+                },
+                {
+                    title: `Front-End Developer I`,
+                    company: 'FanAI Inc.',
+                    href: 'https://fanai.io/',
+                    date: `Dec 2017 - Dec 2019`,
+                    items: [
+                        `One of two Front-End contributors towards the full-cycle of new
+                        feature development with React & TypeScript, designed for scale with consideration of UI/UX technical feasibility`,
+                        `Developed internal tooling such as account management (firebase),
+                        database management GUI, and tracking custom google analytics
+                        behaviors`,
+                        `Added Storybook to document atomically-designed components &
+                        standardize custom design system`,
+                        `ScrumMaster: Facilitate sprint ceremonies, and improve development
+                        processes`
+                    ],
+                }, {
+                    title: `Software Engineer & ScrumMaster`,
+                    company: `iMationSoft`,
+                    href: `https://imationsoft.com`,
+                    date: `Oct 2017 - Dec 2017`,
+                    items: [
+                        `Created an API service with Node.JS and Express.JS that automated
+                        inventory and sales management with Jet.com, Amazon, Ebay, and Etsy`,
+                        `ScrumMaster: Planned sprint releases for team of six engineers and
+                        stakeholders`
+                    ]
+                },
+                {
+                    title: `Teacher Assistant`,
+                    company: `UCLA Extension`,
+                    href: `https://bootcamp.uclaextension.edu/coding/`,
+                    date: `Sept 2017 - Dec 2017`,
+                    items: [
+                        `Mentored 30 students to develop critical thinking and problem
+                        solving skills`
+                    ]
+                },
+                {
+                    title: 'Freelance Web Developer',
+                    href: `/`,
+                    company: `narinsun.com`,
+                    date: `2017 - Present`,
+                    items: [
+                        `Develop consumer-facing mobile first web applications`,
+                        `Create robust databases with server languages for CRUD functionality`,
+                        `Integration of third party APIs to ensure technical feasibility of
+                        UI/UX`,
+                        `Identify the best framework or tools to fit client needs. Examples:
+                        Shopify, Wix, Squarespace, WordPress, etc.`
+                    ]
+                },
+                {
+                    title: `Sr. Client Manager`,
+                    href: `https://kforce.com`,
+                    company: `Kforce, Inc.`,
+                    date: `Aug 2015 - Oct 2017`,
+                },
+                {
+                    title: 'Vice President, Sales & Project Management',
+                    href: `https://pseagency.com`,
+                    company: 'PSE Agency',
+                    date: `July 2009 - Aug 2015`
+                }
+            ],
+            skills: [{
+                    title: 'React',
+                    value: 5,
+                },
+                {
+                    title: 'TypeScript',
+                    value: 4,
+                },
+                {
+                    title: 'JavaScript',
+                    value: 4,
+                },
+                {
+                    title: 'CSS',
+                    value: 4,
+                },
+                {
+                    title: 'Highcharts',
+                    value: 4,
+                },
+                {
+                    title: 'Redux',
+                    value: 3,
+                },
+                {
+                    title: 'Node.JS',
+                    value: 3,
+                }, {
+                    title: `Express.JS`,
+                    value: 3
+                },
+                {
+                    title: `Jest`,
+                    value: 3
+                },
+                {
+                    title: `Testing-Library`,
+                    value: 3
+                }
+            ]
+        },
         headerItems: [
             `home`,
             `about me`,
             `technical skills`,
             `portfolio`,
             `contact`,
+            `resume`
         ],
         portfolioItems: [{
                 title: 'Experience',

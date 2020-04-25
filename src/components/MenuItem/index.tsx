@@ -13,7 +13,13 @@ import { MenuItemProps } from '../../types'
  */
 const MenuItem: FC<MenuItemProps> = ({ item }) => (
   <Styled.MenuItemLi variants={Styled.MENU_ITEM_VARIANTS} {...BUTTON_ANIMATION}>
-    <Styled.HomepageLink to={setHref(item)}>{`+ ${item}`}</Styled.HomepageLink>
+    {item === 'resume' ? (
+      <Styled.ResumeLink to="/resume">+ {item}</Styled.ResumeLink>
+    ) : (
+      <Styled.HomepageLink
+        to={setHref(item)}
+      >{`+ ${item}`}</Styled.HomepageLink>
+    )}
   </Styled.MenuItemLi>
 )
 

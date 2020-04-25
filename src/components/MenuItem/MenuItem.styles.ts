@@ -1,7 +1,9 @@
 import styled from '@emotion/styled'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { COLORS, DIMENSIONS, FONT_WIDTHS } from '../../styles/variables'
+import { Link } from 'gatsby'
 import { motion } from 'framer-motion'
+import { ThemeTypes } from '../../types'
 
 const MenuItemLi = styled(motion.li)`
   align-items: center;
@@ -26,7 +28,7 @@ const MenuItemLi = styled(motion.li)`
 `
 
 const HomepageLink = styled(AnchorLink)`
-  color: ${props => props.theme.actionColor};
+  color: ${(props: ThemeTypes) => props.theme.actionColor};
   cursor: pointer;
   font-size: ${DIMENSIONS.fontSize.regular};
   font-weight: ${FONT_WIDTHS.SEMI_BOLD};
@@ -38,6 +40,13 @@ const HomepageLink = styled(AnchorLink)`
   &:focus {
     text-decoration: underline;
   }
+`
+
+const ResumeLink = styled(Link)`
+  color: ${(props: ThemeTypes) => props.theme.actionColor};
+  font-size: ${DIMENSIONS.fontSize.regular};
+  font-weight: ${FONT_WIDTHS.SEMI_BOLD};
+  text-transform: capitalize;
 `
 
 const MENU_ITEM_VARIANTS = {
@@ -63,4 +72,5 @@ export default {
   MenuItemLi,
   HomepageLink,
   MENU_ITEM_VARIANTS,
+  ResumeLink,
 }

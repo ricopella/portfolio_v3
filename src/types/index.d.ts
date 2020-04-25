@@ -94,10 +94,44 @@ export interface UseSiteMetaDataReturns {
   meta?: []
   headerItems: string[]
   portfolioItems: Portfolio[]
+  resume: ResumeProps
   terminalCommands: TerminalCommand[]
   skills: Skills[]
   title: string
   titleTemplate: string
+}
+
+export interface ResumeProps {
+  contact: ResumeContactItem[]
+  education: ResumeEducationItem[]
+  experience: ResumeExperienceItem[]
+  skills: ResumeSkillsItem[]
+}
+
+export interface ResumeContactItem {
+  key: string
+  value: string
+  href?: string
+}
+
+export interface ResumeEducationItem {
+  date: string
+  note?: string
+  subTitle: string
+  title: string
+}
+
+export interface ResumeExperienceItem {
+  title: string
+  href: string
+  company: string
+  date: string
+  items?: string[]
+}
+
+export interface ResumeSkillsItem {
+  title: string
+  value: number
 }
 
 export interface AuthorMetaData {
@@ -201,6 +235,11 @@ export interface DimensionsType {
     [lH: string]: number
   }
   containerPadding: string | number
+  resume: {
+    heading: {
+      height: string
+    }
+  }
 }
 
 export interface TerminalCommand {
@@ -241,4 +280,31 @@ export interface GithubLanguageItem {
       id: string
     }
   }[]
+}
+
+export interface ThemeTypes {
+  theme: {
+    actionBackgroundColor: string
+    actionColor: string
+    backgroundColor: string
+    backgroundContentColor: string
+    color: string
+    colorCalm: string
+    imageBorderColor: string
+    navBackground: string
+    resumeHeadingDesktop: string
+    resumeHeadingMobile: string
+    resumeHeading: {
+      background: string
+      backgroundMoz: string
+      backgroundWeb: string
+      backgroundLinear: string
+      filter: string
+    }
+    terminalBackground: string
+    themeToggleBackgroundColor: string
+    themeToggleButtonColor: string
+    toggleSwitchActiveColor: string
+    white: string
+  }
 }
