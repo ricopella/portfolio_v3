@@ -1,36 +1,35 @@
 import React, { FC } from 'react'
 import Styled from './Resume.styles'
+import useSiteMetaData from '../../hooks/useSiteMetaData'
+import { ResumeEducationItem } from '../../types'
 
-const Education: FC<{}> = () => (
+export const PureEducation: FC<{
+  educationItems: ResumeEducationItem[]
+  title: string
+}> = ({ educationItems = [], title = '' }) => (
   <Styled.Education>
-    <Styled.ResumeBodyHeading>Education</Styled.ResumeBodyHeading>
+    <Styled.ResumeBodyHeading>{title}</Styled.ResumeBodyHeading>
     <Styled.EducationBody>
-      <Styled.EducationItem>
-        <Styled.EducationItemTitle>UCLA Extension</Styled.EducationItemTitle>
-        <Styled.EducationItemSubTitle>
-          Full-Stack Web Development Certification
-        </Styled.EducationItemSubTitle>
-        <Styled.EducationItemDate>2017</Styled.EducationItemDate>
-      </Styled.EducationItem>
-      <Styled.EducationItem>
-        <Styled.EducationItemTitle>
-          Johnson & Wales University
-        </Styled.EducationItemTitle>
-        <Styled.EducationItemSubTitle>
-          Bachelor of Arts
-        </Styled.EducationItemSubTitle>
-        <Styled.EducationItemNote>+ GPA of 3.8 4.0</Styled.EducationItemNote>
-        <Styled.EducationItemDate>2005 - 2009</Styled.EducationItemDate>
-      </Styled.EducationItem>
-      <Styled.EducationItem>
-        <Styled.EducationItemTitle>Scrum Alliance</Styled.EducationItemTitle>
-        <Styled.EducationItemSubTitle>
-          Certified ScrumMaster
-        </Styled.EducationItemSubTitle>
-        <Styled.EducationItemDate>2018</Styled.EducationItemDate>
-      </Styled.EducationItem>
+      {(educationItems || []).map((item, idx) => (
+        <Styled.EducationItem key={`resume_education_${item}_${idx}`}>
+          <Styled.EducationItemTitle>{item.title}</Styled.EducationItemTitle>
+          <Styled.EducationItemSubTitle>
+            {item.subTitle}
+          </Styled.EducationItemSubTitle>
+          <Styled.EducationItemDate>{item.date}</Styled.EducationItemDate>
+          {item.note ? (
+            <Styled.EducationItemNote>+ {item.note}</Styled.EducationItemNote>
+          ) : null}
+        </Styled.EducationItem>
+      ))}
     </Styled.EducationBody>
   </Styled.Education>
 )
+
+const Education: FC<{}> = () => {
+  const { resume } = useSiteMetaData()
+  const key = Object.keys(resume)[1]
+  return <PureEducation educationItems={resume.education} title={key} />
+}
 
 export default Education

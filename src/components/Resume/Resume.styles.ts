@@ -63,6 +63,7 @@ const ResumeBodyHeading = styled.div`
   color: ${(props: ThemeTypes) => props.theme.resumeHeadingDesktop};
   padding: 0 0 0 1rem;
   line-height: 2rem;
+  text-transform: capitalize;
 
   @media (max-width: ${BREAKPOINTS.smRem}) {
     background-color: transparent;
@@ -86,6 +87,8 @@ const ResumeMainBodyHeading = styled.div`
   color: ${(props: ThemeTypes) => props.theme.colorCalm};
   height: 2rem;
   width: 100%;
+  text-transform: capitalize;
+
   @media (max-width: ${BREAKPOINTS.smRem}) {
     margin: 0 0;
   }
@@ -298,6 +301,16 @@ const ExperienceCompanyLink = styled(OutboundLink)`
     }
   }
 `
+const ExperienceInternalLink = styled(Link)`
+font-size: 0.875rem;
+color: ${(props: ThemeTypes) => props.theme.actionColor};
+margin-left: 0.3125rem;
+
+@media (max-width: ${BREAKPOINTS.resumeFirstBreak}) {
+ margin-left: 0;
+  }
+}
+`
 
 const ExperienceYear = styled.i`
   justify-self: end;
@@ -477,6 +490,7 @@ export default {
   ExperienceListItem,
   ExperienceUl,
   ExperienceCompanyLink,
+  ExperienceInternalLink,
   ExperienceItem,
   EducationItem,
   EducationItemTitle,

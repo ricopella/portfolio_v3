@@ -103,12 +103,35 @@ export interface UseSiteMetaDataReturns {
 
 export interface ResumeProps {
   contact: ResumeContactItem[]
+  education: ResumeEducationItem[]
+  experience: ResumeExperienceItem[]
+  skills: ResumeSkillsItem[]
 }
 
 export interface ResumeContactItem {
   key: string
   value: string
   href?: string
+}
+
+export interface ResumeEducationItem {
+  date: string
+  note?: string
+  subTitle: string
+  title: string
+}
+
+export interface ResumeExperienceItem {
+  title: string
+  href: string
+  company: string
+  date: string
+  items?: string[]
+}
+
+export interface ResumeSkillsItem {
+  title: string
+  value: number
 }
 
 export interface AuthorMetaData {

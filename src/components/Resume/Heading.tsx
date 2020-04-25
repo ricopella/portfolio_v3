@@ -3,13 +3,26 @@ import React, { FC } from 'react'
 import Styled from './Resume.styles'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
 
-export const PureHeading: FC<{ name: string[] }> = ({ name = [] }) => (
+interface PureHeadingProps {
+  name: string[]
+  // for testing
+  removeImage?: boolean
+}
+
+export const PureHeading: FC<PureHeadingProps> = ({
+  name = [],
+  removeImage = false,
+}) => (
   <Styled.Heading>
     <Styled.HeadingProfileImageWrapper>
-      <ProfileImage
-        innerStyle={Styled.HeadingProfileImageInner}
-        outerStyle={Styled.HeadingProfileImageOuter}
-      />
+      {!removeImage ? (
+        <ProfileImage
+          innerStyle={Styled.HeadingProfileImageInner}
+          outerStyle={Styled.HeadingProfileImageOuter}
+        />
+      ) : (
+        <div />
+      )}
     </Styled.HeadingProfileImageWrapper>
     <Styled.HeadingWrapper>
       <Styled.HeadingText className="first">{name[0]}</Styled.HeadingText>

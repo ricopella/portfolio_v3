@@ -3,9 +3,10 @@ import Styled from './Resume.styles'
 import useSiteMetaData from '../../hooks/useSiteMetaData'
 import { ResumeContactItem } from '../../types'
 
-const PureContact: FC<{ contactItems: ResumeContactItem[] }> = ({
-  contactItems,
-}) => {
+export const PureContact: FC<{
+  contactItems: ResumeContactItem[]
+  title: string
+}> = ({ contactItems = [], title = '' }) => {
   const renderLocation = ({ value }: { value: string }) => (
     <Styled.ContactRowValue>{value}</Styled.ContactRowValue>
   )
@@ -28,12 +29,12 @@ const PureContact: FC<{ contactItems: ResumeContactItem[] }> = ({
 
   return (
     <Styled.Contact>
-      <Styled.ResumeBodyHeading>Contact</Styled.ResumeBodyHeading>
+      <Styled.ResumeBodyHeading>{title}</Styled.ResumeBodyHeading>
       <Styled.ContactBody>
         {(contactItems || []).map((item, idx) => (
           <Styled.ContactRowItem key={`resume_contact_${item}_${idx}`}>
             <Styled.ContactRowKey>{item.key}: </Styled.ContactRowKey>
-            {item.key === 'location'
+            {item.key === 'Location'
               ? renderLocation(item)
               : item.href
               ? renderExternalLink(item)
@@ -47,7 +48,9 @@ const PureContact: FC<{ contactItems: ResumeContactItem[] }> = ({
 
 const Contact = () => {
   const { resume } = useSiteMetaData()
-  return <PureContact contactItems={resume.contact} />
+  return (
+    <PureContact contactItems={resume.contact} title={Object.keys(resume)[0]} />
+  )
 }
 
 export default Contact

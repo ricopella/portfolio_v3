@@ -39,6 +39,23 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
               value
               href
             }
+            education {
+              date
+              note
+              subTitle
+              title
+            }
+            experience {
+              title
+              company
+              href
+              items
+              date
+            }
+            skills {
+              title
+              value
+            }
           }
           skills {
             title
