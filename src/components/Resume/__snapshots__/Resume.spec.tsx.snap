@@ -1,0 +1,300 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Contact /> should match Contact snapshot 1`] = `
+<div
+  className="css-rpidww"
+>
+  <div
+    className="css-1gwnzsm"
+  >
+    foo
+  </div>
+  <div
+    className="css-1t1zgjm"
+  >
+    <div
+      className="css-73ivlf"
+    >
+      <div
+        className="css-1a50kw8"
+      >
+        location
+        : 
+      </div>
+      <a
+        className="css-1i80ftk"
+        href="/"
+      >
+        USA
+      </a>
+    </div>
+    <div
+      className="css-73ivlf"
+    >
+      <div
+        className="css-1a50kw8"
+      >
+        email
+        : 
+      </div>
+      <a
+        className="css-1i80ftk"
+        href="mailto:foo@foo.com"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        foo@foo.com
+      </a>
+    </div>
+    <div
+      className="css-73ivlf"
+    >
+      <div
+        className="css-1a50kw8"
+      >
+        website
+        : 
+      </div>
+      <a
+        className="css-1i80ftk"
+        href="/"
+      >
+        this_site.com
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Education /> should match Education snapshot 1`] = `
+<div
+  className="css-4y91xh"
+>
+  <div
+    className="css-1gwnzsm"
+  >
+    foo
+  </div>
+  <div
+    className="css-oppwm5"
+  >
+    <div
+      className="css-chr1eq"
+    >
+      <div
+        className="css-1znfyf"
+      >
+        Foo
+      </div>
+      <div
+        className="css-0"
+      >
+        Bar
+      </div>
+      <i
+        className="css-0"
+      >
+        2020
+      </i>
+    </div>
+    <div
+      className="css-chr1eq"
+    >
+      <div
+        className="css-1znfyf"
+      >
+        Bar
+      </div>
+      <div
+        className="css-0"
+      >
+        Foo
+      </div>
+      <i
+        className="css-0"
+      >
+        2020
+      </i>
+      <div
+        className="css-kh0n0y"
+      >
+        + 
+        Wu-Tang
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Experience /> should match Experience snapshot 1`] = `
+<div
+  className="css-16w85ff"
+>
+  <div
+    className="css-11w48tc"
+  >
+    experience
+  </div>
+  <div
+    className="css-ttnxq"
+  >
+    <div
+      className="css-0"
+    >
+      <div
+        className="css-18qzh43"
+      >
+        <div
+          className="css-o4txv7"
+        >
+          foo
+        </div>
+        <a
+          className="css-1rgqcpp"
+          href="foo.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+          title="bar"
+        >
+          bar
+        </a>
+        <i
+          className="css-50slds"
+        >
+          2020
+        </i>
+      </div>
+      <ul
+        className="css-1cgnpl4"
+      >
+        <li
+          className="css-0"
+        >
+          foo
+        </li>
+        <li
+          className="css-0"
+        >
+          bar
+        </li>
+      </ul>
+    </div>
+    <div
+      className="css-0"
+    >
+      <div
+        className="css-18qzh43"
+      >
+        <div
+          className="css-o4txv7"
+        >
+          bar
+        </div>
+        <a
+          className="css-1hhtpjw"
+          href="/"
+          title="foo"
+        >
+          foo
+        </a>
+        <i
+          className="css-50slds"
+        >
+          2020
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Heading /> should match Heading snapshot 1`] = `
+<div
+  className="css-n51pgc"
+>
+  <div
+    className="css-2o35g8"
+  >
+    <div />
+  </div>
+  <div
+    className="css-zkgsxc"
+  >
+    <div
+      className="first css-19k8x8i"
+    >
+      foo
+    </div>
+    <div
+      className="last css-19k8x8i"
+    >
+      bar
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Skills /> should match Skills snapshot 1`] = `
+<div
+  className="css-eeggkp"
+>
+  <div
+    className="css-1gwnzsm"
+  >
+    skills
+  </div>
+  <div
+    className="css-tb1mzb"
+  >
+    <div
+      className="css-1iafzq5"
+    >
+      <div
+        className="css-107jm1n"
+      >
+        foo
+      </div>
+      <div
+        className="css-1fok2vg"
+      >
+        <i
+          className="css-ybj7dz"
+        />
+        <i
+          className="css-ybj7dz"
+        />
+        <i
+          className="css-ybj7dz"
+        />
+        <i
+          className="css-ybj7dz"
+        />
+        <i
+          className="css-ybj7dz"
+        />
+      </div>
+    </div>
+    <div
+      className="css-1iafzq5"
+    >
+      <div
+        className="css-107jm1n"
+      >
+        bar
+      </div>
+      <div
+        className="css-1fok2vg"
+      >
+        <i
+          className="css-ybj7dz"
+        />
+        <i
+          className="css-ybj7dz"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
