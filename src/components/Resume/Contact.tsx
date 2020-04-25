@@ -1,63 +1,53 @@
 import React, { FC } from 'react'
 import Styled from './Resume.styles'
+import useSiteMetaData from '../../hooks/useSiteMetaData'
+import { ResumeContactItem } from '../../types'
 
-const Contact: FC<{}> = () => (
-  <Styled.Contact>
-    <Styled.ResumeBodyHeading>Contact</Styled.ResumeBodyHeading>
-    <Styled.ContactBody>
-      <Styled.ContactRowItem>
-        <Styled.ContactRowKey>Location: </Styled.ContactRowKey>
-        <Styled.ContactRowValue>Los Angeles, CA</Styled.ContactRowValue>
-      </Styled.ContactRowItem>
-      <Styled.ContactRowItem>
-        <Styled.ContactRowKey>Phone: </Styled.ContactRowKey>
-        <Styled.ContactRowValueLink
-          href={`tel:+14242405016`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          424-240-5016
-        </Styled.ContactRowValueLink>
-      </Styled.ContactRowItem>
+const PureContact: FC<{ contactItems: ResumeContactItem[] }> = ({
+  contactItems,
+}) => {
+  const renderLocation = ({ value }: { value: string }) => (
+    <Styled.ContactRowValue>{value}</Styled.ContactRowValue>
+  )
 
-      <Styled.ContactRowItem>
-        <Styled.ContactRowKey>Email: </Styled.ContactRowKey>
-        <Styled.ContactRowValueLink
-          href={'mailto:narinsun2020@gmail.com'}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          nrs710@gmail.com
-        </Styled.ContactRowValueLink>
-      </Styled.ContactRowItem>
-      <Styled.ContactRowItem>
-        <Styled.ContactRowKey>Website: </Styled.ContactRowKey>
-        <Styled.ContactRowValueInternalLink to={`/`}>
-          narinsun.com
-        </Styled.ContactRowValueInternalLink>
-      </Styled.ContactRowItem>
-      <Styled.ContactRowItem>
-        <Styled.ContactRowKey>Github: </Styled.ContactRowKey>
-        <Styled.ContactRowValueLink
-          href={'https://github.com/ricopella'}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @ricopella
-        </Styled.ContactRowValueLink>
-      </Styled.ContactRowItem>
-      <Styled.ContactRowItem>
-        <Styled.ContactRowKey>LinkedIn: </Styled.ContactRowKey>
-        <Styled.ContactRowValueLink
-          href={`https://www.linkedin.com/in/nsundara/`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @nsundara
-        </Styled.ContactRowValueLink>
-      </Styled.ContactRowItem>
-    </Styled.ContactBody>
-  </Styled.Contact>
-)
+  const renderExternalLink = ({ href, value }: ResumeContactItem) => (
+    <Styled.ContactRowValueLink
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {value}
+    </Styled.ContactRowValueLink>
+  )
+
+  const renderInternalLink = ({ value }: { value: string }) => (
+    <Styled.ContactRowValueInternalLink to={`/`}>
+      {value}
+    </Styled.ContactRowValueInternalLink>
+  )
+
+  return (
+    <Styled.Contact>
+      <Styled.ResumeBodyHeading>Contact</Styled.ResumeBodyHeading>
+      <Styled.ContactBody>
+        {(contactItems || []).map((item, idx) => (
+          <Styled.ContactRowItem key={`resume_contact_${item}_${idx}`}>
+            <Styled.ContactRowKey>{item.key}: </Styled.ContactRowKey>
+            {item.key === 'location'
+              ? renderLocation(item)
+              : item.href
+              ? renderExternalLink(item)
+              : renderInternalLink(item)}
+          </Styled.ContactRowItem>
+        ))}
+      </Styled.ContactBody>
+    </Styled.Contact>
+  )
+}
+
+const Contact = () => {
+  const { resume } = useSiteMetaData()
+  return <PureContact contactItems={resume.contact} />
+}
 
 export default Contact

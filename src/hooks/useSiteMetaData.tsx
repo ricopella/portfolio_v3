@@ -33,6 +33,13 @@ const useSiteMetaData = (): UseSiteMetaDataReturns => {
               year
             }
           }
+          resume {
+            contact {
+              key
+              value
+              href
+            }
+          }
           skills {
             title
             items {

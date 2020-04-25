@@ -400,7 +400,7 @@ const HeadingWrapper = styled.div`
     props.theme.resumeHeading.backgroundLinear};
 
   @media (max-width: 71.875rem) {
-    width: 75%;
+    width: 79%;
   }
 
   @media (max-width: 47.9375rem) {

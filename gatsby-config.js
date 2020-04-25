@@ -26,6 +26,37 @@ module.exports = {
             { title: 'LinkedIn', href: `https://www.linkedin.com/in/nsundara/` },
             { title: 'E-Mail', href: `mailto:nrs710@gmail.com` },
         ],
+        resume: {
+            contact: [{
+                    key: 'Location',
+                    value: 'Los Angeles, CA',
+                },
+                {
+                    key: 'Phone',
+                    value: '424-240-5016',
+                    href: `tel:+14242405016`
+                },
+                {
+                    key: 'Email',
+                    value: 'nrs710@gmail.com',
+                    href: 'mailto:narinsun2020@gmail.com'
+                },
+                {
+                    key: 'Website',
+                    value: 'narinsun.com'
+                },
+                {
+                    key: 'Github',
+                    value: '@ricopella',
+                    href: 'https://github.com/ricopella'
+                },
+                {
+                    key: 'LinkedIn',
+                    value: '@nsundara',
+                    href: 'https://www.linkedin.com/in/nsundara/'
+                }
+            ]
+        },
         headerItems: [
             `home`,
             `about me`,

@@ -94,10 +94,21 @@ export interface UseSiteMetaDataReturns {
   meta?: []
   headerItems: string[]
   portfolioItems: Portfolio[]
+  resume: ResumeProps
   terminalCommands: TerminalCommand[]
   skills: Skills[]
   title: string
   titleTemplate: string
+}
+
+export interface ResumeProps {
+  contact: ResumeContactItem[]
+}
+
+export interface ResumeContactItem {
+  key: string
+  value: string
+  href?: string
 }
 
 export interface AuthorMetaData {
