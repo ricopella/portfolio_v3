@@ -26,13 +26,9 @@ const ResumeWrapper = styled.div`
   padding: 1rem 0;
   width: 210mm;
 
-  @media (max-width: 71.875rem) {
-    margin: 6rem auto;
-    width: calc(100vw - 4rem);
-  }
-
-  @media (max-width: ${BREAKPOINTS.mdRem}) {
+  @media (max-width: ${BREAKPOINTS.resumeFirstBreak}) {
     width: calc(100vw - 2rem);
+    height: 100%;
   }
 `
 
@@ -48,15 +44,38 @@ const ResumeBody = styled.div`
     'contact workExperience'
     'skills workExperience'
     'education workExperience';
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, max-content);
+    grid-template-areas:
+      'contact'
+      'skills'
+      'workExperience'
+      'education';
+  }
 `
 
 const ResumeBodyHeading = styled.div`
   background-color: ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
   height: 2rem;
   width: 80%;
-  color: ${(props: ThemeTypes) => props.theme.white};
+  color: ${(props: ThemeTypes) => props.theme.resumeHeadingDesktop};
   padding: 0 0 0 1rem;
   line-height: 2rem;
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    background-color: transparent;
+    height: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    color: ${(props: ThemeTypes) => props.theme.resumeHeadingMobile};
+    padding: 0 0;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    border-bottom: 0.125rem solid
+      ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
+  }
 `
 
 const ResumeMainBodyHeading = styled.div`
@@ -66,6 +85,10 @@ const ResumeMainBodyHeading = styled.div`
     ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
   color: ${(props: ThemeTypes) => props.theme.colorCalm};
   height: 2rem;
+  width: 100%;
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    margin: 0 0;
+  }
 `
 
 // Contact Info
@@ -76,20 +99,31 @@ const Contact = styled.div`
     ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
   grid-template-rows: repeat(2, max-content);
   grid-row-gap: 1rem;
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    border-right: none;
+  }
 `
 
 const ContactBody = styled.div`
   display: grid;
   grid-template-rows: repeat(6, max-content);
-  // grid-row-gap: 0.5rem;
 `
 
 const ContactRowItem = styled.div`
   display: grid;
   grid-template-rows: max-content;
-  grid-template-columns: repeat(2, max-content);
-  padding-left: 1rem;
+  grid-template-columns: max-content 1fr;
+  padding: 0 1rem;
   grid-column-gap: 0.5rem;
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    border-bottom: 1px solid
+      ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+    padding: 0 0;
+  }
 `
 
 const ContactRowKey = styled.div`
@@ -100,14 +134,19 @@ const ContactRowKey = styled.div`
 const ContactRowValue = styled.div`
   color: ${(props: ThemeTypes) => props.theme.color};
   font-size: 0.875rem;
+  justify-self: end;
 `
 
 const ContactRowValueLink = styled(OutboundLink)`
   font-size: 0.875rem;
+  justify-self: end;
+  color: ${(props: ThemeTypes) => props.theme.actionColor};
 `
 
 const ContactRowValueInternalLink = styled(Link)`
   font-size: 0.875rem;
+  justify-self: end;
+  color: ${(props: ThemeTypes) => props.theme.actionColor};
 `
 
 // Skills
@@ -116,6 +155,10 @@ const Skills = styled.div`
   grid-area: skills;
   border-right: 0.125rem solid
     ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    border-right: none;
+  }
 `
 
 const ResumeSkillsBody = styled.div`
@@ -199,6 +242,11 @@ const WorkExperience = styled.div`
   grid-template-rows: repeat(2, max-content);
   grid-row-gap: 0.5rem;
   padding-right: 1rem;
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    margin: 0 1rem;
+    padding: 0 0;
+  }
 `
 
 const ExperienceBody = styled.div`
@@ -212,6 +260,11 @@ const ExperienceItem = styled.div``
 const ExperienceFirstTitleRow = styled.div`
   display: grid;
   grid-template-columns: max-content max-content 1fr;
+
+  @media (max-width: ${BREAKPOINTS.resumeFirstBreak}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, max-content);
+  }
 `
 
 const ExperienceSecondTitleRow = styled.div`
@@ -221,16 +274,37 @@ const ExperienceSecondTitleRow = styled.div`
 
 const ExperienceTitle = styled.div`
   font-weight: bold;
+
+  &:after {
+    content: ' | ';
+  }
+
+  @media (max-width: ${BREAKPOINTS.resumeFirstBreak}) {
+    justify-self: start;
+
+    &:after {
+      content: none;
+    }
+  }
 `
 
 const ExperienceCompanyLink = styled(OutboundLink)`
   font-size: 0.875rem;
   color: ${(props: ThemeTypes) => props.theme.actionColor};
   margin-left: 0.3125rem;
+
+  @media (max-width: ${BREAKPOINTS.resumeFirstBreak}) {
+   margin-left: 0;
+    }
+  }
 `
 
 const ExperienceYear = styled.i`
   justify-self: end;
+
+  @media (max-width: ${BREAKPOINTS.resumeFirstBreak}) {
+    justify-self: start;
+  }
 `
 
 const ExperienceUl = styled.ul`
@@ -246,6 +320,10 @@ const Education = styled.div`
   border-right: 2px solid
     ${(props: ThemeTypes) => props.theme.actionBackgroundColor};
   grid-template-rows: repeat(2, max-content);
+
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    border-right: none;
+  }
 `
 
 const EducationBody = styled.div`
@@ -315,22 +393,11 @@ const HeadingWrapper = styled.div`
   position: absolute;
   right: 0;
   width: 40rem;
-  background: -moz-linear-gradient(
-    308deg,
-    rgba(76, 73, 97, 0.7721463585434174) 10%,
-    rgba(55, 55, 55, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    308deg,
-    rgba(76, 73, 97, 0.7721463585434174) 10%,
-    rgba(55, 55, 55, 1) 100%
-  );
-  background: linear-gradient(
-    308deg,
-    rgba(76, 73, 97, 0.7721463585434174) 10%,
-    rgba(55, 55, 55, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4c4961",endColorstr="#373737",GradientType=1);
+  background: ${(props: ThemeTypes) => props.theme.resumeHeading.background};
+  background: ${(props: ThemeTypes) => props.theme.resumeHeading.backgroundWeb};
+  background: ${(props: ThemeTypes) => props.theme.resumeHeading.backgroundMoz};
+  background: ${(props: ThemeTypes) =>
+    props.theme.resumeHeading.backgroundLinear};
 
   @media (max-width: 71.875rem) {
     width: 75%;

@@ -258,6 +258,15 @@ export interface ThemeTypes {
     colorCalm: string
     imageBorderColor: string
     navBackground: string
+    resumeHeadingDesktop: string
+    resumeHeadingMobile: string
+    resumeHeading: {
+      background: string
+      backgroundMoz: string
+      backgroundWeb: string
+      backgroundLinear: string
+      filter: string
+    }
     terminalBackground: string
     themeToggleBackgroundColor: string
     themeToggleButtonColor: string

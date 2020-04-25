@@ -28,11 +28,11 @@ const Resume = () => {
         <Styled.ResumeBodyHeading>Contact</Styled.ResumeBodyHeading>
         <Styled.ContactBody>
           <Styled.ContactRowItem>
-            <Styled.ContactRowKey>+ Location: </Styled.ContactRowKey>
+            <Styled.ContactRowKey>Location: </Styled.ContactRowKey>
             <Styled.ContactRowValue>Los Angeles, CA</Styled.ContactRowValue>
           </Styled.ContactRowItem>
           <Styled.ContactRowItem>
-            <Styled.ContactRowKey>+ Phone: </Styled.ContactRowKey>
+            <Styled.ContactRowKey>Phone: </Styled.ContactRowKey>
             <Styled.ContactRowValueLink
               href={`tel:+14242405016`}
               target="_blank"
@@ -43,7 +43,7 @@ const Resume = () => {
           </Styled.ContactRowItem>
 
           <Styled.ContactRowItem>
-            <Styled.ContactRowKey>+ Email: </Styled.ContactRowKey>
+            <Styled.ContactRowKey>Email: </Styled.ContactRowKey>
             <Styled.ContactRowValueLink
               href={'mailto:narinsun2020@gmail.com'}
               target="_blank"
@@ -53,13 +53,13 @@ const Resume = () => {
             </Styled.ContactRowValueLink>
           </Styled.ContactRowItem>
           <Styled.ContactRowItem>
-            <Styled.ContactRowKey>+ Website: </Styled.ContactRowKey>
+            <Styled.ContactRowKey>Website: </Styled.ContactRowKey>
             <Styled.ContactRowValueInternalLink to={`/`}>
               narinsun.com
             </Styled.ContactRowValueInternalLink>
           </Styled.ContactRowItem>
           <Styled.ContactRowItem>
-            <Styled.ContactRowKey>+ Github: </Styled.ContactRowKey>
+            <Styled.ContactRowKey>Github: </Styled.ContactRowKey>
             <Styled.ContactRowValueLink
               href={'https://github.com/ricopella'}
               target="_blank"
@@ -69,7 +69,7 @@ const Resume = () => {
             </Styled.ContactRowValueLink>
           </Styled.ContactRowItem>
           <Styled.ContactRowItem>
-            <Styled.ContactRowKey>+ LinkedIn: </Styled.ContactRowKey>
+            <Styled.ContactRowKey>LinkedIn: </Styled.ContactRowKey>
             <Styled.ContactRowValueLink
               href={`https://www.linkedin.com/in/nsundara/`}
               target="_blank"
@@ -187,7 +187,7 @@ const Resume = () => {
           <Styled.ExperienceItem>
             <Styled.ExperienceFirstTitleRow>
               <Styled.ExperienceTitle>
-                {`Front-End Developer II  | `}
+                {`Front-End Developer II`}
               </Styled.ExperienceTitle>
               <Styled.ExperienceCompanyLink
                 href={'https://fanai.io/'}
@@ -224,7 +224,7 @@ const Resume = () => {
           <Styled.ExperienceItem>
             <Styled.ExperienceFirstTitleRow>
               <Styled.ExperienceTitle>
-                {`Front-End Developer I  | `}
+                {`Front-End Developer I`}
               </Styled.ExperienceTitle>
               <Styled.ExperienceCompanyLink
                 href={'https://fanai.io/'}
@@ -260,7 +260,7 @@ const Resume = () => {
           <Styled.ExperienceItem>
             <Styled.ExperienceFirstTitleRow>
               <Styled.ExperienceTitle>
-                {`Software Engineer & ScrumMaster  | `}
+                {`Software Engineer & ScrumMaster`}
               </Styled.ExperienceTitle>
               <Styled.ExperienceCompanyLink
                 href={'https://imationsoft.com'}
@@ -287,7 +287,7 @@ const Resume = () => {
           <Styled.ExperienceItem>
             <Styled.ExperienceFirstTitleRow>
               <Styled.ExperienceTitle>
-                {`Teacher Assistant | `}
+                {`Teacher Assistant`}
               </Styled.ExperienceTitle>
               <Styled.ExperienceCompanyLink
                 href={'https://bootcamp.uclaextension.edu/coding/'}
@@ -345,7 +345,7 @@ const Resume = () => {
           <Styled.ExperienceItem>
             <Styled.ExperienceFirstTitleRow>
               <Styled.ExperienceTitle>
-                {`Sr. Client Manager | `}
+                {`Sr. Client Manager`}
               </Styled.ExperienceTitle>
               <Styled.ExperienceCompanyLink
                 href={'https://kforce.com'}
@@ -361,7 +361,7 @@ const Resume = () => {
           <Styled.ExperienceItem>
             <Styled.ExperienceFirstTitleRow>
               <Styled.ExperienceTitle>
-                {`Vice President, Sales & Project Management | `}
+                {`Vice President, Sales & Project Management`}
               </Styled.ExperienceTitle>
               <Styled.ExperienceCompanyLink
                 href={'https://pseagency.com'}
