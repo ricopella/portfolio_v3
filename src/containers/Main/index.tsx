@@ -5,7 +5,6 @@ import Home from '../Home'
 import Portfolio from '../Portfolio'
 import React from 'react'
 import Skills from '../Skills'
-import '../../styles/normalize'
 
 const MainContainer = () => {
   return (
