@@ -8,6 +8,7 @@ import ThemeContext from '../providers/ThemeContext'
 import { DARK_MODE_THEME, LIGHT_MODE_THEME } from '../styles/variables'
 import { Link } from 'gatsby'
 import { ThemeProvider } from 'emotion-theming'
+import '../styles/normalize'
 
 const useThemeState = createPersistedState('theme')
 
