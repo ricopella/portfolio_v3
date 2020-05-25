@@ -34,32 +34,32 @@ module.exports = {
                 {
                     key: 'Phone',
                     value: '424-240-5016',
-                    href: `tel:+14242405016`
+                    href: `tel:+14242405016`,
                 },
                 {
                     key: 'Email',
                     value: 'nrs710@gmail.com',
-                    href: 'mailto:narinsun2020@gmail.com'
+                    href: 'mailto:narinsun2020@gmail.com',
                 },
                 {
                     key: 'Website',
-                    value: 'narinsun.com'
+                    value: 'narinsun.com',
                 },
                 {
                     key: 'Github',
                     value: '@ricopella',
-                    href: 'https://github.com/ricopella'
+                    href: 'https://github.com/ricopella',
                 },
                 {
                     key: 'LinkedIn',
                     value: '@nsundara',
-                    href: 'https://www.linkedin.com/in/nsundara/'
-                }
+                    href: 'https://www.linkedin.com/in/nsundara/',
+                },
             ],
             education: [{
                     title: 'UCLA Extension',
                     subTitle: 'Full-Stack Web Development Certification',
-                    date: '2017'
+                    date: '2017',
                 },
                 {
                     title: 'Johnson & Wales University',
@@ -70,15 +70,23 @@ module.exports = {
                 {
                     title: `Scrum Alliance`,
                     subTitle: `Certified ScrumMaster`,
-                    date: `2018`
-                }
+                    date: `2018`,
+                },
             ],
             experience: [{
+                    title: 'Software Engineer II',
+                    company: 'UserAcquisition.com',
+                    href: 'https://useracquisition.com/',
+                    date: `June 2020 - Present`,
+                    items: [],
+                },
+                {
                     title: 'Front-End Developer II',
                     company: 'FanAI Inc.',
                     href: 'https://fanai.io/',
-                    date: `Dec 2019 - Mar 2020`,
-                    items: [`Created data visualizations and dashboards built with Redux &
+                    date: `Dec 2019 - June 2020`,
+                    items: [
+                        `Created data visualizations and dashboards built with Redux &
                     Highcharts. Examples: social following & interactions (twitter &
                     twitch), demographics, purchase behaviors, and cookie tracking
                     analytics`,
@@ -87,7 +95,7 @@ module.exports = {
                     page changes and user interactions using Framer-Motion`,
                         `Improved UX by reducing network calls by 80% with in-browser caching`,
                         `Removed 10k lines of code by refactoring class-based components to
-                    functional components and creating custom react-hooks`
+                    functional components and creating custom react-hooks`,
                     ],
                 },
                 {
@@ -103,20 +111,17 @@ module.exports = {
                         behaviors`,
                         `Added Storybook to document atomically-designed components &
                         standardize custom design system`,
-                        `ScrumMaster: Facilitate sprint ceremonies, and improve development
-                        processes`
                     ],
-                }, {
-                    title: `Software Engineer & ScrumMaster`,
+                },
+                {
+                    title: `Software Engineer`,
                     company: `iMationSoft`,
                     href: `https://imationsoft.com`,
                     date: `Oct 2017 - Dec 2017`,
                     items: [
                         `Created an API service with Node.JS and Express.JS that automated
                         inventory and sales management with Jet.com, Amazon, Ebay, and Etsy`,
-                        `ScrumMaster: Planned sprint releases for team of six engineers and
-                        stakeholders`
-                    ]
+                    ],
                 },
                 {
                     title: `Teacher Assistant`,
@@ -125,8 +130,8 @@ module.exports = {
                     date: `Sept 2017 - Dec 2017`,
                     items: [
                         `Mentored 30 students to develop critical thinking and problem
-                        solving skills`
-                    ]
+                        solving skills`,
+                    ],
                 },
                 {
                     title: 'Freelance Web Developer',
@@ -139,8 +144,8 @@ module.exports = {
                         `Integration of third party APIs to ensure technical feasibility of
                         UI/UX`,
                         `Identify the best framework or tools to fit client needs. Examples:
-                        Shopify, Wix, Squarespace, WordPress, etc.`
-                    ]
+                        Shopify, Wix, Squarespace, WordPress, etc.`,
+                    ],
                 },
                 {
                     title: `Sr. Client Manager`,
@@ -152,8 +157,8 @@ module.exports = {
                     title: 'Vice President, Sales & Project Management',
                     href: `https://pseagency.com`,
                     company: 'PSE Agency',
-                    date: `July 2009 - Aug 2015`
-                }
+                    date: `July 2009 - Aug 2015`,
+                },
             ],
             skills: [{
                     title: 'React',
@@ -182,19 +187,20 @@ module.exports = {
                 {
                     title: 'Node.JS',
                     value: 3,
-                }, {
+                },
+                {
                     title: `Express.JS`,
-                    value: 3
+                    value: 3,
                 },
                 {
                     title: `Jest`,
-                    value: 3
+                    value: 3,
                 },
                 {
                     title: `Testing-Library`,
-                    value: 3
-                }
-            ]
+                    value: 3,
+                },
+            ],
         },
         headerItems: [
             `home`,
@@ -202,11 +208,23 @@ module.exports = {
             `technical skills`,
             `portfolio`,
             `contact`,
-            `resume`
+            `resume`,
         ],
         portfolioItems: [{
                 title: 'Experience',
                 items: [{
+                        alt: 'Portfolio - UserAcquisition.com',
+                        description: 'UserAcquisition.com focuses on implementing advanced mar-tech and custom automation to make existing orgs more efficient.  We work as an extension of your team, creating a growth machine that enables UA groups to spend more with fewer people.',
+                        href: 'https://useracquisition.com',
+                        title: 'UA',
+                        year: `2020 - Present`,
+                        myTitle: 'Software Engineer II',
+                        tech: [
+                            'React',
+                            'GraphQL',
+                            'Apollo'
+                        ],
+                    }, {
                         alt: 'Portfolio - FanAI Inc.',
                         description: 'Audience Monetization Platform for FanAI clients to get Data Visualizations to show breakdowns of social followings, demographics of fan base, purchase behaviors, and other various data sources',
                         fileName: 'fanai.png',
@@ -282,6 +300,26 @@ module.exports = {
                             'Jest',
                             'Testing-Library/React',
                             'Netlify',
+                        ],
+                        year: '2020',
+                    },
+                    {
+                        alt: 'Portfolio - The Music Please',
+                        description: 'Website with an shopify integration, netlify forms, cloudinary cdn for image hosting, integration with twitch API, and more.',
+                        href: 'https://github.com/ricopella/Music-Please',
+                        githubId: `MDEwOlJlcG9zaXRvcnk4MTc4OTMyOQ==`,
+                        title: 'The Music Please',
+                        tech: [
+                            'React',
+                            'TypeScript',
+                            'Gatsby',
+                            'GraphQL',
+                            'emotion',
+                            'Framer-Motion',
+                            'Netlify',
+                            'Shopify',
+                            'Cloudinary',
+                            'Twitch API'
                         ],
                         year: '2020',
                     },
@@ -641,11 +679,11 @@ module.exports = {
             },
         },
         {
-            resolve: "gatsby-source-graphql",
+            resolve: 'gatsby-source-graphql',
             options: {
-                typeName: "GitHub",
-                fieldName: "github",
-                url: "https://api.github.com/graphql",
+                typeName: 'GitHub',
+                fieldName: 'github',
+                url: 'https://api.github.com/graphql',
                 headers: {
                     Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
                 },

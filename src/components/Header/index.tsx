@@ -1,8 +1,9 @@
 import MenuToggle from '../MenuToggle'
 import Navigation from '../Navigation'
-import React, { FC } from 'react'
+import React, { FC, useRef } from 'react'
 import Styled from './Header.styles'
 import ThemeToggle from '../ThemeToggle'
+import { useClickAway } from 'react-use'
 import { useCycle } from 'framer-motion'
 
 /**
@@ -11,9 +12,22 @@ import { useCycle } from 'framer-motion'
  */
 const Header: FC<{}> = () => {
   const [isOpen, toggleOpen] = useCycle(false, true)
+  const ref = useRef(null)
+
+  // closes menu when clicking outside
+  useClickAway(ref, () => {
+    if (isOpen) {
+      toggleOpen()
+    }
+  })
 
   return (
-    <Styled.Nav animate={isOpen ? 'open' : 'closed'} initial={false}>
+    <Styled.Nav
+      animate={isOpen ? 'open' : 'closed'}
+      isOpen={isOpen}
+      initial={false}
+      ref={ref}
+    >
       <Styled.NavBackground variants={Styled.SIDEBAR_VARIANTS} />
       <ThemeToggle />
       <Navigation />

@@ -292,3 +292,5 @@ export const PIE_SERIES_COLORS = [
   '#cae8d5',
   '#d4ded7',
 ]
+
+export type ThemeType = typeof DARK_MODE_THEME
