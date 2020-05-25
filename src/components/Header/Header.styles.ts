@@ -1,13 +1,14 @@
-import styled from '@emotion/styled'
+import styled from '../../styled'
 import { COLORS, Z_INDEX } from '../../styles/variables'
 import { motion } from 'framer-motion'
 
-const Nav = styled(motion.nav)`
+const Nav = styled(motion.nav)<{ isOpen: boolean }>`
   bottom: 0;
   left: 0;
   position: fixed;
   top: 0;
   z-index: ${Z_INDEX.HEADER};
+  width: ${props => (props.isOpen ? `18.75rem` : 0)};
 `
 
 const NavBackground = styled(motion.div)`
