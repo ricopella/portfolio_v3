@@ -19,6 +19,6 @@ Built With: [TypeScript](https://www.typescriptlang.org/), [GatsbyJS](https://ww
 
 ## History
 
-- Last Updated: 05/24/20
+- Last Updated: 09/19/20
 
 - Created: 02/17/19
