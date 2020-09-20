@@ -69,10 +69,20 @@ const IntroContentText = styled.div`
   }
 `
 
+const IntroSubDescription = styled.p`
+  font-size: 1.5rem;
+  color: ${props => props.theme.color};
+  margin: 2rem 0;
+  @media (max-width: ${BREAKPOINTS.smRem}) {
+    display: none;
+  }
+`
+
 export default {
   IntroContentWrapper,
   FullPage,
   IntroTextName,
   IntroTextContainer,
   IntroContentText,
+  IntroSubDescription,
 }

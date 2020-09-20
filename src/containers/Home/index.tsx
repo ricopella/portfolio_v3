@@ -13,13 +13,16 @@ const HomeContainer = () => {
       <Hero />
       <Styled.IntroTextContainer>
         <Styled.IntroContentWrapper>
-          <Styled.IntroContentText>{`Hi, I'm`}</Styled.IntroContentText>
+          <Styled.IntroContentText>{`Hi, my name is`}</Styled.IntroContentText>
           <Styled.IntroTextName>
             {author?.name.toUpperCase()}
           </Styled.IntroTextName>
           <Styled.IntroContentText>
-            {`a web app developer in Los Angeles, CA.`}
+            {`I build things for the web.`}
           </Styled.IntroContentText>
+          <Styled.IntroSubDescription>
+            {`I'm a software engineer living in Los Angles, CA specializing in building websites, applications, and everything in between.`}
+          </Styled.IntroSubDescription>
         </Styled.IntroContentWrapper>
         <Arrow />
       </Styled.IntroTextContainer>
