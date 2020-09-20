@@ -31,6 +31,36 @@ const Portfolio: FC<{}> = () => {
     setSelectedToggleItem(selectedToggleItem === item && isMobile ? '' : item)
   }
 
+  const calcPercents = () => {
+    const cache: {
+      [id: string]: { size: number; name: string; percent?: number }
+    } = {}
+    let totalCount = 0
+    githubItems.forEach(repo => {
+      repo.node.languages.edges.forEach(language => {
+        if (language.node.name !== 'Objective-C') {
+          const name = language.node.name
+          const id = language.node.id
+          const size = cache?.[id]?.size
+            ? cache[id]?.size + language.size
+            : language.size
+
+          cache[id] = {
+            size,
+            name,
+          }
+          totalCount = totalCount + language.size
+        }
+      })
+    })
+
+    Object.keys(cache).forEach(id => {
+      const percent = (cache[id].size / totalCount) * 100
+      cache[id] = { ...cache[id], percent }
+    })
+  }
+  calcPercents()
+
   return (
     <Page id="portfolio" title={HEADING}>
       <Styled.ExperienceContentWrapper>
