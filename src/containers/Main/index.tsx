@@ -13,7 +13,7 @@ const MainContainer = () => {
       <Home />
       <AboutMe />
       <Portfolio />
-      <Skills />
+      {/* <Skills /> */}
       <Contact />
     </>
   )

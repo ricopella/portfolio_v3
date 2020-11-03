@@ -28,7 +28,7 @@ const AboutMeMain = () => {
         </Styled.BioHeadingText>
       </Styled.BioHeadingWrapper>
       <Styled.BioParagraph className="first">
-        {`I’m a frontend software engineer & freelance web developer living in Los
+        {`I’m a software engineer & freelance web developer living in Los
         Angeles. I'm passionate about music, sports, technology and healthy
         living. Collectively I have 10+ years experience in the Sports,
         Entertainment, and Events industries. I'm a life-long learner that's
@@ -70,7 +70,7 @@ const AboutMeMain = () => {
           {` which started from a radio show that lasted 7 years. And, I'm an avid
         New England sports fan!`}
         </Styled.BioParagraph>
-        <Styled.SpotifyHeadingWrapper>
+        {/* <Styled.SpotifyHeadingWrapper>
           <Styled.SpotifyHeading>
             Here are songs I listened to recently on{' '}
             <Styled.ContactLink
@@ -85,7 +85,7 @@ const AboutMeMain = () => {
             (most likely while working out)
           </Styled.SpotifySubheading>
         </Styled.SpotifyHeadingWrapper>
-        <SpotifyTop3 />
+        <SpotifyTop3 /> */}
       </Styled.MoreAboutMeWrapper>
       <Styled.ShowMoreButtonWrapper>
         <Styled.ShowMoreButton
