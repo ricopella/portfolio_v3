@@ -20,9 +20,9 @@ const HomeContainer = () => {
           <Styled.IntroContentText>
             {`I build things for the web`}
           </Styled.IntroContentText>
-          <Styled.IntroSubDescription>
+          {/* <Styled.IntroSubDescription>
             {`I'm a software engineer living in Los Angles, CA specializing in building websites, applications, and everything in between.`}
-          </Styled.IntroSubDescription>
+          </Styled.IntroSubDescription> */}
         </Styled.IntroContentWrapper>
         <Arrow />
       </Styled.IntroTextContainer>
