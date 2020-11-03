@@ -18,7 +18,7 @@ const HomeContainer = () => {
             {author?.name.toUpperCase()}
           </Styled.IntroTextName>
           <Styled.IntroContentText>
-            {`a web app developer in Los Angeles, CA.`}
+            {`I build things for the web`}
           </Styled.IntroContentText>
         </Styled.IntroContentWrapper>
         <Arrow />
