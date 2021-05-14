@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { BREAKPOINTS, COLORS } from '../../styles/variables'
+import { BREAKPOINTS } from '../../styles/variables'
 
 const RootContainer = styled('div')`
   display: grid;
