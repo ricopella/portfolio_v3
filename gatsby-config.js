@@ -227,7 +227,17 @@ module.exports = {
             title: 'UA',
             year: `2020 - Present`,
             myTitle: 'Software Engineer II',
-            tech: ['React', 'TypeScript', 'GraphQL', 'Apollo'],
+            tech: ['React', 'TypeScript', 'GraphQL', 'Apollo', 'Node'],
+          },
+          {
+            alt: 'Portfolio - AlyVR',
+            description: 'Mobile-Friendly Architectural Visualization Platform',
+            href: 'https://AlyVR.com',
+            fileName: 'alyvr.png',
+            title: 'AlyVR',
+            year: `2020 - 2021`,
+            myTitle: 'Front-End Developer (Freelance)',
+            tech: ['React', 'GraphQL', 'Bootstrap'],
           },
           {
             alt: 'Portfolio - FanAI Inc.',
